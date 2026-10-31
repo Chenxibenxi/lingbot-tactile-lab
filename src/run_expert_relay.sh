@@ -32,7 +32,20 @@ if [[ -n "$(nvidia-smi --query-compute-apps=pid --format=csv,noheader 2>/dev/nul
 fi
 free_mib=$(nvidia-smi -i 0 --query-gpu=memory.free --format=csv,noheader,nounits | tr -d ' ')
 [[ "$free_mib" =~ ^[0-9]+$ && "$free_mib" -ge 16000 ]] || { echo "BLOCKED: only ${free_mib:-unknown} MiB GPU memory free"; exit 4; }
-mkdir -p "$BASE/data/paired" "$BASE/work"
+# Original pkl2hdf5 unconditionally calls ffmpeg BEFORE writing HDF5.
+# Use the already-installed imageio-ffmpeg binary in a private shim, never
+# mutate the shared conda environment or write a partial success marker.
+ffmpeg_binary=$("$ENV/bin/python" -B -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())') || { echo 'BLOCKED: no local ffmpeg binary'; exit 5; }
+[[ -x "$ffmpeg_binary" ]] && "$ffmpeg_binary" -hide_banner -loglevel error -h encoder=libx264 >/dev/null || { echo 'BLOCKED: ffmpeg lacks libx264'; exit 5; }
+mkdir -p "$BASE/data/paired" "$BASE/work/ffmpeg-bin"
+ffmpeg_shim=$BASE/work/ffmpeg-bin/ffmpeg
+if [[ -L "$ffmpeg_shim" ]]; then
+  [[ "$(realpath "$ffmpeg_shim")" == "$(realpath "$ffmpeg_binary")" ]] || { echo 'BLOCKED: private ffmpeg shim differs'; exit 5; }
+elif [[ ! -e "$ffmpeg_shim" ]]; then
+  ln -s "$ffmpeg_binary" "$ffmpeg_shim" || exit 5
+else
+  echo 'BLOCKED: private ffmpeg path is not an approved symlink'; exit 5
+fi
 if [[ ! -f "$OVERLAY/envs/_base_task.py" ]]; then
   "$ENV/bin/python" -B "$BASE/src/make_expert_overlay.py" --source "$SOURCE" --out "$OVERLAY" --create || exit 5
 fi
@@ -43,7 +56,7 @@ p=Path(sys.argv[1]); s=p.read_text()
 assert not p.is_symlink() and 'self._force_probe.record_saved_frame' in s
 PY
 (set -C; : > "$LOCK") || { echo "REFUSE concurrent writer $TRIAL"; exit 3; }
-export PATH="$ENV/bin:$PATH" CUDA_VISIBLE_DEVICES=0
+export PATH="$ENV/bin:$BASE/work/ffmpeg-bin:$PATH" CUDA_VISIBLE_DEVICES=0
 export PYTHONPATH="$BASE/src:$OVERLAY"
 export ROBOTWIN_SOURCE="$SOURCE"
 export TACTILE_SOURCE_MACHINE_ROLE=relay_single_rtx3090

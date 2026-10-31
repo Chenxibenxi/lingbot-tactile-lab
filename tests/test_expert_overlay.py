@@ -13,7 +13,7 @@ SOURCE=Path(os.environ.get("ROBOTWIN_SOURCE", "/mnt/relaydata/lingbot/RoboTwin")
 from force_probe import ForceProbe
 from make_expert_overlay import patched_source
 from make_overlay import create_overlay
-from validate_expert_data import validate
+from validate_expert_data import validate,sha256
 from build_paired_index import build
 
 
@@ -94,6 +94,24 @@ class ExpertTests(unittest.TestCase):
             self.assertFalse(paired[0]['input']['tactile_window_valid'])
             self.assertEqual(paired[0]['target']['action_source_frame_index'],1)
             self.assertNotIn('target',paired[0]['input'])
+            gate=root/'expert_success_gate.json'
+            gate.write_text(json.dumps({'schema':'phizju_expert_success_gate_v1',
+                'task':'lift_pot','seed':17,'episode':0,'success':True,
+                'source_machine_role':'relay_single_rtx3090',
+                'source_hostname':'admin001-MS-7D90','planner_ok':True,
+                'goal_ok':True,'saved_frame_markers':2,
+                'source_sha256':{key:result['sha256'][key] for key in ('raw','obs','frames')}}))
+            relayed=json.loads(completion.read_text())
+            relayed.update(source_machine_role='relay_single_rtx3090',
+                           source_hostname='admin001-MS-7D90',success_gate_sha256=sha256(gate))
+            completion.write_text(json.dumps(relayed))
+            self.assertEqual(validate(raw,o,frames,hf,completion)['saved_frames'],2)
+            saved_gate=gate.read_text()
+            bad=json.loads(saved_gate);bad['planner_ok']=False
+            gate.write_text(json.dumps(bad))
+            with self.assertRaisesRegex(ValueError,'success gate'):
+                validate(raw,o,frames,hf,completion)
+            gate.write_text(saved_gate)
             original_raw=raw.read_text()
             changed=[json.loads(line) for line in original_raw.splitlines()]
             changed[0]['clock_origin']='wrong_clock'

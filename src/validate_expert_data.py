@@ -93,6 +93,19 @@ def validate(raw, obs, frames, hdf5, completion=None):
             raise ValueError("no successful completion manifest")
         if manifest.get("sha256")!=hashes or manifest.get("seed")!=rh["seed"] or manifest.get("episode")!=rh["episode"]:
             raise ValueError("completion manifest hashes/identity mismatch")
+        if manifest.get("source_machine_role")=="relay_single_rtx3090":
+            gate_path=Path(completion).parent/"expert_success_gate.json"
+            if not gate_path.is_file() or manifest.get("success_gate_sha256")!=sha256(gate_path):
+                raise ValueError("relay expert success gate missing or hash mismatch")
+            gate=json.loads(gate_path.read_text())
+            if (gate.get("schema")!="phizju_expert_success_gate_v1" or
+                    not gate.get("success") or not gate.get("planner_ok") or not gate.get("goal_ok") or
+                    gate.get("source_machine_role")!="relay_single_rtx3090" or
+                    gate.get("source_hostname")!=manifest.get("source_hostname") or
+                    gate.get("task")!=rh["task"] or gate.get("seed")!=rh["seed"] or
+                    gate.get("episode")!=rh["episode"] or gate.get("saved_frame_markers")!=len(ff)-1 or
+                    gate.get("source_sha256")!={key:hashes[key] for key in ("raw","obs","frames")}):
+                raise ValueError("relay expert success gate identity/physics hashes invalid")
     return {"task":rh["task"],"seed":rh["seed"],"episode":rh["episode"],"physics_steps":len(rr)-1,
             "camera_observations":len(oo)-1,"saved_frames":len(ff)-1,"dt_s":dt,
             "saved_first_step":ff[1]["physics_step"],"saved_last_step":ff[-1]["physics_step"],"sha256":hashes}

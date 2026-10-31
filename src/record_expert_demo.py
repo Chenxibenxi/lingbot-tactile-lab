@@ -10,7 +10,7 @@ import os
 import socket
 from pathlib import Path
 
-from validate_expert_data import validate
+from validate_expert_data import validate, sha256
 
 
 def evaluate_outcome(robot):
@@ -98,6 +98,18 @@ def main():
                 json.dump(failure,file,indent=2)
             raise RuntimeError(f"expert trial rejected: planner_ok={planner_ok}, goal_ok={goal_ok}, probe_failed={probe.failed}, frames={frames}")
         robot.close_env(); closed=True
+        # Persist the already-passed rule-expert gate BEFORE fallible ffmpeg/HDF5
+        # conversion; a converter failure must never masquerade as a bad planner.
+        gate=output/"expert_success_gate.json"
+        gate_record={"schema":"phizju_expert_success_gate_v1","success":True,
+            "task":args.task,"seed":args.seed,"episode":args.episode,
+            "source_machine_role":os.environ.get("TACTILE_SOURCE_MACHINE_ROLE","unverified"),
+            "source_hostname":socket.gethostname(),"planner_ok":planner_ok,
+            "goal_ok":goal_ok,"saved_frame_markers":frames,
+            "source_sha256":{key:sha256(path) for key,path in
+                (("raw",raw),("obs",raw.with_suffix(".obs.jsonl")),
+                 ("frames",raw.with_suffix(".frames.jsonl")))}}
+        with gate.open("x") as file:json.dump(gate_record,file,indent=2)
         # Original RoboTwin conversion creates the actual HDF5 and preview video.
         robot.merge_pkl_to_hdf5_video()
         hdf5=output/"demonstration/data"/f"episode{args.episode}.hdf5"
@@ -107,6 +119,7 @@ def main():
             "source_machine_role":os.environ.get("TACTILE_SOURCE_MACHINE_ROLE", "unverified"),
             "source_hostname":socket.gethostname(),
             "source":"same-run RoboTwin expert; original RGB/state HDF5 and separate tactile markers",
+            "success_gate_sha256":sha256(gate),
             **result}
         dest=output/"completion.json"
         with dest.with_suffix(".tmp").open("x") as file:
