@@ -1,0 +1,25 @@
+{
+  "schema": "lingbot_tactile_dataset_card_v1",
+  "status": "candidate_unassigned_split",
+  "trial_id": "relay_liftpot_s100000_expert0",
+  "source_machine_role": "relay_single_rtx3090",
+  "source_hostname": "admin001-MS-7D90",
+  "task": "lift_pot",
+  "seed": 100000,
+  "episode": 0,
+  "physics_steps": 1487,
+  "saved_frames": 110,
+  "capture_dt_s": 0.004000000189989805,
+  "sha256": {
+    "raw": "7d6bba3cffab451cf33af30fc44ba013d1d155633ffea0608199ee3a793147e4",
+    "obs": "2e1f6622fb6c0928e8a9c9c5060712a1c0d32aa54fdabf3ac7e827b814f14956",
+    "frames": "f4f02e15d798aff15a5190f0434fa393563123b07e552993bc08f974aa98dbea",
+    "hdf5": "36b8beeb033f5358bb35772181d89bc0696b5fbe944f1ef033d4275084a53de1"
+  },
+  "completion_sha256": "bc499e4b2e2f45d05994151ff0e660789253503de0b6848ecfcbd9ee36f4cff7",
+  "data_path_relative": "data/paired/relay_liftpot_s100000_expert0",
+  "image_hdf5_relative": "data/paired/relay_liftpot_s100000_expert0/demonstration/data/episode0.hdf5",
+  "split": null,
+  "calibrated_grip_force": false,
+  "note": "sim impulse/dt proxy, not GelSight and not a real hardware force limit"
+}

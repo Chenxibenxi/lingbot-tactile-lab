@@ -1,0 +1,62 @@
+{
+  "schema": "lingbot_tactile_train_norm_v1",
+  "status": "fit_on_train_split_only",
+  "source_trials": [
+    "relay_liftpot_s100000_expert0",
+    "relay_liftpot_s100003_expert0",
+    "relay_liftpot_s100014_expert0"
+  ],
+  "n_bins_by_finger": [
+    1545,
+    1545,
+    1545,
+    1545
+  ],
+  "pretransform": "log1p on mean/peak proxy-N only; contact fraction unchanged",
+  "median": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "scale_iqr_floor_0p1": [
+    [
+      0.1,
+      0.1,
+      0.1
+    ],
+    [
+      0.1,
+      0.1,
+      0.1
+    ],
+    [
+      0.1,
+      0.1,
+      0.1
+    ],
+    [
+      0.1,
+      0.1,
+      0.1
+    ]
+  ],
+  "training_approval": false,
+  "split_candidate_sha256": "13a7a878ee9d4c8eff19f49bb49525c147a4fec6eea480f2ec720fb06deb00ac"
+}

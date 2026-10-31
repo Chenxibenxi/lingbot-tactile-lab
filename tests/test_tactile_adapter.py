@@ -57,6 +57,8 @@ class TactileAdapterTest(unittest.TestCase):
         bad = dict(stats, source_trials=[])
         with self.assertRaisesRegex(ValueError, 'training-only'):
             self.module.set_normalization(bad)
+        with self.assertRaisesRegex(ValueError,'not approved'):
+            self.module.set_normalization(dict(stats,training_approval=False))
 
     def test_output_projection_receives_gradient(self):
         output=self.module(self.state, self.force, self.mask, self.age, self.valid)

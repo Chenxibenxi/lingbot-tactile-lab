@@ -35,6 +35,8 @@ class TactileStateResidual(nn.Module):
         if (train_stats.get("schema"), train_stats.get("status")) != (
                 "lingbot_tactile_train_norm_v1", "fit_on_train_split_only") or not train_stats.get("source_trials"):
             raise ValueError("must provide provenance-backed training-only statistics")
+        if train_stats.get("training_approval") is False:
+            raise ValueError("pilot normalization is not approved for tactile model training")
         med = torch.as_tensor(train_stats["median"], dtype=self.train_median.dtype,
                               device=self.train_median.device)
         scale = torch.as_tensor(train_stats["scale_iqr_floor_0p1"], dtype=self.train_scale.dtype,

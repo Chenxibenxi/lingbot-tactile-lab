@@ -4,11 +4,11 @@
 
 **沿用并改进**现有 PhiZJU LingBot-VLA + RoboTwin 的数据、训练和评测管线，触觉最终必须作为输入进入训练和闭环推理；不是永久停留在只读日志。保留视觉-only 185800 checkpoint、原始脚本/成绩及可重复运行配置，供科学对照与随时回退；所有新开发在 opt-in 实验分支逐步接入，成熟后合并到通用管线。产出可向 UIUC Lourentzou 实验室展示的研究资产，而非只做一次单任务 demo。
 
-## 第一程：同源示范数据（relay3090首个成功候选已采；多独立seed仍待完成）
+## 第一程：同源示范数据（relay3090五个独立seed试点已采，正式训练仍待门禁）
 
 1. **专家实时触碰的数据必须与其图像来自同一次 episode**。仅同一个 seed、同一个任务而另跑一次仍可能规划不同，不能相拼。本仓库 `src/make_expert_overlay.py` 在 expert 的 `together_move_to_pose` / `take_dense_action` 每物理步采 contact；`_take_picture` 成功写出 pkl 后同步记录真实 `(frame_index, physics_step, actual_seed, actual_qpos/qvel, command_state14)`，HDF5 视频沿用现成生成器。
 2. 拒收未知时钟、探针失效、掉步、HDF5帧数/命令数组与 marker 不一致、任务不成功、状态不完整的产物；仅完成验证才原子写 `completion.json`。旧 HDF5 没时间戳，旧 LeRobot 50fps 是合成时间，不能用来当触觉标签。
-3. **首个 relay `lift_pot` seed100048 同源专家回合已成功并hash验证**：1,514物理步、113帧、105个通过历史完整/正物理间隔门的候选训练对，见 `datasets/cards/relay_liftpot_s100048_expert1.json`；仍需至少5个独立seed才能做真正train/validation/test分割并只在train拟合归一化，不能对单seed模型声称泛化。随后加入小物抓取/接触操作、空夹与不同物体姿态/材质负例；失败示范与一次后处理故障的隔离轨迹仅供分析，不与合格同源专家训练对混用。记录碰撞冲量尖峰/采样 p95 和磁盘体积。既有 encoder 是 RGB，对应 SAPIEN scalar force 不是 GelSight 图像。
+3. **relay `lift_pot` 五个独立物理seed的同源专家回合已成功并hash验证**：共559帧、518个历史完整且下一帧物理步严格递增的候选对，卡片见 `datasets/cards/`；3train/1val/1test 的split仅是达到技术底线的pilot，接触稀疏造成IQR全落0.1地板，须先审阅归一化及更多失败/遮挡负例，不把5seed当科学可信显著性。随后加小物抓取/接触操作、空夹与不同物体姿态/材质负例；失败示范与一次后处理故障的隔离轨迹仅供分析，不与合格同源专家训练对混用。记录碰撞冲量尖峰/采样 p95 和磁盘体积。既有 encoder 是 RGB，对应 SAPIEN scalar force 不是 GelSight 图像。
 
 ## 第二程：可复现数据集转化与模型输入
 

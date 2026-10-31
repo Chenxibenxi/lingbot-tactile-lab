@@ -1,0 +1,40 @@
+{
+  "schema": "lingbot_tactile_seed_split_plan_v1",
+  "status": "candidate_not_approved",
+  "random_seed": 42,
+  "source_machine_role": "relay_single_rtx3090",
+  "train": [
+    "relay_liftpot_s100000_expert0",
+    "relay_liftpot_s100003_expert0",
+    "relay_liftpot_s100014_expert0"
+  ],
+  "validation": [
+    "relay_liftpot_s100005_expert0"
+  ],
+  "test": [
+    "relay_liftpot_s100048_expert1"
+  ],
+  "task_seed_groups": {
+    "lift_pot": {
+      "train": [
+        100003,
+        100000,
+        100014
+      ],
+      "validation": [
+        100005
+      ],
+      "test": [
+        100048
+      ]
+    }
+  },
+  "expert_card_sha256": {
+    "relay_liftpot_s100000_expert0": "4829b59ebaf7a7eb22f98d6c89c26f63e65ab80bc77ad85f443e77759d2c6cdd",
+    "relay_liftpot_s100003_expert0": "9caf9bf44471df6207b34c7ceef497f5c55513a7e1b39d16d7d0f4ffa1edd228",
+    "relay_liftpot_s100005_expert0": "84533758cc9c6cd34055deb350da721c98433a0316bd3c0c72cda73e1bb43b3f",
+    "relay_liftpot_s100014_expert0": "ea628305d368f41cc261d7773368d42affcfacbfad569d189b68d52202812985",
+    "relay_liftpot_s100048_expert1": "1d8749dabde0d8b3c4d66095bb50a97674d73000653f0f976d4999f271da10ba"
+  },
+  "evaluation_claims_approved": false
+}
