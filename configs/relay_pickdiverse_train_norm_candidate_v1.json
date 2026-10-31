@@ -1,0 +1,62 @@
+{
+  "schema": "lingbot_tactile_train_norm_v1",
+  "status": "fit_on_train_split_only",
+  "source_trials": [
+    "relay_pickdiverse_s100000_expert0",
+    "relay_pickdiverse_s100002_expert0",
+    "relay_pickdiverse_s100007_expert0"
+  ],
+  "n_bins_by_finger": [
+    1705,
+    1705,
+    1705,
+    1705
+  ],
+  "pretransform": "log1p on mean/peak proxy-N only; contact fraction unchanged",
+  "median": [
+    [
+      2.6745363579661023,
+      2.774559870805359,
+      1.0
+    ],
+    [
+      2.6826346407984176,
+      2.7825012736571377,
+      1.0
+    ],
+    [
+      2.6117809726396537,
+      2.7595569749495272,
+      1.0
+    ],
+    [
+      2.6219131865084204,
+      2.751359456268862,
+      1.0
+    ]
+  ],
+  "scale_iqr_floor_0p1": [
+    [
+      3.842424994390531,
+      3.8427284821343397,
+      1.0
+    ],
+    [
+      3.843112310042883,
+      3.8434522773177697,
+      1.0
+    ],
+    [
+      3.729687746147735,
+      3.7299066277788233,
+      1.0
+    ],
+    [
+      3.7331233521311953,
+      3.7352331481220227,
+      1.0
+    ]
+  ],
+  "training_approval": false,
+  "split_candidate_sha256": "78612252d29e45bf2f481ed9e7351d95210272e2689c4f8800f0969cf043ad10"
+}
