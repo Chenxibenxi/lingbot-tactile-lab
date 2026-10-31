@@ -1,0 +1,28 @@
+{
+  "schema": "lingbot_tactile_rejected_trial_diagnostic_v1",
+  "status": "quarantined_diagnostic_not_training_or_eval",
+  "source_machine_role": "relay_single_rtx3090",
+  "trial_id": "relay_lift_pot_20261031_pilot1",
+  "task": "lift_pot",
+  "seed": 0,
+  "rejection_type": "planner_failed_before_task_goal",
+  "planner_ok": false,
+  "goal_ok": false,
+  "physics_steps": 1044,
+  "saved_pickle_frame_markers": 77,
+  "contact_physics_steps_by_side": {
+    "left": 0,
+    "right": 0
+  },
+  "has_validated_rgb_hdf5": false,
+  "same_run_observation_markers": true,
+  "suitable_as_grasp_failure_example": false,
+  "accepted_for_training": false,
+  "source_sha256": {
+    "failure": "69a9524bbddbbb4e57b16b67b57415e31ce327bced766fedd9a59ea6840ecc20",
+    "raw": "657057d58f50377b0a0bcb82fb9453aea3ff156d2fc7476f25bbbbe746941563",
+    "obs": "8b6d03abc2a4ddebce22b63f9a50432e39399ccf81e1b32d0003de8114dec182",
+    "frames": "007e63bad61d6f28a1584b3e6b7f7650b0b5dc398d23dd82a9e406de57c7c86a"
+  },
+  "note": "No HDF5 and no successful expert gate. Never merge into positive candidate cards or infer a failed grasp from a planner rejection."
+}
