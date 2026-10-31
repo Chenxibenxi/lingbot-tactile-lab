@@ -1,0 +1,99 @@
+{
+  "schema": "lingbot_tactile_contact_norm_v2",
+  "status": "fit_on_train_split_only",
+  "training_approval": false,
+  "source_trials": [
+    "relay_liftpot_s100000_expert0",
+    "relay_liftpot_s100003_expert0",
+    "relay_liftpot_s100014_expert0"
+  ],
+  "pretransform": "log1p for positive mean/peak proxy only; zero force remains zero; contact fraction unchanged",
+  "median": [
+    [
+      2.547314471505522,
+      2.5618408732075304,
+      0.0
+    ],
+    [
+      2.5639807177894873,
+      2.5819781240242152,
+      0.0
+    ],
+    [
+      2.5611591778623657,
+      2.581203236904392,
+      0.0
+    ],
+    [
+      2.531146335365583,
+      2.5582365212455818,
+      0.0
+    ]
+  ],
+  "scale_iqr_floor_0p1": [
+    [
+      0.1,
+      0.1,
+      1.0
+    ],
+    [
+      0.1,
+      0.1,
+      1.0
+    ],
+    [
+      0.1,
+      0.1,
+      1.0
+    ],
+    [
+      0.1,
+      0.1,
+      1.0
+    ]
+  ],
+  "full_bin_counts_by_finger": [
+    1545,
+    1545,
+    1545,
+    1545
+  ],
+  "positive_force_counts_by_finger_channel": [
+    [
+      350,
+      350
+    ],
+    [
+      354,
+      354
+    ],
+    [
+      356,
+      356
+    ],
+    [
+      348,
+      348
+    ]
+  ],
+  "positive_force_fraction_by_finger_channel": [
+    [
+      0.22653721682847897,
+      0.22653721682847897
+    ],
+    [
+      0.229126213592233,
+      0.229126213592233
+    ],
+    [
+      0.23042071197411004,
+      0.23042071197411004
+    ],
+    [
+      0.22524271844660193,
+      0.22524271844660193
+    ]
+  ],
+  "normalized_force_clip_abs": 4.0,
+  "split_candidate_sha256": "13a7a878ee9d4c8eff19f49bb49525c147a4fec6eea480f2ec720fb06deb00ac"
+}

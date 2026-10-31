@@ -29,11 +29,14 @@ class TactileStateResidual(nn.Module):
         nn.init.zeros_(self.to_state.weight)
         self.register_buffer("train_median", torch.zeros(4, 3))
         self.register_buffer("train_scale", torch.ones(4, 3))
+        self.register_buffer("norm_mode", torch.tensor(0,dtype=torch.int8))  # 0=legacy; 1=positive-only
+        self.register_buffer("norm_clip_abs", torch.tensor(4.,dtype=torch.float32))
 
     def set_normalization(self, train_stats: dict):
         """Install *training-fold-only* median/IQR buffers into the checkpoint."""
-        if (train_stats.get("schema"), train_stats.get("status")) != (
-                "lingbot_tactile_train_norm_v1", "fit_on_train_split_only") or not train_stats.get("source_trials"):
+        schema=train_stats.get("schema")
+        if (schema not in ("lingbot_tactile_train_norm_v1", "lingbot_tactile_contact_norm_v2") or
+                train_stats.get("status")!="fit_on_train_split_only" or not train_stats.get("source_trials")):
             raise ValueError("must provide provenance-backed training-only statistics")
         if train_stats.get("training_approval") is False:
             raise ValueError("pilot normalization is not approved for tactile model training")
@@ -44,9 +47,30 @@ class TactileStateResidual(nn.Module):
         if med.shape != (4, 3) or scale.shape != (4, 3) or not torch.isfinite(med).all().item() or (
                 not torch.isfinite(scale).all().item()) or torch.any(scale <= 0).item():
             raise ValueError("invalid tactile normalization shape or scale")
+        if schema=="lingbot_tactile_contact_norm_v2":
+            import math
+            clip=float(train_stats.get('normalized_force_clip_abs',float('nan')))
+            if (not math.isfinite(clip) or not 0<clip<=16 or
+                    not torch.equal(med[:,2],torch.zeros_like(med[:,2])) or
+                    not torch.equal(scale[:,2],torch.ones_like(scale[:,2]))):
+                raise ValueError('invalid positive-only contact normalization contract')
         with torch.no_grad():
             self.train_median.copy_(med)
             self.train_scale.copy_(scale)
+            self.norm_mode.fill_(int(schema=="lingbot_tactile_contact_norm_v2"))
+            if schema=="lingbot_tactile_contact_norm_v2":self.norm_clip_abs.fill_(clip)
+
+    def _normalized_features(self, h):
+        """Mode v2 keeps absent force at exact zero; never invents contact."""
+        med=self.train_median.to(dtype=h.dtype)
+        scale=self.train_scale.to(dtype=h.dtype)
+        if self.norm_mode.item()==1:
+            force=torch.log1p(h[...,:2])
+            force=torch.where(h[...,:2]>0,(force-med[:,:2])/scale[:,:2],0.)
+            force=force.clamp(-float(self.norm_clip_abs.item()),float(self.norm_clip_abs.item()))
+            return torch.cat([force,h[...,2:]],dim=-1)
+        transformed=torch.cat([torch.log1p(h[...,:2]),h[...,2:]],dim=-1)
+        return (transformed-med)/scale
 
     def forward(self, state_embedding: torch.Tensor,
                 tactile_history: torch.Tensor | None = None,
@@ -89,10 +113,9 @@ class TactileStateResidual(nn.Module):
         h = tactile_history.to(dtype=dtype)
         if torch.any(h[..., :2] < 0).item() or torch.any(h[..., 2] < 0).item() or torch.any(h[..., 2] > 1).item():
             raise ValueError("negative load or contact fraction outside [0,1]")
-        h = torch.cat([torch.log1p(h[..., :2]), h[..., 2:]], dim=-1)
-        # Fitted on the train split only; default buffers mean log1p without
-        # normalization until a validated dataset supplies statistics.
-        h = (h - self.train_median.to(dtype=dtype)) / self.train_scale.to(dtype=dtype)
+        # Default identity stats preserve legacy log1p; v2 uses train-fold
+        # positive-bin statistics without turning absent force into a signal.
+        h = self._normalized_features(h)
         mask = coverage_mask.to(dtype=dtype)
         h = h * mask.unsqueeze(-1)
         seq = torch.cat([h, mask.unsqueeze(-1)], dim=-1).reshape(batch, 5, 16)
