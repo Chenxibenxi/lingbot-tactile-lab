@@ -24,7 +24,7 @@ All **new** raw tactile data, calibrated parameters, model checkpoints and evalu
 | `src/patch_policy_client.py` | Reversible, isolated client-source generator; requires `tactile_v1` server capability before attaching a true infer-call marker | AST/unit checked only; **old server cannot be used as tactile inference** |
 | `src/server_tactile_bridge.py` | Strict transform/batch preprocessing and conditional server capability metadata | CPU mocks tested; **no real VLA server or trained adapter loaded** |
 | `src/patch_model_v2.py` | Isolated strict-source generator for optional FlowMatchingV2 state-token residual | CPU AST/identity tests only; **not loaded with a real VLA checkpoint** |
-| `src/patch_safe_eval_launcher.py` | Creates a private visual-policy eval launcher that verifies curobo paths without writing shared assets or conda `.pth` | CPU patch test; one local 93k closed-loop replay pending |
+| `src/patch_safe_eval_launcher.py` | Private visual-policy eval launcher that checks curobo paths without writing shared assets or conda `.pth` | Local 154800 BF16 seed100048 success **with passive contact only**; zero tactile-model inference |
 | `tests/` | Offline unit/contract regressions | 55 tests passing |
 | `configs/` | Planned experimental capture/window parameters and model-study registry | Initial settings, not tuned |
 | `docs/` | Temporal constraints, controlled baseline and research plan | Draft research assets |

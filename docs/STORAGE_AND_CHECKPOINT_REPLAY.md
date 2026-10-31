@@ -1,0 +1,32 @@
+# Relay storage and visual-policy replay correction
+
+## Disk accounting (2026-10-31)
+
+The earlier statement that this *machine* only had ~38 GiB free was incorrect: that is only the `/mnt/relaydata` filesystem containing this Git worktree. `lsblk`/`df` showed:
+
+| Filesystem | Mounted at | Free | Notes |
+|---|---|---:|---|
+| `/dev/nvme0n1p5` | `/mnt/relaydata` | ~38 GiB | Experiment repo and original evaluation checkout; still needs per-volume headroom. |
+| `/dev/nvme0n1p1` | `/home` | ~251 GiB | The temporary reconstructed 93k BF16 artifact (about 15 GiB including auxiliary files) was removed at the user's request after its diagnostic replay; the untouched 154800 FP32 checkpoint remains on this filesystem. |
+| `/dev/sda2` | `/` | ~182 GiB | ~500 GB physical SATA disk's Linux partition. |
+| `/dev/sda4` | *unmounted* | 149 GB nominal | NTFS partition, **not** counted as available Linux space until separately mounted and verified. |
+
+These are distinct filesystems: space under `/home` or `/` does not automatically make `/mnt/relaydata` larger. No partition was mounted, moved or reformatted during this check.
+
+## Distinguish expert demonstrations from model inference
+
+The two earlier rejected `lift_pot` pilots ran `RoboTwin` rule-based `expert` via `robot.play_once()` with `policy_name=expert`, `ckpt_setting=none`, `need_plan=True`. **No base or trained VLA checkpoint was loaded in either pilot.** Those failures diagnose the expert's planner/terminal-state data gate, not whether a VLA checkpoint can lift the pot. They cannot be rescued as model training demonstrations by relabeling them as checkpoint rollouts.
+
+This machine's historical visual-policy `lift_pot` replay log named `h20D1f_93000`, `demo_clean`, BF16 and recorded 26 successes in 30 episodes. Its former full merged checkpoint under `eval_ckpts/` has been removed, but a local `wandb_pull/93000/adapter.safetensors` and official `weights/base-11c703b/` remain. A CPU key audit verified 336 LoRA target layers and 10 full tensors all map to the base and the known 1624-key inference architecture. `restore_adapter.py` in the submission code can reconstruct an on-disk BF16 inference candidate from these **local relay files**, without using LXC data. This is a new reconstruction, not automatically identical to the previously evaluated merged-file bytes. On the relay 3090 its BF16 strict-loader and a one-episode visual-policy replay **did run**, but seed `100000` scored `0/1`: the pot reached 0.8064 m (success requires >0.82 m), left wrist minimum distance was 0.0374 m (requires <0.03 m), and right wrist reached 0.0228 m. This **does not reproduce** the old 26/30 success and is not evidence of tactile training; one selectively failed episode cannot estimate success rate. The newly built 93k full-weight copy and its private symlink were removed at the user's request after this replay; the small pre-existing adapter/base and the ignored diagnostic logs were retained.
+
+A locally present 154800 FP32 merged checkpoint is another fallback; its separate historical first-submission `lift_pot` clean record was 18/100. A new relay BF16 one-episode **visual-policy** replay targeting historical FP32 success seed `100014` loaded all 1624 tensors and finished normally, but scored `0/1`: pot height reached **0.8265 m** (>0.82 m height threshold on 2 physics observations), yet left/right grasp distances and upright orientation never satisfied the four conditions simultaneously (`steps_all4=0`; minimum upright score 0.5898). Therefore 154800 **can run and can raise the pot above the height threshold on this RTX 3090**, but this episode was not a successful lift; BF16 vs historical FP32 and simulator state also prevent claiming exact reproduction. Do not pool the 93k and 154800 trials into one success rate.
+
+An H20 SSH attempt was **aborted** because the configured host's ED25519 key changed; do not disable host-key verification or transfer credentials/files until independent identity confirmation. GitHub source hosting is not an appropriate substitute for private ~13–26 GB weight files.
+
+## 154800 visual policy + passive physics touch, seed 100048
+
+A second **targeted positive-control** relay BF16 run on historical 154800 FP32 weights started at seed `100048` and scored **`lift_pot` 1/1**, taking 96 policy actions. The task's four success conditions held together on one physics observation (`steps_all4=1`). This is one selected seed, **not** a 100% success-rate estimate. The same-run private passive sensor sidecar recorded 9,331 physics steps, 3 camera `get_obs` events and exactly 2 actual client `model.infer` *attempt markers* (steps 0 and 5,499); the initial decision had no force history and the second had a causal complete 25-step window with age 0 ms. Contact occurred on 1,831 left and 1,810 right physics steps; maximum SAPIEN impulse/dt proxies were ~29.88 N and ~28.44 N, not calibrated gripping forces. The client sent its original visual-only RPC fields: **the checkpoint did not consume touch**, and the final camera observation is not another inference request.
+
+This proves the local 154800 checkpoint *can* lift this pot on the relay, resolving the earlier expert-versus-model confusion: the earlier rule-based `expert` used motion planning and no VLA checkpoint, while this visual policy uses closed-loop predicted actions. There is still **no successful expert HDF5 with frame-aligned images, no accepted tactile training pairs, and no tactile-conditioned model**; this visual rollout cannot be silently promoted to training data. Next investigate an isolated policy-rollout capture path with full HDF5 image/action/time joins (or fix the rule expert's paired-lift planning), then validate and register before training.
+
+The experiment uses a small *copied* RoboTwin tree under ignored `work/eval_sandbox/` and a probe-instrumented derivative under ignored `work/eval_probe_overlay/`. A generated private launcher checks original curobo YAML and conda `.pth` instead of rewriting them. All outputs stay under ignored `data/eval/`, each GPU run obtains an idle lease, and Strata was confirmed `loaded=true` after both 154800 replays with lease released. Original `_base_task.py`, curobo YAML, `.pth`, and original eval-client SHA256 hashes stayed unchanged. **Historical success alone is not a new replay result or tactile capability.**
