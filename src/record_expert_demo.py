@@ -22,6 +22,16 @@ def evaluate_outcome(robot):
         return planner_ok,False,type(exc).__name__
 
 
+def planner_path_statuses(robot):
+    """Bounded, non-trajectory planner status summary for rejected trials."""
+    result={}
+    for side in ("left","right"):
+        paths=getattr(robot,side+"_joint_path",[])
+        result[side]=[(str(item.get("status","missing_status"))[:80]
+                       if isinstance(item,dict) else "missing_result") for item in paths[:16]]
+    return result
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out",required=True,type=Path)
@@ -81,6 +91,7 @@ def main():
                      "source_hostname":socket.gethostname(),"planner_ok":planner_ok,
                      "goal_ok":goal_ok,"goal_check_error_type":goal_check_error,
                      "probe_failed":probe.failed,"saved_frame_markers":frames,
+                     "planner_path_statuses":planner_path_statuses(robot),
                      "raw_basename":raw.name if raw else None,
                      "accepted_for_training":False}
             with (output/"failure.json").open("x") as file:
