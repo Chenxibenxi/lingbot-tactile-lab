@@ -1,0 +1,58 @@
+"""Opt-in server preprocessing bridge for tactile RPC, CPU-testable only.
+
+Existing LingBot deploy files are untouched. A future experimental deployment
+must explicitly call prepare_input BEFORE feature_transform.apply (which may
+silently discard unknown keys) and pass returned tensors to sample_actions.
+Capability cannot be advertised without an actual trained adapter checkpoint.
+"""
+from __future__ import annotations
+import re
+
+import torch
+from tactile_rpc import FIELDS, decode_tactile, encode_tactile_window
+
+TENSOR_FIELDS = ("tactile_history", "tactile_mask", "tactile_age_ms", "tactile_valid")
+
+
+def capability_metadata(*, enabled: bool, model_wired: bool = False,
+                        adapter_checkpoint_sha256: str | None = None) -> dict:
+    if not enabled:
+        return {}
+    if not model_wired or not isinstance(adapter_checkpoint_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", adapter_checkpoint_sha256):
+        raise RuntimeError("cannot advertise tactile_v1 without model wiring and adapter artifact SHA256")
+    return {"capabilities": ["tactile_v1"],
+            "tactile_adapter_sha256": adapter_checkpoint_sha256,
+            "tactile_schema": "lingbot_tactile_rpc_plan_v1"}
+
+
+def prepare_input(raw_observation: dict, feature_transform, *, tactile_enabled=False):
+    """Preserve normal visual transform and append schema-checked tensors."""
+    any_tactile = any(key in raw_observation for key in FIELDS)
+    if not tactile_enabled:
+        if any_tactile:
+            raise RuntimeError("server has tactile disabled but received tactile fields")
+        return feature_transform.apply(raw_observation, policy_eval=True)
+    # Decode before transform: legacy feature_transform may drop novel keys.
+    payload = decode_tactile(raw_observation) if any_tactile else decode_tactile(encode_tactile_window(None))
+    visual = {key: value for key, value in raw_observation.items() if key not in FIELDS}
+    transformed = feature_transform.apply(visual, policy_eval=True)
+    if any(key in transformed for key in TENSOR_FIELDS):
+        raise ValueError("feature transform already emitted tactile keys; refusing overwrite")
+    transformed = dict(transformed)
+    transformed.update({"tactile_history": torch.from_numpy(payload["history"]),
+                        "tactile_mask": torch.from_numpy(payload["mask"]),
+                        "tactile_age_ms": torch.from_numpy(payload["age_ms"]),
+                        "tactile_valid": torch.from_numpy(payload["valid"])})
+    return transformed
+
+
+def stack_tactile_prepared(items: list[dict]) -> dict:
+    if not items:
+        raise ValueError("empty tactile batch")
+    for item in items:
+        if any(key not in item for key in TENSOR_FIELDS):
+            raise ValueError("mixed/incomplete tactile batch")
+    batch = {key: torch.stack([item[key] for item in items]) for key in TENSOR_FIELDS}
+    if tuple(batch["tactile_history"].shape[1:]) != (5,4,3) or tuple(batch["tactile_mask"].shape[1:]) != (5,4):
+        raise ValueError("batched tactile geometry changed")
+    return batch
