@@ -107,7 +107,8 @@ class ForceProbeTest(unittest.TestCase):
                 probe.record_policy_request()
             frame={'observation':{'head_camera':{'rgb':NS(shape=(240,320,3))}}}
             probe.record_observation(frame,0)
-            probe.record_policy_request()
+            first_request=probe.record_policy_request()
+            self.assertEqual((first_request['request_index'],first_request['physics_step']),(0,0))
             probe.sample(scene,robot,1)
             with self.assertRaisesRegex(RuntimeError,'stale'):
                 probe.record_policy_request()

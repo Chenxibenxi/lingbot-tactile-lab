@@ -28,9 +28,9 @@
 
 `src/patch_model_v2.py` 只对本机已知 V2 源源码作严格锚点的**独立副本**补丁，启用 `config.tactile_enabled` 时初始化零输出 adapter，从顶层训练 `forward(**kwargs)` 向 `FlowMatchingV2.forward` 显式传递 history/mask/age/valid，并在 `sample_actions` 中单次编码残差，`predict_velocity` 每步只注入**state token**，不污染 action token；关闭时不加 adapter 新参数，旧行为保留。`tests/test_patch_model_v2.py` 抽取源 AST，在纯CPU假模型上检查零初始化视觉恒等、受训非零输出仅改state token、无adapter拒绝触觉，以及原源码哈希不变。**尚未经真实V2初始化/旧checkpoint加载/训练或服务端透传验证；不得据此发布tactile_v1能力。** 基线权重应先以 `tactile_enabled=False` 按原流程完整载入，再由隔离训练代码显式附加新adapter并载入独立检查点；直接在加载旧权重前设为True可能因新参数缺权重/空初始化而失败，不能借 `strict=False` 掩盖。
 
-## 同源策略采集原型（CPU契约，尚未接评测客户端）
+## 同源策略自回放（隔离客户端实测，但未批准训练）
 
-`src/policy_rollout_capture.py` 提供独立 HDF5 writer：在真正 `model.infer` 处保存该请求实际使用的三相机 uint8 RGB、14D 当前指令状态和仅过去物理步的触觉窗口；**每次实际** `TASK_ENV.take_action` 之后记录施加的14D命令与前后物理步，避免把预测chunk未执行的后半截当标签。相机 request 可恰好等于上一动作结束物理步，时钟不允许倒流；最初没有接触时mask必须保持invalid。`complete` 仅指本地文件有请求与实际动作，`target_semantics=executed_self_rollout_not_expert_or_training_approved`：输出来自本视觉模型的动作，**不是专家纠错目标**，即使回合成功也不能直接声明训练触觉改进。目前只有CPU小模拟三测，未在真实评测客户端启用；下一步还需端到端sidecar/HDF5校验、SHA和成功manifest、源seed分组，之后才能决定是否只用于辅助接触任务或受控行为克隆对照。
+`src/policy_rollout_capture.py` 提供独立 HDF5 writer：在真正 `model.infer` 处保存该请求实际使用的三相机 uint8 RGB、14D 当前指令状态和仅过去物理步的触觉窗口；**每次实际** `TASK_ENV.take_action` 之后记录施加的14D命令与前后物理步，避免把预测chunk未执行的后半截当标签。相机 request 可恰好等于上一动作结束物理步，时钟不允许倒流；最初没有接触时mask必须保持invalid。`complete` 仅指本地文件有请求与实际动作，`target_semantics=executed_self_rollout_not_expert_or_training_approved`：输出来自本视觉模型的动作，**不是专家纠错目标**，即使回合成功也不能直接声明训练触觉改进。已在**隔离复制**的RoboTwin客户端上通过 `src/patch_policy_capture_client.py` 严格锚点接线；154800视觉-only/BF16、relay单3090/历史正例seed100048一集成功，自回放记录2次真实infer、100个实际施加动作、三路原始RGB HDF5和因果触觉，`src/validate_policy_rollout.py` 同源四流加HDF5校验通过，并在 `datasets/relay_policy_self_rollout_154800_s100048_v1.json` 登记字节长度与SHA256。该卡状态仍**self_rollout_not_expert_or_training_approved**，只有被选择的一条种子，不代表触觉模型成功率或获得专家纠错标签；下一步需更多独立种子/失败反事实、对接训练目标与真正模型条件化，再决定辅助接触任务或受控行为克隆对照。
 
 ## 尚须逐层接线（后续变更范围）
 

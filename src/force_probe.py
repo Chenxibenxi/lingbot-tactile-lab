@@ -243,12 +243,14 @@ class ForceProbe:
                 "probe_file":Path(self._file.name).name, "task":self.task,
                 "seed":self.seed, "episode":self.episode, "dt_s":self.dt,
                 "kind":"client_infer_call_attempt; transport_ack_unverified"}) + "\n")
-        self._policy_file.write(json.dumps({"request_index":self._policy_index,
+        row={"request_index":self._policy_index,
             "obs_index":self._obs_index-1, "physics_step":self.step,
             "sim_time_s":round(self.step*self.dt,8),
-            "request_monotonic_ns":time.monotonic_ns()},allow_nan=False) + "\n")
+            "request_monotonic_ns":time.monotonic_ns()}
+        self._policy_file.write(json.dumps(row,allow_nan=False) + "\n")
         self._policy_file.flush()
         self._policy_index += 1
+        return row
 
     def record_saved_frame(self, frame_index, observation, robot):
         """Call only AFTER numbered frame pickle has been saved successfully."""

@@ -1,0 +1,46 @@
+{
+  "schema": "phizju_policy_self_rollout_candidate_v1",
+  "status": "diagnostic_self_rollout_not_expert_or_training_approved",
+  "source_machine_role": "single_relay_rtx3090",
+  "source_hostname": "admin001-MS-7D90",
+  "task": "lift_pot",
+  "actual_seed": 100048,
+  "episode": 0,
+  "policy": "visual_only_154800_bf16",
+  "baseline_checkpoint_index_sha256": "62dbe509bd476ff354e6a9bea5476bfe451471a5e1160d24abb594a35fe2ec40",
+  "policy_reported_success": true,
+  "actual_infer_attempts": 2,
+  "causal_valid_requests": 1,
+  "executed_action_count": 100,
+  "target_semantics": "self_generated_executed_commands_not_expert_corrections",
+  "training_approved": false,
+  "data_root_relative": "data/eval/154800-policy-capture-seed100048-v1",
+  "files": {
+    "raw": {
+      "path": "force/lift_pot_100048_0_7sjw9q5m.jsonl",
+      "size_bytes": 9075384,
+      "sha256": "c38c7099d43bf01588cece2d9ae8a3b1fdb3677745626ae06dad9850e1d24ab0"
+    },
+    "obs": {
+      "path": "force/lift_pot_100048_0_7sjw9q5m.obs.jsonl",
+      "size_bytes": 962,
+      "sha256": "ae0bab8cb3749fbb0e1b6e1b3197e3d6048937fa18634ab17c049c3603132ed9"
+    },
+    "policy": {
+      "path": "force/lift_pot_100048_0_7sjw9q5m.policy.jsonl",
+      "size_bytes": 471,
+      "sha256": "237157984accd47ebe08c96ac8a58f472f95d43faf8e12ed19f6dd8fdea9cd27"
+    },
+    "hdf5": {
+      "path": "policy_lift_pot_100048_0.hdf5",
+      "size_bytes": 679803,
+      "sha256": "8511f83892e98f41ddc756f1f4098695ef181a098abfdb0c285e9c03a8c626c1"
+    }
+  },
+  "exclusions": [
+    "not_in_data_paired",
+    "self_rollout_actions_are_not_expert_corrections",
+    "only_one_selected_seed",
+    "no_tactile_conditioned_model_checkpoint"
+  ]
+}
