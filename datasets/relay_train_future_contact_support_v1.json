@@ -1,0 +1,40 @@
+{
+  "schema": "lingbot_expert_future_contact_support_audit_v1",
+  "status": "TRAIN_ONLY_DIAGNOSTIC_NO_AUX_TRAINING_APPROVAL",
+  "split_sha256": "c94d94d546bcc2bee45c78f3075b6c03b4b128f022490804ee7b89b67f44ebf5",
+  "source_train_trials": [
+    "relay_liftpot_s100000_expert0",
+    "relay_liftpot_s100003_expert0",
+    "relay_liftpot_s100014_expert0"
+  ],
+  "by_trial": {
+    "relay_liftpot_s100000_expert0": {
+      "n_pairs": 102,
+      "both_sides_future_any": 25,
+      "left_future_any": 25,
+      "right_future_any": 25,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 1,
+      "both_new_onset_same_interval": 1
+    },
+    "relay_liftpot_s100003_expert0": {
+      "n_pairs": 104,
+      "both_sides_future_any": 26,
+      "left_future_any": 26,
+      "right_future_any": 26,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 1,
+      "both_new_onset_same_interval": 1
+    },
+    "relay_liftpot_s100014_expert0": {
+      "n_pairs": 103,
+      "both_sides_future_any": 25,
+      "left_future_any": 25,
+      "right_future_any": 25,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 1,
+      "both_new_onset_same_interval": 1
+    }
+  },
+  "meaning": "future interval contact is a label only; current input is causal past history; no hardware force limit"
+}
