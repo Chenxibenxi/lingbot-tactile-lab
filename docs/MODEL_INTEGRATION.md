@@ -26,7 +26,7 @@
 
 ## 可逆 FlowMatchingV2 原型（未安装/未训练）
 
-`src/patch_model_v2.py` 只对本机已知 V2 源源码作严格锚点的**独立副本**补丁，启用 `config.tactile_enabled` 时初始化零输出 adapter，从顶层训练 `forward(**kwargs)` 向 `FlowMatchingV2.forward` 显式传递 history/mask/age/valid，并在 `sample_actions` 中单次编码残差，`predict_velocity` 每步只注入**state token**，不污染 action token；关闭时不加 adapter 新参数，旧行为保留。`tests/test_patch_model_v2.py` 抽取源 AST，在纯CPU假模型上检查零初始化视觉恒等、受训非零输出仅改state token、无adapter拒绝触觉，以及原源码哈希不变。**尚未经真实V2初始化/旧checkpoint加载/训练或服务端透传验证；不得据此发布tactile_v1能力。**
+`src/patch_model_v2.py` 只对本机已知 V2 源源码作严格锚点的**独立副本**补丁，启用 `config.tactile_enabled` 时初始化零输出 adapter，从顶层训练 `forward(**kwargs)` 向 `FlowMatchingV2.forward` 显式传递 history/mask/age/valid，并在 `sample_actions` 中单次编码残差，`predict_velocity` 每步只注入**state token**，不污染 action token；关闭时不加 adapter 新参数，旧行为保留。`tests/test_patch_model_v2.py` 抽取源 AST，在纯CPU假模型上检查零初始化视觉恒等、受训非零输出仅改state token、无adapter拒绝触觉，以及原源码哈希不变。**尚未经真实V2初始化/旧checkpoint加载/训练或服务端透传验证；不得据此发布tactile_v1能力。** 基线权重应先以 `tactile_enabled=False` 按原流程完整载入，再由隔离训练代码显式附加新adapter并载入独立检查点；直接在加载旧权重前设为True可能因新参数缺权重/空初始化而失败，不能借 `strict=False` 掩盖。
 
 ## 尚须逐层接线（后续变更范围）
 
