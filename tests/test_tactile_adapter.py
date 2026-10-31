@@ -1,0 +1,55 @@
+"""CPU-only research-model contracts: identity, masks, shape and gradients."""
+import unittest
+
+import torch
+from tactile_adapter import TactileStateResidual
+
+
+class TactileAdapterTest(unittest.TestCase):
+    def setUp(self):
+        torch.manual_seed(7)
+        self.module = TactileStateResidual(state_width=12, hidden_width=8)
+        self.state = torch.randn(3, 12)
+        self.force = torch.ones(3, 5, 4, 3)
+        self.force[..., 0] = 3.0
+        self.force[..., 1] = 4.0
+        self.mask = torch.ones(3, 5, 4)
+        self.age = torch.zeros(3)
+        self.valid = torch.tensor([True, False, True])
+
+    def test_exact_initial_vision_identity_and_sensor_missing_fallback(self):
+        initial = self.module(self.state, self.force, self.mask, self.age, self.valid)
+        self.assertTrue(torch.equal(initial, self.state))
+        self.assertIs(self.module(self.state, enabled=False), self.state)
+        with torch.no_grad():
+            self.module.to_state.weight.fill_(0.1)
+        self.assertTrue(torch.equal(self.module(self.state, enabled=False), self.state))
+        self.assertTrue(torch.equal(self.module(self.state, None), self.state))
+        output = self.module(self.state, self.force, self.mask, self.age, self.valid)
+        self.assertTrue(torch.equal(output[1], self.state[1]))
+        self.assertFalse(torch.equal(output[0], self.state[0]))
+
+    def test_bad_geometry_and_nan_do_not_silently_train(self):
+        with self.assertRaisesRegex(ValueError, 'tactile_history'):
+            self.module(self.state, self.force[:, :4], self.mask, self.age, self.valid)
+        bad=self.force.clone();bad[0,0,0,0]=float('nan')
+        with self.assertRaisesRegex(ValueError, 'nonfinite'):
+            self.module(self.state, bad, self.mask, self.age, self.valid)
+        with self.assertRaisesRegex(ValueError,'mask'):
+            self.module(self.state, self.force, self.mask*2, self.age, self.valid)
+
+    def test_output_projection_receives_gradient(self):
+        output=self.module(self.state, self.force, self.mask, self.age, self.valid)
+        output.square().mean().backward()
+        self.assertGreater(self.module.to_state.weight.grad.abs().sum().item(), 0)
+        self.assertIsNotNone(self.module.temporal.weight_ih_l0.grad)
+        # Zero-init output projection learns first; temporal encoder receives a
+        # nonzero gradient after the projection takes a single optimizer step.
+        with torch.no_grad():
+            self.module.to_state.weight -= .01 * self.module.to_state.weight.grad
+        self.module.zero_grad(set_to_none=True)
+        self.module(self.state, self.force, self.mask, self.age, self.valid).square().mean().backward()
+        self.assertGreater(self.module.temporal.weight_ih_l0.grad.abs().sum().item(), 0)
+
+
+if __name__ == '__main__': unittest.main()
