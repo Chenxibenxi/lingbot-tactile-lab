@@ -1,0 +1,26 @@
+{
+  "schema": "phizju_policy_contact_aux_registry_v1",
+  "status": "research_auxiliary_candidates_not_training_approved",
+  "training_approved": false,
+  "source_machine_role": "single_relay_rtx3090",
+  "source_hostname": "admin001-MS-7D90",
+  "parent_card": "datasets/relay_policy_self_rollout_154800_s100048_v1.json",
+  "parent_card_sha256": "6b10940870676eeef03038a4dd619a9ad6f01c7534c3cfc9728d65ccce675bab",
+  "task": "lift_pot",
+  "actual_seed": 100048,
+  "episode": 0,
+  "labels_relative": "data/reports/154800_s100048_executed_action_contact_targets.json",
+  "labels_size_bytes": 52219,
+  "labels_sha256": "ea4d856984d7088e0b2cb20561e5e205aa9ee3e4b8518a1728a844554b211774",
+  "label_horizon": "strictly_after_each_applied_action_before_step_through_after_step_inclusive",
+  "model_input_future_contact_allowed": false,
+  "executed_actions": 100,
+  "left_contact_actions": 33,
+  "right_contact_actions": 28,
+  "limits": [
+    "single_selected_successful_seed_cannot_fit_or_validate_model",
+    "model_generated_actions_not_expert_corrections",
+    "sim_impulse_per_dt_proxy_not_calibrated_force",
+    "no_tactile_conditioned_checkpoint"
+  ]
+}
