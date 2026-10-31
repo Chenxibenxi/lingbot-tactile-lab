@@ -1,0 +1,15 @@
+{
+  "schema": "phizju_tactile_window_v1",
+  "status": "candidate_not_tuned",
+  "physics_timestep_s_expected": 0.004,
+  "window_steps": 25,
+  "bins": 5,
+  "finger_order": ["left.fl_link7", "left.fl_link8", "right.fr_link7", "right.fr_link8"],
+  "per_finger_features": ["mean_load_proxy_n", "peak_load_proxy_n", "contact_fraction"],
+  "feature_shape": [5, 4, 3],
+  "mask_shape": [5, 4],
+  "quality_warning_peak_n": 500,
+  "quality_warning_is_not_a_physical_safety_limit": true,
+  "causality": "uses physics steps [T-24,T], including no future sample",
+  "sync_constraint": "same-run saved-frame marker to physics step, never LeRobot's synthetic fps=50 timestamp"
+}

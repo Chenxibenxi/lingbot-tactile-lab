@@ -1,0 +1,21 @@
+{
+  "schema": "lingbot_tactile_capture_plan_v1",
+  "status": "planned_not_executed_on_relay",
+  "source_host_role": "relay_single_rtx3090",
+  "robotwin_source": "/mnt/relaydata/lingbot/RoboTwin",
+  "python": "/mnt/relaydata/lingbot/conda/envs/lingbot-eval310/bin/python",
+  "task_config": "demo_clean",
+  "embodiment": "aloha-agilex",
+  "pilot_tasks": ["lift_pot", "click_bell"],
+  "pilot_seed_candidates": [0, 1, 2],
+  "output_root": "data/paired",
+  "force_source": "SAPIEN_3_contact_impulse_divided_by_scene_dt",
+  "source_notes": "new episodes must be generated here; no LXC raw or fake t/50 timestamps",
+  "quality_gates": [
+    "single-run seed, physics, saved frame, RGB and 14D action identity",
+    "no missing physical step from first expert motion to last saved frame",
+    "HDF5 frame count equals saved-frame marker count and command-state values",
+    "successful expert demonstration and completion SHA256 manifest",
+    "causal tactile windows; initial missing history marked invalid"
+  ]
+}

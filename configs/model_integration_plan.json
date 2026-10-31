@@ -1,0 +1,17 @@
+{
+  "schema": "lingbot_tactile_model_plan_v1",
+  "status": "not_trained_or_evaluated",
+  "baseline": "PhiZJU vision-only 185800 checkpoint (external immutable reference)",
+  "train_input": {
+    "images": ["cam_high", "cam_left_wrist", "cam_right_wrist"],
+    "state_command_dim": 14,
+    "tactile_shape": [5, 4, 3],
+    "tactile_mask_shape": [5, 4],
+    "age_required": true
+  },
+  "action_label_dim": 14,
+  "initial_training_stage": "freeze visual-language trunk; train zero-initialized gated tactile adapter with paired demonstration data",
+  "next_training_stage": "limited action-head LoRA plus future-contact auxiliary supervision, labels only",
+  "evaluation_arms": ["same-data vision_only", "shuffled_tactile_negative_control", "aligned_tactile", "aligned_tactile_plus_controlled_feedback"],
+  "nonnegotiable": ["keep original model input/output reproducible", "never use future contact as input", "dropout tactile sensor fallback", "force safety handled independently"]
+}

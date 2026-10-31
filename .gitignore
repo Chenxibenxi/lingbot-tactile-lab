@@ -1,0 +1,24 @@
+# The relay 3090 is the sole source of new experimental bytes.
+# Local data/weights remain beside this repo's code but not in GitHub history.
+data/**
+!data/README.md
+models/**
+!models/WEIGHTS_REGISTRY.md
+work/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+*.tmp
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.hdf5
+*.mp4
+*.jsonl
+*.tar
+*.tar.gz
+*.zip
+.env
+*.token
