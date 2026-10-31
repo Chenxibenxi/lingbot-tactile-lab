@@ -1,21 +1,19 @@
-"""Fail closed when Strata still reports an active generation phase.
+"""Check Strata's actual busy/queued fields, not its stale phase label.
 
-busy=false and queued=0 alone are insufficient if phase='thinking'. This
-module must run AFTER a GPU lease and BEFORE any service unload/stop.
+Source serve/server.py sets busy=False after completion but retains the last
+phase='thinking'; /v1/unload separately holds FIFO and atomically refuses a
+new active/queued request. Run AFTER taking a GPU lease, before atomic unload.
 """
 from __future__ import annotations
 import json
 import sys
 
-SAFE_PHASES={None,'idle','ready','loaded','unloaded'}
-
-
 def require_idle(status):
     if not isinstance(status,dict):raise ValueError('Strata status must be an object')
     if status.get('busy') is not False or type(status.get('queued')) is not int or status['queued']!=0:
         raise ValueError('Strata has an active or queued request or malformed status')
-    if status.get('phase') not in SAFE_PHASES:
-        raise ValueError(f'Strata phase {str(status.get("phase"))[:40]!r} is not safely idle')
+    # Never gate on 'phase': Strata does not clear it after setting busy=False.
+    # This read-only check is NOT a substitute for /v1/unload's atomic FIFO gate.
     return True
 
 
