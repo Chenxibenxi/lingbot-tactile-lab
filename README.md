@@ -2,7 +2,7 @@
 
 Independent, **private** LingBot-VLA × RoboTwin research repository for gripper force/contact sensing, same-run visuo-tactile datasets, model-input training, inference and controlled-feedback evaluation. The end goal is to **modify and improve** the train/eval pipeline, retaining the existing vision-only 185800 run as an immutable reference—not to stop at read-only logging.
 
-**Repository status:** local `research/tactile-foundation` is not yet pushed. The owner corrected a GitHub repository-name typo and installed a new token through a masked local dialog: account and exact private repo returned HTTP 200 with pull/push permissions, and the remote is currently empty. The token exposed earlier in chat was never used and should be revoked. Only reviewed paths may be pushed to a non-main research branch after owner review. See the [Chinese research report](docs/TACTILE_RESEARCH_REPORT_ZH.md).
+**Repository status:** owner-reviewed `research/tactile-foundation` was pushed to the exact private `Chenxibenxi/lingbot-tactile-lab` remote; local and remote commit `271612c` matched, and remote Contents read passed. No `main` branch was pushed/created; GitHub made the only existing research branch its default. The token exposed earlier in chat was never used and should be revoked; the new token was entered only via a masked local dialog. Raw HDF5, private recordings and weights remain local. See the [Chinese research report](docs/TACTILE_RESEARCH_REPORT_ZH.md).
 
 ## Single-machine provenance
 
