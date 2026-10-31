@@ -24,6 +24,10 @@
 
 `src/server_tactile_bridge.py` 测试了旧 `feature_transform.apply` 会丢未知触觉键时的安全做法：先解码、只把视觉字段交旧transform，然后把通过schema验证的触觉历史/掩码/age/valid加回；同批次旧视觉客户端显式获得invalid/zero-mask字段，不允许首个batch样本字段不同。只有明确 `model_wired=True` 且提供adapter artifact SHA256的实验服务才能申请发布 `capabilities=['tactile_v1']`。这只是CPU拟合transform与batch的契约，**目前没有真实训练权重/模型forward接线/服务进程，禁止将占位SHA视作训练证明。**
 
+## 可逆 FlowMatchingV2 原型（未安装/未训练）
+
+`src/patch_model_v2.py` 只对本机已知 V2 源源码作严格锚点的**独立副本**补丁，启用 `config.tactile_enabled` 时初始化零输出 adapter，从顶层训练 `forward(**kwargs)` 向 `FlowMatchingV2.forward` 显式传递 history/mask/age/valid，并在 `sample_actions` 中单次编码残差，`predict_velocity` 每步只注入**state token**，不污染 action token；关闭时不加 adapter 新参数，旧行为保留。`tests/test_patch_model_v2.py` 抽取源 AST，在纯CPU假模型上检查零初始化视觉恒等、受训非零输出仅改state token、无adapter拒绝触觉，以及原源码哈希不变。**尚未经真实V2初始化/旧checkpoint加载/训练或服务端透传验证；不得据此发布tactile_v1能力。**
+
 ## 尚须逐层接线（后续变更范围）
 
 1. **数据**：`src/paired_samples.py` 已能从中继机本地、SHA 校验通过的同源 HDF5+侧录读取输入（当下新样本数=0）。`src/split_and_norm.py` 已实现按 `(task,实际seed)` 全轨迹分组并让同seed重试不跨分割（默认每任务≥5独立seed），以及**只读train trial**拟合 log1p 特征的 median/IQR；目前无新数据所以没有可发布 split 或 norm 参数。首批帧历史不足与零物理时长的重复帧不能暗中充当有效触觉。一个以相同新数据训练的视觉-only 对照必须同步建立。
