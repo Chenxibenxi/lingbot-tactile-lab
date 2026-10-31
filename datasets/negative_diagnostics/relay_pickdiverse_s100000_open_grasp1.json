@@ -1,0 +1,31 @@
+{
+  "schema": "lingbot_controlled_negative_card_v1",
+  "status": "quarantined_controlled_negative_not_training_or_eval",
+  "trial_id": "relay_pickdiverse_s100000_open_grasp1",
+  "source_machine_role": "relay_single_rtx3090",
+  "task": "pick_diverse_bottles",
+  "seed": 100000,
+  "episode": 0,
+  "perturbation": "simulation_only_two_grasp_targets_open",
+  "matched_positive_seed": 100000,
+  "planner_ok": true,
+  "goal_ok": false,
+  "physics_steps": 1745,
+  "saved_frames": 131,
+  "contact_physics_steps_by_side": {
+    "left": 61,
+    "right": 70
+  },
+  "observed_any_contact": true,
+  "validated_same_run_rgb_hdf5": true,
+  "accepted_for_expert_training": false,
+  "source_sha256": {
+    "raw": "a24368ca78638450c7c40f104de0630969fc1e933d0c518ed601ac7999d05c45",
+    "obs": "acdbb057e838b096ed628e63f83f5551def84c063dec2d3056bdfc3862323700",
+    "frames": "685f9db8452a487db4991de321c124679c776f596a7002c9c77a6cf132070a99",
+    "hdf5": "9823d7d77a580b6933ffc1b5b7989d5d5b1987083c416f57e77ce68338699a56",
+    "negative_gate": "dc932e4a1f3c88306214a9ec550ce5ce2589c771822670f6fec3f75e0b6f1f0f",
+    "negative_completion": "871f3c91e7d3de17ebfff0542917f674359aa8d8fb52a93d851112a994d92c01"
+  },
+  "note": "Controlled simulated open-grasp task failure; not an independent seed, a hardware force limit, or an approved expert training example."
+}
