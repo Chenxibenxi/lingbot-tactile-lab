@@ -1,0 +1,62 @@
+{
+  "schema": "lingbot_tactile_train_label_diagnostic_v1",
+  "status": "train_fold_diagnostic_only_no_model_fit",
+  "split_sha256": "c94d94d546bcc2bee45c78f3075b6c03b4b128f022490804ee7b89b67f44ebf5",
+  "source_train_trials": [
+    "relay_liftpot_s100000_expert0",
+    "relay_liftpot_s100003_expert0",
+    "relay_liftpot_s100014_expert0"
+  ],
+  "change_epsilon_command_units": 1e-05,
+  "frame_physics_step_delta_counts": {
+    "1": 12,
+    "2": 1,
+    "4": 1,
+    "5": 1,
+    "7": 1,
+    "11": 1,
+    "12": 1,
+    "13": 1,
+    "14": 7,
+    "15": 283
+  },
+  "by_trial_and_observed_past_contact": {
+    "relay_liftpot_s100000_expert0": {
+      "past_contact": {
+        "n_pairs": 24,
+        "changed_command_pairs": 17,
+        "mean_abs_command_delta_14d": 0.005140288433592234
+      },
+      "no_past_contact": {
+        "n_pairs": 78,
+        "changed_command_pairs": 67,
+        "mean_abs_command_delta_14d": 0.012538940563879825
+      }
+    },
+    "relay_liftpot_s100003_expert0": {
+      "past_contact": {
+        "n_pairs": 25,
+        "changed_command_pairs": 18,
+        "mean_abs_command_delta_14d": 0.005469596471105303
+      },
+      "no_past_contact": {
+        "n_pairs": 79,
+        "changed_command_pairs": 68,
+        "mean_abs_command_delta_14d": 0.013854635657092542
+      }
+    },
+    "relay_liftpot_s100014_expert0": {
+      "past_contact": {
+        "n_pairs": 24,
+        "changed_command_pairs": 17,
+        "mean_abs_command_delta_14d": 0.005419275013818628
+      },
+      "no_past_contact": {
+        "n_pairs": 79,
+        "changed_command_pairs": 67,
+        "mean_abs_command_delta_14d": 0.014157611917987275
+      }
+    }
+  },
+  "caution": "14D dimensions mix joint/gripper command scales; this is label-change descriptives, not force or task success"
+}
