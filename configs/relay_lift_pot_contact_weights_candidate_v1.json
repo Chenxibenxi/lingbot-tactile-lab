@@ -1,0 +1,42 @@
+{
+  "schema": "lingbot_tactile_train_contact_weights_v1",
+  "status": "candidate_not_approved",
+  "training_approval": false,
+  "split_sha256": "c94d94d546bcc2bee45c78f3075b6c03b4b128f022490804ee7b89b67f44ebf5",
+  "source_train_trials": [
+    "relay_liftpot_s100000_expert0",
+    "relay_liftpot_s100003_expert0",
+    "relay_liftpot_s100014_expert0"
+  ],
+  "n_train_pairs": 309,
+  "observed_past_contact_counts_by_trial": {
+    "relay_liftpot_s100000_expert0": {
+      "past_contact": 24,
+      "no_past_contact": 78
+    },
+    "relay_liftpot_s100003_expert0": {
+      "past_contact": 25,
+      "no_past_contact": 79
+    },
+    "relay_liftpot_s100014_expert0": {
+      "past_contact": 24,
+      "no_past_contact": 79
+    }
+  },
+  "loss_weight_by_trial_and_past_contact": {
+    "relay_liftpot_s100000_expert0": {
+      "past_contact": 2.1458333333333335,
+      "no_past_contact": 0.6602564102564102
+    },
+    "relay_liftpot_s100003_expert0": {
+      "past_contact": 2.06,
+      "no_past_contact": 0.6518987341772152
+    },
+    "relay_liftpot_s100014_expert0": {
+      "past_contact": 2.1458333333333335,
+      "no_past_contact": 0.6518987341772152
+    }
+  },
+  "rule": "equal aggregate loss by independent train seed and observed past-contact class; mean weight=1; no validation/test fitting",
+  "risk": "reweights sparse, expert-success-selected samples; may overfit and cannot alone prove tactile benefit"
+}
