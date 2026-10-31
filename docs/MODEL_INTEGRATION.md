@@ -16,6 +16,10 @@
 
 `src/window_math.py` 统一离线 `align_temporal.py` 和在线 `src/live_tactile_window.py` 的 25 物理步/五分箱计算；已有单测逐特征、mask、age 比较同一输入的离线与在线结果一致，漏步无效、过去锚点/未来数据拒绝。`src/force_probe.py` 仅在 `TACTILE_LIVE_WINDOW=1` 缓存最近125步；`src/shadow_forward.py` 用伪状态token把物理接触→RPC payload→零初始化adapter串通做**CPU影子测试**，能演示数据路径但不会调用真实 LingBot 推理。专家sidecar的原始力header `clock_origin` 与已保存帧clock一致性已加进 `validate_expert_data.py`，历史不同时钟的LXC数据不能进relay候选集。
 
+## 独立客户端补丁预制（未部署）
+
+`src/patch_policy_client.py` 对真正源文件 `RoboTwin/script/eval_policy_client_lingbotvla.py.orig` 用精确锚点生成独立 `work/patches/*.orig`，原源码哈希不变；只在**真实** `model.infer(formatted_observation)` 前尝试 `src/force_probe.py` 的 `.policy.jsonl` 请求时间标记并附加实时因果触觉。`TACTILE_POLICY_INFER=1` 时在初始 WebSocket 连接后要求 `get_server_metadata().capabilities` 明示 `tactile_v1`；旧服务端 metadata `{}` 会提前拒绝，不能静默丢弃键却声称触觉推理。关闭时视觉版原流程不变。该实验源仅经 AST/CPU单测，**还不能运行**：旧 launcher 通过软链回写资产/conda、服务端也尚未发布真实触觉模型能力。 `.policy.jsonl` 是客户端调用尝试的 marker，不代表已收到服务端应答或动作成功。
+
 ## 尚须逐层接线（后续变更范围）
 
 1. **数据**：`src/paired_samples.py` 已能从中继机本地、SHA 校验通过的同源 HDF5+侧录读取输入（当下新样本数=0）。`src/split_and_norm.py` 已实现按 `(task,实际seed)` 全轨迹分组并让同seed重试不跨分割（默认每任务≥5独立seed），以及**只读train trial**拟合 log1p 特征的 median/IQR；目前无新数据所以没有可发布 split 或 norm 参数。首批帧历史不足与零物理时长的重复帧不能暗中充当有效触觉。一个以相同新数据训练的视觉-only 对照必须同步建立。

@@ -99,6 +99,26 @@ class ForceProbeTest(unittest.TestCase):
             self.assertFalse(rows[1]["valid"])
             self.assertTrue(rows[2]["valid"])
 
+    def test_true_policy_requests_have_separate_same_step_markers(self):
+        scene=NS(get_contacts=lambda:[]);robot=fake_robot()
+        with tempfile.TemporaryDirectory() as td:
+            probe=ForceProbe(td,task='lift_pot',seed=7,episode=2,dt=.004,robot=robot)
+            with self.assertRaisesRegex(RuntimeError,'unobserved'):
+                probe.record_policy_request()
+            frame={'observation':{'head_camera':{'rgb':NS(shape=(240,320,3))}}}
+            probe.record_observation(frame,0)
+            probe.record_policy_request()
+            probe.sample(scene,robot,1)
+            with self.assertRaisesRegex(RuntimeError,'stale'):
+                probe.record_policy_request()
+            probe.record_observation(frame,1)
+            probe.record_policy_request()
+            raw=probe.raw_path
+            probe.close()
+            rows=[json.loads(x) for x in raw.with_suffix('.policy.jsonl').read_text().splitlines()]
+            self.assertEqual(rows[0]['schema'],'phizju_policy_request_v1')
+            self.assertEqual([(r['obs_index'],r['physics_step']) for r in rows[1:]],[(0,0),(1,1)])
+
     def test_live_cache_opt_in_only_and_causal_window(self):
         scene=NS(get_contacts=lambda:[]);robot=fake_robot()
         with tempfile.TemporaryDirectory() as td:

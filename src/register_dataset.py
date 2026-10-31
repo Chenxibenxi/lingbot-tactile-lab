@@ -31,7 +31,7 @@ def build_card(trial: Path, repo: Path) -> dict:
     if meta.get("schema") != "phizju_expert_episode_complete_v1" or not meta.get("success"):
         raise ValueError("trial lacks a successful completion marker")
     raw_files = [p for p in (trial / "force").glob("*.jsonl")
-                 if not p.name.endswith((".obs.jsonl", ".frames.jsonl"))]
+                 if not p.name.endswith((".obs.jsonl", ".frames.jsonl", ".policy.jsonl"))]
     if len(raw_files) != 1:
         raise ValueError("expected exactly one raw physics stream")
     raw = raw_files[0]

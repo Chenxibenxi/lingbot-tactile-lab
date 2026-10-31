@@ -11,6 +11,14 @@ import numpy as np
 
 FIELDS = ("observation.tactile.history", "observation.tactile.mask",
           "observation.tactile.age_ms", "observation.tactile.valid")
+CAPABILITY = "tactile_v1"
+
+
+def require_tactile_capability(metadata: dict):
+    """Old servers may silently drop unknown observation keys: refuse that."""
+    capabilities = metadata.get("capabilities") if isinstance(metadata, dict) else None
+    if not isinstance(capabilities, (list, tuple, set)) or CAPABILITY not in capabilities:
+        raise RuntimeError("server did not advertise tactile_v1; refusing fake tactile inference")
 
 
 def _fallback():

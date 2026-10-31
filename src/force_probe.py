@@ -123,7 +123,10 @@ class ForceProbe:
         self._file = None
         self._obs_file = None
         self._frame_file = None
+        self._policy_file = None
+        self._policy_index = 0
         self._obs_index = 0
+        self._last_observation_step = None
         self._frame_count = 0
         self.motion_index = 0
         self.motion_phase = "unclassified"
@@ -223,10 +226,29 @@ class ForceProbe:
                 "capture_monotonic_ns": time.monotonic_ns(), "rgb_shapes": cameras},
                 allow_nan=False) + "\n")
             self._obs_index += 1
+            self._last_observation_step = self.step
             self._obs_file.flush()
         except Exception as exc:
             self._failed = True
             print(f"FORCE_PROBE_OBS_ERROR {type(exc).__name__}: {exc}", flush=True)
+
+    def record_policy_request(self):
+        """Marker ONLY when the experimental client is about to call infer."""
+        if self._failed or self._obs_index <= 0 or self._last_observation_step != self.step:
+            raise RuntimeError("cannot record an unobserved, stale or failed policy request")
+        self._ensure_file()
+        if self._policy_file is None:
+            self._policy_file = open(Path(self._file.name).with_suffix(".policy.jsonl"), "x", encoding="utf-8")
+            self._policy_file.write(json.dumps({"schema":"phizju_policy_request_v1",
+                "probe_file":Path(self._file.name).name, "task":self.task,
+                "seed":self.seed, "episode":self.episode, "dt_s":self.dt,
+                "kind":"client_infer_call_attempt; transport_ack_unverified"}) + "\n")
+        self._policy_file.write(json.dumps({"request_index":self._policy_index,
+            "obs_index":self._obs_index-1, "physics_step":self.step,
+            "sim_time_s":round(self.step*self.dt,8),
+            "request_monotonic_ns":time.monotonic_ns()},allow_nan=False) + "\n")
+        self._policy_file.flush()
+        self._policy_index += 1
 
     def record_saved_frame(self, frame_index, observation, robot):
         """Call only AFTER numbered frame pickle has been saved successfully."""
@@ -277,6 +299,9 @@ class ForceProbe:
                 "right_contact": self.last["right"]["points"] > 0}
 
     def close(self):
+        if self._policy_file is not None:
+            self._policy_file.close()
+            self._policy_file = None
         if self._frame_file is not None:
             self._frame_file.close()
             self._frame_file = None

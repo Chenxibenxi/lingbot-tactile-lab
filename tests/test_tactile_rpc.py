@@ -2,7 +2,7 @@ import unittest
 import json
 from pathlib import Path
 import numpy as np
-from tactile_rpc import attach_tactile, encode_tactile_window, decode_tactile, FIELDS
+from tactile_rpc import attach_tactile, encode_tactile_window, decode_tactile, require_tactile_capability, FIELDS
 
 
 def window(step=25, latest=25):
@@ -19,7 +19,14 @@ class TactileRPCContractTests(unittest.TestCase):
         config=json.loads(p.read_text())
         self.assertEqual(tuple(config['optional_payload_keys']),FIELDS)
         self.assertEqual(config['candidate_max_age_ms'],200)
+        self.assertEqual(config['required_server_capability_before_opt_in'],'tactile_v1')
         self.assertEqual(config['status'],'cpu_contract_tested_not_wired_into_policy')
+
+    def test_server_capability_required_before_opt_in(self):
+        for meta in ({}, {'capabilities':[]}, {'capabilities':'tactile_v1'}):
+            with self.assertRaisesRegex(RuntimeError,'did not advertise'):
+                require_tactile_capability(meta)
+        require_tactile_capability({'capabilities':['vision_v1','tactile_v1']})
 
     def test_disabled_is_original_dictionary_and_no_extra_keys(self):
         original={"observation.state":np.ones(14),"task":"lift the pot"}

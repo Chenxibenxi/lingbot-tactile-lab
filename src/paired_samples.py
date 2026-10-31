@@ -16,7 +16,7 @@ CAMERAS = ("head_camera", "left_camera", "right_camera")
 
 def _raw_files(trial):
     candidates = [p for p in (trial / "force").glob("*.jsonl")
-                  if not p.name.endswith((".obs.jsonl", ".frames.jsonl"))]
+                  if not p.name.endswith((".obs.jsonl", ".frames.jsonl", ".policy.jsonl"))]
     if len(candidates) != 1:
         raise ValueError("expected one same-run force stream")
     return candidates[0]
