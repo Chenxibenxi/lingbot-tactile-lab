@@ -9,4 +9,4 @@ For each future dataset, add a small `datasets/<id>.json` card with source host 
 - Existing relay RoboTwin `raw/lift_pot/aloha-agilex_clean_50/data/episode0.hdf5`: 114 RGB/state frames, no physics timestamp/seed stored in HDF5; seed is in adjacent `seed.txt` and may differ from episode index.
 - Existing LeRobot conversion makes 113 training rows and synthetic 50fps timestamps. It cannot be retroactively aligned with a new contact run.
 
-Use `src/validate_expert_data.py` then `src/build_paired_index.py` to register only a truly same-run paired capture.
+Use `src/validate_expert_data.py`, then `src/build_paired_index.py` and `src/register_dataset.py` to produce a **candidate** card for a truly same-run paired capture. The registrar rejects files outside this repo's `data/paired/` and missing/incorrect relay hostname+source role; it does not approve the train/validation/test split automatically.

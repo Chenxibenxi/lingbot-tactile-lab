@@ -7,6 +7,7 @@ Requires FORCE_PROBE_EXPERT_DIR and --out both inside a new private output root.
 import argparse
 import json
 import os
+import socket
 from pathlib import Path
 
 from validate_expert_data import validate
@@ -72,6 +73,8 @@ def main():
         result=validate(raw,raw.with_suffix(".obs.jsonl"),raw.with_suffix(".frames.jsonl"),hdf5)
         completion={"schema":"phizju_expert_episode_complete_v1","success":True,
             "task":args.task,"seed":args.seed,"episode":args.episode,
+            "source_machine_role":os.environ.get("TACTILE_SOURCE_MACHINE_ROLE", "unverified"),
+            "source_hostname":socket.gethostname(),
             "source":"same-run RoboTwin expert; original RGB/state HDF5 and separate tactile markers",
             **result}
         dest=output/"completion.json"
