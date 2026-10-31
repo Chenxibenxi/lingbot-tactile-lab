@@ -2,13 +2,13 @@
 
 Independent, **private** LingBot-VLA × RoboTwin research repository for gripper force/contact sensing, same-run visuo-tactile datasets, model-input training, inference and controlled-feedback evaluation. The end goal is to **modify and improve** the train/eval pipeline, retaining the existing vision-only 185800 run as an immutable reference—not to stop at read-only logging.
 
-**Repository status:** local Git workspace only, on branch `research/tactile-foundation`. GitHub private remote was **not created** (existing credentials returned HTTP 401); the owner chose to keep it local for now. No content has been pushed.
+**Repository status:** local Git workspace on `research/tactile-foundation`, with no configured GitHub remote or pushed content. Current GitHub credentials authenticate the account (HTTP 200), but the target private repository is not accessible (404) and API repository creation was refused (403); remote sync awaits repository creation/authorization. See the [Chinese research report](docs/TACTILE_RESEARCH_REPORT_ZH.md).
 
 ## Single-machine provenance
 
 All **new** raw tactile data, calibrated parameters, model checkpoints and evaluations must be generated on the relay workstation's **single RTX 3090**, stored locally in `data/` and `models/`. Historic LXC samples from PhiZJU E009–E011 demonstrated feasibility, but **are explicitly excluded from this repo's training datasets and reported relay benchmark**. The relay's existing RoboTwin copy is `/mnt/relaydata/lingbot/RoboTwin`; original vision-only HDF5s are reference input only and lack physical timestamps.
 
-> GPU gate at initialization: the relay 3090 was occupied by an unrelated Strata process (~23.5 GiB). No relay GPU capture has been started; don't kill or preempt that process. Wait for an idle GPU or coordinate with its owner.
+> GPU gate: the relay 3090 normally hosts Strata. Five successful expert captures have now run under bounded interactive leases, only after Strata reported no active/queued tasks; its loaded baseline was restored after each batch. Never preempt an active workload or run a GPU job without fresh occupancy and lease checks.
 
 ## Layout and status
 
@@ -46,12 +46,12 @@ PYTHONPATH="$PWD/src" python3 -B src/make_expert_overlay.py \
   --source /mnt/relaydata/lingbot/RoboTwin --out "$PWD/work/overlay_expert"  # dry-run
 ```
 
-The approved relay runner can first be inspected with `bash src/run_expert_relay.sh --dry-run liftpot_s0 lift_pot 0`. Only after GPU occupancy is cleared, explicitly run `bash src/run_expert_relay.sh --run liftpot_s0 lift_pot 0`; it creates a new isolated overlay and refuses duplicate outputs or active compute processes. Each trial must pass `src/validate_expert_data.py` and receive its own `completion.json` before joining a dataset. Old launcher `start_robotwin_infer_and_eval.sh` may write back through symlinks and modify conda `.pth`; do not invoke it on an overlay without isolating those writable paths.
+Inspect the relay runner with `bash src/run_expert_relay.sh --dry-run relay_liftpot_s100009_expert0 lift_pot 100009`. A real trial additionally requires a freshly verified idle GPU, an interactive GPU lease, Strata's atomic unload/stop only when it has no requests, and restoration plus lease release; the runner alone does **not** acquire a lease. New trial IDs cannot reuse previous outputs. Each successful episode must pass `src/validate_expert_data.py` and receive a hash-bound completion manifest before becoming a candidate. Old launcher `start_robotwin_infer_and_eval.sh` may write back through symlinks and modify conda `.pth`; do not invoke it on an overlay without isolating those writable paths.
 
 ## Where this goes next
 
 1. Relay-only paired demonstrations, actual per-frame physics ticks and manifest SHA256 (no fabricated FPS alignment).
-2. CPU paired-sample reader, default ≥5-actual-seed-per-task split gate, train-only normalization and zero-init tactile state adapter are prepared; collect a relay-only multi-seed dataset before fitting any parameters, then compare against a same-data vision-only baseline. Current action labels remain 14D and use the original physical capture steps, not synthetic 50fps timestamps.
+2. The CPU paired-sample reader, ≥5-actual-seed split gate, train-only candidate normalization and zero-init adapter are prepared. Five relay expert seeds meet only a technical pilot split gate; candidate preprocessing remains explicitly unapproved. Gather more independent contact-rich/failure episodes, review preprocessing, and compare matched-data vision-only versus tactile models before training claims. Labels remain 14D with real physical steps, not synthetic 50fps timestamps.
 3. Opt-in tactile encoder and gated adapter in LingBot training **and policy RPC**, with sensor-absent fallback; train and evaluate real use of tactile via shuffled-signal negative control.
 4. Independent low-level gripper feedback, separate safety bounds, a 2×2 model × feedback ablation, multiple contact-rich tasks and reproducible results.
 
