@@ -13,6 +13,15 @@ from pathlib import Path
 from validate_expert_data import validate
 
 
+def evaluate_outcome(robot):
+    """Record planner and goal separately; a failed planner must not skip goal check."""
+    planner_ok=bool(robot.plan_success)
+    try:
+        return planner_ok,bool(robot.check_success()),None
+    except Exception as exc:
+        return planner_ok,False,type(exc).__name__
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out",required=True,type=Path)
@@ -61,11 +70,22 @@ def main():
         if probe is None:
             raise RuntimeError("expert probe did not initialize; refusing empty demonstration")
         robot.play_once()
-        success=bool(robot.plan_success and robot.check_success())
+        planner_ok,goal_ok,goal_check_error=evaluate_outcome(robot)
+        success=planner_ok and goal_ok
         raw=probe.raw_path
         frames=probe.saved_frames
         if probe.failed or raw is None or frames<2 or not success:
-            raise RuntimeError(f"expert demonstration not accepted: success={success}, probe_failed={probe.failed}, frames={frames}")
+            failure={"schema":"phizju_expert_trial_rejected_v1", "task":args.task,
+                     "seed":args.seed,"episode":args.episode,
+                     "source_machine_role":os.environ.get("TACTILE_SOURCE_MACHINE_ROLE","unverified"),
+                     "source_hostname":socket.gethostname(),"planner_ok":planner_ok,
+                     "goal_ok":goal_ok,"goal_check_error_type":goal_check_error,
+                     "probe_failed":probe.failed,"saved_frame_markers":frames,
+                     "raw_basename":raw.name if raw else None,
+                     "accepted_for_training":False}
+            with (output/"failure.json").open("x") as file:
+                json.dump(failure,file,indent=2)
+            raise RuntimeError(f"expert trial rejected: planner_ok={planner_ok}, goal_ok={goal_ok}, probe_failed={probe.failed}, frames={frames}")
         robot.close_env(); closed=True
         # Original RoboTwin conversion creates the actual HDF5 and preview video.
         robot.merge_pkl_to_hdf5_video()
