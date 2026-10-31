@@ -37,7 +37,7 @@ def main():
     parser.add_argument("--out",required=True,type=Path)
     parser.add_argument("--seed",type=int,default=0)
     parser.add_argument("--episode",type=int,default=0)
-    parser.add_argument("--task",default="lift_pot",choices=["lift_pot", "click_bell"])
+    parser.add_argument("--task",default="lift_pot",choices=["lift_pot", "click_bell", "pick_diverse_bottles"])
     args=parser.parse_args()
     root=Path.cwd()
     if not (root/"envs/_base_task.py").is_file() or (root/"envs/_base_task.py").is_symlink():

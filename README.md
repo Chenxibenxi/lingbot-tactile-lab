@@ -15,7 +15,7 @@ All **new** raw tactile data, calibrated parameters, model checkpoints and evalu
 | Path | Role | Current status |
 |---|---|---|
 | `src/force_probe.py`, `src/make_overlay.py`, `src/make_expert_overlay.py` | SAPIEN per-finger impulse telemetry and isolated RoboTwin overlay | Relay expert seed100048 captured and per-finger telemetry verified |
-| `src/record_expert_demo.py`, `src/validate_expert_data.py`, `src/run_expert_relay.sh` | Same-run expert image, 250Hz contact, command/actual joint state sidecars and strict HDF5 validation | Five independent relay expert successes, each HDF5+hash-bound success gate |
+| `src/record_expert_demo.py`, `src/validate_expert_data.py`, `src/run_expert_relay.sh` | Same-run expert image, 250Hz contact, command/actual joint state sidecars and strict HDF5 validation | Five relay lift-pot successes; diverse-bottle second-task candidate is dry-run only, no new data |
 | `src/align_temporal.py`, `src/build_paired_index.py`, `src/register_dataset.py` | Causal 25-step×5-bin×4-finger alignment, 14D next-frame labels and **relay-only source verification** | Five unassigned candidate cards, 518 usable pairs; **not approved for model training** |
 | `src/paired_samples.py`, `src/paired_ablation.py`, `src/tactile_adapter.py` | Same-run samples, matched RGB/label three-view input audit and gated tactile state residual | All 518 pairs CPU-decoded; only 123 contain nonzero past force; **no model trained** |
 | `src/split_and_norm.py`, `src/contact_normalization.py`, `src/plan_relay_training.py` | Seed-disjoint pilot and train-only v1/v2 contact statistics | 5-seed pilot 3/1/1; v2 zero-preserving/clipped **candidate** still awaits review |

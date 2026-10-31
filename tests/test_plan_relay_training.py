@@ -37,11 +37,18 @@ class RelaySeedPlanTests(unittest.TestCase):
                       'data_path_relative':f'data/paired/run_{seed}'}
                 p=cards_dir/f'run_{seed}.json';p.write_text(json.dumps(card));cards.append(card);paths.append(p)
             card_by_name={c['trial_id']:c for c in cards}
+            other=dict(cards[0],task='pick_diverse_bottles',trial_id='bottle_99',
+                       data_path_relative='data/paired/bottle_99')
+            other_path=cards_dir/'bottle_99.json';other_path.write_text(json.dumps(other))
             with patch('plan_relay_training.build_card',side_effect=lambda path,repo:card_by_name[Path(path).name]), \
                  patch('plan_relay_training.PairedEpisode',FakeEpisode):
                 with self.assertRaisesRegex(ValueError,'distinct seeds'):
                     build_plan(repo,paths[:4],task='lift_pot',instruction='Lift the pot with both arms')
                 result=build_plan(repo,paths,task='lift_pot',instruction='Lift the pot with both arms')
+                mixed=build_plan(repo,[*paths,other_path],task='lift_pot',instruction='Lift the pot with both arms')
+                self.assertEqual(result,mixed)
+                with self.assertRaisesRegex(ValueError,'no verified relay expert cards'):
+                    build_plan(repo,[other_path],task='lift_pot',instruction='Lift the pot with both arms')
             split=result['split'];norm=result['norm']
             self.assertEqual((len(split['train']),len(split['validation']),len(split['test'])),(3,1,1))
             self.assertEqual(set(norm['source_trials']),set(split['train']))

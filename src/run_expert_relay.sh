@@ -6,7 +6,7 @@ TRIAL=${2:?trial_id required}
 TASK=${3:?task required}
 SEED=${4:?seed required}
 [[ "$TRIAL" =~ ^[A-Za-z0-9_-]+$ ]] || { echo 'invalid trial id'; exit 2; }
-[[ "$TASK" == lift_pot || "$TASK" == click_bell ]] || { echo 'unsupported pilot task'; exit 2; }
+[[ "$TASK" == lift_pot || "$TASK" == click_bell || "$TASK" == pick_diverse_bottles ]] || { echo 'unsupported pilot task'; exit 2; }
 [[ "$SEED" =~ ^[0-9]+$ ]] || { echo 'seed must be nonnegative integer'; exit 2; }
 BASE=/mnt/relaydata/lingbot-tactile-lab
 SOURCE=/mnt/relaydata/lingbot/RoboTwin

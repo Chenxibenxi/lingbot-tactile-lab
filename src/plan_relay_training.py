@@ -27,12 +27,18 @@ def build_plan(repo,card_paths,*,task,instruction,min_seeds=5):
         if repo/'datasets/cards' not in path.parents:
             raise ValueError('card outside relay expert registry')
         card=json.loads(path.read_text())
-        if card.get('status')!='candidate_unassigned_split' or card.get('task')!=task:
-            raise ValueError('wrong task or noncandidate expert card')
+        # A second task may have candidate cards without entering this task's
+        # normalization or folds. Only the requested task is eligible here.
+        if card.get('task')!=task:
+            continue
+        if card.get('status')!='candidate_unassigned_split':
+            raise ValueError('noncandidate expert card for requested task')
         if build_card(repo/card['data_path_relative'],repo)!=card:
             raise ValueError('card differs from current relay trial bytes')
         cards.append(card)
         hashes[card['trial_id']]=hashlib.sha256(path.read_bytes()).hexdigest()
+    if not cards:
+        raise ValueError(f'no verified relay expert cards for task {task}')
     split=make_seed_splits(cards,min_seeds_per_task=min_seeds)
     split['expert_card_sha256']=hashes
     split['evaluation_claims_approved']=False
