@@ -27,6 +27,24 @@ class TactileStateResidual(nn.Module):
                                batch_first=True)
         self.to_state = nn.Linear(hidden_width + 1, state_width, bias=False)
         nn.init.zeros_(self.to_state.weight)
+        self.register_buffer("train_median", torch.zeros(4, 3))
+        self.register_buffer("train_scale", torch.ones(4, 3))
+
+    def set_normalization(self, train_stats: dict):
+        """Install *training-fold-only* median/IQR buffers into the checkpoint."""
+        if (train_stats.get("schema"), train_stats.get("status")) != (
+                "lingbot_tactile_train_norm_v1", "fit_on_train_split_only") or not train_stats.get("source_trials"):
+            raise ValueError("must provide provenance-backed training-only statistics")
+        med = torch.as_tensor(train_stats["median"], dtype=self.train_median.dtype,
+                              device=self.train_median.device)
+        scale = torch.as_tensor(train_stats["scale_iqr_floor_0p1"], dtype=self.train_scale.dtype,
+                                device=self.train_scale.device)
+        if med.shape != (4, 3) or scale.shape != (4, 3) or not torch.isfinite(med).all().item() or (
+                not torch.isfinite(scale).all().item()) or torch.any(scale <= 0).item():
+            raise ValueError("invalid tactile normalization shape or scale")
+        with torch.no_grad():
+            self.train_median.copy_(med)
+            self.train_scale.copy_(scale)
 
     def forward(self, state_embedding: torch.Tensor,
                 tactile_history: torch.Tensor | None = None,
@@ -70,6 +88,9 @@ class TactileStateResidual(nn.Module):
         if torch.any(h[..., :2] < 0).item() or torch.any(h[..., 2] < 0).item() or torch.any(h[..., 2] > 1).item():
             raise ValueError("negative load or contact fraction outside [0,1]")
         h = torch.cat([torch.log1p(h[..., :2]), h[..., 2:]], dim=-1)
+        # Fitted on the train split only; default buffers mean log1p without
+        # normalization until a validated dataset supplies statistics.
+        h = (h - self.train_median.to(dtype=dtype)) / self.train_scale.to(dtype=dtype)
         mask = coverage_mask.to(dtype=dtype)
         h = h * mask.unsqueeze(-1)
         seq = torch.cat([h, mask.unsqueeze(-1)], dim=-1).reshape(batch, 5, 16)

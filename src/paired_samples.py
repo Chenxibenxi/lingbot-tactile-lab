@@ -64,9 +64,14 @@ class PairedEpisode:
             raise ValueError("nonfinite paired sample")
         if not np.logical_and(mask >= 0, mask <= 1).all():
             raise ValueError("invalid tactile coverage mask")
+        age_ms = inp["tactile_quality"].get("force_age_ms")
+        if inp["tactile_window_valid"] and (age_ms is None or not np.isfinite(age_ms) or age_ms < 0):
+            raise ValueError("valid tactile window lacks finite nonnegative force age")
         result = {"input": {"command_state_14": command,
                             "tactile_history": features,
                             "tactile_mask": mask,
+                            "tactile_window_valid": bool(inp["tactile_window_valid"]),
+                            "tactile_age_ms": np.float32(age_ms if age_ms is not None else -1.0),
                             "capture_physics_step": inp["capture_physics_step"],
                             "sim_time_s": inp["capture_sim_time_s"],
                             "instruction": self.instruction},

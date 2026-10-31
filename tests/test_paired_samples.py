@@ -14,7 +14,7 @@ def record(frame, step, future_step, valid):
                      "tactile_history":[[[.1,.2,1.0] for _ in range(4)] for _ in range(5)],
                      "tactile_mask":[[1.0]*4 for _ in range(5)],
                      "tactile_window_valid":valid,
-                     "tactile_quality":{"coverage":1.0}},
+                     "tactile_quality":{"coverage":1.0,"force_age_ms":0.0 if valid else None}},
             "target":{"action_command_14":[.2]*14,
                       "action_source_frame_index":frame+1,
                       "next_frame_physics_step":future_step}}
@@ -35,6 +35,8 @@ class PairedSamplesTest(unittest.TestCase):
             self.assertEqual(sample['metadata']['next_frame_step_delta'],15)
             self.assertEqual(sample['input']['tactile_history'].shape,(5,4,3))
             self.assertEqual(sample['input']['tactile_mask'].shape,(5,4))
+            self.assertTrue(sample['input']['tactile_window_valid'])
+            self.assertEqual(float(sample['input']['tactile_age_ms']),0.0)
             self.assertEqual(sample['target']['action_command_14'].shape,(14,))
             self.assertNotIn('action_command_14',sample['input'])
             self.assertNotIn('images_rgb',sample['input'])

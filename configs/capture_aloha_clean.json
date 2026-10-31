@@ -8,6 +8,8 @@
   "embodiment": "aloha-agilex",
   "pilot_tasks": ["lift_pot", "click_bell"],
   "pilot_seed_candidates": [0, 1, 2],
+  "pilot_warning": "three seed candidates only establish pipeline feasibility; insufficient for the default five-seed-per-task train/validation/test gate",
+  "split_ready_unique_seeds_per_task_min": 5,
   "output_root": "data/paired",
   "force_source": "SAPIEN_3_contact_impulse_divided_by_scene_dt",
   "source_notes": "new episodes must be generated here; no LXC raw or fake t/50 timestamps",

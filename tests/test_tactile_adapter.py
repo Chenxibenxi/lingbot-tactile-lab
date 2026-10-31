@@ -3,6 +3,7 @@ import unittest
 
 import torch
 from tactile_adapter import TactileStateResidual
+from split_and_norm import fit_train_only_stats
 
 
 class TactileAdapterTest(unittest.TestCase):
@@ -37,6 +38,25 @@ class TactileAdapterTest(unittest.TestCase):
             self.module(self.state, bad, self.mask, self.age, self.valid)
         with self.assertRaisesRegex(ValueError,'mask'):
             self.module(self.state, self.force, self.mask*2, self.age, self.valid)
+
+    def test_normalization_is_checkpointed_and_train_only(self):
+        import numpy as np
+        samples = []
+        for trial, load in [('train_a', 3.), ('train_b', 5.), ('heldout', 1e7)]:
+            x = np.ones((5,4,3), dtype=np.float32)
+            x[:,:,:2] = load
+            samples.append({'metadata':{'trial_id':trial}, 'input':{
+                'tactile_history':x, 'tactile_mask':np.ones((5,4)),
+                'tactile_window_valid':True}})
+        stats = fit_train_only_stats(samples, {'train_a','train_b'})
+        self.module.set_normalization(stats)
+        self.assertTrue(torch.equal(self.module(self.state,self.force,self.mask,self.age,self.valid), self.state))
+        copy = TactileStateResidual(state_width=12, hidden_width=8)
+        copy.load_state_dict(self.module.state_dict())
+        self.assertTrue(torch.equal(copy.train_median, self.module.train_median))
+        bad = dict(stats, source_trials=[])
+        with self.assertRaisesRegex(ValueError, 'training-only'):
+            self.module.set_normalization(bad)
 
     def test_output_projection_receives_gradient(self):
         output=self.module(self.state, self.force, self.mask, self.age, self.valid)
