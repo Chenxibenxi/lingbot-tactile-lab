@@ -12,6 +12,10 @@
 
 `src/tactile_adapter.py` 接收 `[B,5,4,3]` 历史特征、`[B,5,4]` 有效覆盖、`age_ms[B]`、`window_valid[B]`，经非负载荷 `log1p`、掩码和 5-bin GRU 输出 `proj_width` 残差。输出层严格**零初始化**，初始触觉开启时与视觉基线 state embedding 数值一致；显式关闭、缺传感器、无效窗口都走视觉原值。输出层第一步获得梯度，后续 GRU 可学习。非数值、错误形状、掩码越界立即报错；传感器数值单位是仿真冲量/dt代理而非标定夹力。
 
+## 本轮新增在线与离线共享时序/影子通道（未改原模型）
+
+`src/window_math.py` 统一离线 `align_temporal.py` 和在线 `src/live_tactile_window.py` 的 25 物理步/五分箱计算；已有单测逐特征、mask、age 比较同一输入的离线与在线结果一致，漏步无效、过去锚点/未来数据拒绝。`src/force_probe.py` 仅在 `TACTILE_LIVE_WINDOW=1` 缓存最近125步；`src/shadow_forward.py` 用伪状态token把物理接触→RPC payload→零初始化adapter串通做**CPU影子测试**，能演示数据路径但不会调用真实 LingBot 推理。专家sidecar的原始力header `clock_origin` 与已保存帧clock一致性已加进 `validate_expert_data.py`，历史不同时钟的LXC数据不能进relay候选集。
+
 ## 尚须逐层接线（后续变更范围）
 
 1. **数据**：`src/paired_samples.py` 已能从中继机本地、SHA 校验通过的同源 HDF5+侧录读取输入（当下新样本数=0）。`src/split_and_norm.py` 已实现按 `(task,实际seed)` 全轨迹分组并让同seed重试不跨分割（默认每任务≥5独立seed），以及**只读train trial**拟合 log1p 特征的 median/IQR；目前无新数据所以没有可发布 split 或 norm 参数。首批帧历史不足与零物理时长的重复帧不能暗中充当有效触觉。一个以相同新数据训练的视觉-only 对照必须同步建立。

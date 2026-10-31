@@ -3,6 +3,7 @@ import json
 import os
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 from types import SimpleNamespace as NS
 
@@ -97,6 +98,24 @@ class ForceProbeTest(unittest.TestCase):
             self.assertEqual(rows[1]["rgb_shapes"]["head_camera"], [240, 320, 3])
             self.assertFalse(rows[1]["valid"])
             self.assertTrue(rows[2]["valid"])
+
+    def test_live_cache_opt_in_only_and_causal_window(self):
+        scene=NS(get_contacts=lambda:[]);robot=fake_robot()
+        with tempfile.TemporaryDirectory() as td:
+            with patch.dict(os.environ, {'TACTILE_LIVE_WINDOW':'1'}):
+                probe=ForceProbe(td,task='lift_pot',seed=2,episode=0,dt=.004,robot=robot)
+            self.assertFalse(probe.policy_window()['quality']['window_valid'])
+            for i in range(25): probe.sample(scene,robot,1)
+            value=probe.policy_window()
+            self.assertEqual(value['anchor_physics_step'],25)
+            self.assertEqual(value['quality']['last_source_step'],25)
+            self.assertTrue(value['quality']['window_valid'])
+            self.assertEqual(value['shape'],[5,4,3])
+            probe.close()
+        with tempfile.TemporaryDirectory() as td:
+            with patch.dict(os.environ, {'TACTILE_LIVE_WINDOW':'0'}):
+                probe=ForceProbe(td,task='lift_pot',seed=2,episode=0,dt=.004,robot=robot)
+            self.assertIsNone(probe.policy_window())
 
     def test_duplicate_links_rejected(self):
         robot = fake_robot(); robot.right_fix_gripper_name = ["fl_link7"]

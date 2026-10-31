@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from types import SimpleNamespace as NS
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
@@ -59,7 +60,8 @@ class ExpertTests(unittest.TestCase):
         scene=NS(get_contacts=lambda:[])
         with tempfile.TemporaryDirectory() as td:
             root=Path(td)
-            probe=ForceProbe(root,task='lift_pot',seed=17,episode=0,dt=.004,robot=robot)
+            with patch.dict(os.environ, {'FORCE_PROBE_EXPERT_DIR':str(root)}):
+                probe=ForceProbe(root,task='lift_pot',seed=17,episode=0,dt=.004,robot=robot)
             obs={'joint_action':{'vector':np.arange(14,dtype=np.float32)},
                  'observation':{'head_camera':{'rgb':NS(shape=(240,320,3))}}}
             probe.record_observation(obs,0)
@@ -92,6 +94,13 @@ class ExpertTests(unittest.TestCase):
             self.assertFalse(paired[0]['input']['tactile_window_valid'])
             self.assertEqual(paired[0]['target']['action_source_frame_index'],1)
             self.assertNotIn('target',paired[0]['input'])
+            original_raw=raw.read_text()
+            changed=[json.loads(line) for line in original_raw.splitlines()]
+            changed[0]['clock_origin']='wrong_clock'
+            raw.write_text('\n'.join(json.dumps(item) for item in changed)+'\n')
+            with self.assertRaisesRegex(ValueError,'clock origins'):
+                validate(raw,o,frames,hf)
+            raw.write_text(original_raw)
             with h5py.File(hf,'r+') as f:
                 f['joint_action/vector'][1,0]=77
             with self.assertRaisesRegex(ValueError,'HDF5 command state'):

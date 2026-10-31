@@ -12,8 +12,7 @@ import json
 import math
 from pathlib import Path
 
-FEATURES = ("mean_load_proxy_n", "peak_load_proxy_n", "contact_fraction")
-SIDES = ("left", "right")
+from window_math import SIDES, summarize_window
 
 
 def _lines(path):
@@ -62,11 +61,9 @@ def align(raw_path, markers_path, *, window_steps=25, bins=5, peak_warning_n=500
     if not isinstance(raw_head, dict) or not isinstance(obs_head, dict):
         raise ValueError("missing input header")
     (raw_head, obs_head, links, dt) = _input_header(raw_head, obs_head, Path(raw_path).name)
-    finger_order = [f"{side}.{name}" for side in SIDES for name in links[side]]
     max_step = 0; previous_obs_index = -1; previous_anchor = -1
     used = deque(maxlen=window_steps)
     pending = next(raw_iter, None)
-    tick_span = window_steps // bins
     for marker in obs_iter:
         if not isinstance(marker, dict):
             raise ValueError("invalid observation marker")
@@ -91,59 +88,17 @@ def align(raw_path, markers_path, *, window_steps=25, bins=5, peak_warning_n=500
             pending = next(raw_iter, None)
         if marker.get("valid", False) and (not used or int(used[-1]["physics_step"]) != anchor):
             raise ValueError("marked valid but no same-step force sample")
-        by_step = {int(row["physics_step"]): row for row in used if int(row["physics_step"]) > anchor-window_steps}
-        shape = [bins, len(finger_order), len(FEATURES)]
-        matrix = []; masks = []; coverage = []; observed_max = 0.0
-        per_finger_complete = True
-        for bin_i in range(bins):
-            begin = anchor-window_steps+1 + tick_span*bin_i
-            steps = [by_step.get(tick) for tick in range(begin, begin+tick_span)]
-            valid_steps = [row for row in steps if row is not None]
-            coverage.append(len(valid_steps)/tick_span)
-            bin_values, bin_mask = [], []
-            for side in SIDES:
-                for finger in links[side]:
-                    values = []
-                    for row in valid_steps:
-                        fingers = row[side].get("fingers", {})
-                        if finger not in fingers:
-                            per_finger_complete = False
-                            continue
-                        value = float(fingers[finger]["load_proxy_n"])
-                        if value < 0 or not math.isfinite(value):
-                            raise ValueError("invalid nonnegative finger load")
-                        values.append(value)
-                    # Mean is over observed ticks, with mask distinguishing missing ticks.
-                    observed_max = max(observed_max, max(values, default=0.0))
-                    if values:
-                        bin_values.append([sum(values)/len(values), max(values),
-                                           sum(value > 0 for value in values)/len(values)])
-                    else:
-                        bin_values.append([0.0, 0.0, 0.0])
-                    bin_mask.append(len(values)/tick_span)
-            matrix.append(bin_values)
-            masks.append(bin_mask)
-        observed = sorted(by_step)
-        last_source = observed[-1] if observed else None
-        age_ms = (anchor-last_source)*dt*1000 if last_source is not None else None
-        complete = (anchor >= window_steps and len(observed) == window_steps and
-                    observed[0] == anchor-window_steps+1 and observed[-1] == anchor and
-                    per_finger_complete)
-        high_impact = observed_max > peak_warning_n
+        features = summarize_window(used, anchor, links, dt,
+                                    window_steps=window_steps, bins=bins,
+                                    peak_warning_n=peak_warning_n,
+                                    marker_valid=marker["valid"])
         yield {"schema": "phizju_tactile_window_v1", "task": raw_head["task"],
                "seed": raw_head["seed"], "episode": raw_head["episode"],
                "observation_marker_index": obs_index, "anchor_physics_step": anchor,
                "anchor_sim_time_s": round(anchor*dt, 8), "camera_shapes": marker.get("rgb_shapes"),
                "marker_role": "get_obs_capture_not_necessarily_policy_inference",
                "source_force_file": Path(raw_path).name,
-               "window_steps": window_steps, "dt_s": dt, "shape": shape,
-               "finger_order": finger_order, "feature_order": list(FEATURES),
-               "features": matrix, "sample_fraction_mask": masks,
-               "quality": {"coverage": len(observed)/window_steps,
-                           "bins_coverage": coverage, "last_source_step": last_source,
-                           "force_age_ms": age_ms, "per_finger_complete": per_finger_complete,
-                           "high_impact_warning": high_impact,
-                           "window_valid": complete and bool(marker.get("valid", False))}}
+               "window_steps": window_steps, "dt_s": dt, **features}
     # Validate remaining raw records without ever letting them enter prior windows.
     while pending is not None:
         step = int(pending["physics_step"])

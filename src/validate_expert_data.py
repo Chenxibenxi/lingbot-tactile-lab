@@ -32,6 +32,9 @@ def validate(raw, obs, frames, hdf5, completion=None):
         raise ValueError("unsupported input stream schemas")
     if oh.get("probe_file")!=raw.name or fh.get("probe_file")!=raw.name:
         raise ValueError("sidecar references different physics stream")
+    origin="first_instrumented_expert_step_after_setup_stability"
+    if rh.get("clock_origin")!=origin or fh.get("clock_origin")!=origin:
+        raise ValueError("expert raw/frame clock origins disagree or are unverified")
     for key in ("task","seed","episode"):
         if rh[key]!=oh[key] or rh[key]!=fh[key]:
             raise ValueError("task/seed/episode mismatch")

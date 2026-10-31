@@ -127,7 +127,14 @@ class ForceProbe:
         self._frame_count = 0
         self.motion_index = 0
         self.motion_phase = "unclassified"
+        self.clock_origin = ("first_instrumented_expert_step_after_setup_stability"
+                             if os.environ.get("FORCE_PROBE_EXPERT_DIR") else
+                             "first_instrumented_policy_action_step_after_setup")
         self._failed = False
+        self._live = None
+        if os.environ.get("TACTILE_LIVE_WINDOW") == "1":
+            from live_tactile_window import LiveTactileWindow
+            self._live = LiveTactileWindow(self.links, self.dt)
 
     def _ensure_file(self):
         if self._file is not None:
@@ -140,7 +147,7 @@ class ForceProbe:
             suffix=".jsonl", dir=self.output_dir, delete=False)
         self._file.write(json.dumps({"schema": "phizju_force_probe_v1", "task": self.task,
             "seed": self.seed, "episode": self.episode, "dt_s": self.dt,
-            "clock_origin": "first_instrumented_action_step; excludes setup/expert motion",
+            "clock_origin": self.clock_origin,
             "side_links": {s: sorted(v) for s, v in self.links.items()},
             "meaning": "physx contact impulse/dt proxy; not GelSight; not calibrated grip force"}) + "\n")
 
@@ -173,12 +180,22 @@ class ForceProbe:
                 "action_index": int(action_index), "motion_index": self.motion_index,
                 "motion_phase": self.motion_phase, "left": data["left"], "right": data["right"]}
             self._file.write(json.dumps(self.last, allow_nan=False) + "\n")
+            if self._live is not None:
+                self._live.push(self.last)
             if self.step % 250 == 0:
                 self._file.flush()
         except Exception as exc:
             # Probe failures do not alter simulation/evaluation but remain observable.
             self._failed = True
             print(f"FORCE_PROBE_ERROR {type(exc).__name__}: {exc}", flush=True)
+
+    def policy_window(self):
+        """Opt-in bounded history; ONLY the experimental client may attach at infer."""
+        if self._failed:
+            raise RuntimeError("failed tactile probe cannot be used for inference")
+        if self._live is None:
+            return None
+        return self._live.snapshot(task=self.task, seed=self.seed, episode=self.episode)
 
     def record_observation(self, observation, action_index):
         """Log camera-capture boundary, not a claim that policy inference happened.
