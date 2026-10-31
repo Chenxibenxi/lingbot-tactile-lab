@@ -1,0 +1,75 @@
+{
+  "schema": "lingbot_controlled_contact_persistence_v1",
+  "status": "single_counterfactual_diagnostic_not_training_or_policy_evaluation",
+  "task": "pick_diverse_bottles",
+  "seed": 100000,
+  "independent_seed_count": 1,
+  "positive_card_sha256": "2f1f398e0838c055293f3616158c42983c01bc831f0687e25f149b3e4d66df72",
+  "negative_card_sha256": "7d6071492259782bfea14764180ee8d0638c7d994b58d80ee5c65cefd1592d63",
+  "first_frame": {
+    "head_camera": {
+      "identical_rgb_pixels": true,
+      "shape": [
+        240,
+        320,
+        3
+      ]
+    },
+    "left_camera": {
+      "identical_rgb_pixels": true,
+      "shape": [
+        240,
+        320,
+        3
+      ]
+    },
+    "right_camera": {
+      "identical_rgb_pixels": true,
+      "shape": [
+        240,
+        320,
+        3
+      ]
+    },
+    "command_state_14_identical": true
+  },
+  "touch_runs_by_role": {
+    "positive_expert": {
+      "left": {
+        "first_step": 781,
+        "last_step": 1609,
+        "total_contact_steps": 829,
+        "runs": 1,
+        "longest_contiguous_run": 829,
+        "final_physics_step_in_contact": true
+      },
+      "right": {
+        "first_step": 801,
+        "last_step": 1609,
+        "total_contact_steps": 809,
+        "runs": 1,
+        "longest_contiguous_run": 809,
+        "final_physics_step_in_contact": true
+      }
+    },
+    "controlled_negative": {
+      "left": {
+        "first_step": 1281,
+        "last_step": 1350,
+        "total_contact_steps": 61,
+        "runs": 3,
+        "longest_contiguous_run": 51,
+        "final_physics_step_in_contact": false
+      },
+      "right": {
+        "first_step": 1121,
+        "last_step": 1340,
+        "total_contact_steps": 70,
+        "runs": 8,
+        "longest_contiguous_run": 37,
+        "final_physics_step_in_contact": false
+      }
+    }
+  },
+  "caution": "Same-seed independent runs with different actions; do not pair later frames or infer calibrated force/model performance."
+}
