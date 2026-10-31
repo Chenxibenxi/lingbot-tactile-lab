@@ -16,7 +16,7 @@
 
 1. **数据**：`src/paired_samples.py` 已能从中继机本地、SHA 校验通过的同源 HDF5+侧录读取输入（当下新样本数=0）。`src/split_and_norm.py` 已实现按 `(task,实际seed)` 全轨迹分组并让同seed重试不跨分割（默认每任务≥5独立seed），以及**只读train trial**拟合 log1p 特征的 median/IQR；目前无新数据所以没有可发布 split 或 norm 参数。首批帧历史不足与零物理时长的重复帧不能暗中充当有效触觉。一个以相同新数据训练的视觉-only 对照必须同步建立。
 2. **训练 API**：在此仓库中生成 LingBot 模型的受控小补丁或独立实验 subclass，使训练 batch 显式包含 `tactile_history`, `coverage_mask`, `age_ms`, `window_valid`；从顶层 `forward` 到 `embed_suffix` 逐层透传。不改变旧 API 参数默认值。保存 adapter 的独立 checkpoint + 视觉基座 commit/hash/训练 split/归一化参数。初轮只训 adapter，记录 action loss + 接触辅助任务验证指标。
-3. **推理 API**：扩展客户端的 `formatted_observation`（原只有图像、14D状态、task）和 WebSocket server 校验与传输字段；`sample_actions` 接收同样触觉参数，**进入每次 denoise 的 state token**。可预先算一次 `tactile_delta` 传给 `predict_velocity`，避免重复调用 GRU 10 次；确保存储到前缀缓存/多请求时不串数据。
+3. **推理 API**：`src/tactile_rpc.py` 已给出客户端/服务端的 CPU 可测字段契约（仅 `observation.tactile.history/mask/age_ms/valid`，绝不发送未来力或特权对象名；旧消息完全保持原样，缺失/陈旧传感器显式降级）。现有 RoboTwin 客户端 `script/deploy/websocket_client_policy.py:50–57` 的实际 msgpack_numpy packer 经过回环单测。**下一步才是**扩展客户端 `formatted_observation` 与服务端实际调用：`deploy/lingbot_vla_v2_policy.py:405–415` 的 `_prepare_model_input` 调用 `feature_transform.apply`，未知触觉键可能被丢弃，须在 transform 前解析/在后面显式加回；`:439–459` 批处理只遍历首个样本键，batch内必须给每条观测统一补可见的 invalid/zero-mask 缺省字段；`:75–86, 95–143` 才把字段送模型的 `sample_actions`。`sample_actions` 显式接收触觉并进入每次 denoise 的 state token。可预先算一次 `tactile_delta` 传 `predict_velocity`，避免重复GRU；确保多请求/前缀缓存不串数据。
 4. **评测**：分别测 (A) 相同新数据训练的视觉-only、(B) 正确触觉、(C) 时序打乱触觉、(D) 正确触觉+独立受控反馈。共享原始 seed/任务/权重和渲染设置；报告成功率、接触 onset 检测、尖峰/滑落候选、延迟 p95。模型触觉 missing/fault 应确定性降级到视觉，不回写改变原比赛成绩。
 5. **工程边界**：旧评测 launcher 会通过 overlay 软链修改 assets 与 conda `.pth`，必须先隔离可写资源，不能直接在原环境强行起完整评测。低层夹爪限力回路另行实现，不由 VLA 慢速 infer 替代。
 

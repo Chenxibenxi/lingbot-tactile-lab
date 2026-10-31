@@ -1,0 +1,18 @@
+{
+  "schema": "lingbot_tactile_rpc_plan_v1",
+  "status": "cpu_contract_tested_not_wired_into_policy",
+  "optional_payload_keys": [
+    "observation.tactile.history",
+    "observation.tactile.mask",
+    "observation.tactile.age_ms",
+    "observation.tactile.valid"
+  ],
+  "history_shape": [5, 4, 3],
+  "mask_shape": [5, 4],
+  "candidate_max_age_ms": 200,
+  "policy_request_anchor": "only attach at actual model.infer call; never assume get_obs is a decision",
+  "on_missing_stale_or_invalid": "zero fields plus valid=false; visual-only action path",
+  "transport": "existing RoboTwin WebSocket msgpack_numpy; CPU roundtrip verified",
+  "disabled_mode": "no new fields; byte-equivalent existing observation dictionary",
+  "not_for_model_input": ["future_contact", "target_action", "object_name", "episode_success", "unseen_instruction_label"]
+}
