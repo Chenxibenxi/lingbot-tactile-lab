@@ -28,6 +28,10 @@
 
 `src/patch_model_v2.py` 只对本机已知 V2 源源码作严格锚点的**独立副本**补丁，启用 `config.tactile_enabled` 时初始化零输出 adapter，从顶层训练 `forward(**kwargs)` 向 `FlowMatchingV2.forward` 显式传递 history/mask/age/valid，并在 `sample_actions` 中单次编码残差，`predict_velocity` 每步只注入**state token**，不污染 action token；关闭时不加 adapter 新参数，旧行为保留。`tests/test_patch_model_v2.py` 抽取源 AST，在纯CPU假模型上检查零初始化视觉恒等、受训非零输出仅改state token、无adapter拒绝触觉，以及原源码哈希不变。**尚未经真实V2初始化/旧checkpoint加载/训练或服务端透传验证；不得据此发布tactile_v1能力。** 基线权重应先以 `tactile_enabled=False` 按原流程完整载入，再由隔离训练代码显式附加新adapter并载入独立检查点；直接在加载旧权重前设为True可能因新参数缺权重/空初始化而失败，不能借 `strict=False` 掩盖。
 
+## 同源策略采集原型（CPU契约，尚未接评测客户端）
+
+`src/policy_rollout_capture.py` 提供独立 HDF5 writer：在真正 `model.infer` 处保存该请求实际使用的三相机 uint8 RGB、14D 当前指令状态和仅过去物理步的触觉窗口；**每次实际** `TASK_ENV.take_action` 之后记录施加的14D命令与前后物理步，避免把预测chunk未执行的后半截当标签。相机 request 可恰好等于上一动作结束物理步，时钟不允许倒流；最初没有接触时mask必须保持invalid。`complete` 仅指本地文件有请求与实际动作，`target_semantics=executed_self_rollout_not_expert_or_training_approved`：输出来自本视觉模型的动作，**不是专家纠错目标**，即使回合成功也不能直接声明训练触觉改进。目前只有CPU小模拟三测，未在真实评测客户端启用；下一步还需端到端sidecar/HDF5校验、SHA和成功manifest、源seed分组，之后才能决定是否只用于辅助接触任务或受控行为克隆对照。
+
 ## 尚须逐层接线（后续变更范围）
 
 1. **数据**：`src/paired_samples.py` 已能从中继机本地、SHA 校验通过的同源 HDF5+侧录读取输入（当下新样本数=0）。`src/split_and_norm.py` 已实现按 `(task,实际seed)` 全轨迹分组并让同seed重试不跨分割（默认每任务≥5独立seed），以及**只读train trial**拟合 log1p 特征的 median/IQR；目前无新数据所以没有可发布 split 或 norm 参数。首批帧历史不足与零物理时长的重复帧不能暗中充当有效触觉。一个以相同新数据训练的视觉-only 对照必须同步建立。

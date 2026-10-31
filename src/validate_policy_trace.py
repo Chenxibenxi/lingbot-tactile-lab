@@ -1,8 +1,8 @@
 """Audit same-run passive tactile timeline at ACTUAL policy infer attempts.
 
 This only validates physics/camera/request joins. It NEVER certifies training
-samples: policy RGB pixels, executed action labels and a success-signed HDF5
-completion manifest are not supplied by existing sidecars.
+samples: RGB pixels in an HDF5 file, executed action labels and a
+hash-bound successful completion manifest are absent from these sidecars.
 """
 from __future__ import annotations
 import argparse
