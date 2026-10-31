@@ -104,4 +104,4 @@ def describe(repo, trial_id, instruction):
             "original_frames":episode.card["saved_frames"],"causal_usable_pairs":len(episode),
             "first_usable_frame":min(frames),"last_usable_frame":max(frames),
             "images_same_run":True,"ready_for_training":False,
-            "why_not_yet":"need multi-seed train/val/test split and train-only normalization before model fitting"}
+            "why_not_yet":"candidate split and normalization not approved; no matched-data model fitting or held-out evaluation"}
