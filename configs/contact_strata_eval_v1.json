@@ -1,0 +1,12 @@
+{
+  "schema": "lingbot_tactile_contact_eval_preregistration_v1",
+  "status": "planned_no_model_predictions_or_success_claim",
+  "task": "lift_pot",
+  "split_candidate_sha256": "c94d94d546bcc2bee45c78f3075b6c03b4b128f022490804ee7b89b67f44ebf5",
+  "modes": ["visual_only", "tactile", "permuted_causal_history"],
+  "past_contact_stratum": "current five-bin history contains observed mean/peak proxy > 0 and valid coverage; target and future force are never used for stratification",
+  "metrics": ["macro_seed_mae_14d", "macro_seed_joint_mae_12d", "macro_seed_gripper_mae_2d"],
+  "source_of_targets": "verified relay same-run next-frame 14D expert command only; predictions cannot supply targets",
+  "heldout": "one actual seed for validation and one for test; no inferential error bars or population success claim",
+  "readiness": "five successful expert seeds and candidate split are not approved for training; no tactile-conditioned VLA checkpoint or predictions exist"
+}
