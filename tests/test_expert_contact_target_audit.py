@@ -62,5 +62,18 @@ class ExpertContactTargetAuditTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'mismatch'):
             self.run_audit(physics())
 
+    def test_bottle_task_uses_its_own_split_and_explicit_language(self):
+        class BottleEpisode(FakeEpisode):
+            def __init__(self,repo,trial,*,instruction):
+                self.raw=Path('not-opened-directly.jsonl')
+                assert trial in ('a','b','c')
+                assert instruction=='Pick and place the two diverse bottles'
+        with patch('expert_contact_target_audit.build_plan',return_value={'split':self.split}) as plan, \
+             patch('expert_contact_target_audit.PairedEpisode',BottleEpisode), \
+             patch('expert_contact_target_audit.read_jsonl',return_value=[{'dt_s':.004},*physics()]):
+            result=audit_train(self.repo,self.path,task='pick_diverse_bottles')
+        self.assertEqual(plan.call_args.kwargs['task'],'pick_diverse_bottles')
+        self.assertEqual(result['by_trial']['a']['left_new_onset_from_no_prior'],1)
+
 
 if __name__=='__main__':unittest.main()

@@ -14,13 +14,19 @@ from contact_targets import executed_interval_targets
 from validate_expert_data import read_jsonl
 
 
-def audit_train(repo,split_path,*,instruction='Lift the pot with both arms'):
+INSTRUCTIONS={'lift_pot':'Lift the pot with both arms',
+              'pick_diverse_bottles':'Pick and place the two diverse bottles'}
+
+
+def audit_train(repo,split_path,*,task='lift_pot',instruction=None):
+    if task not in INSTRUCTIONS:raise ValueError('unsupported relay expert contact task')
+    if instruction is None:instruction=INSTRUCTIONS[task]
     repo=Path(repo).resolve(strict=True);split_path=Path(split_path).resolve(strict=True)
     if repo/'datasets' not in split_path.parents:
         raise ValueError('candidate split outside relay registry')
     frozen=json.loads(split_path.read_text())
     current=build_plan(repo,sorted((repo/'datasets/cards').glob('*.json')),
-                       task='lift_pot',instruction=instruction)['split']
+                       task=task,instruction=instruction)['split']
     if frozen!=current or frozen['status']!='candidate_not_approved' or frozen['evaluation_claims_approved']:
         raise ValueError('candidate split/card integrity mismatch')
     result={'schema':'lingbot_expert_future_contact_support_audit_v1',
@@ -67,10 +73,12 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[1])
     p.add_argument('--split',type=Path,required=True)
+    p.add_argument('--task',choices=tuple(INSTRUCTIONS),default='lift_pot')
+    p.add_argument('--instruction',default=None)
     p.add_argument('--out',type=Path,required=True)
     args=p.parse_args()
     if args.out.exists():p.error('refuse overwrite')
-    result=audit_train(args.repo,args.split)
+    result=audit_train(args.repo,args.split,task=args.task,instruction=args.instruction)
     args.out.parent.mkdir(parents=True,exist_ok=True)
     with args.out.open('x') as file:json.dump(result,file,indent=2);file.write('\n')
     print(json.dumps({'status':result['status'],'by_trial':result['by_trial']},indent=2))
