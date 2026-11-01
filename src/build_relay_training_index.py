@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 import numpy as np
 from paired_samples import PairedEpisode,CAMERAS
@@ -21,13 +22,34 @@ TASKS={
 }
 
 
-def build(repo):
+def select_tasks(repo,*,bottle_v2=False):
+    if not bottle_v2:return dict(TASKS)
+    from extend_relay_bottle_split import NEW_IDS,EXPECTED_SEEDS
+    old_path=repo/'datasets/relay_pickdiverse_seed_split_candidate_v1.json'
+    new_path=repo/'datasets/relay_pickdiverse_seed_split_candidate_v2.json'
+    old=json.loads(old_path.read_text());new=json.loads(new_path.read_text())
+    task='pick_diverse_bottles'
+    original=old['task_seed_groups'][task];expanded=new['task_seed_groups'][task]
+    if (new.get('parent_v1_split_sha256')!=sha256(old_path) or
+            set(new.get('new_unassigned_parent_experts',[]))!=set(NEW_IDS) or
+            new['train']!=sorted(old['train']+list(NEW_IDS)) or
+            new['validation']!=old['validation'] or new['test']!=old['test'] or
+            expanded['train']!=sorted(original['train']+list(EXPECTED_SEEDS)) or
+            expanded['validation']!=original['validation'] or expanded['test']!=original['test']):
+        raise ValueError('bottle v2 must append fixed train experts and preserve old heldout')
+    tasks=dict(TASKS)
+    tasks[task]=(new_path.name,'relay_pickdiverse_train_norm_candidate_v2.json',
+                 tasks[task][2])
+    return tasks
+
+
+def build(repo,*,bottle_v2=False):
     repo=Path(repo).resolve(strict=True)
     registry=json.loads((repo/'datasets/provenance_v1.json').read_text())
     if registry.get('schema')!='lingbot_tactile_dataset_registry_v1' or registry.get('approved_paired_episodes')!=[]:
         raise ValueError('this index is exclusively an unapproved exploratory candidate')
     records=[];summary={};seen=set();assigned={}
-    for task,(split_name,norm_name,instruction) in TASKS.items():
+    for task,(split_name,norm_name,instruction) in select_tasks(repo,bottle_v2=bottle_v2).items():
         split_path=repo/'datasets'/split_name;norm_path=repo/'configs'/norm_name
         split=json.loads(split_path.read_text());norm=json.loads(norm_path.read_text())
         if (split.get('schema')!='lingbot_tactile_seed_split_plan_v1' or
@@ -51,7 +73,8 @@ def build(repo):
             ids=split.get(fold)
             if not isinstance(ids,list) or not ids:raise ValueError('empty/non-list candidate fold')
             for trial_id in ids:
-                if trial_id in seen or not isinstance(trial_id,str):raise ValueError('duplicate/malformed expert trial')
+                if (not isinstance(trial_id,str) or not re.fullmatch(r'[A-Za-z0-9_]+',trial_id) or
+                        trial_id in seen):raise ValueError('duplicate/malformed expert trial')
                 seen.add(trial_id)
                 if '_expert' not in trial_id:raise ValueError('negative or self-rollout cannot be expert supervision')
                 card_path=repo/'datasets/cards'/f'{trial_id}.json'
@@ -99,23 +122,29 @@ def build(repo):
                        'train_only_normalization_sha256':sha256(norm_path),
                        'expert_card_sha256':{trial:split['expert_card_sha256'][trial]
                                             for f in ('train','validation','test') for trial in split[f]}}
-    return records,{'schema':'lingbot_relay_paired_training_index_candidate_v1',
+    card={'schema':'lingbot_relay_paired_training_index_candidate_v1',
         'status':'candidate_source_verified_not_training_approved',
         'source_machine_role':'relay_single_rtx3090',
         'pairs':len(records),'tasks':summary,
         'provenance_registry_sha256':sha256(repo/'datasets/provenance_v1.json'),
         'negative_or_self_rollout_pairs':0,'training_approval':False,
         'note':'Row-level private index is not a model fit, evaluation prediction, force calibration, or permission to use heldout samples for training.'}
+    if bottle_v2:
+        card['variant']='bottle_v2_add_train_keep_v1_heldout'
+        card['bottle_v1_split_sha256']=sha256(repo/'datasets/relay_pickdiverse_seed_split_candidate_v1.json')
+    return records,card
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--repo',type=Path,required=True);p.add_argument('--private-out',type=Path,required=True)
-    p.add_argument('--card-out',type=Path,required=True);a=p.parse_args()
+    p.add_argument('--card-out',type=Path,required=True)
+    p.add_argument('--bottle-v2',action='store_true',help='append only two new bottle train seeds; keep original heldout')
+    a=p.parse_args()
     repo=a.repo.resolve(strict=True);private=a.private_out.resolve();card=a.card_out.resolve()
     if private.parent!=repo/'data/reports' or card.parent!=repo/'datasets' or private.exists() or card.exists():
         p.error('fresh output paths must be private data/reports and sanitized datasets roots')
-    rows,summary=build(repo)
+    rows,summary=build(repo,bottle_v2=a.bottle_v2)
     private.parent.mkdir(parents=True,exist_ok=True)
     with private.open('x',encoding='utf-8') as fp:
         for row in rows:fp.write(json.dumps(row,allow_nan=False)+'\n')

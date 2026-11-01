@@ -76,6 +76,42 @@ class PairedIndexTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'leaks'):
                 build(self.repo)
 
+    def test_bottle_v2_only_adds_train_and_freezes_v1_heldout(self):
+        new_ids=['relay_pickdiverse_s100013_onsetpilot_expert0',
+                 'relay_pickdiverse_s100015_onsetpilot_expert0']
+        for trial,seed in zip(new_ids,(100013,100015)):
+            (self.repo/'data/paired'/trial).mkdir()
+            (self.repo/'datasets/cards'/f'{trial}.json').write_text(json.dumps({
+                'task':'pick_diverse_bottles','trial_id':trial,'seed':seed,'physics_steps':30}))
+        v2=json.loads(self.split_path.read_text())
+        v2['parent_v1_split_sha256']=hashlib.sha256(self.split_path.read_bytes()).hexdigest()
+        v2['new_unassigned_parent_experts']=new_ids
+        v2['train']=sorted(v2['train']+new_ids)
+        v2['task_seed_groups']['pick_diverse_bottles']['train']=[1,2,3,100013,100015]
+        for trial in new_ids:
+            v2['expert_card_sha256'][trial]=hashlib.sha256((self.repo/'datasets/cards'/f'{trial}.json').read_bytes()).hexdigest()
+        v2_path=self.repo/'datasets/relay_pickdiverse_seed_split_candidate_v2.json'
+        v2_path.write_text(json.dumps(v2))
+        (self.repo/'configs/relay_pickdiverse_train_norm_candidate_v2.json').write_text(json.dumps({
+            'schema':'lingbot_tactile_train_norm_v1','training_approval':False,
+            'source_trials':v2['train'],
+            'split_candidate_sha256':hashlib.sha256(json.dumps(v2,sort_keys=True).encode()).hexdigest()}))
+        with patch('build_relay_training_index.TASKS',{'pick_diverse_bottles':(
+                self.split_path.name,self.norm_path.name,'Pick bottles')}), \
+             patch('build_relay_training_index.PairedEpisode',self.mocked_build()), \
+             patch('build_relay_training_index.rebuild_expert_card',
+                   side_effect=lambda trial,repo:json.loads((self.repo/'datasets/cards'/f'{trial.name}.json').read_text())):
+            rows,card=build(self.repo,bottle_v2=True)
+            self.assertEqual(len(rows),7)
+            self.assertEqual(card['tasks']['pick_diverse_bottles']['folds']['train']['pairs'],5)
+            self.assertEqual({x['trial_id'] for x in rows if x['fold']=='validation'},set(self.split['validation']))
+            self.assertEqual({x['trial_id'] for x in rows if x['fold']=='test'},set(self.split['test']))
+            self.assertEqual(card['variant'],'bottle_v2_add_train_keep_v1_heldout')
+            self.assertFalse(card['training_approval'])
+            v2['test']=new_ids[:1];v2_path.write_text(json.dumps(v2))
+            with self.assertRaisesRegex(ValueError,'preserve old heldout'):
+                build(self.repo,bottle_v2=True)
+
     def test_negative_and_card_sha_tamper_are_refused(self):
         with patch('build_relay_training_index.TASKS',{'pick_diverse_bottles':(
                 self.split_path.name,self.norm_path.name,'Pick bottles')}), \
@@ -87,6 +123,9 @@ class PairedIndexTests(unittest.TestCase):
                 build(self.repo)
             self.split['train'][0]='relay_pickdiverse_s1_open_grasp_spatial1';self.save()
             with self.assertRaisesRegex(ValueError,'negative'):
+                build(self.repo)
+            self.split['train'][0]='../_expert';self.save()
+            with self.assertRaisesRegex(ValueError,'malformed'):
                 build(self.repo)
 
 
