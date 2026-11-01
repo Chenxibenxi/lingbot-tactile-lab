@@ -25,8 +25,17 @@ def audit_train(repo,split_path,*,task='lift_pot',instruction=None):
     if repo/'datasets' not in split_path.parents:
         raise ValueError('candidate split outside relay registry')
     frozen=json.loads(split_path.read_text())
-    current=build_plan(repo,sorted((repo/'datasets/cards').glob('*.json')),
-                       task=task,instruction=instruction)['split']
+    if split_path.name=='relay_pickdiverse_seed_split_candidate_v2.json':
+        if task!='pick_diverse_bottles':raise ValueError('v2 split only supports bottle task')
+        from extend_relay_bottle_split import build as rebuild_v2
+        current=rebuild_v2(repo)['split']
+    else:
+        # Rebuild ONLY the frozen split members. Newly registered but unassigned
+        # experts must never invalidate or silently reshuffle the older v1 fold.
+        selected=frozen.get('train',[])+frozen.get('validation',[])+frozen.get('test',[])
+        if not selected or len(set(selected))!=len(selected):raise ValueError('duplicate/empty frozen split IDs')
+        paths=[repo/'datasets/cards'/f'{trial}.json' for trial in selected]
+        current=build_plan(repo,paths,task=task,instruction=instruction)['split']
     if frozen!=current or frozen['status']!='candidate_not_approved' or frozen['evaluation_claims_approved']:
         raise ValueError('candidate split/card integrity mismatch')
     result={'schema':'lingbot_expert_future_contact_support_audit_v1',

@@ -1,0 +1,60 @@
+{
+  "schema": "lingbot_expert_future_contact_support_audit_v1",
+  "status": "TRAIN_ONLY_DIAGNOSTIC_NO_AUX_TRAINING_APPROVAL",
+  "split_sha256": "8c884d912e811fc0326373389f4dfb9eb9f3facabe4a35188743155af9f71815",
+  "source_train_trials": [
+    "relay_pickdiverse_s100000_expert0",
+    "relay_pickdiverse_s100002_expert0",
+    "relay_pickdiverse_s100007_expert0",
+    "relay_pickdiverse_s100013_onsetpilot_expert0",
+    "relay_pickdiverse_s100015_onsetpilot_expert0"
+  ],
+  "by_trial": {
+    "relay_pickdiverse_s100000_expert0": {
+      "n_pairs": 113,
+      "both_sides_future_any": 59,
+      "left_future_any": 61,
+      "right_future_any": 59,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 1,
+      "both_new_onset_same_interval": 0
+    },
+    "relay_pickdiverse_s100002_expert0": {
+      "n_pairs": 116,
+      "both_sides_future_any": 59,
+      "left_future_any": 59,
+      "right_future_any": 61,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 1,
+      "both_new_onset_same_interval": 0
+    },
+    "relay_pickdiverse_s100007_expert0": {
+      "n_pairs": 112,
+      "both_sides_future_any": 58,
+      "left_future_any": 60,
+      "right_future_any": 58,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 1,
+      "both_new_onset_same_interval": 0
+    },
+    "relay_pickdiverse_s100013_onsetpilot_expert0": {
+      "n_pairs": 111,
+      "both_sides_future_any": 58,
+      "left_future_any": 58,
+      "right_future_any": 63,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 2,
+      "both_new_onset_same_interval": 0
+    },
+    "relay_pickdiverse_s100015_onsetpilot_expert0": {
+      "n_pairs": 138,
+      "both_sides_future_any": 61,
+      "left_future_any": 63,
+      "right_future_any": 61,
+      "left_new_onset_from_no_prior": 1,
+      "right_new_onset_from_no_prior": 1,
+      "both_new_onset_same_interval": 0
+    }
+  },
+  "meaning": "future interval contact is a label only; current input is causal past history; no hardware force limit"
+}
