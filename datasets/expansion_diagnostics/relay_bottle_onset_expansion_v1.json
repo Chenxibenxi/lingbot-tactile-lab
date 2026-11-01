@@ -1,0 +1,47 @@
+{
+  "schema": "lingbot_bottle_onset_expansion_audit_v1",
+  "status": "two_fixed_attempts_source_checked_not_training_approved",
+  "old_candidate_split_sha256": "33c02a95a5b01e257e9d6c50ee2f016090bc3694973a77f867699c1eb945072c",
+  "predeclared_seeds": [
+    100013,
+    100015
+  ],
+  "attempts": [
+    {
+      "seed": 100013,
+      "trial_id": "relay_pickdiverse_s100013_onsetpilot_expert0",
+      "attempt_status_sha256": "bde294368bfed77c2cddf8cec271d398aee9cdbab3b26e1059281bd33adb0120",
+      "source_machine_role": "relay_single_rtx3090",
+      "writer_exit_code": 0,
+      "status": "verified_expert_candidate_unassigned",
+      "expert_card_sha256": "c2b0f82342984e685036a57ffdd070ce09e92e44a71c120f27937f8e8bb3901d",
+      "saved_frames": 121,
+      "causal_pairs": 111,
+      "pairs_with_past_contact": 63,
+      "future_new_onset_intervals_by_side": {
+        "left": 1,
+        "right": 2
+      }
+    },
+    {
+      "seed": 100015,
+      "trial_id": "relay_pickdiverse_s100015_onsetpilot_expert0",
+      "attempt_status_sha256": "bde294368bfed77c2cddf8cec271d398aee9cdbab3b26e1059281bd33adb0120",
+      "source_machine_role": "relay_single_rtx3090",
+      "writer_exit_code": 0,
+      "status": "verified_expert_candidate_unassigned",
+      "expert_card_sha256": "f7318c6d61b2fa9ca79ed6f974306eaea9c36cc138ce22d89bba80e8cf5f2862",
+      "saved_frames": 148,
+      "causal_pairs": 138,
+      "pairs_with_past_contact": 62,
+      "future_new_onset_intervals_by_side": {
+        "left": 1,
+        "right": 1
+      }
+    }
+  ],
+  "successful_new_expert_candidates": 2,
+  "new_causal_pairs_unassigned": 249,
+  "training_approval": false,
+  "note": "Original v1 seed split remains unchanged. These attempts are neither model fitting nor independent validation/test results."
+}
