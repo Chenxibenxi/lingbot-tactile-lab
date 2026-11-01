@@ -1,0 +1,75 @@
+{
+  "schema": "lingbot_relay_paired_training_index_candidate_v1",
+  "status": "candidate_source_verified_not_training_approved",
+  "source_machine_role": "relay_single_rtx3090",
+  "pairs": 1112,
+  "tasks": {
+    "lift_pot": {
+      "folds": {
+        "train": {
+          "trials": 3,
+          "pairs": 309,
+          "pairs_with_observed_contact": 73,
+          "decoded_camera_frames": 927
+        },
+        "validation": {
+          "trials": 1,
+          "pairs": 104,
+          "pairs_with_observed_contact": 25,
+          "decoded_camera_frames": 312
+        },
+        "test": {
+          "trials": 1,
+          "pairs": 105,
+          "pairs_with_observed_contact": 25,
+          "decoded_camera_frames": 315
+        }
+      },
+      "split_sha256": "c94d94d546bcc2bee45c78f3075b6c03b4b128f022490804ee7b89b67f44ebf5",
+      "train_only_normalization_sha256": "e96fa09c2687282bd579f3d447c0159562b18cb478986e1c2a57e86cc27c99fb",
+      "expert_card_sha256": {
+        "relay_liftpot_s100000_expert0": "4829b59ebaf7a7eb22f98d6c89c26f63e65ab80bc77ad85f443e77759d2c6cdd",
+        "relay_liftpot_s100003_expert0": "9caf9bf44471df6207b34c7ceef497f5c55513a7e1b39d16d7d0f4ffa1edd228",
+        "relay_liftpot_s100014_expert0": "ea628305d368f41cc261d7773368d42affcfacbfad569d189b68d52202812985",
+        "relay_liftpot_s100005_expert0": "84533758cc9c6cd34055deb350da721c98433a0316bd3c0c72cda73e1bb43b3f",
+        "relay_liftpot_s100048_expert1": "1d8749dabde0d8b3c4d66095bb50a97674d73000653f0f976d4999f271da10ba"
+      }
+    },
+    "pick_diverse_bottles": {
+      "folds": {
+        "train": {
+          "trials": 3,
+          "pairs": 341,
+          "pairs_with_observed_contact": 179,
+          "decoded_camera_frames": 1023
+        },
+        "validation": {
+          "trials": 1,
+          "pairs": 126,
+          "pairs_with_observed_contact": 70,
+          "decoded_camera_frames": 378
+        },
+        "test": {
+          "trials": 1,
+          "pairs": 127,
+          "pairs_with_observed_contact": 72,
+          "decoded_camera_frames": 381
+        }
+      },
+      "split_sha256": "33c02a95a5b01e257e9d6c50ee2f016090bc3694973a77f867699c1eb945072c",
+      "train_only_normalization_sha256": "6e70d0251e8e22a20988c1e02228dfac1deac8ec02d42d752290c3560532fff2",
+      "expert_card_sha256": {
+        "relay_pickdiverse_s100000_expert0": "2f1f398e0838c055293f3616158c42983c01bc831f0687e25f149b3e4d66df72",
+        "relay_pickdiverse_s100002_expert0": "266954c139e7d8478fee4ac68f77487bbb1d4d3ea8d847728625e62611b905de",
+        "relay_pickdiverse_s100007_expert0": "113b2baa10b2fce138ec3b48aa42f289628d6801c0521fe94bd30db804979bd5",
+        "relay_pickdiverse_s100012_expert0": "81fe663c5ac4a388a66de2949df43562917392fb21604019423e2933645615e6",
+        "relay_pickdiverse_s100009_expert0": "3407ab4b976ceabb75fd5ff45da25c602261df342150fcd5df271969daf3a94c"
+      }
+    }
+  },
+  "provenance_registry_sha256": "e1ed3bab09dcf068e719f7e08ebb092e9f44fb9c86e9668d120ee0f30b83d2a9",
+  "negative_or_self_rollout_pairs": 0,
+  "training_approval": false,
+  "note": "Row-level private index is not a model fit, evaluation prediction, force calibration, or permission to use heldout samples for training.",
+  "private_index_sha256": "e73d774c10212b35fc8c9ac8edc02e61631136dfab852f307587f4e19d0f43f3"
+}
