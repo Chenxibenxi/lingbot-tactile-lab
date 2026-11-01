@@ -15,14 +15,26 @@ from plan_relay_training import build_plan
 MODES=('visual_only','tactile','permuted_causal_history')
 JOINTS=(0,1,2,3,4,5,7,8,9,10,11,12)
 GRIPPERS=(6,13)
+INSTRUCTIONS={'lift_pot':'Lift the pot with both arms',
+              'pick_diverse_bottles':'Pick and place the two diverse bottles'}
 
 
-def evaluate(repo,split_path,predictions,*,instruction='Lift the pot with both arms'):
+def evaluate(repo,split_path,predictions,*,task='lift_pot',instruction=None):
+    if task not in INSTRUCTIONS:raise ValueError('unsupported contact stratified task')
+    if instruction is None:instruction=INSTRUCTIONS[task]
     repo=Path(repo).resolve(strict=True);split_path=Path(split_path).resolve(strict=True)
     if repo/'datasets' not in split_path.parents:
         raise ValueError('split outside relay dataset registry')
-    split=json.loads(split_path.read_text());cards=sorted((repo/'datasets/cards').glob('*.json'))
-    current=build_plan(repo,cards,task='lift_pot',instruction=instruction)['split']
+    split=json.loads(split_path.read_text())
+    if split_path.name=='relay_pickdiverse_seed_split_candidate_v2.json':
+        if task!='pick_diverse_bottles':raise ValueError('v2 split only supports bottle task')
+        from extend_relay_bottle_split import build as rebuild_v2
+        current=rebuild_v2(repo)['split']
+    else:
+        selected=split.get('train',[])+split.get('validation',[])+split.get('test',[])
+        if not selected or len(set(selected))!=len(selected):raise ValueError('duplicate/empty frozen split IDs')
+        cards=[repo/'datasets/cards'/f'{trial}.json' for trial in selected]
+        current=build_plan(repo,cards,task=task,instruction=instruction)['split']
     if split!=current or split['status']!='candidate_not_approved' or split['evaluation_claims_approved']:
         raise ValueError('split/card integrity or candidate status mismatch')
     split_sha=hashlib.sha256(split_path.read_bytes()).hexdigest()
@@ -75,8 +87,8 @@ def evaluate(repo,split_path,predictions,*,instruction='Lift the pot with both a
                            float(error[list(GRIPPERS)].mean())])
     out={'schema':'lingbot_tactile_contact_stratified_eval_v1',
          'status':'offline_imitation_error_only_not_task_success',
-         'split_sha256':split_sha,'vision_checkpoint_sha256':vision_sha,
-         'metrics':{}}
+         'task':task,'split_sha256':split_sha,'vision_checkpoint_sha256':vision_sha,
+         'model_artifacts_revalidated':False,'metrics':{}}
     for fold in ('train','validation','test'):
         out['metrics'][fold]={}
         for stratum in ('no_past_contact','past_contact'):
@@ -105,13 +117,14 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[1])
     p.add_argument('--split',type=Path,required=True)
+    p.add_argument('--task',choices=tuple(INSTRUCTIONS),default='lift_pot')
     p.add_argument('--predictions',type=Path,required=True,
                    help='local JSON manifest: 3 complete mode predictions for each source pair')
     p.add_argument('--out',type=Path,required=True)
     args=p.parse_args()
     if args.out.exists():p.error('refusing to overwrite an existing score')
     predictions=json.loads(args.predictions.read_text())
-    result=evaluate(args.repo,args.split,predictions)
+    result=evaluate(args.repo,args.split,predictions,task=args.task)
     args.out.parent.mkdir(parents=True,exist_ok=True)
     with args.out.open('x') as file:json.dump(result,file,indent=2);file.write('\n')
     print('OFFLINE_CAUSAL_CONTACT_STRATA_SCORED; NOT A ROBOT TASK SUCCESS CLAIM')
