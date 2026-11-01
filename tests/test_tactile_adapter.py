@@ -1,5 +1,7 @@
 """CPU-only research-model contracts: identity, masks, shape and gradients."""
 import unittest
+import json
+from pathlib import Path
 
 import torch
 from tactile_adapter import TactileStateResidual
@@ -62,6 +64,16 @@ class TactileAdapterTest(unittest.TestCase):
             self.module.set_normalization(bad)
         with self.assertRaisesRegex(ValueError,'not approved'):
             self.module.set_normalization(dict(stats,training_approval=False))
+
+    def test_every_real_candidate_norm_still_rejected_by_training_gate(self):
+        configs=Path(__file__).resolve().parents[1]/'configs'
+        paths=sorted(configs.glob('relay_*norm_candidate_v*.json'))
+        self.assertGreaterEqual(len(paths),6)
+        for path in paths:
+            stats=json.loads(path.read_text())
+            self.assertIs(stats.get('training_approval'),False,path.name)
+            with self.subTest(config=path.name), self.assertRaisesRegex(ValueError,'explicit true approval'):
+                self.module.set_normalization(stats)
 
     def test_output_projection_receives_gradient(self):
         output=self.module(self.state, self.force, self.mask, self.age, self.valid)
