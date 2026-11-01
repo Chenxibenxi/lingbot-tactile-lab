@@ -10,7 +10,8 @@ from types import SimpleNamespace as NS
 
 def make_scene():
     import sapien
-    scene = sapien.Scene(); scene.set_timestep(.004)
+    # A physics-only benchmark must not allocate a Vulkan rendering system.
+    scene = sapien.Scene([sapien.physx.PhysxCpuSystem()]); scene.set_timestep(.004)
     b = scene.create_actor_builder(); b.add_box_collision(half_size=[.1, .1, .1]);
     base = b.build_kinematic(name="probe_finger_box")
     base.set_pose(sapien.Pose(p=[0, 0, .1]))
