@@ -1,6 +1,6 @@
 # LingBot-VLA 触觉输入实验接入点（设计与 CPU 模块验证）
 
-> 目前只落地仓库中的独立 `src/tactile_adapter.py` 及 CPU 测试，**尚未**改写上游模型训练/服务器/评测客户端，也没有在中继机训练。3090 被其他任务占满，不能抢用。下一阶段每一层都必须 opt-in 且视觉版输出可还原。
+> 目前落地仓库内可选 adapter、因果数据接口及CPU门禁，**尚未**把训练好触觉权重接进上游真实模型/服务器，也没有在中继机训练触觉VLA。单3090必须逐任务租约且遵守用户规定的Strata停机/恢复时限，不抢其他任务；每一层都须 opt-in 且视觉版输出可还原。
 
 ## 已核查的上游模型接口
 
@@ -10,7 +10,7 @@
 
 ## 已写并测试的 adapter
 
-`src/tactile_adapter.py` 接收 `[B,5,4,3]` 历史特征、`[B,5,4]` 有效覆盖、`age_ms[B]`、`window_valid[B]`，经非负载荷 `log1p`、掩码和 5-bin GRU 输出 `proj_width` 残差。输出层严格**零初始化**，初始触觉开启时与视觉基线 state embedding 数值一致；显式关闭、缺传感器、无效窗口都走视觉原值。输出层第一步获得梯度，后续 GRU 可学习。非数值、错误形状、掩码越界立即报错；传感器数值单位是仿真冲量/dt代理而非标定夹力。
+`src/tactile_adapter.py` 接收 `[B,5,4,3]` 历史特征、`[B,5,4]` 有效覆盖、`age_ms[B]`、`window_valid[B]`，经非负载荷 `log1p`、掩码和 5-bin GRU 输出 `proj_width` 残差。输出层严格**零初始化**，初始触觉开启时与视觉基线 state embedding 数值一致；显式关闭、缺传感器、无效窗口都走视觉原值。输出层第一步获得梯度，后续 GRU 可学习。`set_normalization()`现要求 `training_approval is True`，**缺字段也拒绝**，而不再只拒显式 false；目前本机两任务的候选配置均不得被adapter当已批准训练参数安装。非数值、错误形状、掩码越界立即报错；传感器数值单位是仿真冲量/dt代理而非标定夹力。
 
 ## 本轮新增在线与离线共享时序/影子通道（未改原模型）
 
@@ -22,7 +22,7 @@
 
 ## 服务端预处理桥（CPU契约，未部署）
 
-`src/server_tactile_bridge.py` 测试了旧 `feature_transform.apply` 会丢未知触觉键时的安全做法：先解码、只把视觉字段交旧transform，然后把通过schema验证的触觉历史/掩码/age/valid加回；同批次旧视觉客户端显式获得invalid/zero-mask字段，不允许首个batch样本字段不同。只有明确 `model_wired=True` 且提供adapter artifact SHA256的实验服务才能申请发布 `capabilities=['tactile_v1']`。这只是CPU拟合transform与batch的契约，**目前没有真实训练权重/模型forward接线/服务进程，禁止将占位SHA视作训练证明。**
+`src/server_tactile_bridge.py` 测试了旧 `feature_transform.apply` 会丢未知触觉键时的安全做法：先解码、只把视觉字段交旧transform，然后把通过schema验证的触觉历史/掩码/age/valid加回；同批次旧视觉客户端显式获得invalid/zero-mask字段，不允许首个batch样本字段不同。修复了占位 SHA 的假阳性：**仅有 `model_wired=True` + 任意64位SHA不再能声明 `capabilities=['tactile_v1']`**。现在需另外出示仓库私有`models/`里真实SHA匹配且非零输出的 `.safetensors`、独立训练记录（来源单3090、真实优化步>0、已批准部署）及哈希匹配的已批准 provenance/train-only split/norm；`training_approval`缺失、false或真实`approved_paired_episodes=[]`一律拒绝。`src/adapter_artifact_gate.py`使用无pickle的`safetensors`按键/尺寸检查非零输出层、GRU结构及归一化缓冲**数值与获批训练折配置一致**，合成临时已批准fixture仅用来测代码正路径，不代表用户当前数据已获批。新门禁只是声明材料的完整性检查，**不能代替负责人批准或证明部署、触觉模型提升**；当前没有真实训练权重／模型forward接线／服务进程，服务器仍禁止宣称触觉能力。
 
 ## 可逆 FlowMatchingV2 原型（未安装/未训练）
 

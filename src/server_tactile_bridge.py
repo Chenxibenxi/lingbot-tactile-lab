@@ -15,13 +15,22 @@ TENSOR_FIELDS = ("tactile_history", "tactile_mask", "tactile_age_ms", "tactile_v
 
 
 def capability_metadata(*, enabled: bool, model_wired: bool = False,
-                        adapter_checkpoint_sha256: str | None = None) -> dict:
+                        adapter_checkpoint_sha256: str | None = None,
+                        repo_root=None, adapter_checkpoint_path=None,
+                        deployment_manifest_path=None) -> dict:
     if not enabled:
         return {}
     if not model_wired or not isinstance(adapter_checkpoint_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", adapter_checkpoint_sha256):
         raise RuntimeError("cannot advertise tactile_v1 without model wiring and adapter artifact SHA256")
+    from adapter_artifact_gate import verify_deployment_artifact
+    try:
+        evidence=verify_deployment_artifact(repo_root,adapter_checkpoint_path,
+                                            deployment_manifest_path,adapter_checkpoint_sha256)
+    except Exception as exc:
+        raise RuntimeError("cannot advertise tactile_v1 without verifiable approved relay training artifact") from exc
     return {"capabilities": ["tactile_v1"],
             "tactile_adapter_sha256": adapter_checkpoint_sha256,
+            "tactile_base_checkpoint_sha256": evidence['base_checkpoint_sha256'],
             "tactile_schema": "lingbot_tactile_rpc_plan_v1"}
 
 

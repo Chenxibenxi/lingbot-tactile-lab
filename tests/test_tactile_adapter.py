@@ -48,7 +48,10 @@ class TactileAdapterTest(unittest.TestCase):
             samples.append({'metadata':{'trial_id':trial}, 'input':{
                 'tactile_history':x, 'tactile_mask':np.ones((5,4)),
                 'tactile_window_valid':True}})
-        stats = fit_train_only_stats(samples, {'train_a','train_b'})
+        raw_stats = fit_train_only_stats(samples, {'train_a','train_b'})
+        with self.assertRaisesRegex(ValueError,'explicit true approval'):
+            self.module.set_normalization(raw_stats)
+        stats = dict(raw_stats,training_approval=True)  # synthetic math-only fixture, not real data approval
         self.module.set_normalization(stats)
         self.assertTrue(torch.equal(self.module(self.state,self.force,self.mask,self.age,self.valid), self.state))
         copy = TactileStateResidual(state_width=12, hidden_width=8)
