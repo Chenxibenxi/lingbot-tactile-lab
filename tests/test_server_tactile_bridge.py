@@ -2,10 +2,11 @@ import unittest
 import json
 import tempfile
 from pathlib import Path
+from unittest.mock import patch
 import numpy as np
 import torch
 from safetensors.torch import save_file
-from adapter_artifact_gate import sha256
+from adapter_artifact_gate import sha256,_verify_train_expert_sources
 from tactile_adapter import TactileStateResidual
 from server_tactile_bridge import capability_metadata,prepare_input,stack_tactile_prepared
 from tactile_rpc import encode_tactile_window
@@ -42,15 +43,26 @@ class ServerTactileBridgeTests(unittest.TestCase):
             model=TactileStateResidual(8)
             with torch.no_grad():model.to_state.weight.fill_(.01)
             weight=repo/'models/trained.safetensors';save_file(model.state_dict(),str(weight))
+            trial_id='relay_pickdiverse_s100000_expert0'
+            (repo/'data/paired'/trial_id).mkdir(parents=True)
+            card={'trial_id':trial_id,'source_machine_role':'relay_single_rtx3090',
+                  'task':'pick_diverse_bottles','seed':100000,
+                  'data_path_relative':f'data/paired/{trial_id}'}
+            card_path=repo/'datasets/cards'/f'{trial_id}.json';card_path.parent.mkdir()
+            card_path.write_text(json.dumps(card))
             registry={'schema':'lingbot_tactile_dataset_registry_v1',
-                      'approved_paired_episodes':['train_seed']}
+                      'approved_paired_episodes':[trial_id]}
             split={'schema':'lingbot_tactile_seed_split_plan_v1',
                    'source_machine_role':'relay_single_rtx3090','status':'approved_for_training',
-                   'train':['train_seed'],'validation':['val_seed'],'test':['test_seed']}
+                   'train':[trial_id],'validation':['relay_pickdiverse_s100012_expert0'],
+                   'test':['relay_pickdiverse_s100009_expert0'],
+                   'expert_card_sha256':{trial_id:sha256(card_path)},
+                   'task_seed_groups':{'pick_diverse_bottles':{
+                       'train':[100000],'validation':[100012],'test':[100009]}}}
             registry_path=repo/'datasets/provenance_v1.json';registry_path.write_text(json.dumps(registry))
             split_path=repo/'datasets/split.json';split_path.write_text(json.dumps(split))
             norm={'schema':'lingbot_tactile_train_norm_v1','status':'fit_on_train_split_only',
-                  'source_trials':['train_seed'],'training_approval':True,
+                  'source_trials':[trial_id],'training_approval':True,
                   'median':[[0.,0.,0.] for _ in range(4)],
                   'scale_iqr_floor_0p1':[[1.,1.,1.] for _ in range(4)],
                   'split_candidate_sha256':sha256(split_path)}
@@ -67,30 +79,56 @@ class ServerTactileBridgeTests(unittest.TestCase):
                   'adapter_checkpoint_path':'models/trained.safetensors',
                   'deployment_manifest_path':'models/approved.json',
                   'adapter_checkpoint_sha256':sha256(weight)}
-            meta=capability_metadata(**args)
-            self.assertIn('tactile_v1',meta['capabilities'])
-            self.assertEqual(meta['tactile_base_checkpoint_sha256'],'b'*64)
-            norm['median'][0][0]=.3;norm_path.write_text(json.dumps(norm))
-            manifest['normalization_sha256']=sha256(norm_path);evidence.write_text(json.dumps(manifest))
-            with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
-                capability_metadata(**args)  # signed config differs from persisted buffers
-            norm['median'][0][0]=0.;norm_path.write_text(json.dumps(norm))
-            manifest['normalization_sha256']=sha256(norm_path);evidence.write_text(json.dumps(manifest))
-            norm['training_approval']=False;norm_path.write_text(json.dumps(norm))
-            with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
-                capability_metadata(**args)
-            norm['training_approval']=True;norm_path.write_text(json.dumps(norm))
-            registry['approved_paired_episodes']=[];registry_path.write_text(json.dumps(registry))
-            with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
-                capability_metadata(**args)
-            registry['approved_paired_episodes']=['train_seed'];registry_path.write_text(json.dumps(registry))
-            with torch.no_grad():model.to_state.weight.zero_()
-            zero=repo/'models/zero_output.safetensors';save_file(model.state_dict(),str(zero))
-            manifest['adapter_sha256']=sha256(zero);evidence.write_text(json.dumps(manifest))
-            zero_args=dict(args,adapter_checkpoint_path='models/zero_output.safetensors',
-                           adapter_checkpoint_sha256=sha256(zero))
-            with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
-                capability_metadata(**zero_args)
+            with patch('register_dataset.build_card',return_value=card) as expert_revalidation:
+                meta=capability_metadata(**args)
+                self.assertIn('tactile_v1',meta['capabilities'])
+                self.assertEqual(meta['tactile_base_checkpoint_sha256'],'b'*64)
+                self.assertEqual(expert_revalidation.call_count,1)
+                card_path.write_text('{}')
+                with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
+                    capability_metadata(**args)  # train card bytes changed
+                card_path.write_text(json.dumps(card))
+                split['task_seed_groups']['pick_diverse_bottles']['train']=[100999]
+                split_path.write_text(json.dumps(split))
+                norm['split_candidate_sha256']=sha256(split_path);norm_path.write_text(json.dumps(norm))
+                manifest['split_sha256']=sha256(split_path)
+                manifest['normalization_sha256']=sha256(norm_path);evidence.write_text(json.dumps(manifest))
+                with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
+                    capability_metadata(**args)  # actual expert seed != claimed train seed
+                split['task_seed_groups']['pick_diverse_bottles']['train']=[100000]
+                split_path.write_text(json.dumps(split))
+                norm['split_candidate_sha256']=sha256(split_path);norm_path.write_text(json.dumps(norm))
+                manifest['split_sha256']=sha256(split_path)
+                manifest['normalization_sha256']=sha256(norm_path);evidence.write_text(json.dumps(manifest))
+                norm['median'][0][0]=.3;norm_path.write_text(json.dumps(norm))
+                manifest['normalization_sha256']=sha256(norm_path);evidence.write_text(json.dumps(manifest))
+                with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
+                    capability_metadata(**args)  # signed config differs from persisted buffers
+                norm['median'][0][0]=0.;norm_path.write_text(json.dumps(norm))
+                manifest['normalization_sha256']=sha256(norm_path);evidence.write_text(json.dumps(manifest))
+                norm['training_approval']=False;norm_path.write_text(json.dumps(norm))
+                with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
+                    capability_metadata(**args)
+                norm['training_approval']=True;norm_path.write_text(json.dumps(norm))
+                registry['approved_paired_episodes']=[];registry_path.write_text(json.dumps(registry))
+                with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
+                    capability_metadata(**args)
+                registry['approved_paired_episodes']=[trial_id];registry_path.write_text(json.dumps(registry))
+                with torch.no_grad():model.to_state.weight.zero_()
+                zero=repo/'models/zero_output.safetensors';save_file(model.state_dict(),str(zero))
+                manifest['adapter_sha256']=sha256(zero);evidence.write_text(json.dumps(manifest))
+                zero_args=dict(args,adapter_checkpoint_path='models/zero_output.safetensors',
+                               adapter_checkpoint_sha256=sha256(zero))
+                with self.assertRaisesRegex(RuntimeError,'verifiable approved'):
+                    capability_metadata(**zero_args)
+
+    def test_spatial_negative_cannot_be_smuggled_into_expert_train_gate(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folded={'expert_card_sha256':{},'task_seed_groups':{'pick_diverse_bottles':{
+                'train':[100007],'validation':[100012],'test':[100009]}}}
+            with self.assertRaisesRegex(ValueError,'nonexpert'):
+                _verify_train_expert_sources(Path(tmp),folded,
+                    ['relay_pickdiverse_s100007_open_grasp_spatial1'])
 
     def test_old_transform_cannot_silently_drop_tactile_fields(self):
         source={'observation.state':np.zeros(14,dtype=np.float32)}

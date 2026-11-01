@@ -33,6 +33,41 @@ def _scoped(repo,name,scope):
     return result
 
 
+def _verify_train_expert_sources(repo,folds,train):
+    """Rebuild expert SHA gates: registry strings alone are not train evidence."""
+    from register_dataset import build_card as build_expert_card
+    card_hashes=folds.get('expert_card_sha256')
+    if not isinstance(card_hashes,dict):
+        raise ValueError('approved split lacks SHA-bound expert cards')
+    actual_train_seed_groups={}
+    for trial_id in train:
+        if not isinstance(trial_id,str) or not re.fullmatch(r'relay_[A-Za-z0-9_-]+_expert[0-9]+',trial_id):
+            raise ValueError('train contains nonexpert or malformed trial id')
+        card_path=_scoped(repo,f'datasets/cards/{trial_id}.json','datasets')
+        card=json.loads(card_path.read_text())
+        if (card_hashes.get(trial_id)!=sha256(card_path) or
+                card.get('trial_id')!=trial_id or
+                card.get('source_machine_role')!='relay_single_rtx3090' or
+                card.get('data_path_relative')!=f'data/paired/{trial_id}' or
+                not isinstance(card.get('task'),str) or type(card.get('seed'))!=int or
+                build_expert_card(repo/'data/paired'/trial_id,repo)!=card):
+            raise ValueError('approved train expert card or live RGB/physics/success gate changed')
+        actual_train_seed_groups.setdefault(card['task'],set()).add(card['seed'])
+    groups=folds.get('task_seed_groups')
+    if not isinstance(groups,dict) or set(groups)!=set(actual_train_seed_groups):
+        raise ValueError('approved split lacks matching actual train task seed groups')
+    for task,by_fold in groups.items():
+        if not isinstance(by_fold,dict):raise ValueError('invalid task seed groups')
+        sets=[]
+        for name in ('train','validation','test'):
+            values=by_fold.get(name)
+            if not isinstance(values,list) or any(type(x)!=int for x in values) or len(set(values))!=len(values):
+                raise ValueError('duplicate/malformed actual seed group')
+            sets.append(set(values))
+        if sets[0]!=actual_train_seed_groups[task] or any(sets[i]&sets[j] for i,j in ((0,1),(0,2),(1,2))):
+            raise ValueError('actual physical seed disagrees with train expert cards or leaked between folds')
+
+
 def verify_deployment_artifact(repo,checkpoint,manifest,expected_sha):
     repo=Path(repo).resolve(strict=True)
     if not isinstance(expected_sha,str) or not _HEX64.fullmatch(expected_sha):
@@ -72,6 +107,7 @@ def verify_deployment_artifact(repo,checkpoint,manifest,expected_sha):
             stats.get('source_trials')!=train or
             stats.get('split_candidate_sha256')!=sha256(split)):
         raise ValueError('train-only approved registry/split/normalization missing')
+    _verify_train_expert_sources(repo,folds,train)
     # No pickle; the actual trained output projection must not be all zeros.
     with safe_open(str(weights),framework='np') as f:
         names=set(f.keys())
