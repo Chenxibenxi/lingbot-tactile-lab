@@ -1,0 +1,134 @@
+{
+  "schema": "lingbot_two_seed_controlled_open_grasp_audit_v1",
+  "status": "two_preregistered_train_seed_counterfactuals_diagnostic_only",
+  "task": "pick_diverse_bottles",
+  "independent_seed_count": 2,
+  "candidate_split_sha256": "33c02a95a5b01e257e9d6c50ee2f016090bc3694973a77f867699c1eb945072c",
+  "trial_pairs": [
+    {
+      "seed": 100000,
+      "positive_trial": "relay_pickdiverse_s100000_expert0",
+      "negative_trial": "relay_pickdiverse_s100000_open_grasp1",
+      "positive_card_sha256": "2f1f398e0838c055293f3616158c42983c01bc831f0687e25f149b3e4d66df72",
+      "negative_card_sha256": "7d6071492259782bfea14764180ee8d0638c7d994b58d80ee5c65cefd1592d63",
+      "spatial_card_sha256": null,
+      "initial_rgb_and_14d_exact_match": true,
+      "positive_expert_contact": {
+        "left": {
+          "first_step": 781,
+          "last_step": 1609,
+          "total_contact_steps": 829,
+          "runs": 1,
+          "longest_contiguous_run": 829,
+          "final_physics_step_in_contact": true
+        },
+        "right": {
+          "first_step": 801,
+          "last_step": 1609,
+          "total_contact_steps": 809,
+          "runs": 1,
+          "longest_contiguous_run": 809,
+          "final_physics_step_in_contact": true
+        }
+      },
+      "open_grasp_failure_contact": {
+        "left": {
+          "first_step": 1281,
+          "last_step": 1350,
+          "total_contact_steps": 61,
+          "runs": 3,
+          "longest_contiguous_run": 51,
+          "final_physics_step_in_contact": false
+        },
+        "right": {
+          "first_step": 1121,
+          "last_step": 1340,
+          "total_contact_steps": 70,
+          "runs": 8,
+          "longest_contiguous_run": 37,
+          "final_physics_step_in_contact": false
+        }
+      },
+      "contact_step_decrease_percent_by_side": {
+        "left": 92.642,
+        "right": 91.347
+      },
+      "positive_peak_proxy_by_finger": {
+        "fl_link7": 46.314035,
+        "fl_link8": 46.747655,
+        "fr_link7": 40.748359,
+        "fr_link8": 40.897791
+      },
+      "negative_peak_proxy_by_finger": {
+        "fl_link7": 0.407689,
+        "fl_link8": 0.0,
+        "fr_link7": 0.06768,
+        "fr_link8": 0.51077
+      }
+    },
+    {
+      "seed": 100007,
+      "positive_trial": "relay_pickdiverse_s100007_expert0",
+      "negative_trial": "relay_pickdiverse_s100007_open_grasp_spatial1",
+      "positive_card_sha256": "113b2baa10b2fce138ec3b48aa42f289628d6801c0521fe94bd30db804979bd5",
+      "negative_card_sha256": "70befc66f6bb4acce00bc03454aa5cc0a597379488cf097d5ae19b53b17ce5f9",
+      "spatial_card_sha256": "247c1d16bbe3e75d4ec201469c8f44f90cedd7f52c0d465d1eb3e0fa9398dc88",
+      "initial_rgb_and_14d_exact_match": true,
+      "positive_expert_contact": {
+        "left": {
+          "first_step": 773,
+          "last_step": 1585,
+          "total_contact_steps": 813,
+          "runs": 1,
+          "longest_contiguous_run": 813,
+          "final_physics_step_in_contact": true
+        },
+        "right": {
+          "first_step": 792,
+          "last_step": 1585,
+          "total_contact_steps": 794,
+          "runs": 1,
+          "longest_contiguous_run": 794,
+          "final_physics_step_in_contact": true
+        }
+      },
+      "open_grasp_failure_contact": {
+        "left": {
+          "first_step": 832,
+          "last_step": 1489,
+          "total_contact_steps": 218,
+          "runs": 8,
+          "longest_contiguous_run": 107,
+          "final_physics_step_in_contact": false
+        },
+        "right": {
+          "first_step": 1274,
+          "last_step": 1296,
+          "total_contact_steps": 11,
+          "runs": 5,
+          "longest_contiguous_run": 3,
+          "final_physics_step_in_contact": false
+        }
+      },
+      "contact_step_decrease_percent_by_side": {
+        "left": 73.186,
+        "right": 98.615
+      },
+      "positive_peak_proxy_by_finger": {
+        "fl_link7": 45.920082,
+        "fl_link8": 45.976721,
+        "fr_link7": 41.825923,
+        "fr_link8": 42.849496
+      },
+      "negative_peak_proxy_by_finger": {
+        "fl_link7": 6.166419,
+        "fl_link8": 4.039117,
+        "fr_link7": 0.0,
+        "fr_link8": 0.360264
+      }
+    }
+  ],
+  "accepted_for_expert_training": false,
+  "evaluation_claims_approved": false,
+  "caution": "Two intentionally modified, expert-preselected simulated seeds are not a task-failure rate, calibrated force, online tactile-policy test or statistical generalization claim."
+}

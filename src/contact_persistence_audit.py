@@ -43,8 +43,8 @@ def audit(repo,positive_id='relay_pickdiverse_s100000_expert0',negative_id='rela
     pcard=repo/'datasets/cards'/f'{positive_id}.json';ncard=repo/'datasets/negative_diagnostics'/f'{negative_id}.json'
     if pc!=json.loads(pcard.read_text()) or nc!=json.loads(ncard.read_text()):
         raise ValueError('source card differs from current local source bytes')
-    if pc['task']!=nc['task'] or pc['seed']!=nc['seed'] or pc['seed']!=100000:
-        raise ValueError('not matched task and physical seed')
+    if pc['task']!=nc['task'] or pc['seed']!=nc['seed'] or pc['seed'] not in (100000,100007):
+        raise ValueError('not preregistered matched task and physical seed')
     histories={}
     for role,path in (('positive_expert',pos),('controlled_negative',neg)):
         raws=[p for p in (path/'force').glob('*.jsonl') if not p.name.endswith(('.obs.jsonl','.frames.jsonl','.policy.jsonl'))]
