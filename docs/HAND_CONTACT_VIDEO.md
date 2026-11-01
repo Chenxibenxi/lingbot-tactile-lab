@@ -15,4 +15,4 @@ cd /mnt/relaydata/lingbot-tactile-lab
 CUDA_VISIBLE_DEVICES='' PYTHONPATH="$PWD/src:$PWD" /mnt/relaydata/lingbot/conda/envs/lingbot-eval310/bin/python -B src/render_hand_force_video.py --repo "$PWD" --out data/reports/another_local_hand_force_video.mp4 --fps 25
 ```
 
-实现见 [`render_hand_force_video.py`](<../src/render_hand_force_video.py>)，来源与结果见[空夹试片结果](<CONTROLLED_OPEN_GRASP_RESULT.md>)。重生成需要同机原始HDF5及接触流；只读使用CPU，不申请GPU租约、不启动Strata。若今后要画**真正投影到手上的触点热图**，现有HDF5其实有逐帧相机标定，但旧接触流缺三维触点坐标和遮挡验证，详见[空间触点补采门槛](<SPATIAL_CONTACT_VIDEO_PLAN.md>)；不得借已有标定就把本视频改口称精确触点图。
+实现见 [`render_hand_force_video.py`](<../src/render_hand_force_video.py>)，来源与结果见[空夹试片结果](<CONTROLLED_OPEN_GRASP_RESULT.md>)。重生成需要同机原始HDF5及接触流；只读使用CPU，不申请GPU租约、不启动Strata。这条旧视频的HDF5虽有逐帧相机标定，却缺三维触点坐标和遮挡验证，详见[空间触点补采门槛](<SPATIAL_CONTACT_VIDEO_PLAN.md>)；不得把它改口称精确触点图。后续另一条独立 seed100007 新试次确实另录了三维点并做[遮挡未知的二维投影回放](<SPATIAL_OPEN_GRASP_RESULT.md>)，不回填本条旧试，也不宣称可见力地图。

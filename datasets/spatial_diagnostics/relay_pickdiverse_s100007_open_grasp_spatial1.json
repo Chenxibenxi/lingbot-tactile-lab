@@ -1,0 +1,27 @@
+{
+  "schema": "lingbot_spatial_contact_diagnostic_v1",
+  "status": "private_same_run_frustum_projection_only_occlusion_unknown_not_training_or_eval",
+  "task": "pick_diverse_bottles",
+  "seed": 100007,
+  "episode": 0,
+  "source_role": "controlled_negative",
+  "source_machine_role": "relay_single_rtx3090",
+  "physics_steps": 1845,
+  "camera_frames": 138,
+  "world_contact_points_by_side": {
+    "left": 237,
+    "right": 11
+  },
+  "same_step_in_frustum_candidates_by_camera": {
+    "head_camera": 10,
+    "left_camera": 3,
+    "right_camera": 2
+  },
+  "geometry_sha256": "7412c7ebef2d0430e91f6cc534001757f042e2355f1234340eeba8e13fc047b0",
+  "parent_card_sha256": "70befc66f6bb4acce00bc03454aa5cc0a597379488cf097d5ae19b53b17ce5f9",
+  "raw_sha256": "8e668af67322617ff07b4d5be7788d72b9fdc9f93f031e63a0c85dc5883d1aae",
+  "hdf5_sha256": "0f59bee110bda460024562ae00b459ad3df336249d8606d9acf5fd910aaca405",
+  "accepted_for_expert_training": false,
+  "occlusion_validated": false,
+  "caution": "2D frustum projections are not visible finger pixels or calibrated grip forces; no model observations contain world contact positions."
+}
