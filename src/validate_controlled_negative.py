@@ -28,8 +28,13 @@ def build_card(repo,trial):
     if gate.get('schema')!='lingbot_controlled_open_grasp_gate_v1' or manifest.get('schema')!='lingbot_controlled_negative_complete_v1':
         raise ValueError('not a controlled negative source')
     if manifest.get('negative_gate_sha256')!=sha256(gate_path):raise ValueError('negative gate SHA mismatch')
+    expected={100000:'relay_pickdiverse_s100000_open_grasp1',
+              100007:'relay_pickdiverse_s100007_open_grasp_spatial1'}
+    seed=gate.get('seed')
+    if type(seed)!=int or seed not in expected or trial.name!=expected[seed]:
+        raise ValueError('controlled negative trial not among preregistered relay seeds')
     for record in (gate,manifest):
-        if (record.get('task')!='pick_diverse_bottles' or record.get('seed')!=100000 or record.get('episode')!=0 or
+        if (record.get('task')!='pick_diverse_bottles' or record.get('seed')!=seed or record.get('episode')!=0 or
             record.get('source_machine_role')!='relay_single_rtx3090' or record.get('source_hostname')!=socket.gethostname() or
             record.get('planner_ok') is not True or record.get('goal_ok') is not False or
             record.get('intervened_grasps')!=2 or record.get('accepted_for_expert_training') is not False):
@@ -41,8 +46,17 @@ def build_card(repo,trial):
     raw=raws[0];obs=raw.with_suffix('.obs.jsonl');frames=raw.with_suffix('.frames.jsonl')
     hdf5=trial/'demonstration/data/episode0.hdf5'
     current=validate(raw,obs,frames,hdf5)  # source RGB/timeline/command validation, no positive completion
-    if gate.get('source_sha256')!={k:current['sha256'][k] for k in ('raw','obs','frames')}:
-        raise ValueError('negative gate raw stream SHA mismatch')
+    spatial=seed==100007
+    if spatial:
+        from validate_contact_geometry import validate_pair
+        geometry=trial/'geometry'/f'{raw.stem}.geometry.jsonl'
+        validate_pair(raw,geometry)
+        current['sha256']['geometry']=sha256(geometry)
+    elif (trial/'geometry').exists():
+        raise ValueError('old negative must not be silently assigned geometry')
+    source_names=('raw','obs','frames','geometry') if spatial else ('raw','obs','frames')
+    if gate.get('source_sha256')!={k:current['sha256'][k] for k in source_names}:
+        raise ValueError('negative gate raw/spatial stream SHA mismatch')
     for name in ('task','seed','episode','physics_steps','camera_observations','saved_frames','dt_s','saved_first_step','saved_last_step','sha256'):
         if manifest.get(name)!=current[name]:raise ValueError(f'negative manifest {name} differs from source bytes')
     if gate.get('saved_frame_markers')!=current['saved_frames']:
@@ -56,7 +70,7 @@ def build_card(repo,trial):
             'trial_id':trial.name,'source_machine_role':'relay_single_rtx3090',
             'task':current['task'],'seed':current['seed'],'episode':current['episode'],
             'perturbation':'simulation_only_two_grasp_targets_open',
-            'matched_positive_seed':100000,'planner_ok':True,'goal_ok':False,
+            'matched_positive_seed':seed,'planner_ok':True,'goal_ok':False,
             'physics_steps':current['physics_steps'],'saved_frames':current['saved_frames'],
             'contact_physics_steps_by_side':contacts,
             'observed_any_contact':any(contacts.values()),

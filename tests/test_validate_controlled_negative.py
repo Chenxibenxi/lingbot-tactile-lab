@@ -11,7 +11,7 @@ from validate_controlled_negative import build_card,sha256
 class ControlledNegativeCardTest(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
-        self.repo=Path(self.tmp.name);self.trial=self.repo/'data/negative/open_grasp'
+        self.repo=Path(self.tmp.name);self.trial=self.repo/'data/negative/relay_pickdiverse_s100000_open_grasp1'
         (self.trial/'force').mkdir(parents=True)
         (self.trial/'demonstration/data').mkdir(parents=True)
         self.raw=self.trial/'force/trial.jsonl';self.obs=self.raw.with_suffix('.obs.jsonl');self.frames=self.raw.with_suffix('.frames.jsonl')
@@ -59,6 +59,27 @@ class ControlledNegativeCardTest(unittest.TestCase):
         (self.trial/'negative_completion.json').write_text(json.dumps(self.manifest))
         (self.trial/'completion.json').write_text('{}')
         with self.assertRaisesRegex(ValueError,'positive expert completion forbidden'):self.verify()
+
+    def test_spatial_seed_new_gate_binds_geometry_without_changing_old_card(self):
+        new=self.trial.with_name('relay_pickdiverse_s100007_open_grasp_spatial1')
+        self.trial.rename(new);self.trial=new
+        self.raw=new/'force/trial.jsonl';self.gate_path=new/'negative_gate.json'
+        geo=new/'geometry/trial.geometry.jsonl';geo.parent.mkdir()
+        geo.write_text('private spatial points')
+        for row in (self.gate,self.manifest,self.current):row['seed']=100007
+        self.gate['source_sha256']['geometry']=sha256(geo)
+        self.manifest['sha256']['geometry']=sha256(geo)
+        self.gate_path.write_text(json.dumps(self.gate))
+        self.manifest['negative_gate_sha256']=sha256(self.gate_path)
+        (new/'negative_completion.json').write_text(json.dumps(self.manifest))
+        with patch('validate_contact_geometry.validate_pair') as points:
+            c=self.verify()
+            self.assertEqual(c['matched_positive_seed'],100007)
+            self.assertEqual(c['source_sha256']['geometry'],sha256(geo))
+            self.assertEqual(points.call_count,1)
+            geo.write_text('tampered spatial points')
+            with self.assertRaisesRegex(ValueError,'SHA mismatch'):
+                self.verify()
 
 
 if __name__=='__main__':unittest.main()

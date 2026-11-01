@@ -22,12 +22,18 @@ def main():
     p.add_argument('--episode',type=int,default=0)
     p.add_argument('--task',choices=['pick_diverse_bottles'],required=True)
     args=p.parse_args()
-    if args.seed!=100000 or args.episode!=0:
-        raise ValueError('bounded intervention only supports paired positive seed100000 episode0')
+    if args.seed not in (100000,100007) or args.episode!=0:
+        raise ValueError('bounded intervention only supports preregistered relay seeds episode0')
     base=Path('/mnt/relaydata/lingbot-tactile-lab').resolve(strict=True)
     output=args.out.resolve()
-    if output.parent!=base/'data/negative' or output.exists():
-        raise ValueError('fresh isolated data/negative trial required')
+    allowed={100000:'relay_pickdiverse_s100000_open_grasp1',
+             100007:'relay_pickdiverse_s100007_open_grasp_spatial1'}
+    if output.parent!=base/'data/negative' or output.name!=allowed[args.seed] or output.exists():
+        raise ValueError('fresh preregistered isolated data/negative trial required')
+    spatial=args.seed==100007
+    expected_geometry=str(output/'geometry') if spatial else None
+    if os.environ.get('TACTILE_CONTACT_GEOMETRY_DIR')!=expected_geometry:
+        raise ValueError('spatial world contact opt-in must match only the preregistered new trial')
     overlay=Path.cwd().resolve(strict=True)
     if (overlay/'envs/_base_task.py').is_symlink() or 'record_saved_frame' not in (overlay/'envs/_base_task.py').read_text():
         raise ValueError('private instrumented expert overlay required')
@@ -65,6 +71,13 @@ def main():
         source={key:sha256(path) for key,path in
                 (('raw',raw),('obs',raw.with_suffix('.obs.jsonl')),
                  ('frames',raw.with_suffix('.frames.jsonl')))}
+        geometry=output/'geometry'/f'{raw.stem}.geometry.jsonl'
+        if spatial:
+            from validate_contact_geometry import validate_pair
+            pair=validate_pair(raw,geometry)
+            if pair['steps']<=0:
+                raise ValueError('spatial geometry did not cover this physics run')
+            source['geometry']=sha256(geometry)
         gate={'schema':'lingbot_controlled_open_grasp_gate_v1',
               'status':'controlled_negative_not_training_approved',
               'task':args.task,'seed':args.seed,'episode':args.episode,
@@ -77,6 +90,10 @@ def main():
         robot.merge_pkl_to_hdf5_video()  # same-run private cache, but *no* success completion
         hdf5=output/'demonstration/data'/f'episode{args.episode}.hdf5'
         checked=validate(raw,raw.with_suffix('.obs.jsonl'),raw.with_suffix('.frames.jsonl'),hdf5)
+        if spatial:
+            from validate_contact_geometry import validate_pair
+            validate_pair(raw,geometry)
+            checked['sha256']['geometry']=sha256(geometry)
         _,*physics=read_jsonl(raw)
         contacts={side:sum(int(r[side]['points']>0) for r in physics) for side in ('left','right')}
         manifest={'schema':'lingbot_controlled_negative_complete_v1',
