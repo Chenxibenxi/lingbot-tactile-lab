@@ -41,15 +41,18 @@ def gripper_links(robot):
     return result
 
 
-def sample_contacts(scene, links, dt, *, min_impulse=1e-9, robot_links=()):
-    """Return per-arm summed |impulse|/dt proxy plus signed world-frame impulse.
+def sample_contacts(scene, links, dt, *, min_impulse=1e-9, robot_links=(), geometry_sink=None):
+    """Return per-arm proxy; optionally emit PRIVATE world points to a separate sink.
 
     SAPIEN documents point.impulse as impulse *on contact.bodies[0]*; sign is
     reversed for bodies[1]. Magnitudes sum over finger points to avoid opposite
     fingers canceling, but MUST NOT be interpreted as calibrated grasp normal N.
+    geometry_sink is opt-in post-hoc diagnostic only, NEVER model observation.
     """
     if not math.isfinite(dt) or dt <= 0:
         raise ValueError("positive physics timestep required")
+    if geometry_sink is not None and not isinstance(geometry_sink,list):
+        raise TypeError("private geometry sink must be a list")
     labels = {name: side for side, names in links.items() for name in names}
     sides = {side: {"contacts": 0, "points": 0, "impulse_magnitude_ns": 0.0,
                     "load_proxy_n": 0.0, "net_impulse_world_ns": [0.0, 0.0, 0.0],
@@ -61,7 +64,7 @@ def sample_contacts(scene, links, dt, *, min_impulse=1e-9, robot_links=()):
     objects = {side: set() for side in sides}
     finger_objects = {name: set() for names in links.values() for name in names}
     robot_links = set(robot_links)
-    # Avoid collecting privileged contact geometry as a model input; telemetry only.
+    # Do not feed privileged world contact geometry to the model or raw force stream.
     for contact in scene.get_contacts():
         a, b = (_name(body) for body in contact.bodies)
         side_a, side_b = labels.get(a), labels.get(b)
@@ -82,6 +85,12 @@ def sample_contacts(scene, links, dt, *, min_impulse=1e-9, robot_links=()):
             magnitude = math.sqrt(sum(x * x for x in impulse))
             if magnitude <= min_impulse:
                 continue
+            if geometry_sink is not None:
+                position = _xyz(getattr(point, "position", None))
+                if position is None:
+                    raise RuntimeError("opt-in spatial contact point lacks finite world position")
+                geometry_sink.append({"side": side, "finger": finger_name,
+                    "position_world_m": position, "load_proxy_n": magnitude / dt})
             active += 1
             record["points"] += 1
             record["impulse_magnitude_ns"] += magnitude
@@ -117,10 +126,33 @@ class ForceProbe:
         if self.dt <= 0 or not math.isfinite(self.dt):
             raise ValueError("Invalid scene timestep")
         self.output_dir = Path(output_dir)
+        expert_commands_dir = os.environ.get('TACTILE_EXPERT_COMMANDS_DIR')
+        self._expert_commands_dir = None
+        self._commands = None
+        if expert_commands_dir is not None:
+            requested = Path(expert_commands_dir)
+            expert_source = os.environ.get('FORCE_PROBE_EXPERT_DIR')
+            if (not requested.is_absolute() or requested.name != 'commands' or
+                    self.output_dir.name != 'force' or
+                    requested.resolve(strict=False).parent != self.output_dir.resolve(strict=False).parent or
+                    not expert_source or Path(expert_source).resolve(strict=False) != self.output_dir.resolve(strict=False) or
+                    os.environ.get('TACTILE_SOURCE_MACHINE_ROLE') != 'relay_single_rtx3090'):
+                raise ValueError('private expert commands require relay trial/commands beside FORCE_PROBE_EXPERT_DIR')
+            self._expert_commands_dir = requested
+        geometry_dir = os.environ.get("TACTILE_CONTACT_GEOMETRY_DIR")
+        self._geometry_dir = None
+        if geometry_dir is not None:
+            requested = Path(geometry_dir)
+            if (not requested.is_absolute() or requested.name != "geometry" or
+                    self.output_dir.name != "force" or
+                    requested.resolve(strict=False).parent != self.output_dir.resolve(strict=False).parent):
+                raise ValueError("private geometry must be an absolute sibling trial/geometry beside trial/force")
+            self._geometry_dir = requested
         self.task, self.seed, self.episode = str(task), int(seed), int(episode)
         self.step = 0
         self.last = None
         self._file = None
+        self._geometry_file = None
         self._obs_file = None
         self._frame_file = None
         self._policy_file = None
@@ -153,6 +185,24 @@ class ForceProbe:
             "clock_origin": self.clock_origin,
             "side_links": {s: sorted(v) for s, v in self.links.items()},
             "meaning": "physx contact impulse/dt proxy; not GelSight; not calibrated grip force"}) + "\n")
+        if self._expert_commands_dir is not None:
+            from expert_command_timeline import ExpertCommandTimeline
+            self._commands = ExpertCommandTimeline(Path(self._file.name), self._expert_commands_dir,
+                task=self.task, seed=self.seed, episode=self.episode, dt_s=self.dt,
+                clock_origin=self.clock_origin)
+
+    def _ensure_geometry_file(self):
+        if self._geometry_dir is None or self._geometry_file is not None:
+            return
+        self._ensure_file()
+        self._geometry_dir.mkdir(parents=True, exist_ok=True)
+        raw = Path(self._file.name)
+        path = self._geometry_dir / f"{raw.stem}.geometry.jsonl"
+        self._geometry_file = path.open("x", encoding="utf-8")
+        self._geometry_file.write(json.dumps({"schema":"lingbot_private_contact_geometry_v1",
+            "probe_file":raw.name,"task":self.task,"seed":self.seed,"episode":self.episode,
+            "dt_s":self.dt,"clock_origin":self.clock_origin,
+            "meaning":"private post-hoc world point positions; not model observation; not calibrated force"}) + "\n")
 
     @property
     def failed(self):
@@ -176,17 +226,29 @@ class ForceProbe:
         if self._failed:
             return
         try:
-            data = sample_contacts(scene, self.links, self.dt, robot_links=self.robot_links)
+            geometry = [] if self._geometry_dir is not None else None
+            data = sample_contacts(scene, self.links, self.dt, robot_links=self.robot_links,
+                                   geometry_sink=geometry)
             self._ensure_file()
             self.step += 1
             self.last = {"physics_step": self.step, "sim_time_s": round(self.step * self.dt, 8),
                 "action_index": int(action_index), "motion_index": self.motion_index,
                 "motion_phase": self.motion_phase, "left": data["left"], "right": data["right"]}
             self._file.write(json.dumps(self.last, allow_nan=False) + "\n")
+            if self._commands is not None:
+                self._commands.write_after_step(self.step, robot,
+                    action_index=int(action_index), motion_index=self.motion_index,
+                    motion_phase=self.motion_phase)
+            if geometry is not None:
+                self._ensure_geometry_file()
+                self._geometry_file.write(json.dumps({"physics_step":self.step,
+                    "points":geometry}, allow_nan=False) + "\n")
             if self._live is not None:
                 self._live.push(self.last)
             if self.step % 250 == 0:
                 self._file.flush()
+                if self._geometry_file is not None:
+                    self._geometry_file.flush()
         except Exception as exc:
             # Probe failures do not alter simulation/evaluation but remain observable.
             self._failed = True
@@ -301,6 +363,12 @@ class ForceProbe:
                 "right_contact": self.last["right"]["points"] > 0}
 
     def close(self):
+        if self._commands is not None:
+            self._commands.close()
+            self._commands = None
+        if self._geometry_file is not None:
+            self._geometry_file.close()
+            self._geometry_file = None
         if self._policy_file is not None:
             self._policy_file.close()
             self._policy_file = None

@@ -106,6 +106,25 @@ def validate(raw, obs, frames, hdf5, completion=None):
                     gate.get("episode")!=rh["episode"] or gate.get("saved_frame_markers")!=len(ff)-1 or
                     gate.get("source_sha256")!={key:hashes[key] for key in ("raw","obs","frames")}):
                 raise ValueError("relay expert success gate identity/physics hashes invalid")
+            optional=manifest.get('command_timeline')
+            if optional is not None or gate.get('command_timeline_sha256') is not None:
+                if (not isinstance(optional,dict) or
+                        optional.get('schema')!='lingbot_expert_command_timeline_audit_v1' or
+                        optional.get('status')!='source_checked_not_training_approved'):
+                    raise ValueError('relay per-step command timeline missing or unverified')
+                from expert_command_timeline import validate_commands
+                command_path=raw.parent.parent/'commands'/f'{raw.stem}.commands.jsonl'
+                report=validate_commands(raw,frames,command_path)
+                if (report['source_sha256']['raw']!=hashes['raw'] or
+                        report['source_sha256']['frames']!=hashes['frames'] or
+                        report['source_sha256']['commands']!=optional.get('sha256') or
+                        gate.get('command_timeline_sha256')!=optional.get('sha256') or
+                        optional.get('physics_steps')!=report['physics_steps'] or
+                        optional.get('initial_frames_without_instrumented_command')!=
+                        report['initial_frames_without_instrumented_command']):
+                    raise ValueError('relay per-step command timeline SHA or counts mismatch')
+        elif manifest.get('command_timeline') is not None:
+            raise ValueError('non-relay expert cannot claim relay command timeline')
     return {"task":rh["task"],"seed":rh["seed"],"episode":rh["episode"],"physics_steps":len(rr)-1,
             "camera_observations":len(oo)-1,"saved_frames":len(ff)-1,"dt_s":dt,
             "saved_first_step":ff[1]["physics_step"],"saved_last_step":ff[-1]["physics_step"],"sha256":hashes}

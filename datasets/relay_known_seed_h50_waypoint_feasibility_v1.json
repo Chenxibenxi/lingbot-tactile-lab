@@ -1,0 +1,14 @@
+{
+  "schema": "lingbot_policy_controller_technical_waypoint_proposal_v1",
+  "status": "not_executed_not_action_labels_not_training_approved",
+  "source_role": "same_seed_technical_replay_only_not_independent_training",
+  "source_raw_sha256": "ce081368ce81fb2b92526c9d15871c433a14cce995fdb1b0d44e01f6bfc08bb0",
+  "source_command_sha256": "6f2840d1bfeab09e6b606e3122aeacf952780dce8983626dcc04c039ab664e70",
+  "recorded_physics_steps": 1582,
+  "fixed_proposal_stride_ticks": 25,
+  "proposed_waypoint_count": 64,
+  "actual_take_action_calls": 0,
+  "known_seed_replay_is_independent_seed": false,
+  "training_approval": false,
+  "warning": "64 are technical qpos waypoint proposals from one previously successful dense planner trace, not 64 actually executed Base_Task.take_action calls or approved H50 action labels. Real controlled replay may fail or yield fewer than 50 valid actions."
+}

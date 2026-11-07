@@ -1,0 +1,5 @@
+# 真实LingBotV2类空权重实例成功：原视觉检查点1,624个键／形状全部匹配（绝非加载或训练）
+
+按[运行前冻结的安全方案](<REAL_VLA_META_PROBE_PLAN_ZH.md>)，在本机唯一RTX3090空闲、Strata用户停机且取得interactive租约后，使用原154800训练配置＋本机已验证Qwen3-VL路径、隔离生成的[FlowMatchingV2触觉源码补丁](<../src/patch_model_v2.py>)，实际**导入并构造`LingbotVlaV2Policy`**，但所有参数仅在`torch.device('meta')`；未读取任一权重数值、未向GPU分配任何模型张量。构造完成后，用[严格元参数与权重头部键形状门](<../src/vla_meta_shape_gate.py>)核对原六分片index的1,624个键：**全部逐键／逐形状匹配**、meta张量没有泄出、PyTorch报告GPU allocated=0B。完成后GPU租约释放且Strata仍停机；上游LingBot model源码SHA保持`9b3c9a2a…`，生成源码私有`work/real_v2_meta_preview.py` SHA`a80be3e9…`。脱敏来源和结果见[元模型审计卡](<../datasets/relay_v2_real_meta_key_shape_audit_v1.json>)。
+
+**仍未完成的实门**：这只确认旧视觉模型**结构**与原权重一致，`full_visual_checkpoint_loaded=false`、`training_approval=false`；原deploy会把约23.2GiB FP32分片合并后严格加载，而当时可用主存约11–12GiB，已被[原加载器RAM门](<REAL_VLA_MEMORY_PREFLIGHT_ZH.md>)拒绝。下步仅能先开发可复核的逐分片**值**复制/严格全键验证方案和BF16内存限额，严格保存原模型的样本/数值行为；随后才有租约下真实全模型装载及1-batch `forward`/`sample_actions`数值恒等、非零adapter反传/显存峰值。当前数据仍只有保存帧H16部分可校对而原H50训练+验证不足、正式provenance/norm未批准，不能因为元模型“对上1,624键”就宣布真实触觉VLA已训练或触觉闭环有效。

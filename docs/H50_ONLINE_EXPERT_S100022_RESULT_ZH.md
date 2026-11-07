@@ -1,0 +1,7 @@
+# 新seed100022真实在线专家试采：任务成功，只有46次高层动作，**H50数据门未过**
+
+按用户批准的[唯一一次新seed/10,000物理步/900秒预算](<H50_ONLINE_EXPERT_S100022_PILOT_PLAN_ZH.md>)，先由用户在工作台停止GPU后端；代理独立复核本机唯一3090无compute/free约23.9GiB、租约free、三个原RoboTwin源码SHA未变、全新试验目录不存在、隔离overlay与私有ffmpeg可用。持独占交互租约后，在**seed100022全新真实回合**调用原任务的在线双臂阶段规则，生成每阶段当前场景的关节目标，逐条经真正`Base_Task.take_action(qpos)`执行；相机每条前拍，真实物理时钟与执行后关节误差旁路侧录。任务在第**46**条真实动作/第**5,688**个物理步**提前通过原双瓶`check_success`**（planner_ok=true、goal_ok=true），没到10,000步上限；46条动作按抓29、抬9、送8分布，最大实测关节与命令绝对偏差约**0.08306**（仅关节坐标差，不能解释为末端位置误差、标定夹力或安全证明）。原始raw物理5,688步/46个当前回合相机标记与46条高层动作起止步逐一匹配且严格连续。
+
+**为何“任务成功”却按规则拒绝训练数据？** 我们选择的原VLA H50语义是**在一个有过去触觉、当前照片的观察时刻后，至少50条连续真正`take_action`高层动作**。新回合在**46条**就成功并提前停止，少4条；不能把原`move`逐物理步、旧100013种子的64技术路标或“再晃几次机械臂”拼成标签。因此此次`failure.json`是**H50长度门的阴性证据，不是抓瓶任务失败**；新试验明确`candidate_h50_call_count_sufficient=false`、`training_approval=false`，**没有写专家HDF5/成功completion/专家candidate card**，注册表仍空。旧已知seed100013的56条技术回放虽然长度够且任务成功，却是从过去的dense轨迹下采样提议，不是新在线规则专家；两者不能互相接力或充作两个合格seed。新seed100022唯一试采已消费，原私有数据/失败卡保留，**不换ID重试此seed、不提前补动作、不把触觉代理力误报为实测抓力**。
+
+[脱敏SHA结果卡](<../datasets/relay_online_expert_s100022_h50_short_v1.json>)绑定仅本机忽略目录`data/paired/relay_pickdiverse_s100022_online_h50_expert0/`的raw/obs/frames/online_actions/pilot_result/rejection六个文件；完整14D、图像、夹爪接触不入Git。作业退出钩子在仍持自身GPU租约时通过**原工作台**`:8077/api/strata/start`只恢复一次Strata，确认`:8080/health loaded=true`后释放租约。当前**并无足够H50训练/验证数据、已批准训练norm、真实adapter训练forward/backward、触觉RPC或同数据视觉/触觉增益结论**；[零基础中文动作生成说明](<H50_ONLINE_EXPERT_BEGINNER_ZH.md>)仍有效，新增本条真回合阴性验证作为其已知缺陷实例。

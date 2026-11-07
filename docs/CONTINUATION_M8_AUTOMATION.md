@@ -1,0 +1,27 @@
+# M8 自动化衔接记录
+
+恢复自动衔接已启用：data/reports/recovery_development_v1/manifest.json冻结了协议、代码与资产清单，17项recovery测试+2项报告测试通过。禁止静默改这些源文件。work/continue_recovery_after_m8.py已启动PID337775，实际存活且日志无错；等待M8 supervisor331175的continuation_result.json成功及M8最终汇总存在，再核对recovery所有SHA启动唯一8回合batch。不会抢占当前GPU或启动Strata。日志在recovery_development_v1/continuation.log，未来queue.log/queue_process.json/queue_result.json。尚未执行任何真实恢复回合。
+
+自动时长报告：首项r0/zero已完成2880，覆盖402/402窗口，队列已进入r0/true（训练PID333736，启动shell333731）。report_m8_duration_curves.py已生成并实际查看duration_r0_zero/report.md和duration_curve.png：非接触离线误差随步数下降，接触误差未持续下降，仅为单条件单重复描述。CPU独立worker work/watch_m8_duration_reports.py 已启动PID334984，核验completed阶段产物SHA后为全部12任务自动生成时长曲线，状态duration_reports_status.json，日志duration_reports.log；不修改冻结训练/评测代码，不使用GPU。它已确认r0_zero报告有效。原训练scheduler329549及衔接器331175仍在运行，当前不得重复启动。
+
+恢复分支最新：已保留开发seed100119–100122，协议RECOVERY_DEVELOPMENT_PROTOCOL_V1_ZH.md及datasets/recovery_development_reservations_v1.json，GPU执行未启用。record_recovery_development.py初版接入当前场景专家、一次左开爪干预、逐动作fsync日志、同源时钟及validate_expert_data。返回recovery_development_complete_v1且training_approval=False，不伪装成可直接训练的传统expert完成标记；其执行前清单尚不存在，禁止运行。report_recovery_development.py生成动作/接触图及可用相机帧，失败报告保留未知终态和未确认动作，不报告活回合。恢复接口相关12项测试、报告2项测试通过；仍需图表实际QA、真实记录器端到端模拟验证、开发配对汇总与完整源pin。当前M8第一任务已完成720和1440，仍未看到2880完成标记；不要修改冻结M8源。
+
+更新：r0/zero的720节点已完成，日志NODE_COMPLETE zero 0 720，结果位于data/reports/cwmj_m8_training_r0_zero/step_720/result.json，意味着运行时历史权重张量和验证输出严格复现门已通过；之后仍由队列继续。独立恢复分支新增recovery_expert_executor.py和3项模拟执行器测试，连同4项标签测试共7项通过；尚未GPU执行，详见RECOVERY_DATA_CONTRACT_ZH.md。不改M8冻结源或输入。
+
+最新状态（后面的段落是实施历史）：384条合成回合汇总测试已通过，覆盖配对漂移整seed排除与缺失阻断，合成矩阵已实际查看，保存在work/m8_batch_synthetic_qa（不是真实实验）。共16项M8统计/完整性/配对/汇总、duration随机流、Strata模拟接口测试通过。评测源码锁定于data/reports/cwmj_m8/evaluation_code_lock.json，现已禁止修改这些文件。自动衔接器work/continue_m8_after_training.py已启动，PID331175，实际进程已确认；等待原训练scheduler329549的完整终态，逐项核验所有阶段结果SHA后启动唯一评测批队列。若训练进程退出或失败则停止，不重启。日志continuation.log和结果continuation_result.json。最后确认训练PID329576仍存活，elapsed08:54。尚无真实M8闭环结果，Strata也未真实调用。接下来应检查阶段完成/异常，不反复逐回合云端看图；保持冻结源文件不变。若确需修复必须先核对活进程，另立审计版本，不能静默改pin。
+
+2026-11-07：用户要求训练、评测自动执行，每回合保存图文，再由本地 Strata 分析，以减少云端重复查看。不得自动重启 Strata 的既有约束仍有效。此前健康检查本地 8080 连接拒绝，分析尚未实际调用。
+
+训练协议已冻结于 CWMJ_M8_FROZEN_PROTOCOL_ZH.md，数据/代码清单为 data/reports/cwmj_m8/training_manifest.json（SHA 49d299b7da7c6bac9720b029387fd80622edb772b530fd23bd27369c5342951e）。这些文件和新训练 runner、reporter、duration contract、research_queue、启动脚本已固定，运行中不可修改。12任务自动训练队列于20:36启动，scheduler PID 329549，首个训练 PID 329576；重入必须检查真实进程与日志，不凭本记录重启。队列状态在 data/reports/cwmj_m8/training_queue_state。每项720/1440/2880输出独立图文，720严格复现历史权重及验证结果方可继续。
+
+已通过两项随机流恢复/采样前缀测试，自动报告合成布局已实际查看（work/m8_report_synthetic_qa，非新实验结果）。m8_paired_seed_statistics.py 实现预注册三个对比及Holm，四项测试通过：共同学习不冒充独有触觉收益、真实交互检出、已有优势不冒充时长效果、缺失/样本不足约束。
+
+闭环实施尚未完成，不能自动启动评测：新 runner、verifier、逐回合 reporter、跨节点初态配对审计已编写；仍需补齐384回合批队列、启动器、冻结清单生成器、完整性/异常审计、汇总图文与相应测试。verifier 当前要求这些文件的完整SHA清单，因此没有清单不能评测。复用的 M7 技术审计及其依赖也须加入闭环代码pin集合，当前FILES还需补齐。16个新seed100103–100118已登记为保留测试，禁止训练/验证使用。
+
+Strata客户端 src/strata_research_analysis.py 只访问已加载服务；输入图文SHA和原响应留档，失败不伪造结论。尚需接入自己的租约、批处理待办、失败/部分响应处理测试，且等待实际服务可用后验证图像接口。不要将未执行的Strata分析报告为完成。
+
+研究总体未完成：M8训练及闭环未结束，恢复监督仅有CPU契约，受控反馈频率实验尚未实施。原实验与checkpoint只读，不按结果正负决定完成。
+
+后续进展：已新增 M8 completion inventory、两项完整性测试、完整汇总报告器、训练完成后冻结评测清单的prepare程序、评测启动器及384回合串行队列。M8统计+完整性共6项测试通过；新程序语法检查通过。仍未启动评测，也未冻结评测代码。下一步需要端到端合成数据测试（包括HDF5配对、报告、错误分支）、审查遗漏的依赖pins、训练结束衔接评测的自动等待器，以及真正接入Strata待办。不要将语法检查或六项单元测试解释为384回合流水线已验证。
+
+继续进展：新增3项真实临时HDF5配对测试（共9项M8测试通过），检测跨节点相机漂移、遗漏/混用节点、初窗valid和首10动作不一致。Strata客户端增加自有租约和仅释放本进程租约检查，3项模拟接口测试通过；未调用实际模型。queue_strata_m8_analysis.py 将逐回合图文及SHA登记为不可改写待办，评测队列每回合只登记、全部评测结束后再尝试分析，服务关闭则返回等待状态。这些分析文件已纳入评测待冻结文件集合。仍需汇总报告端到端合成测试及自动衔接器，未启动评测。

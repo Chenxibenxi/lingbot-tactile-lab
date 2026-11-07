@@ -1,0 +1,7 @@
+# 已知seed原`take_action`机械试验：**54条真实高层调用但任务未成功，H50训练样本仍0**
+
+2026-11-02 用户明确“启动”，按[有界技术方案](<H50_TECHNICAL_CONTROLLER_RUN_PLAN_ZH.md>)仅在本机单RTX3090检查Strata 0 busy/0 queued、lease free、原始RoboTwin `_base_task.py` SHA不变后，独占GPU租约TTL1500，原子`/v1/unload`空闲Strata并暂时stop systemd服务；在隔离[原源码SHA守门overlay](<../src/patch_policy_equivalent_expert_overlay.py>)里新建一次双瓶已知seed100013**独立的技术输出根**。原同seed成功旧轨迹的[64个路标](<H50_POLICY_REPLAY_TECHNICAL_FEASIBILITY_ZH.md>)只当控制提议，用真实`Base_Task.take_action(qpos)`执行；每条之前在**新回合**存当前相机/状态marker，之后记该条实际控制before/after物理区间和新run接触。没有粘贴旧回合图像/触觉/HDF5，也没有保存“训练成功”卡。
+
+实际后台作业**exit7（技术目标未过，不是GPU错误）**：发出了**54次真正的`take_action`**，对应新回合**6,018个连续物理步**和**54帧同回合相机marker**；每一帧步号与后续动作起点相等、每个动作的结束步恰等下一动作的起点，全部raw物理行`motion_phase=policy_action`。一次动作历时22–217物理步、中位109.5；原先设6,000物理步上限，**第54个不可拆开的动作从5,841执行到6,018**后超界18步，立刻停，不启动第55条。实际左右接触步1,916/2,136（最早4,103/3,452步），代理峰值80.476/94.769 N仅冲量÷dt，**不是标定夹持力**。`check_success=false`、没有通过完整规则专家规划/成功门，也没有本回合专家HDF5/completion；所以“超过50次调用”**不能**当50个有效H50监督窗口，`eligible_h50_windows_verified=0`，不能据此调高上限刷成功、回填旧轨迹或计新独立seed。私有逐条14D与相机/力JSONL只在git忽略`data/technical_replay/`，对外仅[脱敏失败证据卡](<../datasets/relay_known_seed_h50_controller_technical_result_v1.json>)绑定五个源SHA。
+
+退出钩子验Strata重启后systemd **active+enabled**、`:8080/health loaded=true`、本人GPU租约释放；原RoboTwin源码SHA仍`448f7152…`，研究仓无权重或私有向量提交。**结论为控制路径在这条技术回放中机械可执行54次但未实现任务**，不是触觉VLA的失败率或提升测量。当前原`take_action`路线的训练/验证数据仍**0份获批**、归一化审批false；已真实载旧VLA并做未训练零adapter同批视觉恒等不能替代专家成功与H50标签。下一步先只读诊断任务失败发生于接触/抬升/放置哪个阶段、重规划与原规则控制差异；无新增人审方案不自动换seed或增加物理上限重跑，正式adapter训练forward/backward/optimizer和RPC能力继续禁止。

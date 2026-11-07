@@ -16,14 +16,15 @@ from validate_expert_data import read_jsonl,sha256
 from validate_policy_trace import validate as validate_trace
 
 
-def validate(raw,obs,policy,hdf5):
+def validate(raw,obs,policy,hdf5, *, allow_policy_calls_on_expert_overlay=False):
     raw,obs,policy,hdf5=map(Path,(raw,obs,policy,hdf5))
-    trace=validate_trace(raw,obs,policy)
+    trace=validate_trace(raw,obs,policy,allow_policy_calls_on_expert_overlay=allow_policy_calls_on_expert_overlay)
     req=read_jsonl(policy)[1:]
     markers=read_jsonl(obs)[1:]
     byobs={row['obs_index']:row for row in markers}
     windows={w['observation_marker_index']:w for w in align(raw,obs)}
-    last_raw_step=read_jsonl(raw)[-1]['physics_step']
+    physics_rows=read_jsonl(raw)
+    last_raw_step=physics_rows[-1]['physics_step']
     with h5py.File(hdf5,'r') as f:
         if (f.attrs.get('schema')!='phizju_policy_rollout_capture_v1' or
                 'not_expert_or_training_approved' not in f.attrs.get('target_semantics','') or
@@ -71,6 +72,10 @@ def validate(raw,obs,policy,hdf5):
                 raise ValueError('applied actions are not causal or mapped to requests')
             if i and index<int(f['applied/request_index'][i-1]):
                 raise ValueError('applied request order regressed')
+            if allow_policy_calls_on_expert_overlay and any(
+                    row.get('action_index')!=i+1 or row.get('motion_phase')!='policy_action'
+                    for row in physics_rows[before+1:after+1]):
+                raise ValueError('expert-overlay physics does not match actual policy call')
             per_request[index]+=1;last_end=after
         if any(not count for count in per_request):
             raise ValueError('policy request has no actually applied action')

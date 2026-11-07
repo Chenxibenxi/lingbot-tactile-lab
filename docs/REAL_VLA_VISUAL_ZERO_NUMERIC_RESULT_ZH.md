@@ -1,0 +1,7 @@
+# 真实LingBot-VLA/Qwen3-VL `sample_actions`：视觉与零触觉输入逐值完全相同（不是触觉增益）
+
+按[先行冻结的同批协议](<REAL_VLA_VISUAL_ZERO_NUMERIC_PLAN_ZH.md>)，本机单张RTX3090在Strata无请求/无排队、独占GPU租约下，将原154800视觉FP32六片重新逐片SHA校验、严格复制全**1,624个权重键**到隔离patched V2 BF16实例，旧视觉基座冻结，仅内层挂未训练的**65,664参数零输出adapter**。输入并非合成图像：严格取本机relay已SHA登记的`lift_pot`**训练折**规则专家seed100000同回合首个因果完整观测（第3帧/物理步31），原HDF5三摄RGB/当前14D状态/过去接触历史由原Qwen处理器与原视觉归一化映射；没有读取测试专家图像或将未来动作、未来触觉作为模型输入。为有界诊断只用**2次去噪步**，固定noise seed97021，两次分别新clone噪声，跑同一完整Qwen视觉编码与`FlowMatchingV2.sample_actions`：①不传触觉；②传该训练观测的因果过去触觉＋尚未训练的零adapter。真实GPU输出均(1,50,55)，**bitwise_equal=true，max_abs_difference=0.0**；PyTorch已分配显存峰值 **12,714,793,984字节≈11.84GiB**。脱敏结果见[真实数值恒等卡](<../datasets/relay_v2_real_visual_zero_identity_v1.json>)；未保存RGB/动作数值或新权重到仓。
+
+实际作业`exit0`、退出钩子后Strata服务**systemd active+enabled**且`:8080/health loaded=true`、独占lease释放，原LingBot模型源码SHA仍`9b3c9a2a…`；全库**181/181 CPU**回归在GPU运行前通过。[上一阶段旧视觉完整载入证据](<REAL_VLA_BF16_LOAD_RESULT_ZH.md>)与本次**真实`sample_actions`前向**分开登记，不把BF16模型加载或CPU小Qwen桩当作数值测试。
+
+**严格边界：**证明的是在这一个训练折RGB/状态和固定noise、2步诊断条件下，“**未训练的零触觉**”没有改变动作预测；不是训练后的触觉提升，更不是RPC能力/推理服务端部署/官方闭环任务成功率。没有训练`forward`、loss/backward/optimizer及真实adapter checkpoint；目前[训练审阅门](<TRAINING_REVIEW_GATE_ZH.md>)仍`approved_paired_episodes=[]`、norm候选`training_approval=false`，原H50专家物理时钟train/validation支持不足，不能以真实视觉前向已通过为由启动触觉拟合或广告`tactile_v1`。下一道门是审批通过的同回合动作chunk/归一化，再按显存测单batch真实训练forward+adapter非零梯度、经审查的真实服务RPC及同数据视觉/触觉/过去触觉置乱对照。

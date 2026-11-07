@@ -1,0 +1,102 @@
+{
+  "schema": "cwmj_m8_seed_reservations_v1",
+  "protocol_sha256": "adca76900ffd9a3981105d8e4310faefe2db5ca4f9c0fd4a8b4a9bbda6f57066",
+  "seeds": [
+    {
+      "seed": 100103,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100104,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100105,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100106,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100107,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100108,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100109,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100110,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100111,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100112,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100113,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100114,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100115,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100116,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100117,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    },
+    {
+      "seed": 100118,
+      "status": "reserved_test",
+      "training_supervision_allowed": false,
+      "validation_selection_allowed": false
+    }
+  ]
+}

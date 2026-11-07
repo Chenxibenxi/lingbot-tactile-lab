@@ -1,0 +1,47 @@
+{
+  "schema": "recovery_development_reservations_v1",
+  "protocol_sha256": "0a7b71f41bfb903b2578d52503c16fb19be8ed522cfb8cadad5678dac774ae00",
+  "gpu_execution_ready": false,
+  "seeds": [
+    {
+      "seed": 100119,
+      "status": "reserved_development",
+      "conditions": [
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    },
+    {
+      "seed": 100120,
+      "status": "reserved_development",
+      "conditions": [
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    },
+    {
+      "seed": 100121,
+      "status": "reserved_development",
+      "conditions": [
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    },
+    {
+      "seed": 100122,
+      "status": "reserved_development",
+      "conditions": [
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    }
+  ]
+}

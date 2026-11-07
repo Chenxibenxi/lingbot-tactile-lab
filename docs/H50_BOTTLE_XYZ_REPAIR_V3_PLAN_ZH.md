@@ -1,0 +1,5 @@
+# 用户批准一次修正7D读取后的同seed瓶位补录：原控制和资源门不变
+
+[上次同seed诊断](<H50_BOTTLE_XYZ_DIAGNOSTIC_FAILED_ZH.md>)第一条真实`take_action`后37物理步因插桩错误退出：原`get_functional_point(0)`默认**xyz＋四元数7项**，旧新函数误要求只有3项，xyz行0且任务成败未知。原v2私有输出五SHA锁定并禁止复用。用户进一步**明确批准仅一次修正后补录**：源唯一seed100013、已锁64路标、`MAX_PHYSICS_STEPS=6000`、相同`take_action`控制路径和任务成功门一律不变，只有每次动作后瓶位私有旁路改取前3个xyz；新ID固定`data/technical_replay/relay_knownseed100013_h50_controller_xyz_repair_v3/`。`src/run_policy_controller_technical.py --diagnostic-xyz-repair-v3`在生成新输出前重验原成功规则专家回合的completion/HDF5/raw/frames/command SHA、原v2失败卡及五原始私有输出SHA、原RoboTwin源码与隔离overlay SHA；7维假瓶CPU回归、v3仅一次性ID拒重用/拒v2混配。任何缺口立即停，v2/v1原输出绝不删除或改写。
+
+用户同时明确偏好**连续或间断实验时不要每小试都重启Strata**。本批若lease无人占/无人等、Strata`busy=false/queued=0/in_flight=0`且最近一次历史请求已完成≥120秒（累计requests可非零），只在开始原子`/v1/unload`并停systemd一次；interactive GPU租约TTL1500，单次pilot受`timeout 900s`限制、64调用/6000物理步不加；完成后确认子进程/GPU实验无残留，**释放本人租约，但Strata可暂留停止（unit仍enabled）以供本批后续有界工作，绝不在每次EXIT自动重启**。遇他人需要/用户要求结束批次应让位并按协议恢复基线；下一次动GPU仍必须重新拿本人lease且核无其他计算进程。服务临停后如果诊断失败，不自作主张反复重跑；用户知道当前闲卡状态后再安排一次最终恢复。私有动作、相机、接触、瓶坐标不会入Git；成败都不产生获批专家HDF5或训练许可，旧`approved_paired_episodes=[]`与norm审批false不变。

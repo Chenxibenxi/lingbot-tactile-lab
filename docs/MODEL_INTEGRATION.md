@@ -1,6 +1,10 @@
+> 2026-11-06 最终更新：修复加载缓冲区和推理一致性后，v3 已完成三组×120步真实训练及 seed100030 成对仿真。独立进程输出完全一致；离线未通过预登记收益标准，闭环两组均失败，尚未证明触觉提升。v1 效果解释作废，v2 加载阶段中止。结果见 `docs/TACTILE_EFFECT_20261106_RESULTS_ZH.md`。
+
 # LingBot-VLA 触觉输入实验接入点（设计与 CPU 模块验证）
 
-> 目前只落地仓库中的独立 `src/tactile_adapter.py` 及 CPU 测试，**尚未**改写上游模型训练/服务器/评测客户端，也没有在中继机训练。3090 被其他任务占满，不能抢用。下一阶段每一层都必须 opt-in 且视觉版输出可还原。
+> 2026-11-06后续更新：已按用户明确授权完成真实GPU训练（3组×120优化步），并开展进程内触觉闭环对照；原“没有optimizer/没有真实触觉权重”的叙述为历史状态。离线收益尚未达到预登记阈值，不能宣称成功率提升。见[本轮协议](TACTILE_EFFECT_PILOT_V1.md)与私有`data/reports/tactile_effect_pilot_v1/`。
+
+> 目前落地仓库内可选 adapter、因果数据接口及CPU门禁，**尚未**把训练好触觉权重接进上游真实模型/服务器，也没有在中继机训练触觉VLA。单3090必须逐任务租约且遵守用户规定的Strata停机/恢复时限，不抢其他任务；每一层都须 opt-in 且视觉版输出可还原。
 
 ## 已核查的上游模型接口
 
@@ -10,7 +14,7 @@
 
 ## 已写并测试的 adapter
 
-`src/tactile_adapter.py` 接收 `[B,5,4,3]` 历史特征、`[B,5,4]` 有效覆盖、`age_ms[B]`、`window_valid[B]`，经非负载荷 `log1p`、掩码和 5-bin GRU 输出 `proj_width` 残差。输出层严格**零初始化**，初始触觉开启时与视觉基线 state embedding 数值一致；显式关闭、缺传感器、无效窗口都走视觉原值。输出层第一步获得梯度，后续 GRU 可学习。非数值、错误形状、掩码越界立即报错；传感器数值单位是仿真冲量/dt代理而非标定夹力。
+`src/tactile_adapter.py` 接收 `[B,5,4,3]` 历史特征、`[B,5,4]` 有效覆盖、`age_ms[B]`、`window_valid[B]`，经非负载荷 `log1p`、掩码和 5-bin GRU 输出 `proj_width` 残差。输出层严格**零初始化**，初始触觉开启时与视觉基线 state embedding 数值一致；显式关闭、缺传感器、无效窗口都走视觉原值。输出层第一步获得梯度，后续 GRU 可学习。`set_normalization()`现要求 `training_approval is True`，**缺字段也拒绝**，而不再只拒显式 false；目前本机两任务的候选配置均不得被adapter当已批准训练参数安装。非数值、错误形状、掩码越界立即报错；传感器数值单位是仿真冲量/dt代理而非标定夹力。
 
 ## 本轮新增在线与离线共享时序/影子通道（未改原模型）
 
@@ -22,11 +26,11 @@
 
 ## 服务端预处理桥（CPU契约，未部署）
 
-`src/server_tactile_bridge.py` 测试了旧 `feature_transform.apply` 会丢未知触觉键时的安全做法：先解码、只把视觉字段交旧transform，然后把通过schema验证的触觉历史/掩码/age/valid加回；同批次旧视觉客户端显式获得invalid/zero-mask字段，不允许首个batch样本字段不同。只有明确 `model_wired=True` 且提供adapter artifact SHA256的实验服务才能申请发布 `capabilities=['tactile_v1']`。这只是CPU拟合transform与batch的契约，**目前没有真实训练权重/模型forward接线/服务进程，禁止将占位SHA视作训练证明。**
+`src/server_tactile_bridge.py` 测试了旧 `feature_transform.apply` 会丢未知触觉键时的安全做法：先解码、只把视觉字段交旧transform，然后把通过schema验证的触觉历史/掩码/age/valid加回；同批次旧视觉客户端显式获得invalid/zero-mask字段，不允许首个batch样本字段不同。修复了占位 SHA 的假阳性：**仅有 `model_wired=True` + 任意64位SHA不再能声明 `capabilities=['tactile_v1']`**。现在需另外出示仓库私有`models/`里真实SHA匹配且非零输出的 `.safetensors`、独立训练记录（来源单3090、真实优化步>0、已批准部署）及哈希匹配的已批准 provenance/train-only split/norm；`training_approval`缺失、false或真实`approved_paired_episodes=[]`一律拒绝。`src/adapter_artifact_gate.py`使用无pickle的`safetensors`按键/尺寸检查非零输出层、GRU结构及归一化缓冲**数值与获批训练折配置一致**；还要对拟入训练的每条专家卡重新核验本机原始物理流、HDF5和成功完成门，逐卡SHA必须符合获批split且实际(seed,task)分组互斥，隔离负例不能塞入训练。合成临时已批准fixture仅用来测代码正路径，不代表用户当前数据已获批。新门禁只是声明材料的完整性检查，**不能代替负责人批准或证明部署、触觉模型提升**。新增[`patch_server_tactile_v2.py`](<../src/patch_server_tactile_v2.py>)以本机deploy源SHA为硬门只生成Git忽略的**未安装服务预览**：`_prepare_model_input`先保留旧视觉resize/transform再解触觉四字段且补缺测视觉客户端零掩码；单样本和批处理全部四个sample_actions调用位置均使用[`model_tactile_kwargs`](<../src/server_tactile_bridge.py>)按device/dtype/几何严格传递，partial/无效拒；CPU小server桩验证默认视觉输入数值完全一致，默认不设`_tactile_capability_ready`时收到触觉则拒绝。重要限制：预览仍import**原旧模型**，没有任何实际训练权重、已批准部署证据或真实服务进程；单测人工设ready仅检查route，不代表可宣告`tactile_v1`。未来必须在旧权重strict装载后才接已验trained adapter，替换隔离patched V2模型import并刷新可能缓存/编译的推理函数，再按artifact gate开能力；**现在服务器仍禁止宣称触觉能力**。
 
 ## 可逆 FlowMatchingV2 原型（未安装/未训练）
 
-`src/patch_model_v2.py` 只对本机已知 V2 源源码作严格锚点的**独立副本**补丁，启用 `config.tactile_enabled` 时初始化零输出 adapter，从顶层训练 `forward(**kwargs)` 向 `FlowMatchingV2.forward` 显式传递 history/mask/age/valid，并在 `sample_actions` 中单次编码残差，`predict_velocity` 每步只注入**state token**，不污染 action token；关闭时不加 adapter 新参数，旧行为保留。`tests/test_patch_model_v2.py` 抽取源 AST，在纯CPU假模型上检查零初始化视觉恒等、受训非零输出仅改state token、无adapter拒绝触觉，以及原源码哈希不变。**尚未经真实V2初始化/旧checkpoint加载/训练或服务端透传验证；不得据此发布tactile_v1能力。** 基线权重应先以 `tactile_enabled=False` 按原流程完整载入，再由隔离训练代码显式附加新adapter并载入独立检查点；直接在加载旧权重前设为True可能因新参数缺权重/空初始化而失败，不能借 `strict=False` 掩盖。
+`src/patch_model_v2.py` 只对本机已知 V2 源源码作严格锚点的**独立副本**补丁，启用 `config.tactile_enabled` 时初始化零输出 adapter，从顶层训练 `forward(**kwargs)` 向 `FlowMatchingV2.forward` 显式传递 history/mask/age/valid，并在 `sample_actions` 中单次编码残差，`predict_velocity` 每步只注入**state token**，不污染 action token；关闭时不加 adapter 新参数，旧行为保留。`tests/test_patch_model_v2.py` 抽取源 AST，在纯CPU假模型上检查零初始化视觉恒等、受训非零输出仅改state token、无adapter拒绝触觉，以及原源码哈希不变。在用户允许的Strata停机窗口内，经独立interactive GPU租约，已把此补丁生成到本仓库Git忽略`work/model_patch_preview.py`，使用本机RTX3090和LingBot实际依赖**成功导入真实补丁模块及FlowMatchingV2类**；源modeling文件SHA`9b3c9a2a…`始终不变。重要依赖边界：CPU仅AST测试可跑，但真实模块import过程中上游Triton group_gemm预调配置会主动调用`torch.cuda.get_device_capability()`；隐藏GPU直接import会`RuntimeError: No CUDA GPUs are available`，不能拿CPU import失败误判补丁有错，也不能在未拿租约时偷启GPU。此次**未实例化真实V2、未加载旧checkpoint、未训练或服务端透传**；不得据此发布tactile_v1能力。 基线权重应先以 `tactile_enabled=False` 按原流程完整载入，再由隔离训练代码显式附加新adapter并载入独立检查点；直接在加载旧权重前设为True可能因新参数缺权重/空初始化而失败，不能借 `strict=False` 掩盖。新增[`model_attach_contract.py`](<../src/model_attach_contract.py>)只接受**实际strict load返回**的无missing/unexpected结果，要求模型先tactile_disabled/无adapter，再冻结旧主干、以state_proj同device/dtype附零输出GRU；CPU合成模块验证视觉恒等、旧主干无梯度且新输出层有梯度、缺权重键/预装adapter失败。另有[`tests/test_patch_model_v2_full_path.py`](<../tests/test_patch_model_v2_full_path.py>)执行**真正由源生成器抽出的**顶层训练`forward`和推理`sample_actions→predict_velocity`完整方法体，但把巨型Qwen替成CPU小桩：真实调用验证四触觉字段到内层训练调用、去噪循环每次复用同一个触觉state残差（GRU每请求只算一次）、零初始化视觉恒等、非零残差改动作、valid=false回到视觉；单测还修复测试中反复复用原采样器`noise`会被原代码in-place更新、产生错误“恒等”结论的陷阱。这些仍是**合成CPU模型**，不能说真实Qwen前反向/真实服务走通。它**未加载真实26GB checkpoint**、未实例化真实LingBotV2、不能认证调用者提供的load结果确实来自已审核权重，未给RPC发布`tactile_v1`或打开真实训练；server若缓存已编译`sample_actions_fn`还须刷新并单独实测。当前真实H50数据门已被[物理时钟审计](<PHYSICAL_CHUNK_READINESS_ZH.md>)否决，不能因装载顺序测试通过就绕过数据门。
 
 ## 同源策略自回放（隔离客户端实测，但未批准训练）
 
@@ -34,7 +38,7 @@
 
 ## 尚须逐层接线（后续变更范围）
 
-1. **数据**：`src/paired_samples.py` 已从唯一relay3090五条经SHA绑定成功门的同源专家 HDF5+侧录筛得 **518** 个可用因果帧对（5个独立seed，全部候选、未授权训练）。`src/split_and_norm.py` + `src/plan_relay_training.py` 按 `(task,实际seed)` 全轨迹分组让同seed重试不跨分割，建立**仅试点**3train/1val/1test seed split并只用train309帧对拟 log1p 特征 median/IQR；所有四指全部3特征的中位数0、IQR跌到0.1地板（接触正值仅约22–23%完整bin），说明零主导归一化可能夸大稀疏接触响应，正式训练前需评审接触感知归一化和幅度限制，不能把技术最低5 seed误认为足够科学统计功效。新增 `src/contact_normalization.py` v2 候选只用训练折正接触bin拟合、无力原值保持精确0、归一化力幅限制±4；真实训练折仍有8/8力通道IQR触底0.1、约4.76%正值会被夹，不把这当性能胜利；config仍 `training_approval=false`，adapter拒绝装载待评审候选。`src/paired_ablation.py` 在CPU真实解码五seed全部518对三路RGB并构造逐对同RGB/state/target的视觉-only、真实触觉、因果历史内部重排视图；只有123对含任一非零历史力，另外395对重排不改变力值，故总样本动作损失绝不能独当触觉增益，后续应预注册接触窗口分层指标。首批帧历史不足与零物理时长重复帧未被冒充有效触觉。以后以相同新数据训练的视觉-only对照须同步建立。
+1. **数据**：`src/paired_samples.py` 已从唯一relay3090五条经SHA绑定成功门的同源专家 HDF5+侧录筛得 **518** 个可用因果帧对（5个独立seed，全部候选、未授权训练）。`src/split_and_norm.py` + `src/plan_relay_training.py` 按 `(task,实际seed)` 全轨迹分组让同seed重试不跨分割，建立**仅试点**3train/1val/1test seed split并只用train309帧对拟 log1p 特征 median/IQR；所有四指全部3特征的中位数0、IQR跌到0.1地板（接触正值仅约22–23%完整bin），说明零主导归一化可能夸大稀疏接触响应，正式训练前需评审接触感知归一化和幅度限制，不能把技术最低5 seed误认为足够科学统计功效。新增 `src/contact_normalization.py` v2 候选只用训练折正接触bin拟合、无力原值保持精确0、归一化力幅限制±4；真实训练折仍有8/8力通道IQR触底0.1、约4.76%正值会被夹，不把这当性能胜利；config仍 `training_approval=false`，adapter拒绝装载待评审候选。`src/paired_ablation.py` 在CPU真实解码五seed全部518对三路RGB并构造逐对同RGB/state/target的视觉-only、真实触觉、因果历史内部重排视图；只有123对含任一非零历史力，另外395对重排不改变力值，故总样本动作损失绝不能独当触觉增益，后续应预注册接触窗口分层指标。首批帧历史不足与零物理时长重复帧未被冒充有效触觉。以后以相同新数据训练的视觉-only对照须同步建立。后续独立双瓶补采和v2扩展已重验提锅5＋双瓶7专家、1361个因果候选对，训练／验证／测试899／230／232；这**没有**覆盖当前仓库`approved_paired_episodes=[]`与候选norm `training_approval=false`，先按[训练前审阅卡](<TRAINING_REVIEW_GATE_ZH.md>)评审，不能把可索引误认已获准fit。
 2. **训练 API**：在此仓库中生成 LingBot 模型的受控小补丁或独立实验 subclass，使训练 batch 显式包含 `tactile_history`, `coverage_mask`, `age_ms`, `window_valid`；从顶层 `forward` 到 `embed_suffix` 逐层透传。不改变旧 API 参数默认值。保存 adapter 的独立 checkpoint + 视觉基座 commit/hash/训练 split/归一化参数。初轮只训 adapter，记录 action loss + 接触辅助任务验证指标。
 3. **推理 API**：`src/tactile_rpc.py` 已给出客户端/服务端的 CPU 可测字段契约（仅 `observation.tactile.history/mask/age_ms/valid`，绝不发送未来力或特权对象名；旧消息完全保持原样，缺失/陈旧传感器显式降级）。现有 RoboTwin 客户端 `script/deploy/websocket_client_policy.py:50–57` 的实际 msgpack_numpy packer 经过回环单测。**下一步才是**扩展客户端 `formatted_observation` 与服务端实际调用：`deploy/lingbot_vla_v2_policy.py:405–415` 的 `_prepare_model_input` 调用 `feature_transform.apply`，未知触觉键可能被丢弃，须在 transform 前解析/在后面显式加回；`:439–459` 批处理只遍历首个样本键，batch内必须给每条观测统一补可见的 invalid/zero-mask 缺省字段；`:75–86, 95–143` 才把字段送模型的 `sample_actions`。`sample_actions` 显式接收触觉并进入每次 denoise 的 state token。可预先算一次 `tactile_delta` 传 `predict_velocity`，避免重复GRU；确保多请求/前缀缓存不串数据。
 4. **评测**：分别测 (A) 相同新数据训练的视觉-only、(B) 正确触觉、(C) 时序打乱触觉、(D) 正确触觉+独立受控反馈。共享原始 seed/任务/权重和渲染设置；报告成功率、接触 onset 检测、尖峰/滑落候选、延迟 p95。模型触觉 missing/fault 应确定性降级到视觉，不回写改变原比赛成绩。

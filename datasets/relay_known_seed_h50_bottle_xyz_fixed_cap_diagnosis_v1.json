@@ -1,0 +1,31 @@
+{
+  "schema": "lingbot_h50_bottle_xyz_fixed_cap_diagnosis_v1",
+  "status": "goal_failed_both_y_distance_outside_0_1_m_at_cap",
+  "task": "pick_diverse_bottles",
+  "seed": 100013,
+  "same_seed_technical_not_independent": true,
+  "original_waypoint_proposals": 64,
+  "actual_take_action_calls": 54,
+  "physics_cap": 6000,
+  "physics_steps": 6018,
+  "stopped_reason": "bounded_physics_cap_exceeded_inside_action",
+  "goal_success": false,
+  "final_bottle_subgates": {
+    "left": {"final_x_error_m": -0.004, "final_y_error_m": 0.1209, "final_z_m": 0.9872, "final_xy_gate": false, "final_z_gate": true, "first_z_gate_call": 44, "first_xy_gate_call": null},
+    "right": {"final_x_error_m": 0.0169, "final_y_error_m": 0.1719, "final_z_m": 1.0054, "final_xy_gate": false, "final_z_gate": true, "first_z_gate_call": 44, "first_xy_gate_call": null}
+  },
+  "source_file_sha256": {
+    "calls": "fd64f88a9128fb2fac165c6d35cdbe2d8f79ae0130630d0a5321d258898444f6",
+    "frames": "fd5b64f5a0b576796eb4756cdc5e4fbb158c8c96325d6199eec0543d21329a8b",
+    "geometry": "c1a4b96a2224d0b3b05504433079cf5036cee60cc4505e48befaa8f32aa0f130",
+    "obs": "3c36b8e9fb8168ea3677228a226b249ff5c18bbf7111cf4d7d34b5f5b4a7aa67",
+    "raw": "be1280aa2b5f22cfaddd4ca74b5091527f90ca80758ed5566db1664957cc3877",
+    "result": "9ba6f0dfb6396f7a0830de239918d00ad7f396a551d99515bb3ff4be25ee1ffe"
+  },
+  "eligible_h50_windows_verified": 0,
+  "hdf5_expert_completion_written": false,
+  "training_approval": false,
+  "strata_service_state_after_batch": "inactive_enabled_by_user_no_frequent_restart_preference",
+  "gpu_lease_released": true,
+  "note": "Second user-approved same-seed fixed-64-waypoint and 6000-step technical diagnostic exactly reproduced 54 original-controller actions and 6018 ticks. At the cap both bottle x/z gates pass but y distances to target exceed 0.1 m; the remaining ten proposals were not executed and their outcome is unknown. No task success, expert dataset, training, or VLA improvement claim."
+}

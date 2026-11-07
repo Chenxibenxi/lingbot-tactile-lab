@@ -1,0 +1,20 @@
+{
+  "schema": "lingbot_real_v2_meta_state_header_gate_v1",
+  "status": "all_original_visual_keys_and_shapes_match_headers_only",
+  "source_machine_role": "relay_single_rtx3090",
+  "matched_key_count": 1624,
+  "model_is_meta_only": true,
+  "values_loaded": false,
+  "full_visual_checkpoint_loaded": false,
+  "cuda_allocated_bytes": 0,
+  "training_approval": false,
+  "model_source_sha256": "9b3c9a2ad6823f9d58da51b732477785a1e4db0d29db80e030e094c7b605e40c",
+  "original_154800_training_config_sha256": "daa533fe9380a8427fc8737cc5fbbfac8e5192057231e78cd28450319dabbbf0",
+  "local_tokenizer_config_sha256": "edac7703329133edfc53e46ac0081835144c99d7eebf28b71c732694d435224d",
+  "checkpoint_index_sha256": "62dbe509bd476ff354e6a9bea5476bfe451471a5e1160d24abb594a35fe2ec40",
+  "isolated_generated_model_source_sha256": "a80be3e9b7f7834676a086c1ffab964e6a25ad8bc81b4572e8939e0f400b8191",
+  "single_shard_ram_lower_bound_pass": true,
+  "lease_released_after_probe": true,
+  "baseline_model_source_unchanged": true,
+  "note": "Actual patched LingBotVlaV2Policy instantiated on meta under relay RTX3090 import lease; original 1624 visual checkpoint index keys/shapes match exactly. No weights loaded, no model forward, no gradient, no usable tactile adapter or server."
+}

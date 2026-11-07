@@ -62,5 +62,40 @@ class ExpertContactTargetAuditTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'mismatch'):
             self.run_audit(physics())
 
+    def test_bottle_task_uses_its_own_split_and_explicit_language(self):
+        class BottleEpisode(FakeEpisode):
+            def __init__(self,repo,trial,*,instruction):
+                self.raw=Path('not-opened-directly.jsonl')
+                assert trial in ('a','b','c')
+                assert instruction=='Pick and place the two diverse bottles'
+        with patch('expert_contact_target_audit.build_plan',return_value={'split':self.split}) as plan, \
+             patch('expert_contact_target_audit.PairedEpisode',BottleEpisode), \
+             patch('expert_contact_target_audit.read_jsonl',return_value=[{'dt_s':.004},*physics()]):
+            result=audit_train(self.repo,self.path,task='pick_diverse_bottles')
+        self.assertEqual(plan.call_args.kwargs['task'],'pick_diverse_bottles')
+        self.assertEqual(result['by_trial']['a']['left_new_onset_from_no_prior'],1)
+
+    def test_unassigned_new_expert_cannot_reshuffle_frozen_v1(self):
+        extra=self.repo/'datasets/cards/new_unassigned_expert.json';extra.write_text('{}')
+        with patch('expert_contact_target_audit.build_plan',return_value={'split':self.split}) as plan, \
+             patch('expert_contact_target_audit.PairedEpisode',FakeEpisode), \
+             patch('expert_contact_target_audit.read_jsonl',return_value=[{'dt_s':.004},*physics()]):
+            audit_train(self.repo,self.path)
+        selected=plan.call_args.args[1]
+        self.assertNotIn(extra,selected)
+        self.assertEqual(len(selected),5)
+
+    def test_bottle_v2_verifies_its_separate_frozen_train_and_no_old_recompute(self):
+        v2=self.repo/'datasets/relay_pickdiverse_seed_split_candidate_v2.json'
+        v2.write_text(json.dumps(self.split))
+        with patch('extend_relay_bottle_split.build',return_value={'split':self.split}) as rebuilt, \
+             patch('expert_contact_target_audit.build_plan',side_effect=AssertionError('v2 cannot reshuffle')), \
+             patch('expert_contact_target_audit.PairedEpisode',FakeEpisode), \
+             patch('expert_contact_target_audit.read_jsonl',return_value=[{'dt_s':.004},*physics()]):
+            result=audit_train(self.repo,v2,task='pick_diverse_bottles',
+                               instruction='Lift the pot with both arms')
+        self.assertEqual(rebuilt.call_count,1)
+        self.assertEqual(result['by_trial']['b']['left_new_onset_from_no_prior'],1)
+
 
 if __name__=='__main__':unittest.main()

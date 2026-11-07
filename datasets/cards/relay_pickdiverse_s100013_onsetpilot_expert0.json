@@ -1,0 +1,25 @@
+{
+  "schema": "lingbot_tactile_dataset_card_v1",
+  "status": "candidate_unassigned_split",
+  "trial_id": "relay_pickdiverse_s100013_onsetpilot_expert0",
+  "source_machine_role": "relay_single_rtx3090",
+  "source_hostname": "admin001-MS-7D90",
+  "task": "pick_diverse_bottles",
+  "seed": 100013,
+  "episode": 0,
+  "physics_steps": 1609,
+  "saved_frames": 121,
+  "capture_dt_s": 0.004000000189989805,
+  "sha256": {
+    "raw": "60703755b75c3c8bd8427aec3a0f88068503dbd283029faa3665235ce1b8b595",
+    "obs": "18d2b7b8fc733b27d3a2143648684d85f5e91e30a221cc876567030eb5dc53c7",
+    "frames": "e4cab8ea2a845d1a546116ebfd10a694a49dfe0f86bd8620a49fe7b0b829afe3",
+    "hdf5": "950db61a745f6b2bec93600b2587b03e887f4683b528a249e0e902a198354775"
+  },
+  "completion_sha256": "89c2bd283914f80fca88562255d432daf64e8f9a2aaf9091deed92e91851434f",
+  "data_path_relative": "data/paired/relay_pickdiverse_s100013_onsetpilot_expert0",
+  "image_hdf5_relative": "data/paired/relay_pickdiverse_s100013_onsetpilot_expert0/demonstration/data/episode0.hdf5",
+  "split": null,
+  "calibrated_grip_force": false,
+  "note": "sim impulse/dt proxy, not GelSight and not a real hardware force limit"
+}

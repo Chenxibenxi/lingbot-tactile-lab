@@ -14,7 +14,7 @@ from align_temporal import align
 from validate_expert_data import read_jsonl
 
 
-def validate(raw_path, obs_path, policy_path):
+def validate(raw_path, obs_path, policy_path, *, allow_policy_calls_on_expert_overlay=False):
     raw, obs, policy = map(Path, (raw_path, obs_path, policy_path))
     rh, oh, ph = (read_jsonl(p)[0] for p in (raw, obs, policy))
     if (rh.get('schema'), oh.get('schema'), ph.get('schema')) != (
@@ -23,7 +23,11 @@ def validate(raw_path, obs_path, policy_path):
     if oh.get('probe_file') != raw.name or ph.get('probe_file') != raw.name:
         raise ValueError('sidecars do not refer to the same physics stream')
     if rh.get('clock_origin') != 'first_instrumented_policy_action_step_after_setup':
-        raise ValueError('unexpected expert or unknown policy clock origin')
+        rows=read_jsonl(raw)[1:]
+        if (not allow_policy_calls_on_expert_overlay or
+                rh.get('clock_origin')!='first_instrumented_expert_step_after_setup_stability' or
+                not rows or any(r.get('motion_phase')!='policy_action' for r in rows)):
+            raise ValueError('unexpected expert or unknown policy clock origin')
     for field in ('task', 'seed', 'episode'):
         if rh[field] != oh[field] or rh[field] != ph[field]:
             raise ValueError(f'{field} identity mismatch')

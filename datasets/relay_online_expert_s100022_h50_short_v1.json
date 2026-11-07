@@ -1,0 +1,30 @@
+{
+  "schema": "lingbot_online_rule_expert_newseed_no_h50_v1",
+  "status": "task_goal_passed_expert_h50_rejected_call_count_46",
+  "task": "pick_diverse_bottles",
+  "seed": 100022,
+  "source_machine_role": "relay_single_rtx3090",
+  "source": "current-scene online dual-arm rule stages; original Base_Task.take_action",
+  "actual_take_action_calls": 46,
+  "physics_steps": 5688,
+  "approved_physics_cap": 10000,
+  "camera_frames": 46,
+  "phase_call_counts": {"grasp": 29, "lift": 9, "place": 8},
+  "planner_ok": true,
+  "task_goal_success": true,
+  "max_joint_tracking_abs_error": 0.08306,
+  "h50_required_calls": 50,
+  "eligible_h50_windows_verified": 0,
+  "expert_completion_written": false,
+  "expert_hdf5_written": false,
+  "training_approval": false,
+  "source_file_sha256": {
+    "raw": "26ff8feec8535338dd4f7365d8aae780fd340a2b285d2de3e1b98dba5b291a84",
+    "obs": "7fa3ae3a31d504d81ad5e3fe0a53bf761d3eb4041501023ba0bcdaa139ce5662",
+    "frames": "727cf110531a8a231ecf28072f550762fa390f8611c39001bd0acf9027a43f99",
+    "actions": "6c06e04a34429936c6a134f0b082c3f5addc5b21d0d4cd95a168fea7ef970cf8",
+    "result": "e31b5d8c7a57645ea02cd828472306e332d46b0fdc669cf451162fb7b8ddab97",
+    "rejection": "c519a747370247a101fd6ae5b368c3839847341f4d74a1f897675c6e7f4671f7"
+  },
+  "note": "User-approved ONE new-seed online expert attempt genuinely reached task check_success but ended on its 46th high-level call before the 50-call H50 gate. No HDF5/completion/candidate expert card was emitted, and the unique seed must never be replayed or padded to fabricate H50. Single success does not show robustness, force safety or tactile VLA improvement. Workbench Strata restored after the leased attempt."
+}

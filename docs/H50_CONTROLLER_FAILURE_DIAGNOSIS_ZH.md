@@ -1,0 +1,5 @@
+# H50高层控制试验失败诊断：接触确实发生，但没有瓶子目标位置证据
+
+仅用**本机**同实际seed100013两条彼此独立的真实仿真回合，复核[原规则专家成功技术侧录](<EXPERT_COMMAND_KNOWN_SEED_SMOKE_RESULT_ZH.md>)的`completion.json`/raw SHA，以及[新`take_action`技术失败回合](<H50_TECHNICAL_CONTROLLER_RESULT_ZH.md>)的私有raw与脱敏卡SHA；只读CPU统计，不动GPU、原资产、测试折/模型权重。原规则专家在1,582个物理步完成双瓶任务，首次**右**接触第597步、**左**接触第803步；各侧有接触的步数841/780。新控制器回放在6,018步/54次高层动作内，右首次接触第3,452步、左第4,103步（约为本回合57.4%与68.2%进度），各侧接触2,136/1,916步。新回合不是“没有碰到瓶子”，也不能把冲量/dt代理峰值当标定夹力或据此推断夹持成功。**相同seed不是相同轨迹**：旧规则专家按规划器每步set_arm_joints走dense/together，新回放是qpos路标逐个TOPP重规划，时钟/接触差异不能当严格控制效果A/B。
+
+原任务[`pick_diverse_bottles.check_success`](</mnt/relaydata/lingbot/RoboTwin/envs/pick_diverse_bottles.py#L94-L104>)要求两个瓶子各自功能点在目标附近`|x-x_target|<0.1`、`|y-y_target|<0.1`且`z>0.89`；当前私有技术记录只写动作/接触/图像marker和回合最终`goal_check_after_run=false`，**没有**末帧功能点xyz或每个子门值，无法从接触步数判断到底是抓取、抬升、放置位置还是只因6,000步上限未到剩余10个路标而失败。它也没有专家成功门/HDF5，`eligible_h50_windows_verified=0`。合理下一步是**先设计新的只诊断、不作为模型输入**的逐动作瓶功能点xyz／目标误差／高度门sidecar和同回合成功/控制安全上限，预先固定是否允许增加时长或换seed的审批；不能直接把原失败卡改为成功，也不自动延长上限、重复试到成功或将旧新回合粘接成一个训练序列。训练来源/归一化仍未获批准。

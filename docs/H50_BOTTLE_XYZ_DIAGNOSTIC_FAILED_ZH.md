@@ -1,0 +1,5 @@
+# 双瓶逐动作xyz诊断首次复演失败：记录器把7维功能点误当3维，**不能推断任务成败**
+
+用户明确只批准一次**同seed、原64路标、原6,000步上限**的诊断复演；按[试前方案](<H50_BOTTLE_XYZ_DIAGNOSTIC_PLAN_ZH.md>)在本机relay单3090上确认Strata idle、获取独占TTL1500租约、原子unload空闲Strata并临停systemd，fresh试验路径固定为git忽略`data/technical_replay/relay_knownseed100013_h50_controller_xyz_diagnostic_v2/`，未覆写第一次机械失败卡。任务真实开始并调用第**1**次原`take_action(qpos)`、实际物理前进**37步**，拍下**1帧同回合当前相机**；但记录器在动作完成后读取瓶功能点处抛`ValueError`，**xyz诊断行0、已写完的高层动作行0**，未计算任务最终success，整个作业exit1。源码已核[`get_functional_point`默认list返回xyz＋四元数共7项](</mnt/relaydata/lingbot/RoboTwin/envs/utils/actor_utils.py#L29-L52>)，而本仓新增记录器误要求列表长度==3；这是诊断插桩错误，不是第1次动作使任务失败、也不是“重新试验成功”。私有partial raw/frames/calls及空geometry文件保持原样，五个文件指纹、未获批状态见[脱敏失败卡](<../datasets/relay_known_seed_bottle_xyz_instrumentation_failure_v1.json>)；不读取其中的旧图像/动作作为训练数据。
+
+退出钩子已恢复Strata **systemd active+enabled / health loaded=true**、释放本人GPU租约，原RoboTwin `_base_task.py` SHA `448f7152...`未动。记录器现已在CPU上改为**仅取7维返回的前三个xyz**并给7维假瓶回归用例，原6,000上限、原64路标与真正的控制路径不变；但用户批准的“一次”已经实际执行且新v2 ID不能复用，**绝不静默再跑或删除partial来过测试**。如果用户同意，需新ID、单独预登记且保持同seed/路标/上限的**一次补录**，先明确这只是修记录器，不是训练数据批准；否则停在这个失败证据。无真实获批H50专家样本、adapter反传/训练或真实RPC能力。

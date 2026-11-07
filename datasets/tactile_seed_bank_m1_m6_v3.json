@@ -1,0 +1,2974 @@
+{
+  "schema": "lingbot_tactile_seed_bank_v3",
+  "scope": "M1-M6 relay evidence, with M5 reused-test interventions explicit",
+  "original_registry_unchanged": true,
+  "diagnostic_replays_are_not_independent_samples": true,
+  "scenario_definitions": {
+    "original_20_bottles": "original RoboTwin 001_bottle random IDs0\u201319",
+    "cwmj_wine_v2": {
+      "asset_manifest": "/mnt/relaydata/lingbot-tactile-lab/work/cwmj_bottle_asset_v2/manifest.json",
+      "sha256": "5eb9abae0d2f27f860bf594616cb463ae75bdd076da3b2f0d64a0ac5aa0ff836"
+    }
+  },
+  "m4_training_manifest_sha256": "c8364753b0d1b46c18fda768d73af8bb8f5db4d729cf71aaafb2681768a6a82c",
+  "entries": [
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100033,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100033/report.md",
+      "report_result_sha256": "3156d4c47c638250e75b93dcb39b3642cd66c9e82b65638e55c8547fb1a4c5da",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "UnStableError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100033_online_h50_stride20_train_expert0"
+    },
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100034,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100034/report.md",
+      "report_result_sha256": "3e67a4e0c1cafcc76a714e392070c3e9fd53815675d1b2d927665f7702e5af9b",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "UnStableError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100034_online_h50_stride20_train_expert0"
+    },
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100035,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100035/report.md",
+      "report_result_sha256": "3663d5bc528ab7c099146f181b8e9a65949cb364f90075d83de4ad8b9f279387",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "UnStableError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100035_online_h50_stride20_train_expert0"
+    },
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100036,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "accepted_success_source_verified",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100036/report.md",
+      "report_result_sha256": "6086bab178d5e2be89ac12e60c9b914b818c925905bf0c861a26b38a0df62375",
+      "valid_windows": 56,
+      "contact_windows": 21,
+      "completed_source_verified": true,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": null,
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100036_online_h50_stride20_train_expert0",
+      "source_sha256": {
+        "raw": "c6a617c5bae33b5dc0a7e6e42889c221ebe6f0d13354cc21e693798891e5aee8",
+        "obs": "4bc2a4b7b91c8fd55efe236964b9cdfb02daae1148a2e9c8038dc77174455397",
+        "frames": "424ffaac03abdf19d19835356dbccdfa6b51797eb45a457a7c7dec903dc668ae",
+        "hdf5": "3bdef095ae72d34a699e877dfedf46a48df43ce562ebc23e5727a2069a7e9815",
+        "online_actions": "1687cf6ed6fce507acc09c505d3dbaaf8caf84bddea2c400e1b781fbb1d4fb84",
+        "pilot_result": "bb1a7c9213f87c9fb1cebb76a237a6d4492f9ecc4b07bf8ebee96f8674067f60",
+        "completion": "72623b79510687151cd818eb87f1ee0bf76c13a6779c1db7c61376459dbb8788",
+        "success_gate": "e1fa6ae1b8bed0757a8026443e142f5bd282f84bdf7d0ad525c3390e9d3ab164"
+      }
+    },
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100037,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100037/report.md",
+      "report_result_sha256": "fbda9e17887ed2a5eb29da4c7fce591df9df3cfc087778673f31e7f4bf9389b6",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "OnlineExpertPlanError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100037_online_h50_stride20_train_expert0"
+    },
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100038,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100038/report.md",
+      "report_result_sha256": "ae785362bdd7ba7c8ca76a9ed333224ae28054b09f8248fa1f9fdb7abd6220d2",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "UnStableError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100038_online_h50_stride20_train_expert0"
+    },
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100039,
+      "role": "expert_collection_attempt",
+      "fold": "validation",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100039/report.md",
+      "report_result_sha256": "bed84d73c6acc4d4743ed2b14eec521415a0982a19295d403690bca51bd6096c",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "UnStableError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100039_online_h50_stride20_validation_expert0"
+    },
+    {
+      "scenario": "original_20_bottles",
+      "seed": 100040,
+      "role": "expert_collection_attempt",
+      "fold": "validation",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/multiseed_m1/seed_100040/report.md",
+      "report_result_sha256": "8e2aef559c82066f76b7786bc391c234a77b40b5e9f102fe81c7c4abbfd5af43",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "UnStableError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickdiverse_s100040_online_h50_stride20_validation_expert0"
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100045,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "accepted_success_source_verified",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/cwmj_m4/seed_100045/report.md",
+      "report_result_sha256": "12b7bbcd10c4269c782f912e5ff1bf9b933c63774e03b6866bf29e76d62c281c",
+      "valid_windows": 66,
+      "contact_windows": 25,
+      "completed_source_verified": true,
+      "used_as_expert_supervision_in_m4": true,
+      "future_fit_requires_new_manifest": true,
+      "exception": null,
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmj_s100045_online_h50_stride20_train_expert0",
+      "source_sha256": {
+        "raw": "56c5a50151d97cbdf38f0bd31eea3a8cb602a80cb8357d07c228d5008ed26761",
+        "obs": "682ecd53c16445e732abf9fa7d24c5367c7a01e23bbd03585720d2c5da37502a",
+        "frames": "5cb0934c0b14539b7876372f9955e7fe8b1ac09f6569c2f2c67386e230c8a42f",
+        "hdf5": "ca3cef26d478938fb2bb0dcc01927f922b234294c314a8b6a0f34e2b758e2c12",
+        "online_actions": "dc2b59e526e1e634baa16dc7e88f9af84aa8ffbbf20d7cfbd34b6765125a9303",
+        "pilot_result": "a9f4e88592c937951b769b9c2a9ce26a274fd0c14721307a3106bbb1dd56ed65",
+        "completion": "ba4f3a0e5dd09765ff8dddf2135c9fb3d3ac8e5bcdcea79c8322f2de47282523",
+        "success_gate": "ada0e02ba5a9a05217104e49191cd28e400cbb55fefb3aef20a01b5ea6f7c50d",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "used_as_expert_supervision_in_m6": true,
+      "m6_completed_training_usage_evidence": [
+        {
+          "repeat": 0,
+          "arm": "zero",
+          "artifact_sha256": "b9da556fbba9234bab34c3f62e90bea60b4e536418cc9678741b1684aac73214",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "true",
+          "artifact_sha256": "074b6041bc3c7ae19f2df1d4e68615d16a267060fbf3a5715ab712f8822237e8",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "mismatch",
+          "artifact_sha256": "3864f1bcc03cbed1056f1595b717a27fec816c4549dc3336495ffa44ebc204e4",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100046,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "accepted_success_source_verified",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/cwmj_m4/seed_100046/report.md",
+      "report_result_sha256": "e457125ee5dbec86a08dd5e4023837cef29124ffbbfb1475796fcb914a2023d2",
+      "valid_windows": 57,
+      "contact_windows": 19,
+      "completed_source_verified": true,
+      "used_as_expert_supervision_in_m4": true,
+      "future_fit_requires_new_manifest": true,
+      "exception": null,
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmj_s100046_online_h50_stride20_train_expert0",
+      "source_sha256": {
+        "raw": "f5a42b192e392a8e1bb4fab7f7ed99bf3129f7134c0130de1cb7e2e58632cd6f",
+        "obs": "680afb9d2cdf9799b4aef518844edafc09e6f823f9350ae133b95f277d32faf9",
+        "frames": "a20c8fcf9e2c8c277748e0ef0f43b11c2b15b70d56275cf5f144fad25ca2bfa5",
+        "hdf5": "9596479000778e03fbbdc98ad1ba8639c1aa722031f6f405033d39fd3d22e05a",
+        "online_actions": "72ba339cfafdda58866c4b37ffd0773dfbe9b8b195b39edfc2bace7b29735bbb",
+        "pilot_result": "db11af3a07fbd0a89f10e7284072179fc188666a83b8e317f53d9e65468b716d",
+        "completion": "62d5b3a325240b7991a6bd9104e5a85e7b16be9d560aca0208da2d12b2ecf873",
+        "success_gate": "2267d838196d52d03beebb82f8973293f73b95514d5abe59cf849c84eb23d5fc",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "used_as_expert_supervision_in_m6": true,
+      "m6_completed_training_usage_evidence": [
+        {
+          "repeat": 0,
+          "arm": "zero",
+          "artifact_sha256": "b9da556fbba9234bab34c3f62e90bea60b4e536418cc9678741b1684aac73214",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "true",
+          "artifact_sha256": "074b6041bc3c7ae19f2df1d4e68615d16a267060fbf3a5715ab712f8822237e8",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "mismatch",
+          "artifact_sha256": "3864f1bcc03cbed1056f1595b717a27fec816c4549dc3336495ffa44ebc204e4",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100047,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/cwmj_m4/seed_100047/report.md",
+      "report_result_sha256": "680789f783d5938604ae7eac678c3097427de5b56a629212cced3e5373a521c6",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "OnlineExpertPlanError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmj_s100047_online_h50_stride20_train_expert0",
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100048,
+      "role": "expert_collection_attempt",
+      "fold": "train",
+      "status": "preflight_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/cwmj_m4/seed_100048/report.md",
+      "report_result_sha256": "414079052727fe0ee8360a71b0ac24a454bf869a0d6e0400774738e97b092a6a",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": null,
+      "preflight_reason": "global fresh-seed guard found historical lift_pot seed100048; no CWMJ setup or GPU run occurred; no replacement seed selected",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmj_s100048_online_h50_stride20_train_expert0",
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100049,
+      "role": "expert_collection_attempt",
+      "fold": "validation",
+      "status": "accepted_success_source_verified",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/cwmj_m4/seed_100049/report.md",
+      "report_result_sha256": "51a7bcfa02a414bbd6bd0802dca2c9c9f23b3ea6f92a3aaf66386433dd74195e",
+      "valid_windows": 55,
+      "contact_windows": 19,
+      "completed_source_verified": true,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": null,
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmj_s100049_online_h50_stride20_validation_expert0",
+      "source_sha256": {
+        "raw": "1f442d84027370e6033848e951550691a84b672ddd9ec087287b104fbacfbb26",
+        "obs": "f89478190306990ad2337185767ebb0d32657ac2c8d4580c52c369c35592cbda",
+        "frames": "862f5d683e43d8d65d478b418425faaa7e463fc91b94b4350219548b5eebfc32",
+        "hdf5": "7ec62956e9adbca71308852d7829f1aea1ac41aaa3c8414e896be8f398350f1c",
+        "online_actions": "290fd43ee45013fc4cd3a42209b7858baf17dcda117041adf3645a6f60e07cb6",
+        "pilot_result": "fe2613d93d4b2ebaa266668b04091c9f91db793b58304e652ecebf51a5c3c7fc",
+        "completion": "ec224b7d69e1248960883e15c41cb3b86a169d72d0571e36902d980fb41aed02",
+        "success_gate": "aff5c91902124cf5dc1128e0027adf270a3782763473abf7465fcc28cbc066d6",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100050,
+      "role": "expert_collection_attempt",
+      "fold": "validation",
+      "status": "collection_rejected",
+      "report": "/mnt/relaydata/lingbot-tactile-lab/data/reports/cwmj_m4/seed_100050/report.md",
+      "report_result_sha256": "eb242f354495b0319694bf00934d8053227cc7dd19be03ac6862e75198e9d893",
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "completed_source_verified": false,
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "exception": "OnlineExpertPlanError",
+      "preflight_reason": null,
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmj_s100050_online_h50_stride20_validation_expert0",
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100051,
+      "arm": "zero",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100051_zero",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "result_sha256": "c65fbbbd8a1be6e1229434601f2f06f40e703377de5a55a929f7f8086dbcfc47",
+      "actions": 400,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100051,
+      "arm": "true",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100051_true",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": true,
+      "termination": "task_success",
+      "result_sha256": "2c54e047f999693217b2afa93349aa0e2f72479f505f67111442c40bb1c896a0",
+      "actions": 71,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100052,
+      "arm": "zero",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100052_zero",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "result_sha256": "2f911fd08e17c924ef3ae8336e48b38b84ec93fdab866e980ce380b4933457d8",
+      "actions": 400,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100052,
+      "arm": "true",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100052_true",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "result_sha256": "2b7c1e1a2bee02ba4df7a9aebf59468ed4bc0a7563ac7e93d40802f22694a8ff",
+      "actions": 400,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100053,
+      "arm": "zero",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100053_zero",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "result_sha256": "8240cfc017f17b025deaba96addb9646c64a3fcdbf554d5a4aa727ab3bc3f75f",
+      "actions": 400,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100053,
+      "arm": "true",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100053_true",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "result_sha256": "a9d13b4d50e2e7f858fef1675b7dab0c69238ce30524627ed7c804c0575d0e07",
+      "actions": 400,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100054,
+      "arm": "zero",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100054_zero",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "result_sha256": "4eaeca0a01c2835e7d0b75a39c2222b02759b1671388534bfba1a6ace3e1b216",
+      "actions": 400,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100054,
+      "arm": "true",
+      "role": "heldout_policy_rollout",
+      "fold": "test",
+      "status": "completed",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m4_100054_true",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "result_sha256": "50a33387b5315c34c1f6ef6c567083a7e88acd9353b1aa9d2c0d34ac41776629",
+      "actions": 400,
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100051,
+      "fold": "test",
+      "stage": "M5",
+      "role": "exploratory_same_weight_input_ablation",
+      "independent_new_seed": false,
+      "weight_arm": "true",
+      "input_arm": "zero",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m5_100051_zero",
+      "status": "completed",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": true,
+      "termination": "task_success",
+      "actions": 245,
+      "result_sha256": "ea2f6a424a8968f8ea652548f8ae5eca0e9aabc6cf52d3f526dea3436ccb37b8",
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100052,
+      "fold": "test",
+      "stage": "M5",
+      "role": "exploratory_same_weight_input_ablation",
+      "independent_new_seed": false,
+      "weight_arm": "true",
+      "input_arm": "zero",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m5_100052_zero",
+      "status": "completed",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "actions": 400,
+      "result_sha256": "e8eaaeceed990f8d031ea736f4275384aaa0cc6b6a978e01aa65aae507ca7585",
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100053,
+      "fold": "test",
+      "stage": "M5",
+      "role": "exploratory_same_weight_input_ablation",
+      "independent_new_seed": false,
+      "weight_arm": "true",
+      "input_arm": "zero",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m5_100053_zero",
+      "status": "completed",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "actions": 400,
+      "result_sha256": "7bbe099e5e2f2a8e4e5e9b5f1bfad317f07584c64be3c2cb3f01603413523420",
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100054,
+      "fold": "test",
+      "stage": "M5",
+      "role": "exploratory_same_weight_input_ablation",
+      "independent_new_seed": false,
+      "weight_arm": "true",
+      "input_arm": "zero",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m5_100054_zero",
+      "status": "completed",
+      "used_as_expert_supervision_in_m4": false,
+      "future_fit_requires_new_manifest": true,
+      "success": false,
+      "termination": "official_action_limit",
+      "actions": 400,
+      "result_sha256": "08516b75972af94ad2465e29e3737ddd495aa59c9dfd371c17a2c45dbe66307f",
+      "used_as_expert_supervision_in_m6": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100055,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100055_online_h50_stride20_train_expert0",
+      "status": "collection_rejected",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "report_result_sha256": "57d6b011189279192258a0ed35e1c4728da7743a5034e97bc0c6d9a6bbfc75f9",
+      "completed_source_verified": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100056,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100056_online_h50_stride20_train_expert0",
+      "status": "collection_rejected",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "report_result_sha256": "24b596deb4a1bd56d7e16d335b56f2a6cb572128afdd3508c02450708af9df70",
+      "completed_source_verified": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100057,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100057_online_h50_stride20_train_expert0",
+      "status": "collection_rejected",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "report_result_sha256": "6f9be8c19fb7d7f11950616172252c4ba689f8098872561b63b6bf35aa8ce886",
+      "completed_source_verified": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100058,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100058_online_h50_stride20_train_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": true,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 56,
+      "contact_windows": 20,
+      "report_result_sha256": "de97969ae0053536a53be2efd215e1b44c83608530cef08025e441e018c6b025",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "d7fad622bec2487a291d2c9f2d35c4c0daedf1f97bfa7c1fc228d9fc1cf69ce6",
+        "obs": "ee2e4f0c1b5c183b375ab44c1e341b51f3202f6653fa56716896a565425f5efb",
+        "frames": "c25801c56667d729cdc1a83dd6aac8380307472ed321c3cb448a5c6e4201fa0e",
+        "hdf5": "571aedb28ac675c66fa338b902cf7344e35f3d94a17ee8be929eeb691e969890",
+        "online_actions": "db2b76aa4dfe88d2287e4721ab3e70963d61de69cd6dfb746c38d9a83e857740",
+        "pilot_result": "e79b76cd0af3d511500913eb50b52f9312bbf884d72d3eb4a87c8a5dfe846772",
+        "completion": "6e11aa1bbd55b997de47b99e07b72f550a690f3c6c313f9402af531fbcda2fa3",
+        "success_gate": "a8ec55eb000c879dfe179b0e56c411032109e99f14b6c3a644afac8160b7f0ce",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "m6_completed_training_usage_evidence": [
+        {
+          "repeat": 0,
+          "arm": "zero",
+          "artifact_sha256": "b9da556fbba9234bab34c3f62e90bea60b4e536418cc9678741b1684aac73214",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "true",
+          "artifact_sha256": "074b6041bc3c7ae19f2df1d4e68615d16a267060fbf3a5715ab712f8822237e8",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "mismatch",
+          "artifact_sha256": "3864f1bcc03cbed1056f1595b717a27fec816c4549dc3336495ffa44ebc204e4",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100059,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100059_online_h50_stride20_train_expert0",
+      "status": "collection_rejected",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "report_result_sha256": "4720e0088f8d38346e08b8419059c3407ff1756d669153d6a436bfc3d4e97faa",
+      "completed_source_verified": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100060,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100060_online_h50_stride20_train_expert0",
+      "status": "collection_rejected",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "report_result_sha256": "b47b39e2feb17e0d15059b20628d1e6c6690dad111f2e183904bd6bdce3a6f54",
+      "completed_source_verified": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100061,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100061_online_h50_stride20_train_expert0",
+      "status": "collection_rejected",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "report_result_sha256": "f664f897394a4c273a9e4a46ec76d367dd9f574e56b22aaf8ed1e13d4c407ce7",
+      "completed_source_verified": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100062,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100062_online_h50_stride20_train_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": true,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 55,
+      "contact_windows": 20,
+      "report_result_sha256": "68f105a00767e081a6eff5738d709728806f99d6186ad4e8e1915312204aa46e",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "fc6baebff7903e214019c6d2ef81a26dc7518b06662917f31a8444f3c6b7cb4c",
+        "obs": "2795f5c08742fa7ae146426162b9b9e94fb330f48454a6b9d5dfdaaca233c097",
+        "frames": "fa7f2d87bc133e690ac471e63a9166c451d389a44941c04e052a71cfe10b1beb",
+        "hdf5": "7c79d5cd2dfe41a6b5299d9ec8d2c2f2733f4992c134e0d2ba98cff1c553adee",
+        "online_actions": "f7947e562584594f252bffa403fbae0f6e4fd544bbfdbe3172652d3a63234ec6",
+        "pilot_result": "51a4e37206a1c4f7db98b3d8c3ee6e4d487b22a60de447941a6ac31bedc62790",
+        "completion": "d125cfa97d057f6b532cc8b831133d17ba79ee53cb7f225f89a9513d96c1d7e6",
+        "success_gate": "8bdc0424aa6f49b29a69dd844393095ff0c7e1021089b1b20dcf80d54e89beb5",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "m6_completed_training_usage_evidence": [
+        {
+          "repeat": 0,
+          "arm": "zero",
+          "artifact_sha256": "b9da556fbba9234bab34c3f62e90bea60b4e536418cc9678741b1684aac73214",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "true",
+          "artifact_sha256": "074b6041bc3c7ae19f2df1d4e68615d16a267060fbf3a5715ab712f8822237e8",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "mismatch",
+          "artifact_sha256": "3864f1bcc03cbed1056f1595b717a27fec816c4549dc3336495ffa44ebc204e4",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100063,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100063_online_h50_stride20_train_expert0",
+      "status": "collection_rejected",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 0,
+      "contact_windows": 0,
+      "report_result_sha256": "c9683846243bdd3331e3ac6d6906fbcef9d847fbc4470b02c2d7a7a7e5be7350",
+      "completed_source_verified": false
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100064,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100064_online_h50_stride20_train_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": true,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 54,
+      "contact_windows": 19,
+      "report_result_sha256": "ecedf6efbae9e9577058555b4e3ac316bc9923acec0507184948c0f4fca2fa32",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "354d2a594278d4fb526b336ca18dd4ccf6dcfaaa727e1af2bf21dbf2b4dba242",
+        "obs": "230d851460645a53cc94cc6a4b98ad489379b6e19eda7acd7aa2912fba5f97ad",
+        "frames": "4f245bddeb48dfcba86c57f5f23f29c540d37aaaa48e5f1d41bd9f216cb6ea9c",
+        "hdf5": "1eb4c05f38273dfc92c9b8a2f33fdd7d4ea0783026cccc1414a15f40b7fc6bc3",
+        "online_actions": "840ca4f1353404d1e6275896dbcaa533ff7dbf1cfc5d84416dcaa531cae38083",
+        "pilot_result": "9c03a8164a6044d1d331e99255a0c4b430734036fc8b5ddebeadc8fb53155513",
+        "completion": "8800b6388d44abe7d699976a3206bde451a12d177cb42c9c9a127163f0c97b57",
+        "success_gate": "b5f90ed6dc60de6ba4b2f4663365300bee74a6c05b4aed1eade5d294b9855c8b",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "m6_completed_training_usage_evidence": [
+        {
+          "repeat": 0,
+          "arm": "zero",
+          "artifact_sha256": "b9da556fbba9234bab34c3f62e90bea60b4e536418cc9678741b1684aac73214",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "true",
+          "artifact_sha256": "074b6041bc3c7ae19f2df1d4e68615d16a267060fbf3a5715ab712f8822237e8",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "mismatch",
+          "artifact_sha256": "3864f1bcc03cbed1056f1595b717a27fec816c4549dc3336495ffa44ebc204e4",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100065,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100065_online_h50_stride20_train_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": true,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 58,
+      "contact_windows": 21,
+      "report_result_sha256": "1134ac9b7e26621352eb4d7dd9155c02d0063fcbf74b8e454716611319a50c53",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "479aa02b893d88332f8d9901b688e601e14d2323928a57247575e3c314c91f9b",
+        "obs": "126c25c94cc1c3f63fd0d0bda55bbbdd7fec4f6753f28618d5406b563f63687f",
+        "frames": "6b6005a27d3e53f0a9e55be09d58b6dde4a63a91b382813b1ebccbd5f8b576ba",
+        "hdf5": "c92453bb416995c4b2aa7e2c92ff9d6499aea27d103fde1171947b20facf0e3c",
+        "online_actions": "467f8c867ea3289de3fa9e978592ad19eadcebf077edc7c7646f0ac3843c33d3",
+        "pilot_result": "6c9f648d89f4d844a9cf714865e4397d4dee3964eafd80f204b0d82f19d7c358",
+        "completion": "1331911ee58d9f73e30aa53d839005bcb0f8315a3caed045115c12706f49780c",
+        "success_gate": "565322d414fe62a1404abeb02433182fdf5aa22afe74cfc155e60bca85ea7fa1",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "m6_completed_training_usage_evidence": [
+        {
+          "repeat": 0,
+          "arm": "zero",
+          "artifact_sha256": "b9da556fbba9234bab34c3f62e90bea60b4e536418cc9678741b1684aac73214",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "true",
+          "artifact_sha256": "074b6041bc3c7ae19f2df1d4e68615d16a267060fbf3a5715ab712f8822237e8",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "mismatch",
+          "artifact_sha256": "3864f1bcc03cbed1056f1595b717a27fec816c4549dc3336495ffa44ebc204e4",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100066,
+      "fold": "train",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100066_online_h50_stride20_train_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": true,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 56,
+      "contact_windows": 19,
+      "report_result_sha256": "3e062fba9149d36af042e2f1be0c530a2a6c7bc45de87dae7cd520780bd542f7",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "c511359ee3a92fd6738e77036342e8276235541371b5ff19c5f8534219450b3b",
+        "obs": "3075129a4ba97ed8c114a5428a91bdbd1519380273c1b9afa62688bc43602ce4",
+        "frames": "1cd4553ba5d0c8bd343abc526e45294f8e231c3c5a4b0ebe9c2b334d73f6159e",
+        "hdf5": "5c55a1a9f1789abb48bcf253bb60f823fc4ac185d4f8d6a63ea43435ff8afa73",
+        "online_actions": "708fb012b7aa0f70d9cb313900e5f7dd84a2d3f2e7f056d0b471047d55ee3049",
+        "pilot_result": "764d5a187d975a9381c101ac8b065f0b5e72c5baa099b8130427246323945067",
+        "completion": "dd839b4e6ac173445434b458a224c1a393b7c678b0709120c5f2a31d9b17fcf6",
+        "success_gate": "be7121fa276c048c2865af393290297b30fb8e77729ae93f0d1a73061d1f2055",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      },
+      "m6_completed_training_usage_evidence": [
+        {
+          "repeat": 0,
+          "arm": "zero",
+          "artifact_sha256": "b9da556fbba9234bab34c3f62e90bea60b4e536418cc9678741b1684aac73214",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "true",
+          "artifact_sha256": "074b6041bc3c7ae19f2df1d4e68615d16a267060fbf3a5715ab712f8822237e8",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        },
+        {
+          "repeat": 0,
+          "arm": "mismatch",
+          "artifact_sha256": "3864f1bcc03cbed1056f1595b717a27fec816c4549dc3336495ffa44ebc204e4",
+          "training_log_sha256": "7c3f21d8834341b5ba69d432891658f74c3b9711747b5c5eb09c5572284cc2d1"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100067,
+      "fold": "validation",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100067_online_h50_stride20_validation_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 55,
+      "contact_windows": 19,
+      "report_result_sha256": "c456453ad406feb430951e722f98cb76fd962a1d20c382e0b2fad005c4d6b5f4",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "b7ee9b7d27ba72718c77245e2a7ac5c109aae19c65e7032ecfb010cd64b717bd",
+        "obs": "71717c2e63cc35e72e6c43f8ec7f3e71ae95dcdd1d3469e981e11a5deba3f6a8",
+        "frames": "a4d09046767ff049f10e704da9de45b8c97be419d4b9374aa142b43fc928af14",
+        "hdf5": "2428f9d3a612cf0d7e8a482cee196409f25f417313ed1618a1055a313962e874",
+        "online_actions": "d7b8379536ef5756678ce3026545213ed602c7f91e5f9d2b37fc77cf660ca830",
+        "pilot_result": "1619c118fb4af2bbb86a6b2ecf7541c37441f96bb08aa98e235926aa9e42be4e",
+        "completion": "d93cc3922d7a4bae72c735ce515fca645198b917fa023df680cb3fd4ad63c572",
+        "success_gate": "d0260177860fac28bedf2a6cb665b6d6006198e95fbf77df051b8b83d3c0c1ba",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100068,
+      "fold": "validation",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100068_online_h50_stride20_validation_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 55,
+      "contact_windows": 19,
+      "report_result_sha256": "9c07bd2ff7e889563bbfdd9673277bb011a1c53c3a77ed73e1ea3133b5227210",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "427440556a3c20a68b36c538948d02585dc1ee3a170fd299a5d8adecf4481327",
+        "obs": "a48cb2ddd91f582f8a0ef5fe0ab8c4b902c9411fd14c02e1119cd94834bfed95",
+        "frames": "5477f3a1919b49c7d6471007fc101ac9cbd4a8b49ce41fd1e5729ffd5b906799",
+        "hdf5": "a37b35b0a55fa4c6ed5b1678652123ea08bd067c02a896f62e3f4c5329103115",
+        "online_actions": "99e777a9c3c7820f4710297feded9111335a6fe7086379bd9dd4dbe244de6678",
+        "pilot_result": "1b1e6f000bf197a09e59a39f0a590defc84ae6f50ff2deba3b5dc1c6514143c2",
+        "completion": "0dc3294d185727a6b01d7c6b2773633539c42465d6bc84a5d4a2dc2c3089fdb1",
+        "success_gate": "5d45ce54d71bfa0f641dc678134a9606109971c8f05f627e6c9c562bba9f55d0",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100069,
+      "fold": "validation",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100069_online_h50_stride20_validation_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 57,
+      "contact_windows": 20,
+      "report_result_sha256": "bcf9eb573f52fa613dd68904dd68ee0f3ad812b87cf43fd9b8c90287713b498f",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "4cbfb2d45de5b0ad387ecf7b6ecfd7d28537faea22cadd229c6be8266d5d3fb5",
+        "obs": "41edeeb0154207116da0f6442936d813d526ffc3252d49a4ac068b3b77d2836a",
+        "frames": "0c12b481f14e07995df650b0211e3d8ad32855c2a66264271930a51a964336e1",
+        "hdf5": "188268089fbbe2e550d384fbf3f23de1417008554781cfd0db4ad3ff27513563",
+        "online_actions": "a01f2c16f54ddd91c461056471f0511c671756eca697a80ced872fe97dbb13f3",
+        "pilot_result": "10ec9af67e364ae0daf6ca9b62fb2dbb66f9bd0b1f4b4c5569ff4ca9c049cf8f",
+        "completion": "3d254f6ffeff413479fe9c61eace2752070d5ea08ab3eb93ec82bde834601dd6",
+        "success_gate": "5228c9e96e83f3db5fe2440bf6a158c3699b3d4177e2f2e1da47e756b3544c49",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100070,
+      "fold": "validation",
+      "stage": "M6",
+      "role": "expert_collection_attempt",
+      "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/paired/relay_pickcwmjm6_s100070_online_h50_stride20_validation_expert0",
+      "status": "accepted_success_source_verified",
+      "used_as_expert_supervision_in_m4": false,
+      "used_as_expert_supervision_in_m6": false,
+      "future_fit_requires_new_manifest": true,
+      "valid_windows": 57,
+      "contact_windows": 20,
+      "report_result_sha256": "7bbd05e6c8d9257751cb46fea0a89eab85bb35b55a5ddb12e2c65606e5c81156",
+      "completed_source_verified": true,
+      "source_sha256": {
+        "raw": "78501f09e5726ef339ca6d18f7cda89ee4b89f47145358da01e8a54a7d79e651",
+        "obs": "32f47fa6896b3b902caae928ad61dc928d0f32b80aa5d8ee652a45024ab8c014",
+        "frames": "4cdc5ba627a9d7aef45649f8ff22d528ddeaef379fab362e918de65f3d00206d",
+        "hdf5": "02c712ce7d65c452ff333fb36643b8f72d0298ee6adfc8f2181eb82949f9e6eb",
+        "online_actions": "6c5ea3e42352935747af3b04a1fed273ef93a5c7ffe174934b73dbfe5b55dd60",
+        "pilot_result": "dcfefaf153f11c936530b5fa1de146234e6c0b4827ae56fe58b5105db63ef923",
+        "completion": "9fb5d112af453ddc731ff8f3a34717527b7311dea476af124ffd10a62d4874fc",
+        "success_gate": "3d58239a509c9ac7ba7dde4c960d96614669a13176643ef2d1c32c25b0ecc691",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100071,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100071_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100071_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "0b42e573cf43982706f1a22301636ba8dd3965996d2d3eddfcf42f3f3f4a273d"
+        },
+        {
+          "name": "r0_100071_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100071_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "d7974d8a9460dc41c69923680e90f5c901531e551c10523218bc7916a31f8b04"
+        },
+        {
+          "name": "r0_100071_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100071_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "1808d9a1d9dfb3b7e22c818570e51a1ebda4ebd807dd2ef609d55017d2a195bd"
+        },
+        {
+          "name": "r0_100071_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100071_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "5493128fe8e486bee8086b36c3e2b4497e2611dc05a84fab74cca2105a0194c5"
+        },
+        {
+          "name": "r1_100071_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100071_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "dd196f33535d452d9d12ff8917a3ba1bab9c478252fe6937b5872e0c2adf17eb"
+        },
+        {
+          "name": "r1_100071_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100071_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "113792ab5ac0c245232fd4cf4cdc4e0945b82449821ed0695ef1957caff0059c"
+        },
+        {
+          "name": "r1_100071_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100071_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "b2ce3f53255cca45c4650aff8a35cf1119fcae96840513a4d1f1e0ab8ca91dd5"
+        },
+        {
+          "name": "r1_100071_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100071_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "96029269cdf5a509db85c025795b9693071313788c316b0cd8b079c77c589d9c"
+        },
+        {
+          "name": "r2_100071_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100071_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "3c323eb98e87bba47b55cfa96857149b5a4a53897e05a6627ad312e691a16f83"
+        },
+        {
+          "name": "r2_100071_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100071_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "a9e998b15bf489315184e77ad5354f8db37207575d19fb6db8fca0d164773020"
+        },
+        {
+          "name": "r2_100071_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100071_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "467e72fba1369e9abb47c9f1eed4fbbdd8c396ad41587b4e198acbb306ca4244"
+        },
+        {
+          "name": "r2_100071_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100071_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "8ee41cd8f000eb795aa330f9481e1011fe676115df29781b04babf9330b5b9c6"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100072,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100072_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100072_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "55caaa4dab0df65344793271a7c6924558d0ef9fae4138c541e60fdb2348db4c"
+        },
+        {
+          "name": "r0_100072_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100072_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "ba3c0ed86ff7e3224b3b5e4582b63c0f25ec7cdb2cbfc0ea2c302a446c5a54db"
+        },
+        {
+          "name": "r0_100072_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100072_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "94f12741d7c7f55ecc0ec6d1b6aea69f9823bfb1388793feff4a3d1877641898"
+        },
+        {
+          "name": "r0_100072_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100072_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "b3d250417c525969cc3a3901a7523fac40f643f122bfe2177234f25b9eb47a86"
+        },
+        {
+          "name": "r1_100072_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100072_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "af8b911f4f9b70dc220a405136026895bfafbc868fbdf9d2b9e8bb1816f8a6fc"
+        },
+        {
+          "name": "r1_100072_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100072_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "2773754fffbe2b51926b6a3a940c5189c5fa50e421978e40221f4d616078cb6b"
+        },
+        {
+          "name": "r1_100072_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100072_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "698092747275d175b5cfe3579853ddf08969a282507213b1f00196729de78a47"
+        },
+        {
+          "name": "r1_100072_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100072_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "84122b59e84fa72935ce6925733dfa10d4cd853319bbe9eab1c614a421006f44"
+        },
+        {
+          "name": "r2_100072_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100072_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "b577bc7ce4fed8ded24bbcff50fd8f8df6088547cbb68aed7c6e0208e522f52c"
+        },
+        {
+          "name": "r2_100072_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100072_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "42db6d4a3342006d3998b5681f4a3bce94317ab5ee6c691a51edd8890b43e318"
+        },
+        {
+          "name": "r2_100072_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100072_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "9a0820519674d81fb26410f565f17849ffb59996269806229ec40bb79002e585"
+        },
+        {
+          "name": "r2_100072_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100072_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "c22e895df56676a5b42c61d837a12ffb6e27292dd6476f0d7d6668e8c4f850e2"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100073,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100073_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100073_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "fbb4b987dfe8c504d73a19781594b171762d1c5835823244ba4ae68aa74a2232"
+        },
+        {
+          "name": "r0_100073_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100073_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "5467a75faa8847c529cfa3d73748249035e8b568f33c38814446eafd4934f133"
+        },
+        {
+          "name": "r0_100073_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100073_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "b051450309e1d0aa57b0028ccedc67db10b26c10be22be9d90562709ef479a3b"
+        },
+        {
+          "name": "r0_100073_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100073_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4e447b0dfbac6cbffaecb9b9f6f67880a038b82ea45bd8a48bb353ca9dd6045f"
+        },
+        {
+          "name": "r1_100073_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100073_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4bee0f92209881a45c1b2f14c4e38aebfd3987689005b6bacede68dd5a63af8f"
+        },
+        {
+          "name": "r1_100073_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100073_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "ac4269852389642a693d1cabf3092e9850156115936a8bae50200e3b3a350991"
+        },
+        {
+          "name": "r1_100073_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100073_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "9f0ab867280d7874f74df2d76f6aacd9a0a4a326916bae083ed6302068cdff32"
+        },
+        {
+          "name": "r1_100073_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100073_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "5e728942b97cae121263fe15cda2d8941ec8c760941df81bc3e3c8d364d40565"
+        },
+        {
+          "name": "r2_100073_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100073_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "739cad34c201e173b35be9f26f16049a64eda2529a6e98050d88d02aa7ace536"
+        },
+        {
+          "name": "r2_100073_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100073_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "d8aaf780f8c5edf7d75d5ed86202df42835a730f89079d76f1e56b520083022f"
+        },
+        {
+          "name": "r2_100073_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100073_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "81b3f552af098b60904a86e66148cca5ce38834460f76fdba66b50d3791dca9a"
+        },
+        {
+          "name": "r2_100073_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100073_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "47283f57098c0d1def10b7696b6d557bc53c5b8dfed2f097b25658c085534aef"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100074,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100074_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100074_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "26eca3aa7d4c395381b986d371f1a577784b81e8373077b24845a95d00aa1b22"
+        },
+        {
+          "name": "r0_100074_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100074_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "1e785828e75c962e0dff21131394810f97057446ea655b1965336e8de5defd48"
+        },
+        {
+          "name": "r0_100074_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100074_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "68be401d3cb8cc3e52f342315a49ac280567b4eab390f162f5c440a259a2ba88"
+        },
+        {
+          "name": "r0_100074_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100074_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "7ec6fca4074823f8e58661766324e13286356365a1f5339fdeb5b3aebaae5855"
+        },
+        {
+          "name": "r1_100074_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100074_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "348b8958d05b5c741098593daaf652bbdad42949fa997072d4f4231e146cbf9a"
+        },
+        {
+          "name": "r1_100074_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100074_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "edf64c68b5d99ad3e083ddc373e199b5712efe320c169e5e5b66bc82f7f8d724"
+        },
+        {
+          "name": "r1_100074_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100074_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "afa54713e1beb8564966e499b553d147ce2415884d243c77ec4e9e10c99bc3c9"
+        },
+        {
+          "name": "r1_100074_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100074_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "ede7adf6c859b4814870bfbb486514001a6d5165c050691f2c14b1f3f2e163c6"
+        },
+        {
+          "name": "r2_100074_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100074_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "a2dd5c70e29b5d052d3c7d2b28c4f52ae6ba6cd5e269f5124eb33109c9b61a1c"
+        },
+        {
+          "name": "r2_100074_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100074_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "78a6e0178388e3a87f70503d4ab6ef213be2a21170e1b3eaf8f8f0aeda077fb2"
+        },
+        {
+          "name": "r2_100074_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100074_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "4c56f567cb0042aa2797c027ec7a030285aa8b9df24eb869abaead86eedab62d"
+        },
+        {
+          "name": "r2_100074_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100074_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "6f49bac8c3c653483e6c8211ad11e648bc6bd19328cd94ac4ed9db42a0680ccc"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100075,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100075_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100075_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "5ce2610dead97bf97eaad31a3f6bcff99aeb7639c6538e9a0a68f3ee0c204462"
+        },
+        {
+          "name": "r0_100075_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100075_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "3f5df5785e576cfd72fecffa24dc0cccf8a596a5ce8a7a5bd5e11270f6eb115e"
+        },
+        {
+          "name": "r0_100075_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100075_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "897dbb985a27f4e016f2fa216fe4e68d4b8d9419adf37aa589c23c1f1fb27547"
+        },
+        {
+          "name": "r0_100075_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100075_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "42df8655f8ab0480f55ee6ca4b75ff5060bcc28250dc811bf8227e993d16b3c1"
+        },
+        {
+          "name": "r1_100075_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100075_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "61fd5a860f5e9aa6e9799979fc84b6f32bf12adb5b35a704ca7dcec80296281b"
+        },
+        {
+          "name": "r1_100075_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100075_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "f3cc795f2747076e8dd1bd48ee2b6f4ed7bbf8ac6eb19b9b8f70d76806c46fc1"
+        },
+        {
+          "name": "r1_100075_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100075_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "69c7308613b3e00df0cecdd66c90b816919ab428dbd0721cadbca89121e8f39a"
+        },
+        {
+          "name": "r1_100075_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100075_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "8dcb294c8fefb3f83877338235c3c3ba06c6be866fc460cbdf46cc35fc1e8d7b"
+        },
+        {
+          "name": "r2_100075_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100075_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "8f02b9534ba10d27d85e48cb248f49b1e6dc9542578706b3d15827a21180f24c"
+        },
+        {
+          "name": "r2_100075_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100075_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "7eb44a407e2e90ab0e17fe945cd1ab43d447e3ff04ac1451c5ac7a5f922bc005"
+        },
+        {
+          "name": "r2_100075_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100075_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "5cec60c78c6ccf0aa07a0a980918e067d222e9c90bff293bad3311b1879dbe16"
+        },
+        {
+          "name": "r2_100075_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100075_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "384e8c742df208d625876a70f04339e99f6d0277c109430bbb34478f69be87df"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100076,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100076_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100076_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "006cd469c830333af75664e1631a5f82f76346d896105a3551944bc5b6c3d0b4"
+        },
+        {
+          "name": "r0_100076_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100076_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "2e46102643436e5a45650c965b326a71965510b8d78e688651192691e47eb916"
+        },
+        {
+          "name": "r0_100076_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100076_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "a523d7ea15e7efd6ee999acbcf47a3319ba6a901add19afbd3608840178a3d84"
+        },
+        {
+          "name": "r0_100076_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100076_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "db3f617c3790d65684e16a33a1f0e60f9ab3e958b5545bb0f01912692eb3d7e1"
+        },
+        {
+          "name": "r1_100076_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100076_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4a61aa05022fa8dd9e59b384d2ab17b8dbb87786c869105e45dd191d9d93a0c6"
+        },
+        {
+          "name": "r1_100076_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100076_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "b1585322f5f5f5df6daccc0b5d0afd0d71943fe4215b825dea93b365be2cbe87"
+        },
+        {
+          "name": "r1_100076_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100076_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "8b3a083c8a935da60ca887e2a6949ce7113648c8c6e2d93975ea023c07fcc9ca"
+        },
+        {
+          "name": "r1_100076_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100076_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "459536eb9b069e9aa5a360560cab3aa44b2e043d9ec37c8bc697303dfbd9dd4d"
+        },
+        {
+          "name": "r2_100076_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100076_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "949202a2653bc322869518f740138630a40a9e3fabc8d6e3f186c7df0cda762c"
+        },
+        {
+          "name": "r2_100076_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100076_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "09bcb53a6d0a48bb5e344b0ae55183a418994b9a14abfa9f825d39d49ed1298e"
+        },
+        {
+          "name": "r2_100076_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100076_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "9ae8d2663d71c4760ec90ef7e4cf6ff697fc4e306db073d0335333e9476c09fb"
+        },
+        {
+          "name": "r2_100076_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100076_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "ec2640ba47b556fd3c2a365894777ed8ae1bc695f7dcfb06aa8a776c96141850"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100077,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100077_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100077_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "2cb84fe8dd609aed3e712cafcef4a60213134f74870264f55b3f3bf540b99077"
+        },
+        {
+          "name": "r0_100077_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100077_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "339493834e97bd57ba3128b09920c4dda082e0eafa2aeef9fbd0c15791f73818"
+        },
+        {
+          "name": "r0_100077_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100077_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "17b33207179b4d7c98c97935561d57790b00041644a12af39fe58d8c6e9ff60b"
+        },
+        {
+          "name": "r0_100077_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100077_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "8c4538b71051d2c11ff983cf656fbee86cc4ea48aaa43924cd58c86707c8f1ad"
+        },
+        {
+          "name": "r1_100077_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100077_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "8840bd27e6faf04fa63d7f4ee75ab1baf504c154a28e345cc5e3e3503c5c5707"
+        },
+        {
+          "name": "r1_100077_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100077_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "0d0fa8b2c4803c9b7cc7cd6ad6c73e5549719819b7168610fec7d846cee07ccb"
+        },
+        {
+          "name": "r1_100077_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100077_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "d67becc18c5545bce8cc1cc7b616591e6f7729b6be5680061f56cbab5d5a4131"
+        },
+        {
+          "name": "r1_100077_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100077_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "a859f56d57ec62f89af247391d9dadccd72c7c2e6cf72db18a212d9d8faf8d84"
+        },
+        {
+          "name": "r2_100077_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100077_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "371002f18678733eceb9748ea15c2001185a369bae709ecbcce0634b23b07276"
+        },
+        {
+          "name": "r2_100077_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100077_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "3d16ae5d7266794091502179c77fc7692908e2b35e4628bec8655d3ef413c9d1"
+        },
+        {
+          "name": "r2_100077_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100077_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "986d75472d679a1c395257dcaa7be47c97a0979b567bba064c6adc3c374d838c"
+        },
+        {
+          "name": "r2_100077_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100077_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "99e5c7585ef71ab559f899e23d3855b1ce74fa52bccb8206f69a38c711f5b3bc"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100078,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100078_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100078_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "79e7913c39ece5a8f7683f974de057dc12dfe650407a00f31aedf28803458f1e"
+        },
+        {
+          "name": "r0_100078_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100078_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "7d2079bbd7b3a19e9894605c68d07fc674c6bfa779ccfa93f8af1cbfe3baed57"
+        },
+        {
+          "name": "r0_100078_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100078_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "5913d8b9372365dc6e655297fecfc3a5024e513571d9076890d06c30afe3fba2"
+        },
+        {
+          "name": "r0_100078_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100078_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "5cdb0a132caaa07c39e1e7ba357ec75685c43d84c2cffa2688f5bfe58b229ef3"
+        },
+        {
+          "name": "r1_100078_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100078_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "9f90e7d47abb6c579ef7b875b08137e85a3869d5658786f47624beda15d2773f"
+        },
+        {
+          "name": "r1_100078_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100078_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "974cb3622c01260eb97313248d8d9474c97443833779db2eefe7d50ae54aca5b"
+        },
+        {
+          "name": "r1_100078_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100078_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "aadae8d1a1018a83dba7929f31b510ed5412a1de1bbe59a92e3cfd8fb28336a3"
+        },
+        {
+          "name": "r1_100078_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100078_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "261452a46594f29b17f9674c5507279c92002593c8b56fa30b2935881f8ec2fc"
+        },
+        {
+          "name": "r2_100078_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100078_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "609c6d4624dbdc1bbaa71ad09bbd10c3aec1b4af64f561cfa4d891f2a4594717"
+        },
+        {
+          "name": "r2_100078_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100078_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "9da6da2cabe6f338ac27fb7990b2fc78e27cf39c59524e29b52bc08ae35f879d"
+        },
+        {
+          "name": "r2_100078_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100078_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "1e5f0cbc1b54366d9489ccfb39b0a3174ff1c7659d26a44d47f9a399574164fa"
+        },
+        {
+          "name": "r2_100078_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100078_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "fb1f9b494957045c504c05ea6fb215cd1acc50a1701bb0758c45c0621dbf002a"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100079,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100079_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100079_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "c941187a6c1ec7b5ffe528efc7e8ee6ba32cba126b87e04b77b36ba3de4599c9"
+        },
+        {
+          "name": "r0_100079_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100079_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "8a97cb27618eabf8e79b7abd4d8f5fab52456b3072cbe55a77f28e296f6fea9e"
+        },
+        {
+          "name": "r0_100079_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100079_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "3d5c08be54eb7ede7d48115219d869ab784e5c4cc12612570a591d3b93cf2b76"
+        },
+        {
+          "name": "r0_100079_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100079_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4bd63b4a5adf3506e0b5e728f99a2783f20c057ebabdfe118e79d6f4a34a8a5a"
+        },
+        {
+          "name": "r1_100079_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100079_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "571fe646570c79d45a105016735b953ff91ac289b01fc72c1228b1e6c8bb0a43"
+        },
+        {
+          "name": "r1_100079_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100079_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "61700f891e03aafa2e97350bf1f850069b4453c8e10da87b2ed32c69350db450"
+        },
+        {
+          "name": "r1_100079_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100079_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "6a336e860c4984d66ccb66f366f733481f5aef118c0a08412e5d9c804d92c8c9"
+        },
+        {
+          "name": "r1_100079_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100079_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "c5797ee888c7fc708d45f6a7210d7f8bb260d3e7ef13bbde339c33b3ea066602"
+        },
+        {
+          "name": "r2_100079_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100079_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "eedf5a390354904f242b93f7cf7ab5ff131fbd486473e6db5a67233f37ec2847"
+        },
+        {
+          "name": "r2_100079_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100079_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "642a1f4396bbba6402a6cf07c1fb373b455acf08e427186fdb2e9e05a34e3f19"
+        },
+        {
+          "name": "r2_100079_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100079_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "1e7b62f591d871ad7e08b8ea6184e0e32d3fc08b4d5d92e04c2bfe55b01275bc"
+        },
+        {
+          "name": "r2_100079_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100079_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "0ad538689a54ee7515d853979525ad9016bcf8446413bc4dcc405340eddecd79"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100080,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": true,
+      "attempts": [
+        {
+          "name": "r0_100080_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100080_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "2e218bf7d5a6e609a56e1297d67504c03eacb75f558ceed32c6dd18061fa5bae"
+        },
+        {
+          "name": "r0_100080_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100080_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "9b8bb8e49f1b1cece64a6ba34b90e867d7a4195db3249e4ace24a94a13c36636"
+        },
+        {
+          "name": "r0_100080_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100080_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4700849916752789e4163b4c0957bb8e0441c0fdc18b4b17deab574db772ec58"
+        },
+        {
+          "name": "r0_100080_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100080_true_input_zero",
+          "status": "audited_interruption",
+          "success": null,
+          "evidence": {
+            "utc": "2026-11-07T00:44:56.068112+00:00",
+            "interrupted_attempt": "r0_100080_true_input_zero",
+            "cause": "Process absent after host reboot; precise interruption cause unknown. Log last observed 110 actions, no terminal outcome.",
+            "last_logged_actions_lower_bound": 110,
+            "success": null,
+            "policy": "Preserve partial files, no retry; exclude whole seed 100080 from primary paired statistics; continue all other planned attempts.",
+            "original_files_sha256": {
+              "data/eval/cwmj_m6_confirm_r0_100080_true_input_zero/rollout.hdf5": "e7d133396168017c00c9912a0ab125470dd2dd32554699b59c5851f9fda73e1b",
+              "data/eval/cwmj_m6_confirm_r0_100080_true_input_zero/scenario.json": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346",
+              "data/eval/cwmj_m6_confirm_r0_100080_true_input_zero/restored_buffers.json": "cb870598f7a580e3f9578730b0e2e238ac21f3b00d34927926e6e4e075f5bae7",
+              "data/eval/cwmj_m6_confirm_r0_100080_true_input_zero/setup.json": "da23306a65a9e75dac9f1861f063e13eb1cd33cd0e8262f60ed1e4b67a8de4c8",
+              "data/eval/cwmj_m6_confirm_r0_100080_true_input_zero/force/pick_diverse_bottles_100080_0_gk8kzf7j.jsonl": "8d9473d4df96c22fdc5c6ab092e57ff75aae3616508797b2117402d5307d0913",
+              "data/eval/cwmj_m6_confirm_r0_100080_true_input_zero/force/pick_diverse_bottles_100080_0_gk8kzf7j.policy.jsonl": "51c91ac2de813718b728aad77158eef3f7cb68707bcb1d92bba376936f0f8e3e",
+              "data/eval/cwmj_m6_confirm_r0_100080_true_input_zero/force/pick_diverse_bottles_100080_0_gk8kzf7j.obs.jsonl": "95fbbd0650ae9f2a2ae62b162f30bc3340c527f7802f2ce7efa9b718252ea84e"
+            }
+          }
+        },
+        {
+          "name": "r1_100080_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100080_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "c60e562ee9a35a96f192551b13e945ad52c3da29e2ba7ca3f232ea6ffb1b7539"
+        },
+        {
+          "name": "r1_100080_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100080_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "2b730857b7b56e567af7db63bfd293e50cad8ac873799ccbd07bca83e80dbdb5"
+        },
+        {
+          "name": "r1_100080_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100080_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "9d2ce73d9433fdf3c565293d8cafc8a721f18afe35f389de2519022197ec6aa5"
+        },
+        {
+          "name": "r1_100080_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100080_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "d39fe46f9e0a98e534839147862d02c0573e50b59cd4d72f8970553d8fb04866"
+        },
+        {
+          "name": "r2_100080_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100080_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4e93944e3bfda82b4eec3e08f48d6c416ffb7df9aea015e2808e6be426a47f27"
+        },
+        {
+          "name": "r2_100080_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100080_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "db051a598d5841e4140c9ef96daaf19869619c9b73a88842f36d03a261855a71"
+        },
+        {
+          "name": "r2_100080_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100080_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "a9ad7176ccf2ac7190cb36310b5ec6f5e1dcfa80282cf7845f3b2c2cb405c64f"
+        },
+        {
+          "name": "r2_100080_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100080_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "fdcb7d66818cf17f76af94126441c837f02429f6026abcfcb0e0986cfa8ac236"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100081,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100081_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100081_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "bd10f97071d7110fad54a8e62139ac01f588a6f0202022705907bb2cfa1611f0"
+        },
+        {
+          "name": "r0_100081_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100081_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "d4be904d430f67ecee42655ea82502e833fdfaef1282daab655d24e13b982d1f"
+        },
+        {
+          "name": "r0_100081_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100081_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "bebcf11cad5dd1a42fb9a2fddbd8cb8bf47fddcc2dd098605c6ab2387389efdb"
+        },
+        {
+          "name": "r0_100081_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100081_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "df16e3592f049fc1c516e4919c0653dddf86c7ea0a2a1ef60783b59028413880"
+        },
+        {
+          "name": "r1_100081_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100081_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "19ad1d8e2d9017e63a3d0307cef74316c72dbe98b7f052e038e04163cf487089"
+        },
+        {
+          "name": "r1_100081_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100081_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "148c9799ee98876145ea0fd3fab722c973feacd4b87a98f56ebaeaac77453b14"
+        },
+        {
+          "name": "r1_100081_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100081_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "7245a77bedc40f356e36bcc58d82dd693420c3312bf2967e5ee9a24adcc9655f"
+        },
+        {
+          "name": "r1_100081_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100081_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "02f9395a953ac9d7b3c7674439c0bb5d2bea21a6225990dd96c17bf88afb39ee"
+        },
+        {
+          "name": "r2_100081_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100081_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "4fec5afb8e562334449374f0dd9fc51defd1a55b91fa14eb91eed0df5901160e"
+        },
+        {
+          "name": "r2_100081_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100081_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "e967d2e13b98680bdd90cc1349466b0da5e61b40db1097e1ca934eb427502637"
+        },
+        {
+          "name": "r2_100081_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100081_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "58f93c4b868b85c2b338ff5ed7a33a36fd04fe5ce25e1f2c3de8d0a05f421dfa"
+        },
+        {
+          "name": "r2_100081_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100081_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "41776305e8d579cd98ea932c15f4386707ad7d01bbcaa97c6ca54c8181517cc6"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100082,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100082_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100082_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "1a35cbeeae5dcca47f7a8847309c1c360482658ee6d1d539b41700f87c0e2fa2"
+        },
+        {
+          "name": "r0_100082_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100082_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "5fa2950ed47eebfbb849e8fc9cac813595c1720cdc4d5034b1d1eac827e66fa7"
+        },
+        {
+          "name": "r0_100082_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100082_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "2c5d44a2da25f52befdee62f0bbfa2be3f1f9cdf652788607ee07864b23f4a24"
+        },
+        {
+          "name": "r0_100082_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100082_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "1f6d2f8a07131255345bbcb52c3b7c0f20e0f25fc1112750a3fac8187bd0dcee"
+        },
+        {
+          "name": "r1_100082_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100082_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "17d8142335a52c2dbd648eb0581c125dd0648416f2986da0cf46e55e1896f36e"
+        },
+        {
+          "name": "r1_100082_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100082_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "d48ee4bb61203bb0c17665c02ce6837cb87591a5eb6954229f6a5921160a573d"
+        },
+        {
+          "name": "r1_100082_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100082_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "b3dd0a1793960067058f6892fae5429b01a886806b0c9f744bb9e14c43d9aa00"
+        },
+        {
+          "name": "r1_100082_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100082_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "f619d749718487a5c291aea64bf2c907abd166bac335775da49e3b0a4b287c0e"
+        },
+        {
+          "name": "r2_100082_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100082_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "cd649b5b0a83636454534458c004ecde847342a261b2df845a80376b013c9016"
+        },
+        {
+          "name": "r2_100082_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100082_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "65dcfeeeb0ac57623808570c53845647c6c1fb8046adbef7d8691f9443e2cf5c"
+        },
+        {
+          "name": "r2_100082_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100082_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "dba42678f5f01e168dd0a586b0b37b91fdb40f94433334ed90a45a1c1fdba22f"
+        },
+        {
+          "name": "r2_100082_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100082_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "d76af7c7a8d8e50e7719ae56d9bd5178e21ec68ab680f515855f61ac40355a6b"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100083,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100083_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100083_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "e8696ad4a96690723de7b32651ad87867d12e086d76ba2be478c436bf3ad8848"
+        },
+        {
+          "name": "r0_100083_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100083_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "e451d954c3b2d202c15a0b147d032793949553c396717fe876753f958512433a"
+        },
+        {
+          "name": "r0_100083_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100083_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "0fbb8feab457bd83173c51628e175467c9a7ee1e8a6a2a9c3b156eeefeb8467b"
+        },
+        {
+          "name": "r0_100083_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100083_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "e1c7040a888e240869fc756a3a9355de6929fabd2ed00bbf900dbe2720486812"
+        },
+        {
+          "name": "r1_100083_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100083_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "3479210bbb6fac84dd7dcdbf5d70a85ea2e1b234bb695b93ca838d9faec00561"
+        },
+        {
+          "name": "r1_100083_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100083_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "7c14dda2a1b4152c91fbd4b247c948c7d3255cc00c6f283b1a4ba0dff0525bfa"
+        },
+        {
+          "name": "r1_100083_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100083_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "3da119336b3300c42f4d3250fb4a4e064450315aeeedb1330500817d3ec73c4c"
+        },
+        {
+          "name": "r1_100083_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100083_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "8d5b74851019cad3a63a8c46d6546e1c0fddd558bdc30012d801dc944375fc5d"
+        },
+        {
+          "name": "r2_100083_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100083_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "1e574341dea1b85026413266460ae2c995f6c4e4995d4e23788b39b0fbf6c614"
+        },
+        {
+          "name": "r2_100083_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100083_true",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "1a1226dcdf3f7f5fffe52dfa0a40d18ebfa4da8cb1a3a7c36745568f3b235f85"
+        },
+        {
+          "name": "r2_100083_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100083_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "8b8e804b6be7e7ede19330b3ed34f7d49ebc4c2203165fda70c929d2550baf89"
+        },
+        {
+          "name": "r2_100083_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100083_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "0dbdb081d6911bba2e10b152a2e91b5a7a593aefb2edd93a9622a2a21ad8f3f0"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100084,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100084_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100084_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4ad98440ea04ca3e44f1858cc00b7a2c58486795003df01d2fc82ee49c3185af"
+        },
+        {
+          "name": "r0_100084_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100084_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "709b43db18b11cbc619e3b0353ee11a0659cba88dd57e1d3eec7464553d8926c"
+        },
+        {
+          "name": "r0_100084_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100084_mismatch",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "e7d0e7a5081e0a0e38ac72e9e7e3dcf0c55e7ce7f83d2eaf34719a40c3367f11"
+        },
+        {
+          "name": "r0_100084_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100084_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "021b1cd7e4c87a6f8ee7206455e87d71182a9a26b74205a3829be8e9c2fa0aba"
+        },
+        {
+          "name": "r1_100084_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100084_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "690d48e47313de1e0560a2e1689a42fe003eb01866466e4270cea2ab28833937"
+        },
+        {
+          "name": "r1_100084_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100084_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "fa89bd06b7584bab68dc567e883b52192402c3eedd964ed63f0bdc5c47f75a38"
+        },
+        {
+          "name": "r1_100084_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100084_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "e25c2af9e0103183744bdbe64ae0a86028599ba6b3b683eb2c203cf1e68747e2"
+        },
+        {
+          "name": "r1_100084_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100084_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "d8d80d2af3780801b1ea94677c917aadd03a477bfc1e6265d40b079aa5b37d79"
+        },
+        {
+          "name": "r2_100084_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100084_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "69ed5d7add5e5eff7e2e284296b7d0391db06afc31051db9fddd9c2a87502b7b"
+        },
+        {
+          "name": "r2_100084_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100084_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "afcaf62853014e390cbca4478e8eefd5f541bc563917d6866c719d3b3efd158d"
+        },
+        {
+          "name": "r2_100084_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100084_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4e5519ecf8add96d2ffb0f62188d4672c41bd6420b2865ec7e6bf790fbd0d7fa"
+        },
+        {
+          "name": "r2_100084_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100084_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "cdd94af513a3ec066f1a6bbabc19b6afb404c0fbd8f088a30bcf1ca131be04a8"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100085,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100085_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100085_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "03c842bd4fa581c5ae4fbc64998a4f1f420f721bccb06c495828dd69267350d0"
+        },
+        {
+          "name": "r0_100085_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100085_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "f4eda356de1721e74f3b181055521f40546df9d7d1b32e11bef623492c9e7b5e"
+        },
+        {
+          "name": "r0_100085_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100085_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "adb3b4a06eac08f2b03a280647f7cddf946e9592367af8d79ca25c207a34fbda"
+        },
+        {
+          "name": "r0_100085_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100085_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "bfb7fa2fdd32b7f3942c06f94d47858b94cf761d499da672faabbcfec7a0e7a1"
+        },
+        {
+          "name": "r1_100085_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100085_zero",
+          "status": "completed",
+          "success": true,
+          "result_sha256": "12b84496164e429500a313e9a2a0c7b38b5abb95e0518b5bcf82b967224720c2"
+        },
+        {
+          "name": "r1_100085_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100085_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "553b2529092245b355acdff4d57629b0fa1a1693e4b2f0bbd7ef8dc04198d49a"
+        },
+        {
+          "name": "r1_100085_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100085_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "24d94b43497709a93c93a3bf220241520971a9b56e07b5d29b67d7402999c49a"
+        },
+        {
+          "name": "r1_100085_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100085_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "fb0d97e636d2babe906f01cb8d2fca41fc6c934b9315fe89ef457a6ceba83a45"
+        },
+        {
+          "name": "r2_100085_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100085_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "d07b5397c95c9dc52f74e0f1cb715f5cc966987637cd9155e500c4ffc9bffb89"
+        },
+        {
+          "name": "r2_100085_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100085_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "a8839d884009b4692b097643f8358337a95416b56826174669c50fb0010ca8ea"
+        },
+        {
+          "name": "r2_100085_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100085_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "6cbfe864d4bf523c8c786a12e5b4abd6286466bc58e7f09ff0499c85a35cdb01"
+        },
+        {
+          "name": "r2_100085_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100085_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "d696eb06cbed17a3862ede261c290d86693a006f9e0e4a97347a987a38748d49"
+        }
+      ]
+    },
+    {
+      "scenario": "cwmj_wine_v2",
+      "seed": 100086,
+      "fold": "test",
+      "stage": "M6_confirmation",
+      "role": "fixed_independent_confirmation",
+      "status": "consumed_test_seed",
+      "future_fit_requires_new_manifest": true,
+      "used_as_expert_supervision_in_m6": false,
+      "available_as_new_test_seed": false,
+      "excluded_due_to_interruption": false,
+      "attempts": [
+        {
+          "name": "r0_100086_zero",
+          "repeat": 0,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100086_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "b65f6d70f71b2146003cefb677051b1593ca319542a1eefc1a75fdb496a1c3a4"
+        },
+        {
+          "name": "r0_100086_true",
+          "repeat": 0,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100086_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "0962725a16b1d06c28d947a69288d985c807a17477734a4fecdfe4bb0239d0ff"
+        },
+        {
+          "name": "r0_100086_mismatch",
+          "repeat": 0,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100086_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "4002234fe15daa5a87c77e63f7a13333a8e08f81b4d4ae3cd02947beccd99beb"
+        },
+        {
+          "name": "r0_100086_true_input_zero",
+          "repeat": 0,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r0_100086_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "edf13ff8ae28cb9cdc25a41f12f12979ca88207afe67e5b8822039f7fe4b56c6"
+        },
+        {
+          "name": "r1_100086_zero",
+          "repeat": 1,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100086_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "664a37ee210454cf5c5096c24df191066871f4ba4ea9b7b2c7084e218b898e86"
+        },
+        {
+          "name": "r1_100086_true",
+          "repeat": 1,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100086_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "08569a0c5eb13a8b90120e045abe9b6abf0ceccc9f1f646c330d0de2a509100e"
+        },
+        {
+          "name": "r1_100086_mismatch",
+          "repeat": 1,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100086_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "eb370d8fd909db761a7762e2822c3c78fdbfbbf26b5f56d89d369fa1f3fb79bf"
+        },
+        {
+          "name": "r1_100086_true_input_zero",
+          "repeat": 1,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r1_100086_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "c4dc10dc1c585fbc1f2eea74a6f0a35365649d7970afd705e7798e2436183b21"
+        },
+        {
+          "name": "r2_100086_zero",
+          "repeat": 2,
+          "arm": "zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100086_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "a417fb55f8267cbf394c65eaaca055f473271548d4572d6aa573c7757569e3c4"
+        },
+        {
+          "name": "r2_100086_true",
+          "repeat": 2,
+          "arm": "true",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100086_true",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "2db067a737a4cb567b4324f7c76219851a07a78fb81974201ea9da1c186f7ad0"
+        },
+        {
+          "name": "r2_100086_mismatch",
+          "repeat": 2,
+          "arm": "mismatch",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100086_mismatch",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "b670e5c1519cdd2f6e00a9521ce8bf01381cf27c26bf5e50fea7064028d0af27"
+        },
+        {
+          "name": "r2_100086_true_input_zero",
+          "repeat": 2,
+          "arm": "true_input_zero",
+          "raw_dir": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m6_confirm_r2_100086_true_input_zero",
+          "status": "completed",
+          "success": false,
+          "result_sha256": "ab0d402fe88d8db3b481759a6ae6c6fcd5a510ce94cf491a036b5aa3e1a3e974"
+        }
+      ]
+    }
+  ],
+  "snapshot_utc": "2026-11-07T02:59:48.457947+00:00",
+  "parent_bank_sha256": "dcbb69d75a56e5e8c0eb1c59826f3fc70681aed58f0972f485a2d583e8fd17a7",
+  "confirmation_batch_accounted": true,
+  "statistical_eligibility": "Determined separately by final paired audit"
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "lingbot_relay_expert_command_smoke_v1",
+  "status": "technical_success_same_seed_replay_not_independent_training_episode",
+  "source_machine_role": "relay_single_rtx3090",
+  "task": "pick_diverse_bottles",
+  "seed": 100013,
+  "trial_id": "relay_pickdiverse_s100013_command_smoke_expert0",
+  "source_success": true,
+  "completion_bound_to_command_timeline": true,
+  "physics_steps": 1582,
+  "saved_frames": 120,
+  "dt_s": 0.004000000189989805,
+  "initial_frames_without_instrumented_command": 1,
+  "source_sha256": {
+    "raw": "ce081368ce81fb2b92526c9d15871c433a14cce995fdb1b0d44e01f6bfc08bb0",
+    "obs": "7a0629fb65e4e88ae7c699af372e2d449117931ca74ceb9a1890aaa8e24a15e1",
+    "frames": "ff007b68b2c9fb3f0e6f46b677721f5c30dc767bb0941e8d3affee985859f2c3",
+    "hdf5": "3a8f2d3a738f10609c81a1837869c47616639f8b830f29de6951eb18d42d1421",
+    "commands": "6f2840d1bfeab09e6b606e3122aeacf952780dce8983626dcc04c039ab664e70"
+  },
+  "old_same_seed_episode_physics_steps": 1609,
+  "old_same_seed_episode_saved_frames": 121,
+  "new_independent_seed_count": 0,
+  "added_to_success_registry": false,
+  "added_to_train_validation_test": false,
+  "training_approval": false,
+  "meaning": "One fresh same-physical-seed technical replay validates the opt-in command sidecar, but its trajectory differs from the previous episode and may not be spliced into old RGB, used to claim generalized success, or silently added to training."
+}

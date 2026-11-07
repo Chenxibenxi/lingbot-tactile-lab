@@ -1,0 +1,7 @@
+# 用户追加批准仅一次8,000物理步上限、同seed同64路标的瓶位技术验证（试前登记）
+
+[此前6,000步诊断](<H50_BOTTLE_XYZ_REPAIR_RESULT_ZH.md>)按源成功回合seed100013/原64个qpos提议，在第54次`take_action`结束时已达6,018物理步：两瓶z及目标x通过，但y误差+0.1209/+0.1719m未入±0.1m门；已完成的最后10次动作两瓶y误差逐次下降，却无法知道余下10个未执行路标的后果。用户**明确批准仅一次**独立新试验ID`data/technical_replay/relay_knownseed100013_h50_controller_cap8000_v4/`的**技术验证**，只放宽可拆动作间物理步上限**从6,000到8,000**，seed、原64个SHA锁定提议、真实`Base_Task.take_action(qpos)`、观测与后置瓶位诊断/目标成功门不变。若一个原子TOPP动作越8,000，仅可让该动作完成后立停；即使成功，也只是同seed受控机械验证，**绝不是独立训练样本/获批专家HDF5/触觉VLA能力证明**，禁止自动重跑、改步长或继续加上限。旧v1/v2/v3私有输出绝不覆盖、复制或改动，命令与图像/瓶世界坐标依旧Git忽略。
+
+`src/technical_take_action_replay.py`仅允许严格`data/technical_replay/...cap8000_v4/calls.jsonl`获得8,000上限，其余路径默认6,000并拒绝冒用新上限；`src/run_policy_controller_technical.py --technical-cap8000-v4`在创建新目录前核源成功completion/HDF5/raw/frames/commands、原RoboTwin源码与私有overlay SHA、v3阴性诊断卡六个私有文件SHA与真实54/6018限制，既有任何文件变动即拒。CPU先全套测试、只读检查v4路径不存在、新旧审批状态false和未获批集为空。
+
+硬件门：此前发现Strata由工作台`model_console.py`独立启动、占用约23.6GiB而user systemd unit仍`enabled/inactive`，租约free不代表GPU可用；代理未抢占，用户现**主动从工作台停止GPU后端并确认可以使用**，代理已独立核3090无任何compute、free约23.9GiB且租约free。仍须在单3090先拿有限TTL=1500的**独占GPU租约**、复核外部进程不复活/显存≥20GiB再开始；若有人抢占则放弃本次、不得kill或unload他人。空卡启动一次`timeout 900s`的v4任务；原子任务退出、无残留GPU计算后按用户“批次结束你再拉起”要求，**仍持该租约仅一次调用原工作台`POST :8077/api/strata/start`恢复Strata，核`:8080/health loaded=true`后释放本人租约**。不得误把user unit inactive称为服务关闭或恢复成功；若工作台恢复失败或GPU出现他人进程，先让位并如实报告，绝不重复启动。结果逐SHA审计双瓶目标门，旧`approved_paired_episodes=[]`与norm审批false不变。

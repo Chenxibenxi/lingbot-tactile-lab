@@ -53,6 +53,11 @@ def main():
     force_dir=output/"force"
     if os.environ.get("FORCE_PROBE_EXPERT_DIR") != str(force_dir):
         raise RuntimeError("FORCE_PROBE_EXPERT_DIR must equal <out>/force exactly")
+    command_dir=os.environ.get('TACTILE_EXPERT_COMMANDS_DIR')
+    if command_dir is not None:
+        if (command_dir != str(output/'commands') or
+                os.environ.get('TACTILE_SOURCE_MACHINE_ROLE') != 'relay_single_rtx3090'):
+            raise RuntimeError('command timeline must be opt-in only in this fresh relay trial/commands')
     import importlib
     import yaml
     with (root/"task_config/demo_clean.yml").open() as f:
@@ -109,6 +114,12 @@ def main():
             "source_sha256":{key:sha256(path) for key,path in
                 (("raw",raw),("obs",raw.with_suffix(".obs.jsonl")),
                  ("frames",raw.with_suffix(".frames.jsonl")))}}
+        command_audit=None
+        if command_dir is not None:
+            from expert_command_timeline import validate_commands
+            command_path=output/'commands'/f'{raw.stem}.commands.jsonl'
+            command_audit=validate_commands(raw,raw.with_suffix('.frames.jsonl'),command_path)
+            gate_record['command_timeline_sha256']=command_audit['source_sha256']['commands']
         with gate.open("x") as file:json.dump(gate_record,file,indent=2)
         # Original RoboTwin conversion creates the actual HDF5 and preview video.
         robot.merge_pkl_to_hdf5_video()
@@ -121,6 +132,13 @@ def main():
             "source":"same-run RoboTwin expert; original RGB/state HDF5 and separate tactile markers",
             "success_gate_sha256":sha256(gate),
             **result}
+        if command_audit is not None:
+            completion['command_timeline']={
+                'schema':command_audit['schema'],
+                'sha256':command_audit['source_sha256']['commands'],
+                'physics_steps':command_audit['physics_steps'],
+                'initial_frames_without_instrumented_command':command_audit['initial_frames_without_instrumented_command'],
+                'status':'source_checked_not_training_approved'}
         dest=output/"completion.json"
         with dest.with_suffix(".tmp").open("x") as file:
             json.dump(completion,file,indent=2)

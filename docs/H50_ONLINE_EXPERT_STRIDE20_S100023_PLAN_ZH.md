@@ -1,0 +1,7 @@
+# 新独立seed100023：用户批准的唯一一次stride20在线专家试采（运行前登记）
+
+旧seed100022在线规则stride25真实任务成功但只有46条原`Base_Task.take_action`，未产生H50；旧同seed技测100013虽56条且成功，命令来自过去dense轨迹下采样，亦非在线专家。用户**单独批准**在尚无历史试次的全新**seed100023**只试**一次**显式`stride=20`的在线规则专家：双臂抓/抬/送阶段只读取**本回合当前**机器人/瓶位，计划路径每20个**规划数组索引**生成一条14D提议（并非20物理步），外部仍由原`Base_Task.take_action(qpos)`真实执行，每条前相机标记与过去25物理步触觉、后记真实控制跨度。固定**10,000物理步上限/900秒墙钟/≤128条动作**，不可拆TOPP动作越cap后即停；输出只能位于新Git忽略`data/paired/relay_pickdiverse_s100023_online_h50_stride20_expert0/`且不得复用。旧100022输出及源码保持原样，错误19/True等stride拒绝；[上一轮CPU假设](<H50_ONLINE_STRIDE20_CPU_DESIGN_ZH.md>)的“6→11”不推断本回合动作数量、成功率或力安全。
+
+实现预飞：`src/online_expert_pilot_executor.py`默认stride25不变，只在本次私有衍生runner**显式**调用stride20；`src/patch_online_expert_stride20_pilot.py`严格锁住上次已使用seed100022的收集器/预登记源文件SHA、只在`work/`生成源码私有副本，替换seed、唯一trial ID、GPU lease owner及stride一个精确锚点。原RoboTwin `_base_task.py`/双瓶任务/机器人规划器三SHA仍须原值，旧work overlay SHA亦须一致；CPU先验证同回合编号、空目录、专家旧fold train/val/test seed分离、原视觉/触觉数据审批仍空。旧规则dense标签、旧技术试片、seed100022的图像和动作不准入本次模型输入/标签；本次成功也只是**一个未审核的train候选**，必须另有独立validation H50、完整同回合SHA/HDF5、负责人审批train-only归一化后才可在3090训真正LingBot-VLA。
+
+用户强调自己开工前会在工作台停止占GPU的后端；**他尚未确认本批已停止时，不得动GPU**。收到确认后再验唯一RTX3090、无其他compute、实际空闲显存≥16GiB、lease无holder/waiter、输出与lock/status均不存在，持本人`online-expert-s100023-stride20-v1`独占TTL1500，外层`timeout 900s`仅运行一次。无论结果如何都按真目标门/H50≥50分别报告；失败保留私有raw、帧和sidecar，不换seed/参数重试或填充空动作。任务结束仍持租约时只通过原工作台恢复一次Strata，health.loaded=true后释放；绝不称单新seed已证明触觉VLA增益或训练已获批准。

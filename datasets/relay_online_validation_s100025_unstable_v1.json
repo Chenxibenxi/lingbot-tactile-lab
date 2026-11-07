@@ -1,0 +1,22 @@
+{
+  "schema": "lingbot_online_validation_s100025_init_rejection_v1",
+  "status": "unstable_initial_object_before_any_highlevel_action",
+  "task": "pick_diverse_bottles",
+  "seed": 100025,
+  "fold_intent": "validation_candidate_only_not_assigned",
+  "unstable_object_reported": "001_bottle",
+  "exception_type": "UnStableError",
+  "recorded_physics_steps": null,
+  "actual_take_action_calls": 0,
+  "expert_hdf5_written": false,
+  "completion_written": false,
+  "independent_validation_h50_verified": 0,
+  "training_approval": false,
+  "source_file_sha256": {
+    "preregistration": "c85ebfe802771a43984ee73854b28f6383e56558beedc37c329642e35049642f",
+    "rejection": "64e94fe5aae0adde33cac66614992b69c34427bb0a52d2f9f43fc4828550131b",
+    "private_preregistration_code": "670c0cbd9985b07d1c7c4cb5ab50be3dddf71c6b041c375db928f9fae7a254a4",
+    "private_recording_code": "fc447968672770546cf6e593fd079ea7165751c70890c1fd284a4f800814f08a"
+  },
+  "note": "Exactly one new seed100025 validation-only trial was started after owner manually stopped GPU backends. Original RoboTwin setup_demo raised UnStableError (001_bottle) before any online expert action/capture; no force/raw/obs/frames/actions/HDF5/completion were written. Do not retry this seed, convert to train, mark as expert, or approve GPU training. The trial's exclusive GPU lease was released and Strata remained inactive; no automatic restoration."
+}

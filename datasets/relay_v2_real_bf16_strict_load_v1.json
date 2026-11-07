@@ -1,0 +1,31 @@
+{
+  "schema": "lingbot_real_154800_bf16_strict_stream_load_v1",
+  "status": "strict_real_visual_weights_loaded_zero_adapter_attached_no_forward_no_training",
+  "source_machine_role": "relay_single_rtx3090",
+  "source_evidence_sha256": {
+    "checkpoint_index_sha256": "62dbe509bd476ff354e6a9bea5476bfe451471a5e1160d24abb594a35fe2ec40",
+    "local_tokenizer_config_sha256": "edac7703329133edfc53e46ac0081835144c99d7eebf28b71c732694d435224d",
+    "model_source_sha256": "9b3c9a2ad6823f9d58da51b732477785a1e4db0d29db80e030e094c7b605e40c",
+    "training_config_sha256": "daa533fe9380a8427fc8737cc5fbbfac8e5192057231e78cd28450319dabbbf0"
+  },
+  "generated_preview_sha256": "a80be3e9b7f7834676a086c1ffab964e6a25ad8bc81b4572e8939e0f400b8191",
+  "shard_sha256_match_all_six": true,
+  "keys_loaded": 1624,
+  "allocated_before_values_bytes": 12539666432,
+  "cuda_allocated_after_adapter_bytes": 12539800064,
+  "cuda_peak_bytes": 12539800064,
+  "model_param_device": "cuda:0",
+  "model_param_dtype": "torch.bfloat16",
+  "adapter_parameter_count": 65664,
+  "visual_base_frozen": true,
+  "zero_adapter_attached": true,
+  "model_forward_run": false,
+  "adapter_backward_run": false,
+  "training_approval": false,
+  "server_capability_advertised": false,
+  "weights_ever_saved_to_repo": false,
+  "strata_restored_active_enabled_loaded": true,
+  "exclusive_gpu_lease_released": true,
+  "negative_attempts_before_success": 2,
+  "note": "Source SHA-verified original FP32 shards were strict-stream-copied into the real isolated patched LingbotVlaV2Policy BF16 module on the one relay RTX3090; 65,664-parameter zero residual attached to the inner FlowMatchingV2 only. No model forward/sample_actions, gradients, fit, inference server, or artifact was produced."
+}

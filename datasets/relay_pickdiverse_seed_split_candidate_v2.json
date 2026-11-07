@@ -1,0 +1,51 @@
+{
+  "schema": "lingbot_tactile_seed_split_plan_v1",
+  "status": "candidate_not_approved",
+  "random_seed": 42,
+  "source_machine_role": "relay_single_rtx3090",
+  "train": [
+    "relay_pickdiverse_s100000_expert0",
+    "relay_pickdiverse_s100002_expert0",
+    "relay_pickdiverse_s100007_expert0",
+    "relay_pickdiverse_s100013_onsetpilot_expert0",
+    "relay_pickdiverse_s100015_onsetpilot_expert0"
+  ],
+  "validation": [
+    "relay_pickdiverse_s100012_expert0"
+  ],
+  "test": [
+    "relay_pickdiverse_s100009_expert0"
+  ],
+  "task_seed_groups": {
+    "pick_diverse_bottles": {
+      "train": [
+        100000,
+        100002,
+        100007,
+        100013,
+        100015
+      ],
+      "validation": [
+        100012
+      ],
+      "test": [
+        100009
+      ]
+    }
+  },
+  "expert_card_sha256": {
+    "relay_pickdiverse_s100000_expert0": "2f1f398e0838c055293f3616158c42983c01bc831f0687e25f149b3e4d66df72",
+    "relay_pickdiverse_s100002_expert0": "266954c139e7d8478fee4ac68f77487bbb1d4d3ea8d847728625e62611b905de",
+    "relay_pickdiverse_s100007_expert0": "113b2baa10b2fce138ec3b48aa42f289628d6801c0521fe94bd30db804979bd5",
+    "relay_pickdiverse_s100009_expert0": "3407ab4b976ceabb75fd5ff45da25c602261df342150fcd5df271969daf3a94c",
+    "relay_pickdiverse_s100012_expert0": "81fe663c5ac4a388a66de2949df43562917392fb21604019423e2933645615e6",
+    "relay_pickdiverse_s100013_onsetpilot_expert0": "c2b0f82342984e685036a57ffdd070ce09e92e44a71c120f27937f8e8bb3901d",
+    "relay_pickdiverse_s100015_onsetpilot_expert0": "f7318c6d61b2fa9ca79ed6f974306eaea9c36cc138ce22d89bba80e8cf5f2862"
+  },
+  "evaluation_claims_approved": false,
+  "parent_v1_split_sha256": "33c02a95a5b01e257e9d6c50ee2f016090bc3694973a77f867699c1eb945072c",
+  "new_unassigned_parent_experts": [
+    "relay_pickdiverse_s100013_onsetpilot_expert0",
+    "relay_pickdiverse_s100015_onsetpilot_expert0"
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "schema": "lingbot_m7_confirmation_reservations_v1",
+  "parent_seed_bank_sha256": "7ff3878e405855e5fed276b787f96d302a0fd0774fd2357bb47ee1e0f5440028",
+  "training_protocol_sha256": "5210f92d9896efb2f87aaf1197a60cc10ad6393d04cf66bb4769fe9331da4fec",
+  "entries": [
+    {
+      "seed": 100087,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100088,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100089,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100090,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100091,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100092,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100093,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100094,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100095,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100096,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100097,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100098,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100099,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100100,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100101,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    },
+    {
+      "seed": 100102,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "reserved_not_run",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ]
+    }
+  ]
+}

@@ -55,6 +55,36 @@ class ContactStratifiedEvalTests(unittest.TestCase):
         self.assertEqual(result['metrics']['test']['past_contact']['tactile']['macro_seed_mae_14d'],0)
         self.assertEqual(result['metrics']['test']['past_contact']['permuted_causal_history']['macro_seed_joint_mae_12d'],2)
 
+    def test_new_unassigned_card_does_not_reassign_frozen_v1_scorer(self):
+        extra=self.repo/'datasets/cards/unassigned_expert.json';extra.write_text('{}')
+        with patch('contact_stratified_eval.build_plan',return_value={'split':self.split}) as plan, \
+             patch('contact_stratified_eval.PairedEpisode',FakeEpisode):
+            score=evaluate(self.repo,self.path,self.manifest)
+        self.assertEqual(score['task'],'lift_pot')
+        self.assertFalse(score['model_artifacts_revalidated'])
+        self.assertNotIn(extra,plan.call_args.args[1])
+        self.assertEqual(len(plan.call_args.args[1]),5)
+
+    def test_bottle_v2_requires_parent_verified_frozen_split_and_correct_instruction(self):
+        path=self.repo/'datasets/relay_pickdiverse_seed_split_candidate_v2.json'
+        path.write_text(json.dumps(self.split))
+        predictions=dict(self.manifest,split_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+        class BottleEpisode(FakeEpisode):
+            def __init__(self,repo,trial,*,instruction):
+                self.trial=trial
+                assert instruction=='Pick and place the two diverse bottles'
+        with patch('extend_relay_bottle_split.build',return_value={'split':self.split}) as rebuilt, \
+             patch('contact_stratified_eval.build_plan',side_effect=AssertionError('v2 must not reshuffle')), \
+             patch('contact_stratified_eval.PairedEpisode',BottleEpisode):
+            score=evaluate(self.repo,path,predictions,task='pick_diverse_bottles')
+            self.assertEqual(score['task'],'pick_diverse_bottles')
+            self.assertEqual(rebuilt.call_count,1)
+            with self.assertRaisesRegex(ValueError,'v2 split only supports bottle'):
+                evaluate(self.repo,path,predictions,task='lift_pot')
+            path.write_text(json.dumps(dict(self.split,test=['a'])))
+            with self.assertRaisesRegex(ValueError,'mismatch'):
+                evaluate(self.repo,path,predictions,task='pick_diverse_bottles')
+
     def test_missing_duplicate_nonfinite_or_injected_target_fail(self):
         with self.assertRaisesRegex(ValueError,'incomplete matched'):
             self.assess(dict(self.manifest,rows=self.manifest['rows'][:-1]))

@@ -1,0 +1,107 @@
+{
+  "schema": "lingbot_physical_action_chunk_audit_v1",
+  "status": "candidate_not_training_approved",
+  "source_machine_role": "relay_single_rtx3090",
+  "horizons_saved_frames": [
+    16,
+    50
+  ],
+  "target_semantics": "future_saved_frame_14D_drive_target_not_physics_step_actions",
+  "physical_clock": "same_episode_physics_step_and_dt_not_lerobot_50fps",
+  "training_approval": false,
+  "test_future_labels_read": false,
+  "provenance_registry_sha256": "e1ed3bab09dcf068e719f7e08ebb092e9f44fb9c86e9668d120ee0f30b83d2a9",
+  "tasks": {
+    "lift_pot": {
+      "split_sha256": "c94d94d546bcc2bee45c78f3075b6c03b4b128f022490804ee7b89b67f44ebf5",
+      "folds": {
+        "train": {
+          "trials": 3,
+          "horizons": {
+            "16": {
+              "eligible_anchors": 322,
+              "legal_windows": 93,
+              "all_15_step_windows": 77,
+              "rejected_nonpositive_gap": 184,
+              "rejected_out_of_bounds": 45
+            },
+            "50": {
+              "eligible_anchors": 322,
+              "legal_windows": 0,
+              "all_15_step_windows": 0,
+              "rejected_nonpositive_gap": 175,
+              "rejected_out_of_bounds": 147
+            }
+          }
+        },
+        "validation": {
+          "trials": 1,
+          "horizons": {
+            "16": {
+              "eligible_anchors": 108,
+              "legal_windows": 32,
+              "all_15_step_windows": 26,
+              "rejected_nonpositive_gap": 61,
+              "rejected_out_of_bounds": 15
+            },
+            "50": {
+              "eligible_anchors": 108,
+              "legal_windows": 0,
+              "all_15_step_windows": 0,
+              "rejected_nonpositive_gap": 59,
+              "rejected_out_of_bounds": 49
+            }
+          }
+        }
+      }
+    },
+    "pick_diverse_bottles": {
+      "split_sha256": "8c884d912e811fc0326373389f4dfb9eb9f3facabe4a35188743155af9f71815",
+      "folds": {
+        "train": {
+          "trials": 5,
+          "horizons": {
+            "16": {
+              "eligible_anchors": 617,
+              "legal_windows": 192,
+              "all_15_step_windows": 164,
+              "rejected_nonpositive_gap": 350,
+              "rejected_out_of_bounds": 75
+            },
+            "50": {
+              "eligible_anchors": 617,
+              "legal_windows": 8,
+              "all_15_step_windows": 7,
+              "rejected_nonpositive_gap": 364,
+              "rejected_out_of_bounds": 245
+            }
+          }
+        },
+        "validation": {
+          "trials": 1,
+          "horizons": {
+            "16": {
+              "eligible_anchors": 131,
+              "legal_windows": 44,
+              "all_15_step_windows": 38,
+              "rejected_nonpositive_gap": 72,
+              "rejected_out_of_bounds": 15
+            },
+            "50": {
+              "eligible_anchors": 131,
+              "legal_windows": 0,
+              "all_15_step_windows": 0,
+              "rejected_nonpositive_gap": 82,
+              "rejected_out_of_bounds": 49
+            }
+          }
+        }
+      }
+    }
+  },
+  "pot_h50_train_validation_all15_gate_pass": false,
+  "original_lingbot_h50_training_feasible": false,
+  "gate_reason": "FAIL_CLOSED: pot H50 has zero genuine all-15-step train or validation windows",
+  "private_candidate_rows": 369,
+  "private_candidate_rows_sha256": "3eb2e698ff75aa16d1a32e529a75b5236ebfca0963a95f611524ddb6cec32782"
+}

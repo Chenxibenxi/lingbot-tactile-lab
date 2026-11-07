@@ -1,0 +1,33 @@
+{
+  "schema": "lingbot_relay_expert_command_two_seed_attempt_audit_v1",
+  "status": "both_attempts_rejected_no_successful_expert_episode",
+  "source_machine_role": "relay_single_rtx3090",
+  "precommitted_seed_count": 2,
+  "replacement_or_cherry_pick_count": 0,
+  "attempts": [
+    {
+      "task": "lift_pot",
+      "seed": 100017,
+      "trial_id": "relay_liftpot_s100017_commandpilot_expert0",
+      "expert_accepted": false,
+      "failure_stage": "right_arm_planner_failed",
+      "instrumented_physics_steps": 827,
+      "saved_frame_markers": 60,
+      "per_step_command_timeline_source_checked": true,
+      "private_command_timeline_sha256": "684da29100c3279b8ff21a656db7c65f4b580c9ec3641b450a3e54e44f9b64f9",
+      "hdf5_success_completion": false
+    },
+    {
+      "task": "pick_diverse_bottles",
+      "seed": 100021,
+      "trial_id": "relay_pickdiverse_s100021_commandpilot_expert0",
+      "expert_accepted": false,
+      "failure_stage": "object_unstable_during_setup_before_instrumented_expert",
+      "per_step_command_timeline_source_checked": false,
+      "hdf5_success_completion": false
+    }
+  ],
+  "new_approved_expert_pairs": 0,
+  "training_approval": false,
+  "meaning": "Failed expert/unstable initialization diagnostics only. A SHA-checked command stream on the failed pot trial is not a successful demonstration or a VLA training label."
+}

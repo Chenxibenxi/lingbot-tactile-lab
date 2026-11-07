@@ -79,6 +79,33 @@ class ForceProbeTest(unittest.TestCase):
             self.assertTrue(probe.observation()["left_contact"])
             self.assertAlmostEqual(probe.observation()["left_load_proxy_n"], 1)
 
+    def test_relay_expert_opt_in_records_per_tick_drive_targets_outside_old_force_schema(self):
+        with tempfile.TemporaryDirectory() as td:
+            trial=Path(td);force=trial/'force';commands=trial/'commands'
+            robot=fake_robot()
+            robot.get_left_arm_jointState=lambda:[1.]*6+[.2]
+            robot.get_right_arm_jointState=lambda:[2.]*6+[.8]
+            scene=NS(get_contacts=lambda:[])
+            env={'FORCE_PROBE_EXPERT_DIR':str(force),'TACTILE_SOURCE_MACHINE_ROLE':'relay_single_rtx3090',
+                 'TACTILE_EXPERT_COMMANDS_DIR':str(commands)}
+            with patch.dict(os.environ,env):
+                probe=ForceProbe(force,task='lift_pot',seed=7,episode=2,dt=.004,robot=robot)
+                probe.begin_motion('expert_dense')
+                probe.sample(scene,robot,1);probe.sample(scene,robot,1)
+                self.assertFalse(probe.failed)
+                raw=probe.raw_path
+                probe.close()
+            cmd=commands/f'{raw.stem}.commands.jsonl'
+            rows=[json.loads(x) for x in cmd.read_text().splitlines()]
+            self.assertEqual([r['physics_step'] for r in rows[1:]],[1,2])
+            self.assertEqual(rows[1]['drive_target_state_14'],[1.]*6+[.2]+[2.]*6+[.8])
+            self.assertEqual([r['motion_phase'] for r in rows[1:]],['expert_dense']*2)
+            old=[json.loads(x) for x in raw.read_text().splitlines()]
+            self.assertNotIn('drive_target_state_14',str(old))
+            with patch.dict(os.environ,dict(env,TACTILE_EXPERT_COMMANDS_DIR=str(trial/'outside'))):
+                with self.assertRaisesRegex(ValueError,'private expert commands'):
+                    ForceProbe(force,task='lift_pot',seed=7,episode=2,dt=.004,robot=robot)
+
     def test_observation_markers_pair_with_raw_steps(self):
         with tempfile.TemporaryDirectory() as td:
             robot = fake_robot()

@@ -1,0 +1,19 @@
+{
+  "schema": "lingbot_online_bottle_stride_cpu_candidate_v1",
+  "status": "CPU_only_unexecuted_new_independent_seed_not_authorized",
+  "baseline_executed_stride_path_indices": 25,
+  "exploratory_opt_in_stride_path_indices": 20,
+  "source_observation": "seed100022 original online highlevel task succeeded at 46 genuine calls; this observation is a development diagnosis, not a replay/training sample",
+  "cpu_fake_phase_command_counts": {
+    "stride25": {"grasp": 3, "lift": 1, "place": 2, "total": 6},
+    "stride20": {"grasp": 5, "lift": 2, "place": 4, "total": 11}
+  },
+  "physical_ticks_per_stride": null,
+  "predicted_new_seed_h50_calls": null,
+  "can_infer_new_seed_success_or_safety": false,
+  "old_seed100022_rerun_allowed": false,
+  "new_seed_or_gpu_trial_authorized": false,
+  "eligible_h50_windows_verified": 0,
+  "training_approval": false,
+  "note": "The stride is an index on a fresh within-stage IK path, not a physics clock or a way to pad actions. New physics, scene and early-stop may change all counts. The previous successful short trial remains immutable; any new independent seed and fixed budget need separate owner approval."
+}

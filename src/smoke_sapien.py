@@ -14,7 +14,9 @@ def main():
     import sapien
     from force_probe import sample_contacts
 
-    scene = sapien.Scene()
+    # Explicit PhysX CPU-only scene: default sapien.Scene() initializes renderer,
+    # which can crash on headless hosts with CUDA_VISIBLE_DEVICES=''.
+    scene = sapien.Scene([sapien.physx.PhysxCpuSystem()])
     dt = 1 / 100.0
     scene.set_timestep(dt)
     builder = scene.create_actor_builder()
@@ -26,14 +28,22 @@ def main():
     target = builder.build(name="probe_target_box")
     target.set_pose(sapien.Pose(p=[0, 0, .26]))
     readings = []
+    positions = []
     for i in range(100):
         scene.step()
-        item = sample_contacts(scene, {"left": {"probe_finger_box"}, "right": {"unused"}}, dt)
+        points = []
+        item = sample_contacts(scene, {"left": {"probe_finger_box"}, "right": {"unused"}},
+                               dt, geometry_sink=points)
+        if len(points) != item["left"]["points"]:
+            raise ValueError("real SAPIEN point location count differs from force count")
+        positions.extend(p["position_world_m"] for p in points)
         readings.append(item["left"]["load_proxy_n"])
     result = {"schema": "phizju_contact_api_smoke_v1", "sapien_version": getattr(sapien, "__version__", "unknown"),
               "dt_s": dt, "steps": len(readings), "nonzero_steps": sum(x > 0 for x in readings),
               "peak_load_proxy_n": max(readings), "tail10_mean_load_proxy_n": sum(readings[-10:]) / 10,
-              "note": "box-on-box contact impulse/dt only; NOT a real gripper force measurement"}
+              "world_contact_points": len(positions),
+              "world_contact_z_range_m": [min(p[2] for p in positions),max(p[2] for p in positions)] if positions else [],
+              "note": "CPU box-on-box impulse/dt and SAPIEN point positions; NOT a real gripper force measurement"}
     with open(args.out, "w", encoding="utf8") as f:
         json.dump(result, f, indent=2)
     print(json.dumps(result, indent=2))

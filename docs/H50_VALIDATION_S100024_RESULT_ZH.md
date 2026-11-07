@@ -1,0 +1,7 @@
+# validation-only 新seed100024：80次真动作仍未达任务目标，**验证H50=0**；旧退出钩子误自动拉起Strata已禁用
+
+按用户唯一批准的[新validation seed100024试前计划](<H50_VALIDATION_S100024_STRIDE20_PLAN_ZH.md>)，用户亲自停工作台GPU后端；代理再核本机3090无计算进程/free≈23.8GiB、独占GPU租约空闲、原三个RoboTwin源码SHA以及本私有验证折收集器SHA不变，新试验目录未存在。确只执行**这一个**seed100024、显式stride20、原`Base_Task.take_action(qpos)`、10,000物理步/900秒预算的真实新回合。实际控制器完成**80条**高层动作、**9,559个连续物理步**，逐动作前相机标记共**80**，抓瓶/抬升/送目标分别40/10/30条，`planner_ok=true`但在所有提议阶段结束时原任务`check_success=false`、`goal_success_reported=false`、`stopped_reason=proposals_exhausted_without_goal`，**没有超物理步预算**。记录最大实测关节对命令绝对差约0.015433（仅关节诊断，不证明两瓶握持、无碰撞、目标位置或硬件安全）；没有逐动作瓶功能点侧录，**不能猜**它究竟哪一瓶/哪个xy-z成功子门失败。
+
+H50不仅要求≥50次高层动作，**还要求成功专家回合及同回合来源/HDF5/完成卡验真**；此回合虽有80次真调用，却**任务不成功，不能拿来做验证监督标签**。私有`failure.json`记录拒收、没有专家HDF5或completion/candidate card，不能把“验证失败”说成视觉/触觉模型推理失败（本轮根本没有跑VLA）。[脱敏阴性卡](<../datasets/relay_online_validation_s100024_rejected_v1.json>)逐SHA绑raw/obs/frames/online_actions/pilot_result/rejection六个私有文件，未含14D全序列/RGB/接触原数据；不重放100024、不改stride/换ID刷成功。本机目前仅有[seed100023单train意图来源的8个相关H50候选锚](<H50_ONLINE_EXPERT_STRIDE20_S100023_RESULT_ZH.md>)，**独立验证H50仍为0**、注册表仍`approved_paired_episodes=[]`、训练归一化未批，不能启动真实3090训练或上线触觉RPC。
+
+**资源行为纠错（重要）**：本次私有旧wrapper在任务exit7后仍照旧自动工作台POST拉起了Strata并核`loaded=true`后释放租约；用户当场明确指出“**不用自动拉起了**”。代理已道歉，不为纠错再自动关闭当前已加载模型；[最新GPU收尾规程](<GPU_NO_AUTORESTORE_POLICY_ZH.md>)与仓库AGENTS明确规定**所有后续**GPU试验结束/异常只释放本人租约、报告真实GPU/服务状态，**绝不自动启动/加载Strata**。本轮服务恢复是历史事实，不应隐瞒，也不能作为未来自动恢复许可。

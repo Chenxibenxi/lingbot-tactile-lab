@@ -1,0 +1,33 @@
+{
+  "schema": "lingbot_online_expert_s100023_h50_source_audit_v1",
+  "status": "source_verified_train_intent_candidate_not_approved",
+  "task": "pick_diverse_bottles",
+  "seed": 100023,
+  "source_machine_role": "relay_single_rtx3090",
+  "stride_path_indices": 20,
+  "actual_take_action_calls": 59,
+  "physics_steps": 6808,
+  "saved_frames": 59,
+  "planner_ok": true,
+  "task_goal_ok": true,
+  "online_highlevel_clock_verified": true,
+  "causal_h50_candidate_anchors_count": 8,
+  "causal_h50_candidate_anchor_indices": [2, 3, 4, 5, 6, 7, 8, 9],
+  "fold_intent": "train_only_not_assigned",
+  "independent_validation_h50_candidates": 0,
+  "approved_h50_train_windows": 0,
+  "approved_h50_validation_windows": 0,
+  "gpu_training_permitted_now": false,
+  "training_approval": false,
+  "source_file_sha256": {
+    "raw": "48e712cae9e66a349f51b253e1e46a3f69d8ee81c446cb8cec1bcc2fe72af780",
+    "obs": "a3cb8d2ca6b87a3e882d6627ec10cb2ed4ce0e5acbed0e1462a5d1d5ee467338",
+    "frames": "8ebc8ca72d84140c3ed25830a80a9770ef6f45cde9c4b2fa5ea6454d053ee5ad",
+    "hdf5": "fc4d14ffa5980d19b6a0ef402d1823d82025e4183bb6497a269361ec2dd1c93a",
+    "completion": "0785a32e6340a7038b06de7d8a282df122c8b018cda3a0f5b184b46abca254cc",
+    "success_gate": "de0c99176a0aa1b3f2f9eece16f6214030c8d429fa31b9cf98f24751d35fe9ef",
+    "online_actions": "38f2b7c0e9ef851bbb15e573742206724ff66efa966146ee9e981548250b369c",
+    "pilot_result": "a2d37ac4ba726037d8c521db69af5656c12680bf44c24278a4d8f098c0f2efc5"
+  },
+  "note": "One owner-approved independent seed100023 stride20 real GPU trial succeeded at task goal and contains eight causally valid future-50-call same-run action anchors after source/HDF5 verification. All eight share a single physical seed: they are not eight independent expert episodes. No validation seed, train-only norm approval, adapter training or RPC. First wrapper exit8 was restore refusal due transient post-trial CUDA process; a separate own-lease workbench restoration finished exit0 and loaded=true. Private RGB/14D/forces are never in git."
+}

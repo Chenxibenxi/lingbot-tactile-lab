@@ -1,0 +1,24 @@
+{
+  "schema": "lingbot_same_seed_xyz_diagnostic_instrumentation_failure_v1",
+  "status": "instrumentation_failed_after_first_real_action_before_xyz_record",
+  "source_machine_role": "relay_single_rtx3090",
+  "attempted_real_take_action_calls": 1,
+  "committed_calls_rows": 0,
+  "physics_steps": 37,
+  "saved_same_run_frames": 1,
+  "xyz_diagnostic_rows": 0,
+  "goal_outcome_known": false,
+  "failure_origin": "diagnostic helper incorrectly required three coordinates; original RoboTwin get_functional_point(0) returns seven values: xyz plus quaternion",
+  "source_file_sha256": {
+    "raw": "23c5313397e23bc871ac5faa927883bedae391f5ecbec6bc694c7b065b786123",
+    "frames": "52522e446e9f4f9d3f8d06c65a5315e2cdda1ede2c52f0c836daf4126d6ad5b1",
+    "calls": "4db7e99f2f2b78dad48a11bcc11488c4abd0a047656e9d0d633cc9d0b376572b",
+    "geometry": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "failure": "4e84793c7ae4e5675d0d79a1462445633fd73b78aaa3ddc939c7dfe657a4369c"
+  },
+  "training_approval": false,
+  "independent_expert_seed": false,
+  "strata_restored_active_enabled_loaded": true,
+  "gpu_lease_released": true,
+  "note": "User-approved one same-seed xyz diagnostic stopped on a recorder schema bug after the first atomic take_action. No xyz values were recorded, task success cannot be inferred. Output kept private and immutable; no automatic rerun or expanded cap."
+}

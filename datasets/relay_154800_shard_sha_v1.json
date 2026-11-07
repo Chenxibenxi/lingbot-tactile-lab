@@ -1,0 +1,16 @@
+{
+  "schema": "lingbot_external_visual_shard_byte_manifest_v1",
+  "checkpoint_index_sha256": "62dbe509bd476ff354e6a9bea5476bfe451471a5e1160d24abb594a35fe2ec40",
+  "shard_files": {
+    "model-00001-of-00006.safetensors": {"file_bytes": 4848149048, "sha256": "b71b499bd4a4148c1685449fe1abe35bd1f790081c70e1cc4b82899d00597400"},
+    "model-00002-of-00006.safetensors": {"file_bytes": 4868437936, "sha256": "dba6b8fc99a5670cf966eb5acb4ed9ed53c5a20bcc8fed91764d6174a2425d05"},
+    "model-00003-of-00006.safetensors": {"file_bytes": 4809264800, "sha256": "766a18c9f7d0755ac578f2c73fec3a029a53efbdd2f6dc97f369ec82034ebc85"},
+    "model-00004-of-00006.safetensors": {"file_bytes": 4859442460, "sha256": "39a1d8fa5146a71bd45489d652e12229dea3ecc915aa2b0f17b5470a78a0fec0"},
+    "model-00005-of-00006.safetensors": {"file_bytes": 4898303408, "sha256": "d60bf36bb17c4579f08337d4ad84090b272fb3fd23d9abe32bab8a47c8feeb58"},
+    "model-00006-of-00006.safetensors": {"file_bytes": 622195024, "sha256": "06f4ff864d06d19d7340ca56165fd882e1851c2386d0775db99c298bc1fea5e7"}
+  },
+  "tensor_key_count": 1624,
+  "values_loaded_into_model": false,
+  "training_approval": false,
+  "warning": "Read-only whole-file hashes of external original 154800 visual checkpoint; no model/CUDA/paired-data approval."
+}

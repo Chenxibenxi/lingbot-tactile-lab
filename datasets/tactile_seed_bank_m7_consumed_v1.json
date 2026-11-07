@@ -1,0 +1,1899 @@
+{
+  "schema": "lingbot_m7_consumed_tests_v1",
+  "created_utc": "2026-11-07T12:22:59.648067+00:00",
+  "reservation_path": "/mnt/relaydata/lingbot-tactile-lab/datasets/tactile_seed_bank_m7_reservations_v1.json",
+  "reservation_sha256": "4fe23550f42649489bd16496c8dbd90994c93266953e8acab4e2d99b24a860a5",
+  "summary_path": "/home/admin001/lingbot-tactile-artifacts/cwmj-m7-confirmation/summary.json",
+  "summary_sha256": "1acfb2b443a01b2f758e5aa0b8cc80464488143711acad14dea08c925ae19dfe",
+  "policy": "Consumed confirmation seeds must not become training supervision, validation/model selection, or fresh confirmatory tests. Preserve frozen reservation unchanged.",
+  "entries": [
+    {
+      "seed": 100087,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100087_zero/result.json",
+          "result_sha256": "d061591dbdad500cc83c4996e071cbe5d627db9122bf9e404f7c1f288cd2ec56",
+          "pair_audit_sha256": "8b739bfc0bfcec3b87284df42a20d5f6ca645db2aacae2e75061741b78a05eb1"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100087_true/result.json",
+          "result_sha256": "c12eeffb18edf3dda4cd74a8acc4b67abef36bc13cf96e39729531ebb9168167",
+          "pair_audit_sha256": "8b739bfc0bfcec3b87284df42a20d5f6ca645db2aacae2e75061741b78a05eb1"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100087_mismatch/result.json",
+          "result_sha256": "c4962a052ab69bc72f531e483a1a6bfbd5006b396e0471c5669d4c374e4d8410",
+          "pair_audit_sha256": "8b739bfc0bfcec3b87284df42a20d5f6ca645db2aacae2e75061741b78a05eb1"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100087_contact_state/result.json",
+          "result_sha256": "783d3275a148493c9feff49dc8db8649be82ec9bf1e931291ec5470e2ce5342b",
+          "pair_audit_sha256": "8b739bfc0bfcec3b87284df42a20d5f6ca645db2aacae2e75061741b78a05eb1"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100087_zero/result.json",
+          "result_sha256": "1c202a5ccd72efaabf79464987876595bda8ecefdab22b155429aad16e6921b2",
+          "pair_audit_sha256": "c938791bd096aad57c808811f931ddb158152e28d9e756ea32fe5e2f51b89685"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100087_true/result.json",
+          "result_sha256": "300142d5023ad3eb6b3e63d1ac798eac5b3ab7f5b5a297f35a4d6d3ddee7ca06",
+          "pair_audit_sha256": "c938791bd096aad57c808811f931ddb158152e28d9e756ea32fe5e2f51b89685"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100087_mismatch/result.json",
+          "result_sha256": "b711f3b8d9ef3a3cc7a5711ab34781ffb4e6b4e5b0a381ea673b375e0a24f6b3",
+          "pair_audit_sha256": "c938791bd096aad57c808811f931ddb158152e28d9e756ea32fe5e2f51b89685"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100087_contact_state/result.json",
+          "result_sha256": "f783261e03c39af77d1149b8589e7419c30a30666df060881f1e6baca431ba25",
+          "pair_audit_sha256": "c938791bd096aad57c808811f931ddb158152e28d9e756ea32fe5e2f51b89685"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100087_zero/result.json",
+          "result_sha256": "6eac8bbee93e06f3da6524461a05cea7fa59d8bed0e53129a24b65987d725491",
+          "pair_audit_sha256": "de24504c45faba0887a5463dbd1ebd99c039062bd39100d8636551f9e9acbd82"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100087_true/result.json",
+          "result_sha256": "7620212918ed473028aff05eab74e79267d275d0bcf6665dbca858f6a1b1a3bc",
+          "pair_audit_sha256": "de24504c45faba0887a5463dbd1ebd99c039062bd39100d8636551f9e9acbd82"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100087_mismatch/result.json",
+          "result_sha256": "d4127c162f12b10d5273dbe24ed066f0353faee56b4dc5b645f6ec8c2a80bf93",
+          "pair_audit_sha256": "de24504c45faba0887a5463dbd1ebd99c039062bd39100d8636551f9e9acbd82"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100087_contact_state/result.json",
+          "result_sha256": "16ac945b6c23ce05e537a3ff149a0c1dc15743356118c70b5a7e025e28b5ec90",
+          "pair_audit_sha256": "de24504c45faba0887a5463dbd1ebd99c039062bd39100d8636551f9e9acbd82"
+        }
+      ]
+    },
+    {
+      "seed": 100088,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100088_zero/result.json",
+          "result_sha256": "c7781bee79f10791bd5841d558632e2e178178939df01614f70f111f0c4e6896",
+          "pair_audit_sha256": "4f96d9bfaf98e9ffb96c413d2922246249b0d45b42198ef098f4c287b6c181b0"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100088_true/result.json",
+          "result_sha256": "8568e33f892bebfb5cd47e336c528e743f6558d8bf5ea792872d2a75959dfb2e",
+          "pair_audit_sha256": "4f96d9bfaf98e9ffb96c413d2922246249b0d45b42198ef098f4c287b6c181b0"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100088_mismatch/result.json",
+          "result_sha256": "9dad9cb83d68c182a5ad2b5a1a65e108dd7d939d3d6d4053ffd3e72169ba7237",
+          "pair_audit_sha256": "4f96d9bfaf98e9ffb96c413d2922246249b0d45b42198ef098f4c287b6c181b0"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100088_contact_state/result.json",
+          "result_sha256": "47a75b8482a0d0b09e1384fb59c15a8ecd0b32de9d9181a6c2e2f53e44f6c115",
+          "pair_audit_sha256": "4f96d9bfaf98e9ffb96c413d2922246249b0d45b42198ef098f4c287b6c181b0"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100088_zero/result.json",
+          "result_sha256": "85fe14ee19876fa24c034c912fd9d6827c8b9ab0335387b8af6ca84c0fd01b52",
+          "pair_audit_sha256": "6868a432a08bf6b63a8007e50aa01054430b5bafdcb00c193fa754a7716531c8"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100088_true/result.json",
+          "result_sha256": "201f04c4bbe64241e3a3019cdabca3a8640039acae61be8cd92757b8eff6b712",
+          "pair_audit_sha256": "6868a432a08bf6b63a8007e50aa01054430b5bafdcb00c193fa754a7716531c8"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100088_mismatch/result.json",
+          "result_sha256": "223c3827135e013df2e358065836f1583c473e775597581d8f6ee7a104511038",
+          "pair_audit_sha256": "6868a432a08bf6b63a8007e50aa01054430b5bafdcb00c193fa754a7716531c8"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100088_contact_state/result.json",
+          "result_sha256": "182386cb5e7f1b8707507498d7a9814a156a7a6104410d037b7f67e0e29da350",
+          "pair_audit_sha256": "6868a432a08bf6b63a8007e50aa01054430b5bafdcb00c193fa754a7716531c8"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100088_zero/result.json",
+          "result_sha256": "fa4193b5b547589287394fe6d4911b020d5cddbb3c914fa5022f6f43c2c77695",
+          "pair_audit_sha256": "009855ee963b469621d494ef94364be20f5ddb98f04144c0b2fa09501cca8e96"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100088_true/result.json",
+          "result_sha256": "0587153a7396bed251fb20d83ab9a537967fff3f454ee58dc424faae608052aa",
+          "pair_audit_sha256": "009855ee963b469621d494ef94364be20f5ddb98f04144c0b2fa09501cca8e96"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100088_mismatch/result.json",
+          "result_sha256": "bfde0ce86f92034b607e7e47c33b373b16ffd0e226012d98729bc77eec7b426f",
+          "pair_audit_sha256": "009855ee963b469621d494ef94364be20f5ddb98f04144c0b2fa09501cca8e96"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100088_contact_state/result.json",
+          "result_sha256": "728b5ee16f07582046370ffccc3a1aeb0545630c2f108d38d637440cc80b70c8",
+          "pair_audit_sha256": "009855ee963b469621d494ef94364be20f5ddb98f04144c0b2fa09501cca8e96"
+        }
+      ]
+    },
+    {
+      "seed": 100089,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100089_zero/result.json",
+          "result_sha256": "67a4154645633198bce2140906a81b5217464532c4a10f0a60ecfe79dce4f660",
+          "pair_audit_sha256": "1505dd915276386f24444b29553079f6fc95619d83e0f08aec7479d90b3d6a4e"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100089_true/result.json",
+          "result_sha256": "050d8fb80c6dab1e98b7dc07592852c33ae042a925575c460b330e1e12643db4",
+          "pair_audit_sha256": "1505dd915276386f24444b29553079f6fc95619d83e0f08aec7479d90b3d6a4e"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100089_mismatch/result.json",
+          "result_sha256": "e55b23f67ffa2c56c292b608132f54d2c6a7d0ccccc80732c77b786b53c6de36",
+          "pair_audit_sha256": "1505dd915276386f24444b29553079f6fc95619d83e0f08aec7479d90b3d6a4e"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100089_contact_state/result.json",
+          "result_sha256": "55afabc3c5c40552d0901de07670ff6fdf10c2b1d14187bfd8b58a84bddbe8a4",
+          "pair_audit_sha256": "1505dd915276386f24444b29553079f6fc95619d83e0f08aec7479d90b3d6a4e"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100089_zero/result.json",
+          "result_sha256": "be9f241b1cfc0a564f99fdd5e94e8c7a1796602f3ace393a0215785507010252",
+          "pair_audit_sha256": "93f579be64eef0b241e98202e52a8b4792825a4d881bab65f80146c82bdbdd3c"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100089_true/result.json",
+          "result_sha256": "55ff53cdb7a634ac0484e18337b684b2c067c0fa0f591bd61ec74886ec44a973",
+          "pair_audit_sha256": "93f579be64eef0b241e98202e52a8b4792825a4d881bab65f80146c82bdbdd3c"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100089_mismatch/result.json",
+          "result_sha256": "a1bb0ca8d834c3d6de1af7a02b4e6a8de8a92d3c9da9ab9e8425357b189f660d",
+          "pair_audit_sha256": "93f579be64eef0b241e98202e52a8b4792825a4d881bab65f80146c82bdbdd3c"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100089_contact_state/result.json",
+          "result_sha256": "b4be35add63a0936ab3c2e1717ac69634612afdf5e34f90b3e58c84611aa7c14",
+          "pair_audit_sha256": "93f579be64eef0b241e98202e52a8b4792825a4d881bab65f80146c82bdbdd3c"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100089_zero/result.json",
+          "result_sha256": "212ccbb1eec8f9f7d6d6e3d4a9a881ebafe680a1ca9a58b1313cb1ed194a7704",
+          "pair_audit_sha256": "a570bd8ef11a485fd339793ecdf385253c79089632a103c5aa883cbc12ac1f72"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100089_true/result.json",
+          "result_sha256": "578c3c8aae9dba77ebed597e08d19753797dcbe9882cf60148bbbf721975b24c",
+          "pair_audit_sha256": "a570bd8ef11a485fd339793ecdf385253c79089632a103c5aa883cbc12ac1f72"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100089_mismatch/result.json",
+          "result_sha256": "019f6e00a6b6bf5c8adc1ee88113bc7f316d569e032a6d210a42519c8cdd2993",
+          "pair_audit_sha256": "a570bd8ef11a485fd339793ecdf385253c79089632a103c5aa883cbc12ac1f72"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100089_contact_state/result.json",
+          "result_sha256": "bed8a3e14a9571684f79bbe23c6beaca3a3574900b1fa0e0fbd80faa2ade981c",
+          "pair_audit_sha256": "a570bd8ef11a485fd339793ecdf385253c79089632a103c5aa883cbc12ac1f72"
+        }
+      ]
+    },
+    {
+      "seed": 100090,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100090_zero/result.json",
+          "result_sha256": "eb5e723e01b5929a1bd0267bc9d523270eee77a2f7a0a97f01b9dd3562799b08",
+          "pair_audit_sha256": "e9cec37add10286c79032f26294bb34367786598ef75de8daa56b1835f790d52"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100090_true/result.json",
+          "result_sha256": "010051aa73f76b1151d3fd3c9d46406dc5a5f87a4e8dff249136dadbc0bc4c52",
+          "pair_audit_sha256": "e9cec37add10286c79032f26294bb34367786598ef75de8daa56b1835f790d52"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100090_mismatch/result.json",
+          "result_sha256": "de7ffd48c51e32d6b807299bb412959011f0b78474899891355897b9a8ba290a",
+          "pair_audit_sha256": "e9cec37add10286c79032f26294bb34367786598ef75de8daa56b1835f790d52"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100090_contact_state/result.json",
+          "result_sha256": "cf073bd31bc2ebf99b5379a9d436455d3d2e88d8fbb68c1f66326482bacb18ab",
+          "pair_audit_sha256": "e9cec37add10286c79032f26294bb34367786598ef75de8daa56b1835f790d52"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100090_zero/result.json",
+          "result_sha256": "ee266ba3d21cb63019817fc61aac588f270228847afc289ced2eacc17f5e592d",
+          "pair_audit_sha256": "9eec6890c28c99be741e0d04610fd59ca9777f5e4305e58074c0c4753c2c72a1"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100090_true/result.json",
+          "result_sha256": "01f8afd28656387adc4b547844bea31f5f521f85c16005ac21bbe9bc9f94eaa1",
+          "pair_audit_sha256": "9eec6890c28c99be741e0d04610fd59ca9777f5e4305e58074c0c4753c2c72a1"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100090_mismatch/result.json",
+          "result_sha256": "7ac552ae464a7f6f10aa41141831b097348ebcc0d0b406097cf6a533d662f392",
+          "pair_audit_sha256": "9eec6890c28c99be741e0d04610fd59ca9777f5e4305e58074c0c4753c2c72a1"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100090_contact_state/result.json",
+          "result_sha256": "6d628c61214b69ba26c08852cfd08c69ce1d35c6d9d624c47055605a191b9498",
+          "pair_audit_sha256": "9eec6890c28c99be741e0d04610fd59ca9777f5e4305e58074c0c4753c2c72a1"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100090_zero/result.json",
+          "result_sha256": "33a425e5da1c8420c64e4771829d952463dd25394d5f20545f3013d040431479",
+          "pair_audit_sha256": "d51c8e6e444c6f39dcb479d1b5b436f1955c037207c50b177efd8eca49cb3551"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100090_true/result.json",
+          "result_sha256": "f3be3eca558719b8e6fc3c1cee4ffad505c8302e0cd2dfc8a2dc0e815cdc7323",
+          "pair_audit_sha256": "d51c8e6e444c6f39dcb479d1b5b436f1955c037207c50b177efd8eca49cb3551"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100090_mismatch/result.json",
+          "result_sha256": "7afdd8fd9282f723cb940e70847e14ce8f54266bf8ab90a4a7b1bc94d0a02c81",
+          "pair_audit_sha256": "d51c8e6e444c6f39dcb479d1b5b436f1955c037207c50b177efd8eca49cb3551"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100090_contact_state/result.json",
+          "result_sha256": "55ec068f9ec7d1013bf8939e7e96c761520c13c0554bff470464e385a201296e",
+          "pair_audit_sha256": "d51c8e6e444c6f39dcb479d1b5b436f1955c037207c50b177efd8eca49cb3551"
+        }
+      ]
+    },
+    {
+      "seed": 100091,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100091_zero/result.json",
+          "result_sha256": "27d18a5a8ad25b58e7799dcc5d4bf77de6a0729e794dbe5d39431103da0bd9f2",
+          "pair_audit_sha256": "79cc67b63204d48a1c221c9a969af7ce676d2e84cd851f79a21bdbc94a71e5b8"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100091_true/result.json",
+          "result_sha256": "026cd73c44d6a20958fff959444e472d9b34aedacc39358a57f2260c544264c6",
+          "pair_audit_sha256": "79cc67b63204d48a1c221c9a969af7ce676d2e84cd851f79a21bdbc94a71e5b8"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100091_mismatch/result.json",
+          "result_sha256": "efe8ee73f0521b5de3ee1042fb2516cb5f5dddc9c8e51d335f638ee0de4d7f5a",
+          "pair_audit_sha256": "79cc67b63204d48a1c221c9a969af7ce676d2e84cd851f79a21bdbc94a71e5b8"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100091_contact_state/result.json",
+          "result_sha256": "a9ce7c883e0bff0600c76d1a4ac228b5f4c89d43b46af81c63f6cd32c9e3de22",
+          "pair_audit_sha256": "79cc67b63204d48a1c221c9a969af7ce676d2e84cd851f79a21bdbc94a71e5b8"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100091_zero/result.json",
+          "result_sha256": "dfb62480628054db03707215b4ac70f15830992087dcf8bffcc7a71c2143ffa9",
+          "pair_audit_sha256": "bcb974c54b29510c2c47cc861231b9aaf3626f55ddac664bdefb7bd46c468b70"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100091_true/result.json",
+          "result_sha256": "ae1f2a56ddbfd98ece1369bb110ae773c97828f37be4a8505deef18b37fd79df",
+          "pair_audit_sha256": "bcb974c54b29510c2c47cc861231b9aaf3626f55ddac664bdefb7bd46c468b70"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100091_mismatch/result.json",
+          "result_sha256": "5059a974bce4865f26d5cb12113e057b6f400a6fdb02ce0ab924257610d35a3d",
+          "pair_audit_sha256": "bcb974c54b29510c2c47cc861231b9aaf3626f55ddac664bdefb7bd46c468b70"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100091_contact_state/result.json",
+          "result_sha256": "9d31972a080ce37f4133ac80381183c2b2f6c41a64575f5995caeb73d6b9e02b",
+          "pair_audit_sha256": "bcb974c54b29510c2c47cc861231b9aaf3626f55ddac664bdefb7bd46c468b70"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100091_zero/result.json",
+          "result_sha256": "25dfe666ef271151bc65dbe7372a3d0d7e83ae7207491ef406c4d3d9f582be78",
+          "pair_audit_sha256": "f6758c1de65aac906324ed97cbf77fc94c3c467fe640ef093247c8f0417ec7e0"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100091_true/result.json",
+          "result_sha256": "2fa6e615ba87a0458e8c44c947d37ec2abf6e1d7f3d74ab4bf93e31099f95d65",
+          "pair_audit_sha256": "f6758c1de65aac906324ed97cbf77fc94c3c467fe640ef093247c8f0417ec7e0"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100091_mismatch/result.json",
+          "result_sha256": "80a21090372cc7a9e903f61708c06dd73a57b4a503c7ac99ba4eba83788b1a0e",
+          "pair_audit_sha256": "f6758c1de65aac906324ed97cbf77fc94c3c467fe640ef093247c8f0417ec7e0"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100091_contact_state/result.json",
+          "result_sha256": "afcdf37360854ed1c5206d88b335c0d33b69f995f12d3ef945ae4992718126a9",
+          "pair_audit_sha256": "f6758c1de65aac906324ed97cbf77fc94c3c467fe640ef093247c8f0417ec7e0"
+        }
+      ]
+    },
+    {
+      "seed": 100092,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100092_zero/result.json",
+          "result_sha256": "127a8fa3043afc443cbb272b1f18da851f6ddef28a0d9d9b87bc02886493baf5",
+          "pair_audit_sha256": "15e4669803e5e69e0a9e29bc32e8af364a3327d8382a11f8d556779609e6861d"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100092_true/result.json",
+          "result_sha256": "cc5c991e82596498a38477787d6bec385453de6b67895719824f7c947f85c6c1",
+          "pair_audit_sha256": "15e4669803e5e69e0a9e29bc32e8af364a3327d8382a11f8d556779609e6861d"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100092_mismatch/result.json",
+          "result_sha256": "9d17236c72bf0fdb6103789f1490991b00c972ddf4fbb0f0879b5cd8381936ec",
+          "pair_audit_sha256": "15e4669803e5e69e0a9e29bc32e8af364a3327d8382a11f8d556779609e6861d"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100092_contact_state/result.json",
+          "result_sha256": "44e09e7ce228f919b632cf250793530e04154675400d6e8c386d0f3cd98afa07",
+          "pair_audit_sha256": "15e4669803e5e69e0a9e29bc32e8af364a3327d8382a11f8d556779609e6861d"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100092_zero/result.json",
+          "result_sha256": "355a910c400a242486b82a3c1cd114bfef15bc9565495f528af8b08bae23e04b",
+          "pair_audit_sha256": "c37c6e780aa026eb5764f8f5abcf55b3c10b99b5e7d287362927b53e41681a09"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100092_true/result.json",
+          "result_sha256": "69dcd05b918274375f4ce8bdce9bdd8816c592af49278956682741c03f18789b",
+          "pair_audit_sha256": "c37c6e780aa026eb5764f8f5abcf55b3c10b99b5e7d287362927b53e41681a09"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100092_mismatch/result.json",
+          "result_sha256": "f2667297405bf773807b66d5fa228f396940aee85c85a56d2d2df3ea5b73b6b6",
+          "pair_audit_sha256": "c37c6e780aa026eb5764f8f5abcf55b3c10b99b5e7d287362927b53e41681a09"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100092_contact_state/result.json",
+          "result_sha256": "a702420da3db402e817b185ff126c0a9d071ddda901f737daa7bd229dffbf238",
+          "pair_audit_sha256": "c37c6e780aa026eb5764f8f5abcf55b3c10b99b5e7d287362927b53e41681a09"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100092_zero/result.json",
+          "result_sha256": "f74adaae9d6f0e12552dd3435e4ea828615b108f66b551a0922b491aba28e22d",
+          "pair_audit_sha256": "6bc5d09ced8607adeace73ffc5676111363dd07da4bd78dc98ab2d2ba39d69f6"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100092_true/result.json",
+          "result_sha256": "c37c57c1805c05343b6e1c9e09f7b33fa27870348e2463f74b13d0974eea539f",
+          "pair_audit_sha256": "6bc5d09ced8607adeace73ffc5676111363dd07da4bd78dc98ab2d2ba39d69f6"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100092_mismatch/result.json",
+          "result_sha256": "25f5450c01ed9f75e996e9a6358ca09e542b04d4450eb819798b8513d45a00ec",
+          "pair_audit_sha256": "6bc5d09ced8607adeace73ffc5676111363dd07da4bd78dc98ab2d2ba39d69f6"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100092_contact_state/result.json",
+          "result_sha256": "30d5dad12990ae6793e41dadd218b682175ef17ed5ae8d66863c954653b64a85",
+          "pair_audit_sha256": "6bc5d09ced8607adeace73ffc5676111363dd07da4bd78dc98ab2d2ba39d69f6"
+        }
+      ]
+    },
+    {
+      "seed": 100093,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100093_zero/result.json",
+          "result_sha256": "0bfda3fbd5521a06265df0ce3f13f50ba924a6ea393c1dfeb2c40bf2a4e1b176",
+          "pair_audit_sha256": "202484fdf3dc4567dc05fa37edad0e430d8bd652d7a70fb8aa8e50026a1718e3"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100093_true/result.json",
+          "result_sha256": "8714d714bbaaf0288eaab32e37e9579b329d734f063ee82c2fe0aeec832853ba",
+          "pair_audit_sha256": "202484fdf3dc4567dc05fa37edad0e430d8bd652d7a70fb8aa8e50026a1718e3"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100093_mismatch/result.json",
+          "result_sha256": "0e5c9280032d18adbbc43befe82e818c868112d668450a4d9193432291a451e1",
+          "pair_audit_sha256": "202484fdf3dc4567dc05fa37edad0e430d8bd652d7a70fb8aa8e50026a1718e3"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100093_contact_state/result.json",
+          "result_sha256": "6eed144531338fecd3076740bf019758b6ee1919e5a4e9c00f762e5b45f04cbe",
+          "pair_audit_sha256": "202484fdf3dc4567dc05fa37edad0e430d8bd652d7a70fb8aa8e50026a1718e3"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100093_zero/result.json",
+          "result_sha256": "88feacaeea9a77846ebc3f94130d223a566a3293f44ca500434966d7f4c12197",
+          "pair_audit_sha256": "f7cf1e5fb808d18ed9a79704cfa8ab60f417714622d5161944db689711de684c"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100093_true/result.json",
+          "result_sha256": "b49506b32e6e99dc9eeb09f894ed5b1f3742ec2a9add6a22e6635d9b119ac253",
+          "pair_audit_sha256": "f7cf1e5fb808d18ed9a79704cfa8ab60f417714622d5161944db689711de684c"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100093_mismatch/result.json",
+          "result_sha256": "8c5e2b81b22cfeed88a60561035fb5f619657d18f5ea240935e643b799588434",
+          "pair_audit_sha256": "f7cf1e5fb808d18ed9a79704cfa8ab60f417714622d5161944db689711de684c"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100093_contact_state/result.json",
+          "result_sha256": "48464be4dc0d7f2932f5a1d69fdd57698a134e7a3eb132b06fa0620a18def2ca",
+          "pair_audit_sha256": "f7cf1e5fb808d18ed9a79704cfa8ab60f417714622d5161944db689711de684c"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100093_zero/result.json",
+          "result_sha256": "3b959efc3ee0db7b629945f333be5edb5f4c29fcf1fe11ac24414d0f6d0305c6",
+          "pair_audit_sha256": "316ae72f823910a74d6eaa48daf7b278dac813fa7e1efe7b0efc69ad7589ef35"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100093_true/result.json",
+          "result_sha256": "18764a26d3fd75a6c8c1c41ebd091a46eb26338ca8492cced9c39f872d367e62",
+          "pair_audit_sha256": "316ae72f823910a74d6eaa48daf7b278dac813fa7e1efe7b0efc69ad7589ef35"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100093_mismatch/result.json",
+          "result_sha256": "639bb2c27617519ac6feb94c67eebfdcd2af52057b509a87527b1d771b8a1f5a",
+          "pair_audit_sha256": "316ae72f823910a74d6eaa48daf7b278dac813fa7e1efe7b0efc69ad7589ef35"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100093_contact_state/result.json",
+          "result_sha256": "0b4f27d098d5c0f07d6e3b9f19f8520741d26549e4603aa8fb84c7b9159eb67a",
+          "pair_audit_sha256": "316ae72f823910a74d6eaa48daf7b278dac813fa7e1efe7b0efc69ad7589ef35"
+        }
+      ]
+    },
+    {
+      "seed": 100094,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100094_zero/result.json",
+          "result_sha256": "b76e9c10d9d704f2aa757e16d51c52c358b0e1f81c52b4118d7932036b11d8fc",
+          "pair_audit_sha256": "eb8f51a3e6ce61000286f2bec2ca20f0ffb27b97c39a552a682f43fa2596704b"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100094_true/result.json",
+          "result_sha256": "b75d1554332a6b5b2c9b84bdb6aa4261ac2480adea26cd7dc16c9dbba4ede307",
+          "pair_audit_sha256": "eb8f51a3e6ce61000286f2bec2ca20f0ffb27b97c39a552a682f43fa2596704b"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100094_mismatch/result.json",
+          "result_sha256": "edff3e17c3ecd48d80c3e46d872ca3cbfe9b0150d1cd564c3f0624227375f57c",
+          "pair_audit_sha256": "eb8f51a3e6ce61000286f2bec2ca20f0ffb27b97c39a552a682f43fa2596704b"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100094_contact_state/result.json",
+          "result_sha256": "2638eb5483e8bc0547a7e341ea749c89c718e871fdb8b7a61f36d9ddbdc1225e",
+          "pair_audit_sha256": "eb8f51a3e6ce61000286f2bec2ca20f0ffb27b97c39a552a682f43fa2596704b"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100094_zero/result.json",
+          "result_sha256": "54d9ac6bb6b45ace8eec86fd880826b99506bb2f0604306ecdf34ef01d570344",
+          "pair_audit_sha256": "6e4f977dbd3f0fc1a676f0d8241e7ba7a43caf83ce1bd3bbab1683a32f997cbd"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100094_true/result.json",
+          "result_sha256": "c0094f4c67c0458e2b5831bcad360e57bf90f025178d5ca9a7b50029a2b33a56",
+          "pair_audit_sha256": "6e4f977dbd3f0fc1a676f0d8241e7ba7a43caf83ce1bd3bbab1683a32f997cbd"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100094_mismatch/result.json",
+          "result_sha256": "eb2e2660c98996e1cf959182e404bd68a1205761c661d9c60557c47cfab6a048",
+          "pair_audit_sha256": "6e4f977dbd3f0fc1a676f0d8241e7ba7a43caf83ce1bd3bbab1683a32f997cbd"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100094_contact_state/result.json",
+          "result_sha256": "61b52de5882a7e5f82df489852cc056dc978b162111b18dfeb476abee31fa97a",
+          "pair_audit_sha256": "6e4f977dbd3f0fc1a676f0d8241e7ba7a43caf83ce1bd3bbab1683a32f997cbd"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100094_zero/result.json",
+          "result_sha256": "66860f757235f458ddeb12b3c1c53c8b4816c87277f9198557b6d7dedcd5133a",
+          "pair_audit_sha256": "c9b733d080b94be4d5923227d83feeb3453ee67b5486ce8e8783630dd732c6f5"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100094_true/result.json",
+          "result_sha256": "d0618dbbbd5c5df5ccedcee0f89156f07386991fbba2927c4d4ba0fbe8bfb37d",
+          "pair_audit_sha256": "c9b733d080b94be4d5923227d83feeb3453ee67b5486ce8e8783630dd732c6f5"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100094_mismatch/result.json",
+          "result_sha256": "e4669b8fcc2b72a93d57e0ff6c95489c7092cb3ac2e60a3297cd80fa2773a11f",
+          "pair_audit_sha256": "c9b733d080b94be4d5923227d83feeb3453ee67b5486ce8e8783630dd732c6f5"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100094_contact_state/result.json",
+          "result_sha256": "9e58ec73c12a2f0ef2c6e4e13f4ba1ad500fb2d78b83fbccc2d3da258d0eed92",
+          "pair_audit_sha256": "c9b733d080b94be4d5923227d83feeb3453ee67b5486ce8e8783630dd732c6f5"
+        }
+      ]
+    },
+    {
+      "seed": 100095,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100095_zero/result.json",
+          "result_sha256": "3d41f7846885925baec81b4eddfbcfd26674204ae1321e42afe06f8d486b210f",
+          "pair_audit_sha256": "fbba211b1dc1871c4a67c6e65721311be75966a0d3e69eedad83c12a9f74fa73"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100095_true/result.json",
+          "result_sha256": "6781bcb42cf64df08f32c085dd4abc739e721ebbe57071e6e96e69a6adff5d25",
+          "pair_audit_sha256": "fbba211b1dc1871c4a67c6e65721311be75966a0d3e69eedad83c12a9f74fa73"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100095_mismatch/result.json",
+          "result_sha256": "bbf1172bd36747522721c7515ec5af9ce4ce03739c8049b08169d61856e9df4a",
+          "pair_audit_sha256": "fbba211b1dc1871c4a67c6e65721311be75966a0d3e69eedad83c12a9f74fa73"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100095_contact_state/result.json",
+          "result_sha256": "c62379a4567c389e1011750729df93d11264d0bc1ed381ba1d479ccc25e8744f",
+          "pair_audit_sha256": "fbba211b1dc1871c4a67c6e65721311be75966a0d3e69eedad83c12a9f74fa73"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100095_zero/result.json",
+          "result_sha256": "4697990f0e7fafdf56e4619ba50cc57489f33f4b5bf2d2ca11561a62c4ac71cb",
+          "pair_audit_sha256": "eda7829299b7e89df4696d7fc53ef2887715db9c933d680a057dddb592487476"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100095_true/result.json",
+          "result_sha256": "9cfc82edbdde9eb05baa676e60a4ada562fbd562c31d2c110d7eb65d165e0bd9",
+          "pair_audit_sha256": "eda7829299b7e89df4696d7fc53ef2887715db9c933d680a057dddb592487476"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100095_mismatch/result.json",
+          "result_sha256": "8c6465adb33175a35523c36adcd7d05653990f1ea461408256fd112854a8c6d1",
+          "pair_audit_sha256": "eda7829299b7e89df4696d7fc53ef2887715db9c933d680a057dddb592487476"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100095_contact_state/result.json",
+          "result_sha256": "0b26de227016db93d1361bd8369895d0da5067315718da5c907ad60d571b828e",
+          "pair_audit_sha256": "eda7829299b7e89df4696d7fc53ef2887715db9c933d680a057dddb592487476"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100095_zero/result.json",
+          "result_sha256": "2b01e5651fa12b9e3c22facced1dbabfe48be82d04f0f945f8cc6cad20221c0a",
+          "pair_audit_sha256": "eb0cc2dad89142cb5c022b8b0da1ce98ebcac3c5e6e5bcb72430aedcdd001bc0"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100095_true/result.json",
+          "result_sha256": "10ad3ba61d01cd6267f46a47a3e1bac7fdf442cf170809a78a1355f084abedb8",
+          "pair_audit_sha256": "eb0cc2dad89142cb5c022b8b0da1ce98ebcac3c5e6e5bcb72430aedcdd001bc0"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100095_mismatch/result.json",
+          "result_sha256": "e0e91b07d41cac4019d861781c7b6cc5272ed282f813321f4315fd1a629f4b72",
+          "pair_audit_sha256": "eb0cc2dad89142cb5c022b8b0da1ce98ebcac3c5e6e5bcb72430aedcdd001bc0"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100095_contact_state/result.json",
+          "result_sha256": "89d4fd17d3c5225a6c684238a0c7165956f4b6e931d99285c50b1c4373ae40a3",
+          "pair_audit_sha256": "eb0cc2dad89142cb5c022b8b0da1ce98ebcac3c5e6e5bcb72430aedcdd001bc0"
+        }
+      ]
+    },
+    {
+      "seed": 100096,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100096_zero/result.json",
+          "result_sha256": "5a693e0d8b9c77ecb600b0d987c5e086cd0bbb7647c41cb8c3dc4daaca9c017f",
+          "pair_audit_sha256": "15314afa27c02f2433ef8857e9877f77341bd45fbd7463e4e0807c8b8ac9f6a5"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100096_true/result.json",
+          "result_sha256": "edbc3ed253a81663948beb6686480f48fde91f5416f314d2c2f092725f55a1fb",
+          "pair_audit_sha256": "15314afa27c02f2433ef8857e9877f77341bd45fbd7463e4e0807c8b8ac9f6a5"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100096_mismatch/result.json",
+          "result_sha256": "a7113012a894364aea6a1284d27b0c9c3dd1b69161878611f853826688d618e3",
+          "pair_audit_sha256": "15314afa27c02f2433ef8857e9877f77341bd45fbd7463e4e0807c8b8ac9f6a5"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100096_contact_state/result.json",
+          "result_sha256": "2380d27b394404ccf44c4e9a4ce0af8a7d438c4e7c2b292885f2fd3dbea90d0f",
+          "pair_audit_sha256": "15314afa27c02f2433ef8857e9877f77341bd45fbd7463e4e0807c8b8ac9f6a5"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100096_zero/result.json",
+          "result_sha256": "1b6f1a15f4e276b7d2bac74593e2e2e2956ff656272f3a10b35740e522303190",
+          "pair_audit_sha256": "499db5b38090872c7c416967073f8502e1a96a3e82257a22a91a0098567efc4d"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100096_true/result.json",
+          "result_sha256": "62dab52041b0bfdac7ec6c65ea43ec2ceb5f3924a7729e59487b3a47f94f352c",
+          "pair_audit_sha256": "499db5b38090872c7c416967073f8502e1a96a3e82257a22a91a0098567efc4d"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100096_mismatch/result.json",
+          "result_sha256": "ef10ae113b54cc4f141b07766aa9f8457c818ae0cdc2a95ba959029f7daf4394",
+          "pair_audit_sha256": "499db5b38090872c7c416967073f8502e1a96a3e82257a22a91a0098567efc4d"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100096_contact_state/result.json",
+          "result_sha256": "41e0ec830225873d602764287fb7581e95e0f853a18e00be97d32d689ddcf957",
+          "pair_audit_sha256": "499db5b38090872c7c416967073f8502e1a96a3e82257a22a91a0098567efc4d"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100096_zero/result.json",
+          "result_sha256": "100648a22be776ee03e68397c0a05a25b0e0f68aaf280d5ee8322ab1c7a37926",
+          "pair_audit_sha256": "527070de10113c54390876551e32a7a6d5f7f48da2c23c1ba1abd29431b31ecc"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100096_true/result.json",
+          "result_sha256": "cb244c0140728a241000305cc6587815d8311a759735034f735a0ce99add052a",
+          "pair_audit_sha256": "527070de10113c54390876551e32a7a6d5f7f48da2c23c1ba1abd29431b31ecc"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100096_mismatch/result.json",
+          "result_sha256": "5857e958fcdeae681af4a10f258688ea2a23f65416f939145e3641694906efe1",
+          "pair_audit_sha256": "527070de10113c54390876551e32a7a6d5f7f48da2c23c1ba1abd29431b31ecc"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100096_contact_state/result.json",
+          "result_sha256": "f6d0d5e26c14153a6a5039288b1a5ee16b94500bb8da951f0d3f750c45cbcd45",
+          "pair_audit_sha256": "527070de10113c54390876551e32a7a6d5f7f48da2c23c1ba1abd29431b31ecc"
+        }
+      ]
+    },
+    {
+      "seed": 100097,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100097_zero/result.json",
+          "result_sha256": "0b9a9e31cab34a23f26f59898284ccd0c1fe1b1ede7499014f7879ed41eb8ac6",
+          "pair_audit_sha256": "e551d9db14a04a18ab7e9a94725c82df8810dc526ac501575c565773301f6dc6"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100097_true/result.json",
+          "result_sha256": "5547d0b33a63dcafba0f439848b1385d1d4fcc6b23d9d6bd212bb3cb496fad7c",
+          "pair_audit_sha256": "e551d9db14a04a18ab7e9a94725c82df8810dc526ac501575c565773301f6dc6"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100097_mismatch/result.json",
+          "result_sha256": "8282e782dcefb63c73e98aae12f5df986c2653a4bb577046c5c8ebde7ad60e50",
+          "pair_audit_sha256": "e551d9db14a04a18ab7e9a94725c82df8810dc526ac501575c565773301f6dc6"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100097_contact_state/result.json",
+          "result_sha256": "7117ce39448aec62878b5d10499273a7c53c035582b163b4d6f5d7ac98ee862f",
+          "pair_audit_sha256": "e551d9db14a04a18ab7e9a94725c82df8810dc526ac501575c565773301f6dc6"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100097_zero/result.json",
+          "result_sha256": "49481ce179dc90762201fda7dd01db5045a103b44bd3156b40b22c2496eff288",
+          "pair_audit_sha256": "667b02696be2d880477be718949b4fb2b6e9bea1a21fb8a016c2cc7df2819e0b"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100097_true/result.json",
+          "result_sha256": "6e2fc54626886620af71c6e56f6d53a466219e514c8b52b2fbe959cd8916c2a0",
+          "pair_audit_sha256": "667b02696be2d880477be718949b4fb2b6e9bea1a21fb8a016c2cc7df2819e0b"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100097_mismatch/result.json",
+          "result_sha256": "3f4e9ed52920295806e822c67f6873d91a357fab89443cbad70fe176f1a43851",
+          "pair_audit_sha256": "667b02696be2d880477be718949b4fb2b6e9bea1a21fb8a016c2cc7df2819e0b"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100097_contact_state/result.json",
+          "result_sha256": "c009eef0a846f05ca4f4dccee9258ffef30ca43ddf2a813c59eb28aeeb62a1bb",
+          "pair_audit_sha256": "667b02696be2d880477be718949b4fb2b6e9bea1a21fb8a016c2cc7df2819e0b"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100097_zero/result.json",
+          "result_sha256": "89db540b189e0b1fb33067f4cd0da225d7c0c8673392144f081f57194a7121b5",
+          "pair_audit_sha256": "c593db54306c77d9046119c30fee57adb738a4de402fc1f9cee50c9d8fefa1f8"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100097_true/result.json",
+          "result_sha256": "192e2fb51877e0e9a5244434918305013539970ba11426ef37f27bfc914ae88f",
+          "pair_audit_sha256": "c593db54306c77d9046119c30fee57adb738a4de402fc1f9cee50c9d8fefa1f8"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100097_mismatch/result.json",
+          "result_sha256": "bf3b597251d6ed18c1d5d0eedf53530707efb9136b2a1c0d0759f3219fc063b3",
+          "pair_audit_sha256": "c593db54306c77d9046119c30fee57adb738a4de402fc1f9cee50c9d8fefa1f8"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100097_contact_state/result.json",
+          "result_sha256": "c81aed13af97e2497459442c8c91e7ded527cfe6445d7afc2158984980fff4fd",
+          "pair_audit_sha256": "c593db54306c77d9046119c30fee57adb738a4de402fc1f9cee50c9d8fefa1f8"
+        }
+      ]
+    },
+    {
+      "seed": 100098,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100098_zero/result.json",
+          "result_sha256": "b366fb569ce64272942b69f86dbda7fcd8978fa50de67bf5d5a0f6dc092753f7",
+          "pair_audit_sha256": "bc8c6cf53c044c78aeaf3d22710c039d460d00419bd28aa7733476b373b9a91d"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100098_true/result.json",
+          "result_sha256": "06942ec84dd2863ea4b371d1259ae0088e2d9600d4778545409a10e9d44c4bbe",
+          "pair_audit_sha256": "bc8c6cf53c044c78aeaf3d22710c039d460d00419bd28aa7733476b373b9a91d"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100098_mismatch/result.json",
+          "result_sha256": "39816171d42daea65d43667413415710b1e846e290410a942dfcca06bf2706a2",
+          "pair_audit_sha256": "bc8c6cf53c044c78aeaf3d22710c039d460d00419bd28aa7733476b373b9a91d"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100098_contact_state/result.json",
+          "result_sha256": "033d722dfca34f1aa8e5b6de93a1d48f4f7e7a4197a5a4d25874b18b9ebb5f99",
+          "pair_audit_sha256": "bc8c6cf53c044c78aeaf3d22710c039d460d00419bd28aa7733476b373b9a91d"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100098_zero/result.json",
+          "result_sha256": "abb913342630c62f983d9a368565d7a4507676e6013276c6ed01222e86531940",
+          "pair_audit_sha256": "38f4f09932ea14db0bd91394f61760ff9293741ed6aed207d01ae426b9bc696d"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100098_true/result.json",
+          "result_sha256": "59b70a9800634a2b3b381472f39e13ab2dfd8f1b453239222b0cca5b7445ef9d",
+          "pair_audit_sha256": "38f4f09932ea14db0bd91394f61760ff9293741ed6aed207d01ae426b9bc696d"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100098_mismatch/result.json",
+          "result_sha256": "72e6bd1729f084347aab92343a709a37c41cec28f5052f51d1f757d711bc671f",
+          "pair_audit_sha256": "38f4f09932ea14db0bd91394f61760ff9293741ed6aed207d01ae426b9bc696d"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100098_contact_state/result.json",
+          "result_sha256": "e08eb592ddd9700fa4a921a92f7a59ffaadb699f5ca74c6a66fc006d34d92037",
+          "pair_audit_sha256": "38f4f09932ea14db0bd91394f61760ff9293741ed6aed207d01ae426b9bc696d"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100098_zero/result.json",
+          "result_sha256": "e984b6cc9524066f34da0c5d11e02b3b4b4aea93d23dac5b5a9ade13fb1adea3",
+          "pair_audit_sha256": "962ac590b72b0880515551f90c0c899527c95e82bffa0a6c05a80d765dc20630"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100098_true/result.json",
+          "result_sha256": "0323615a3ef7b2a690cdfe9d92c6ae1185033c095a7e42e5df225015008703e3",
+          "pair_audit_sha256": "962ac590b72b0880515551f90c0c899527c95e82bffa0a6c05a80d765dc20630"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100098_mismatch/result.json",
+          "result_sha256": "ade45be022148d91582bfae0775fc4a184f228468ddd73a622d1b6883a2af500",
+          "pair_audit_sha256": "962ac590b72b0880515551f90c0c899527c95e82bffa0a6c05a80d765dc20630"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100098_contact_state/result.json",
+          "result_sha256": "1171ace7e9a516e99a6f1d9d9b31a89c8b4d457e912d720c7b2ea2724a82f469",
+          "pair_audit_sha256": "962ac590b72b0880515551f90c0c899527c95e82bffa0a6c05a80d765dc20630"
+        }
+      ]
+    },
+    {
+      "seed": 100099,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100099_zero/result.json",
+          "result_sha256": "6ddeaafb9003357b5ac2126af8b320b9427c0d5cf5f4c882ce72c10dab930ff1",
+          "pair_audit_sha256": "21db11b9ddf07e7d1a5d1d845177ae219e13dc3c98035a9edc517bbc0587cadc"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100099_true/result.json",
+          "result_sha256": "e7e55ae846e3a98fc4c4056e90899509a7048e2a2eaaaad53454a77a09682884",
+          "pair_audit_sha256": "21db11b9ddf07e7d1a5d1d845177ae219e13dc3c98035a9edc517bbc0587cadc"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100099_mismatch/result.json",
+          "result_sha256": "f0d2c394367f0f4c13e17fea4226f51d3b68c55d51bc369a30219a87d421621e",
+          "pair_audit_sha256": "21db11b9ddf07e7d1a5d1d845177ae219e13dc3c98035a9edc517bbc0587cadc"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100099_contact_state/result.json",
+          "result_sha256": "d7838f0b6468a716f0274ade57f950581671b431c4631207f44b38ffe42dc166",
+          "pair_audit_sha256": "21db11b9ddf07e7d1a5d1d845177ae219e13dc3c98035a9edc517bbc0587cadc"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100099_zero/result.json",
+          "result_sha256": "bf75ba0cb721dbdfabbfb3dd36c9bad0b1b550396539a7f1d6d7e5f1e9e27742",
+          "pair_audit_sha256": "48ba1ee536ec30030a1751cb281e53454a1d72c144c47e9498d72c004088e071"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100099_true/result.json",
+          "result_sha256": "307eb6f4f7ca2b60b49c4e48c7dc01e5ac19e34aa78c3d8eeaee32cb4e0ee33e",
+          "pair_audit_sha256": "48ba1ee536ec30030a1751cb281e53454a1d72c144c47e9498d72c004088e071"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100099_mismatch/result.json",
+          "result_sha256": "7dd9c8459bffb9e1dc23fac5b2eff009c5a45cb08f8eaae8bb0139d01c3adf48",
+          "pair_audit_sha256": "48ba1ee536ec30030a1751cb281e53454a1d72c144c47e9498d72c004088e071"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100099_contact_state/result.json",
+          "result_sha256": "f2a560a8dcf678ea8c99440177f37bd7c87f5b0019b362f97fca44b7de398ecd",
+          "pair_audit_sha256": "48ba1ee536ec30030a1751cb281e53454a1d72c144c47e9498d72c004088e071"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100099_zero/result.json",
+          "result_sha256": "df43d2c5b3c434071562ba43c7e84efa4efa213e597c8f50d463d275a7d677e7",
+          "pair_audit_sha256": "adaad639cc0acd520dfb30321b9ec4df1911dd1648e88348c37b0ec290a424c1"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100099_true/result.json",
+          "result_sha256": "7c4580989838c87f1d0a495180f682a8abf77fe11d1f8edf562e54863a84c085",
+          "pair_audit_sha256": "adaad639cc0acd520dfb30321b9ec4df1911dd1648e88348c37b0ec290a424c1"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100099_mismatch/result.json",
+          "result_sha256": "26485440b911074dc0fb018c0cd68f08a92a086f274cd698d2b7537d06506ab6",
+          "pair_audit_sha256": "adaad639cc0acd520dfb30321b9ec4df1911dd1648e88348c37b0ec290a424c1"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100099_contact_state/result.json",
+          "result_sha256": "f4b398a3d703fd5ce24325869b2c26b92b54945ab624433693ba4bffd6e56e75",
+          "pair_audit_sha256": "adaad639cc0acd520dfb30321b9ec4df1911dd1648e88348c37b0ec290a424c1"
+        }
+      ]
+    },
+    {
+      "seed": 100100,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100100_zero/result.json",
+          "result_sha256": "aba168eccf415c4dc39226e9b3cc6667b32a7b285e2ad81eca71a4c9c9c71f70",
+          "pair_audit_sha256": "3dee1869e049a67c66de6e9cc80b68748a44157f327cf034a9fbc235c554b12d"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100100_true/result.json",
+          "result_sha256": "972ece484a14651f9be358a0264a60a462733c374e1190dbb17456be72d7f0f5",
+          "pair_audit_sha256": "3dee1869e049a67c66de6e9cc80b68748a44157f327cf034a9fbc235c554b12d"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100100_mismatch/result.json",
+          "result_sha256": "5dd8a758c54f74b034deb1aee6a72a3400fb267cccdb5cf93b88fd9dc27dae3c",
+          "pair_audit_sha256": "3dee1869e049a67c66de6e9cc80b68748a44157f327cf034a9fbc235c554b12d"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100100_contact_state/result.json",
+          "result_sha256": "f5e2a0774b8bc921a5dadcaee1f3909507f308a4f25c0bd6a8617491ce5f4647",
+          "pair_audit_sha256": "3dee1869e049a67c66de6e9cc80b68748a44157f327cf034a9fbc235c554b12d"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100100_zero/result.json",
+          "result_sha256": "4161988217d044edd028c7f718fabb31f79c096a470bbd3637cbd4274b4e1ac7",
+          "pair_audit_sha256": "4af9df31f23b7bac8828322506061a9dd14bcccb394cf4d6f1b9414e1bfa06a1"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100100_true/result.json",
+          "result_sha256": "457649f34c47d215b7a76a766f88637971d39c3745a782049a496acd820352b5",
+          "pair_audit_sha256": "4af9df31f23b7bac8828322506061a9dd14bcccb394cf4d6f1b9414e1bfa06a1"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100100_mismatch/result.json",
+          "result_sha256": "84236acfebb730e8bc5bff6ff1899acd3692d2d5f9842d8388c6909d5fde1b1a",
+          "pair_audit_sha256": "4af9df31f23b7bac8828322506061a9dd14bcccb394cf4d6f1b9414e1bfa06a1"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100100_contact_state/result.json",
+          "result_sha256": "fee14e2e2a7566793e18fa596e97bba20f95cd780f9afcafee110aa939931b48",
+          "pair_audit_sha256": "4af9df31f23b7bac8828322506061a9dd14bcccb394cf4d6f1b9414e1bfa06a1"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100100_zero/result.json",
+          "result_sha256": "64863ea9a8ad0f7c88c33cb7e4d64474b88958f973a9299b051faaf6decf034b",
+          "pair_audit_sha256": "abcced0d225a7bc6b990e6b3f86d7a8e463c140169d6d8a4d5995a0768f7d680"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100100_true/result.json",
+          "result_sha256": "13c905517f8a271c280cc493cfd0669fd98855dd140d919e7ca5cc7c0822bae8",
+          "pair_audit_sha256": "abcced0d225a7bc6b990e6b3f86d7a8e463c140169d6d8a4d5995a0768f7d680"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100100_mismatch/result.json",
+          "result_sha256": "23dd54825d210da48d1dac8072a90fb7a5cc8af466f1cbce92d088006a935707",
+          "pair_audit_sha256": "abcced0d225a7bc6b990e6b3f86d7a8e463c140169d6d8a4d5995a0768f7d680"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100100_contact_state/result.json",
+          "result_sha256": "12155c3da4504ba4d995065a0474176a0c85184061c46fc6a4bcad4eb8598d70",
+          "pair_audit_sha256": "abcced0d225a7bc6b990e6b3f86d7a8e463c140169d6d8a4d5995a0768f7d680"
+        }
+      ]
+    },
+    {
+      "seed": 100101,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100101_zero/result.json",
+          "result_sha256": "ce03d591887356cd90250cee8cc86187cacdb4cf9ba52cf2cc308332cea8d81b",
+          "pair_audit_sha256": "b463abeeb8d272d43112781f3005ca7215e23a78d596e28c0d540208c630075a"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100101_true/result.json",
+          "result_sha256": "29da0e4440774c54c2bfcd6ed4cef42fd793516447a54483ec3eb70512c5994d",
+          "pair_audit_sha256": "b463abeeb8d272d43112781f3005ca7215e23a78d596e28c0d540208c630075a"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100101_mismatch/result.json",
+          "result_sha256": "edcde335df22bf76d8376065c37544f37dec0115afb3aeceb669d60499eb2a93",
+          "pair_audit_sha256": "b463abeeb8d272d43112781f3005ca7215e23a78d596e28c0d540208c630075a"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100101_contact_state/result.json",
+          "result_sha256": "f4b78b5a50a2e5f532eb03fc5b49959fbd9698f3312ba868346887504e280b0f",
+          "pair_audit_sha256": "b463abeeb8d272d43112781f3005ca7215e23a78d596e28c0d540208c630075a"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100101_zero/result.json",
+          "result_sha256": "055f80a9ae9e529a4e150e1409abd481d263426c5ed78f031317ae7744eb971c",
+          "pair_audit_sha256": "59ec7c67aaa39c111d05941fda1689e6685723a2d4f511522d5674da91b45622"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100101_true/result.json",
+          "result_sha256": "5f1a78c12664f4a03a844ccb1314d084898fa3b67c528a3b8a1ff03b0247fae9",
+          "pair_audit_sha256": "59ec7c67aaa39c111d05941fda1689e6685723a2d4f511522d5674da91b45622"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100101_mismatch/result.json",
+          "result_sha256": "6fb6b4a239a6684db20f69545586d32a74d41f8739bc54ce2e2315ee8bc21d90",
+          "pair_audit_sha256": "59ec7c67aaa39c111d05941fda1689e6685723a2d4f511522d5674da91b45622"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100101_contact_state/result.json",
+          "result_sha256": "75398cbd061a25b5a71777e65b5a235b0e697f24b54215ee69fd8dd5a63a9f52",
+          "pair_audit_sha256": "59ec7c67aaa39c111d05941fda1689e6685723a2d4f511522d5674da91b45622"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": true,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100101_zero/result.json",
+          "result_sha256": "8b22628dfa230ca925a0ed5e11a4fd99a9704fee1fd2fb5ee238b45e67d4cd05",
+          "pair_audit_sha256": "dd1456a9f41651051c72e03e8a6e3e6c68f30119dd5273c131285d83fc50956d"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100101_true/result.json",
+          "result_sha256": "fddea6334d9b13481a69cd1f387dd8f2e712a5611e35f41579448da7d1f9e607",
+          "pair_audit_sha256": "dd1456a9f41651051c72e03e8a6e3e6c68f30119dd5273c131285d83fc50956d"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100101_mismatch/result.json",
+          "result_sha256": "ea35665ad6182f9ecd35b6c9f4958a458593479a156445861a20e160ef84ff8e",
+          "pair_audit_sha256": "dd1456a9f41651051c72e03e8a6e3e6c68f30119dd5273c131285d83fc50956d"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100101_contact_state/result.json",
+          "result_sha256": "90a6480df92a74a5d718aea00661be145bc028e129fcea4ba8c6a65e200f23be",
+          "pair_audit_sha256": "dd1456a9f41651051c72e03e8a6e3e6c68f30119dd5273c131285d83fc50956d"
+        }
+      ]
+    },
+    {
+      "seed": 100102,
+      "fold": "test",
+      "scenario": "cwmj_wine_v2",
+      "status": "consumed_test",
+      "stage": "M7_confirmation",
+      "training_supervision_allowed": false,
+      "repeats": [
+        0,
+        1,
+        2
+      ],
+      "conditions": [
+        "zero",
+        "true",
+        "mismatch",
+        "contact_state"
+      ],
+      "validation_selection_allowed": false,
+      "attempts": [
+        {
+          "repeat": 0,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100102_zero/result.json",
+          "result_sha256": "00ba90ea6bc0c27f8688a4295f56d96e1a94df5d04fe8cd55c5eb3627e071294",
+          "pair_audit_sha256": "992163d7e8c5b4f215a54e79ef81a56b178059a5668974fed41c0fa23ff12273"
+        },
+        {
+          "repeat": 0,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100102_true/result.json",
+          "result_sha256": "6b340a5fce569f406d4b0568c7668fa9e5427d368b977558ebbb660e785b56f0",
+          "pair_audit_sha256": "992163d7e8c5b4f215a54e79ef81a56b178059a5668974fed41c0fa23ff12273"
+        },
+        {
+          "repeat": 0,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100102_mismatch/result.json",
+          "result_sha256": "653146fe88063e2538e0998261495ae15b52416bb8a1b7c6ee1306241a528992",
+          "pair_audit_sha256": "992163d7e8c5b4f215a54e79ef81a56b178059a5668974fed41c0fa23ff12273"
+        },
+        {
+          "repeat": 0,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r0_100102_contact_state/result.json",
+          "result_sha256": "5deac468ec2e2dd74a012db75c30720aed06f3c6cd9348fb8b9e06337b9cb4c5",
+          "pair_audit_sha256": "992163d7e8c5b4f215a54e79ef81a56b178059a5668974fed41c0fa23ff12273"
+        },
+        {
+          "repeat": 1,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100102_zero/result.json",
+          "result_sha256": "94ac3155cffa8d393d06156bdd9800bc6b94e0a077798421556f84549a2a7982",
+          "pair_audit_sha256": "4242c0f05c6883998f5b546a08a00363b0e9b10929a450de8a749f0952ffd4c8"
+        },
+        {
+          "repeat": 1,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100102_true/result.json",
+          "result_sha256": "d8382d7ea8c38eff6d0dcdf188504d13a6c2252b6b7e670db56844ff6f2bdd64",
+          "pair_audit_sha256": "4242c0f05c6883998f5b546a08a00363b0e9b10929a450de8a749f0952ffd4c8"
+        },
+        {
+          "repeat": 1,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100102_mismatch/result.json",
+          "result_sha256": "257cf6ebf97db632b706484676657071a1b3d7bfe25184cc9d9380df518b37c1",
+          "pair_audit_sha256": "4242c0f05c6883998f5b546a08a00363b0e9b10929a450de8a749f0952ffd4c8"
+        },
+        {
+          "repeat": 1,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r1_100102_contact_state/result.json",
+          "result_sha256": "e822ca121e6891c99a141ebb4e3123f62da780836d620619bbacd43219af2aa9",
+          "pair_audit_sha256": "4242c0f05c6883998f5b546a08a00363b0e9b10929a450de8a749f0952ffd4c8"
+        },
+        {
+          "repeat": 2,
+          "condition": "zero",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100102_zero/result.json",
+          "result_sha256": "00fd15d0cc569e2cc73188fd9147ba9c0ce498c98bb1b5f725a8615d4d4562c6",
+          "pair_audit_sha256": "3ad682f5d37001d0cb80efef7d85eeaa895d9d4192d805a9837e8f74cfa8ef24"
+        },
+        {
+          "repeat": 2,
+          "condition": "true",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100102_true/result.json",
+          "result_sha256": "96f17290aa840cb5bae9375ae8ea345be1bc01291fe52d48b4b60580467c0198",
+          "pair_audit_sha256": "3ad682f5d37001d0cb80efef7d85eeaa895d9d4192d805a9837e8f74cfa8ef24"
+        },
+        {
+          "repeat": 2,
+          "condition": "mismatch",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100102_mismatch/result.json",
+          "result_sha256": "7ff4170513c719cd48b1c362747403ad57bee446a471917d8fc0fc2c6121b616",
+          "pair_audit_sha256": "3ad682f5d37001d0cb80efef7d85eeaa895d9d4192d805a9837e8f74cfa8ef24"
+        },
+        {
+          "repeat": 2,
+          "condition": "contact_state",
+          "success": false,
+          "result_path": "/mnt/relaydata/lingbot-tactile-lab/data/eval/cwmj_m7_confirm_r2_100102_contact_state/result.json",
+          "result_sha256": "18c7025934b81f8a0a15734b1b4a01fa0bb989b92b60a4af5a24316de0b1718b",
+          "pair_audit_sha256": "3ad682f5d37001d0cb80efef7d85eeaa895d9d4192d805a9837e8f74cfa8ef24"
+        }
+      ]
+    }
+  ]
+}

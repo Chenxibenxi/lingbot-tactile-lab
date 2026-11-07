@@ -1,0 +1,31 @@
+{
+  "schema": "lingbot_online_validation_s100024_rejection_v1",
+  "status": "80_true_calls_but_task_goal_false_no_validation_h50",
+  "task": "pick_diverse_bottles",
+  "seed": 100024,
+  "fold_intent": "validation_only_not_train_or_approved",
+  "actual_take_action_calls": 80,
+  "physics_steps": 9559,
+  "approved_physics_cap": 10000,
+  "saved_frames": 80,
+  "phase_call_counts": {"grasp": 40, "lift": 10, "place": 30},
+  "planner_ok": true,
+  "task_goal_success": false,
+  "stopped_reason": "proposals_exhausted_without_goal",
+  "max_joint_tracking_abs_error": 0.015433,
+  "source_and_completion_HDF5_verified": false,
+  "expert_hdf5_written": false,
+  "completion_written": false,
+  "independent_validation_h50_verified": 0,
+  "approved_h50_validation_windows": 0,
+  "training_approval": false,
+  "source_file_sha256": {
+    "raw": "582ad9b189887be10bb5f99ca76f0a8e7634486a1f0bf5972f47bcd7ac6c4533",
+    "obs": "c9b1c690424e89503d299ea3b5dd1ed9d4801ca61cc285646a1fe1db7e4fa404",
+    "frames": "b45e926c2fe4e4d114cd109d2a00e9850a7d35a29287eac26abc8c991abfb23c",
+    "actions": "9a5fb18988d145fb76e08e52cac812a6a88754d0ab278c69da34fb85247d32d4",
+    "result": "86efb03738945267e9bf048819f5af22f6223340cc5c1d279738982dd8064af1",
+    "rejection": "4d44c9b1257502465b09c890a207522659d17183f78478e6eee70cc5036f4b55"
+  },
+  "note": "Single owner-approved stride20 validation-only seed executed under an exclusive 3090 lease. Planner succeeded, but the bottle task goal was false when all proposed rule stages ended; 80 real calls alone cannot qualify H50. No HDF5/completion, no validation candidate, no training. Workbench Strata was automatically restored by the old exit hook once; latest owner instruction forbids that on all future jobs, whose wrappers were amended afterward."
+}
