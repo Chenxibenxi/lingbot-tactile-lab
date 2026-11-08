@@ -42,7 +42,7 @@ def audit(root):
         trial=root/f'data/eval/controlled_feedback_pilot_v1/s{seed}_{arm}_c{cadence}'
         result=json.loads((trial/'result.json').read_text())
         row=dict(seed=seed,cadence=cadence,arm=arm,result_sha256=sha256(trial/'result.json'),
-                 success=result.get('success'),status=result['status'],technical_pass=False)
+                 reported_success=result.get('success'),success=None,status=result['status'],technical_pass=False)
         if result['status']!='completed' or result.get('resource_censored') is not False:
             row['reason']=result.get('error',result.get('termination','missing resource status'))
             rows.append(row);continue
@@ -64,7 +64,7 @@ def audit(root):
             raise ValueError('same-run source audit mismatch')
         timing=audit_hdf5(trial/'rollout.hdf5',result['requests'],seed=seed,cadence=cadence,official_success=result['success'])
         if timing!=result['cadence_audit']:raise ValueError('actual cadence audit mismatch')
-        row.update(technical_pass=True,source_audit=source,cadence_audit=timing)
+        row.update(success=result['success'],technical_pass=True,source_audit=source,cadence_audit=timing)
         rows.append(row);eligible[(seed,cadence,arm)]=trial
     for seed in (100127,100128):
         paths=[eligible.get((seed,c,a)) for c in (10,1) for a in ARMS]

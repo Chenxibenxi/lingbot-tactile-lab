@@ -1,0 +1,23 @@
+{
+  "schema": "controlled_feedback_pilot_reservations_v2",
+  "protocol_sha256": "4dc407439759782a3e43a00916a0b9b00595017aaa4aa27e9d7d6b8dcb60424c",
+  "seeds": [
+    100145,
+    100146
+  ],
+  "repeat": 0,
+  "training_steps": 2880,
+  "cadences": [
+    10,
+    1
+  ],
+  "arms": [
+    "zero",
+    "true",
+    "mismatch",
+    "contact_state"
+  ],
+  "training_approval": false,
+  "confirmation_eligible": false,
+  "gpu_execution_ready": false
+}
