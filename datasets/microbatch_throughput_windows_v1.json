@@ -1,0 +1,633 @@
+{
+  "schema": "microbatch_throughput_windows_v1",
+  "purpose": "performance_only_not_task_benefit",
+  "training_approval": false,
+  "inventory_sha256": "3049e92499836bd56e524cf500a00fb9452af001cabdfb772f2afc8b6980e4c1",
+  "transformed_dataset_sha256": "72eb5e30a769eaf70db419e2a841660e7d44bffa8074eac99ea08e08a8666d0b",
+  "train_samples": 402,
+  "selection_rule": "32 unique evenly spaced indices in original frozen train order; i*(N-1)//31",
+  "indices": [
+    0,
+    12,
+    25,
+    38,
+    51,
+    64,
+    77,
+    90,
+    103,
+    116,
+    129,
+    142,
+    155,
+    168,
+    181,
+    194,
+    206,
+    219,
+    232,
+    245,
+    258,
+    271,
+    284,
+    297,
+    310,
+    323,
+    336,
+    349,
+    362,
+    375,
+    388,
+    401
+  ],
+  "samples": [
+    {
+      "trial_id": "relay_pickcwmj_s100045_online_h50_stride20_train_expert0",
+      "seed": 100045,
+      "fold": "train",
+      "frame_index": 2,
+      "contact": false,
+      "source_sha256": {
+        "raw": "56c5a50151d97cbdf38f0bd31eea3a8cb602a80cb8357d07c228d5008ed26761",
+        "obs": "682ecd53c16445e732abf9fa7d24c5367c7a01e23bbd03585720d2c5da37502a",
+        "frames": "5cb0934c0b14539b7876372f9955e7fe8b1ac09f6569c2f2c67386e230c8a42f",
+        "hdf5": "ca3cef26d478938fb2bb0dcc01927f922b234294c314a8b6a0f34e2b758e2c12",
+        "online_actions": "dc2b59e526e1e634baa16dc7e88f9af84aa8ffbbf20d7cfbd34b6765125a9303",
+        "pilot_result": "a9f4e88592c937951b769b9c2a9ce26a274fd0c14721307a3106bbb1dd56ed65",
+        "completion": "ba4f3a0e5dd09765ff8dddf2135c9fb3d3ac8e5bcdcea79c8322f2de47282523",
+        "success_gate": "ada0e02ba5a9a05217104e49191cd28e400cbb55fefb3aef20a01b5ea6f7c50d",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100045_online_h50_stride20_train_expert0",
+      "seed": 100045,
+      "fold": "train",
+      "frame_index": 14,
+      "contact": false,
+      "source_sha256": {
+        "raw": "56c5a50151d97cbdf38f0bd31eea3a8cb602a80cb8357d07c228d5008ed26761",
+        "obs": "682ecd53c16445e732abf9fa7d24c5367c7a01e23bbd03585720d2c5da37502a",
+        "frames": "5cb0934c0b14539b7876372f9955e7fe8b1ac09f6569c2f2c67386e230c8a42f",
+        "hdf5": "ca3cef26d478938fb2bb0dcc01927f922b234294c314a8b6a0f34e2b758e2c12",
+        "online_actions": "dc2b59e526e1e634baa16dc7e88f9af84aa8ffbbf20d7cfbd34b6765125a9303",
+        "pilot_result": "a9f4e88592c937951b769b9c2a9ce26a274fd0c14721307a3106bbb1dd56ed65",
+        "completion": "ba4f3a0e5dd09765ff8dddf2135c9fb3d3ac8e5bcdcea79c8322f2de47282523",
+        "success_gate": "ada0e02ba5a9a05217104e49191cd28e400cbb55fefb3aef20a01b5ea6f7c50d",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100045_online_h50_stride20_train_expert0",
+      "seed": 100045,
+      "fold": "train",
+      "frame_index": 27,
+      "contact": false,
+      "source_sha256": {
+        "raw": "56c5a50151d97cbdf38f0bd31eea3a8cb602a80cb8357d07c228d5008ed26761",
+        "obs": "682ecd53c16445e732abf9fa7d24c5367c7a01e23bbd03585720d2c5da37502a",
+        "frames": "5cb0934c0b14539b7876372f9955e7fe8b1ac09f6569c2f2c67386e230c8a42f",
+        "hdf5": "ca3cef26d478938fb2bb0dcc01927f922b234294c314a8b6a0f34e2b758e2c12",
+        "online_actions": "dc2b59e526e1e634baa16dc7e88f9af84aa8ffbbf20d7cfbd34b6765125a9303",
+        "pilot_result": "a9f4e88592c937951b769b9c2a9ce26a274fd0c14721307a3106bbb1dd56ed65",
+        "completion": "ba4f3a0e5dd09765ff8dddf2135c9fb3d3ac8e5bcdcea79c8322f2de47282523",
+        "success_gate": "ada0e02ba5a9a05217104e49191cd28e400cbb55fefb3aef20a01b5ea6f7c50d",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100045_online_h50_stride20_train_expert0",
+      "seed": 100045,
+      "fold": "train",
+      "frame_index": 40,
+      "contact": false,
+      "source_sha256": {
+        "raw": "56c5a50151d97cbdf38f0bd31eea3a8cb602a80cb8357d07c228d5008ed26761",
+        "obs": "682ecd53c16445e732abf9fa7d24c5367c7a01e23bbd03585720d2c5da37502a",
+        "frames": "5cb0934c0b14539b7876372f9955e7fe8b1ac09f6569c2f2c67386e230c8a42f",
+        "hdf5": "ca3cef26d478938fb2bb0dcc01927f922b234294c314a8b6a0f34e2b758e2c12",
+        "online_actions": "dc2b59e526e1e634baa16dc7e88f9af84aa8ffbbf20d7cfbd34b6765125a9303",
+        "pilot_result": "a9f4e88592c937951b769b9c2a9ce26a274fd0c14721307a3106bbb1dd56ed65",
+        "completion": "ba4f3a0e5dd09765ff8dddf2135c9fb3d3ac8e5bcdcea79c8322f2de47282523",
+        "success_gate": "ada0e02ba5a9a05217104e49191cd28e400cbb55fefb3aef20a01b5ea6f7c50d",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100045_online_h50_stride20_train_expert0",
+      "seed": 100045,
+      "fold": "train",
+      "frame_index": 53,
+      "contact": true,
+      "source_sha256": {
+        "raw": "56c5a50151d97cbdf38f0bd31eea3a8cb602a80cb8357d07c228d5008ed26761",
+        "obs": "682ecd53c16445e732abf9fa7d24c5367c7a01e23bbd03585720d2c5da37502a",
+        "frames": "5cb0934c0b14539b7876372f9955e7fe8b1ac09f6569c2f2c67386e230c8a42f",
+        "hdf5": "ca3cef26d478938fb2bb0dcc01927f922b234294c314a8b6a0f34e2b758e2c12",
+        "online_actions": "dc2b59e526e1e634baa16dc7e88f9af84aa8ffbbf20d7cfbd34b6765125a9303",
+        "pilot_result": "a9f4e88592c937951b769b9c2a9ce26a274fd0c14721307a3106bbb1dd56ed65",
+        "completion": "ba4f3a0e5dd09765ff8dddf2135c9fb3d3ac8e5bcdcea79c8322f2de47282523",
+        "success_gate": "ada0e02ba5a9a05217104e49191cd28e400cbb55fefb3aef20a01b5ea6f7c50d",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100045_online_h50_stride20_train_expert0",
+      "seed": 100045,
+      "fold": "train",
+      "frame_index": 66,
+      "contact": true,
+      "source_sha256": {
+        "raw": "56c5a50151d97cbdf38f0bd31eea3a8cb602a80cb8357d07c228d5008ed26761",
+        "obs": "682ecd53c16445e732abf9fa7d24c5367c7a01e23bbd03585720d2c5da37502a",
+        "frames": "5cb0934c0b14539b7876372f9955e7fe8b1ac09f6569c2f2c67386e230c8a42f",
+        "hdf5": "ca3cef26d478938fb2bb0dcc01927f922b234294c314a8b6a0f34e2b758e2c12",
+        "online_actions": "dc2b59e526e1e634baa16dc7e88f9af84aa8ffbbf20d7cfbd34b6765125a9303",
+        "pilot_result": "a9f4e88592c937951b769b9c2a9ce26a274fd0c14721307a3106bbb1dd56ed65",
+        "completion": "ba4f3a0e5dd09765ff8dddf2135c9fb3d3ac8e5bcdcea79c8322f2de47282523",
+        "success_gate": "ada0e02ba5a9a05217104e49191cd28e400cbb55fefb3aef20a01b5ea6f7c50d",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100046_online_h50_stride20_train_expert0",
+      "seed": 100046,
+      "fold": "train",
+      "frame_index": 13,
+      "contact": false,
+      "source_sha256": {
+        "raw": "f5a42b192e392a8e1bb4fab7f7ed99bf3129f7134c0130de1cb7e2e58632cd6f",
+        "obs": "680afb9d2cdf9799b4aef518844edafc09e6f823f9350ae133b95f277d32faf9",
+        "frames": "a20c8fcf9e2c8c277748e0ef0f43b11c2b15b70d56275cf5f144fad25ca2bfa5",
+        "hdf5": "9596479000778e03fbbdc98ad1ba8639c1aa722031f6f405033d39fd3d22e05a",
+        "online_actions": "72ba339cfafdda58866c4b37ffd0773dfbe9b8b195b39edfc2bace7b29735bbb",
+        "pilot_result": "db11af3a07fbd0a89f10e7284072179fc188666a83b8e317f53d9e65468b716d",
+        "completion": "62d5b3a325240b7991a6bd9104e5a85e7b16be9d560aca0208da2d12b2ecf873",
+        "success_gate": "2267d838196d52d03beebb82f8973293f73b95514d5abe59cf849c84eb23d5fc",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100046_online_h50_stride20_train_expert0",
+      "seed": 100046,
+      "fold": "train",
+      "frame_index": 26,
+      "contact": false,
+      "source_sha256": {
+        "raw": "f5a42b192e392a8e1bb4fab7f7ed99bf3129f7134c0130de1cb7e2e58632cd6f",
+        "obs": "680afb9d2cdf9799b4aef518844edafc09e6f823f9350ae133b95f277d32faf9",
+        "frames": "a20c8fcf9e2c8c277748e0ef0f43b11c2b15b70d56275cf5f144fad25ca2bfa5",
+        "hdf5": "9596479000778e03fbbdc98ad1ba8639c1aa722031f6f405033d39fd3d22e05a",
+        "online_actions": "72ba339cfafdda58866c4b37ffd0773dfbe9b8b195b39edfc2bace7b29735bbb",
+        "pilot_result": "db11af3a07fbd0a89f10e7284072179fc188666a83b8e317f53d9e65468b716d",
+        "completion": "62d5b3a325240b7991a6bd9104e5a85e7b16be9d560aca0208da2d12b2ecf873",
+        "success_gate": "2267d838196d52d03beebb82f8973293f73b95514d5abe59cf849c84eb23d5fc",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100046_online_h50_stride20_train_expert0",
+      "seed": 100046,
+      "fold": "train",
+      "frame_index": 39,
+      "contact": false,
+      "source_sha256": {
+        "raw": "f5a42b192e392a8e1bb4fab7f7ed99bf3129f7134c0130de1cb7e2e58632cd6f",
+        "obs": "680afb9d2cdf9799b4aef518844edafc09e6f823f9350ae133b95f277d32faf9",
+        "frames": "a20c8fcf9e2c8c277748e0ef0f43b11c2b15b70d56275cf5f144fad25ca2bfa5",
+        "hdf5": "9596479000778e03fbbdc98ad1ba8639c1aa722031f6f405033d39fd3d22e05a",
+        "online_actions": "72ba339cfafdda58866c4b37ffd0773dfbe9b8b195b39edfc2bace7b29735bbb",
+        "pilot_result": "db11af3a07fbd0a89f10e7284072179fc188666a83b8e317f53d9e65468b716d",
+        "completion": "62d5b3a325240b7991a6bd9104e5a85e7b16be9d560aca0208da2d12b2ecf873",
+        "success_gate": "2267d838196d52d03beebb82f8973293f73b95514d5abe59cf849c84eb23d5fc",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmj_s100046_online_h50_stride20_train_expert0",
+      "seed": 100046,
+      "fold": "train",
+      "frame_index": 52,
+      "contact": true,
+      "source_sha256": {
+        "raw": "f5a42b192e392a8e1bb4fab7f7ed99bf3129f7134c0130de1cb7e2e58632cd6f",
+        "obs": "680afb9d2cdf9799b4aef518844edafc09e6f823f9350ae133b95f277d32faf9",
+        "frames": "a20c8fcf9e2c8c277748e0ef0f43b11c2b15b70d56275cf5f144fad25ca2bfa5",
+        "hdf5": "9596479000778e03fbbdc98ad1ba8639c1aa722031f6f405033d39fd3d22e05a",
+        "online_actions": "72ba339cfafdda58866c4b37ffd0773dfbe9b8b195b39edfc2bace7b29735bbb",
+        "pilot_result": "db11af3a07fbd0a89f10e7284072179fc188666a83b8e317f53d9e65468b716d",
+        "completion": "62d5b3a325240b7991a6bd9104e5a85e7b16be9d560aca0208da2d12b2ecf873",
+        "success_gate": "2267d838196d52d03beebb82f8973293f73b95514d5abe59cf849c84eb23d5fc",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100058_online_h50_stride20_train_expert0",
+      "seed": 100058,
+      "fold": "train",
+      "frame_index": 7,
+      "contact": false,
+      "source_sha256": {
+        "raw": "d7fad622bec2487a291d2c9f2d35c4c0daedf1f97bfa7c1fc228d9fc1cf69ce6",
+        "obs": "ee2e4f0c1b5c183b375ab44c1e341b51f3202f6653fa56716896a565425f5efb",
+        "frames": "c25801c56667d729cdc1a83dd6aac8380307472ed321c3cb448a5c6e4201fa0e",
+        "hdf5": "571aedb28ac675c66fa338b902cf7344e35f3d94a17ee8be929eeb691e969890",
+        "online_actions": "db2b76aa4dfe88d2287e4721ab3e70963d61de69cd6dfb746c38d9a83e857740",
+        "pilot_result": "e79b76cd0af3d511500913eb50b52f9312bbf884d72d3eb4a87c8a5dfe846772",
+        "completion": "6e11aa1bbd55b997de47b99e07b72f550a690f3c6c313f9402af531fbcda2fa3",
+        "success_gate": "a8ec55eb000c879dfe179b0e56c411032109e99f14b6c3a644afac8160b7f0ce",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100058_online_h50_stride20_train_expert0",
+      "seed": 100058,
+      "fold": "train",
+      "frame_index": 20,
+      "contact": false,
+      "source_sha256": {
+        "raw": "d7fad622bec2487a291d2c9f2d35c4c0daedf1f97bfa7c1fc228d9fc1cf69ce6",
+        "obs": "ee2e4f0c1b5c183b375ab44c1e341b51f3202f6653fa56716896a565425f5efb",
+        "frames": "c25801c56667d729cdc1a83dd6aac8380307472ed321c3cb448a5c6e4201fa0e",
+        "hdf5": "571aedb28ac675c66fa338b902cf7344e35f3d94a17ee8be929eeb691e969890",
+        "online_actions": "db2b76aa4dfe88d2287e4721ab3e70963d61de69cd6dfb746c38d9a83e857740",
+        "pilot_result": "e79b76cd0af3d511500913eb50b52f9312bbf884d72d3eb4a87c8a5dfe846772",
+        "completion": "6e11aa1bbd55b997de47b99e07b72f550a690f3c6c313f9402af531fbcda2fa3",
+        "success_gate": "a8ec55eb000c879dfe179b0e56c411032109e99f14b6c3a644afac8160b7f0ce",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100058_online_h50_stride20_train_expert0",
+      "seed": 100058,
+      "fold": "train",
+      "frame_index": 33,
+      "contact": false,
+      "source_sha256": {
+        "raw": "d7fad622bec2487a291d2c9f2d35c4c0daedf1f97bfa7c1fc228d9fc1cf69ce6",
+        "obs": "ee2e4f0c1b5c183b375ab44c1e341b51f3202f6653fa56716896a565425f5efb",
+        "frames": "c25801c56667d729cdc1a83dd6aac8380307472ed321c3cb448a5c6e4201fa0e",
+        "hdf5": "571aedb28ac675c66fa338b902cf7344e35f3d94a17ee8be929eeb691e969890",
+        "online_actions": "db2b76aa4dfe88d2287e4721ab3e70963d61de69cd6dfb746c38d9a83e857740",
+        "pilot_result": "e79b76cd0af3d511500913eb50b52f9312bbf884d72d3eb4a87c8a5dfe846772",
+        "completion": "6e11aa1bbd55b997de47b99e07b72f550a690f3c6c313f9402af531fbcda2fa3",
+        "success_gate": "a8ec55eb000c879dfe179b0e56c411032109e99f14b6c3a644afac8160b7f0ce",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100058_online_h50_stride20_train_expert0",
+      "seed": 100058,
+      "fold": "train",
+      "frame_index": 46,
+      "contact": true,
+      "source_sha256": {
+        "raw": "d7fad622bec2487a291d2c9f2d35c4c0daedf1f97bfa7c1fc228d9fc1cf69ce6",
+        "obs": "ee2e4f0c1b5c183b375ab44c1e341b51f3202f6653fa56716896a565425f5efb",
+        "frames": "c25801c56667d729cdc1a83dd6aac8380307472ed321c3cb448a5c6e4201fa0e",
+        "hdf5": "571aedb28ac675c66fa338b902cf7344e35f3d94a17ee8be929eeb691e969890",
+        "online_actions": "db2b76aa4dfe88d2287e4721ab3e70963d61de69cd6dfb746c38d9a83e857740",
+        "pilot_result": "e79b76cd0af3d511500913eb50b52f9312bbf884d72d3eb4a87c8a5dfe846772",
+        "completion": "6e11aa1bbd55b997de47b99e07b72f550a690f3c6c313f9402af531fbcda2fa3",
+        "success_gate": "a8ec55eb000c879dfe179b0e56c411032109e99f14b6c3a644afac8160b7f0ce",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100062_online_h50_stride20_train_expert0",
+      "seed": 100062,
+      "fold": "train",
+      "frame_index": 4,
+      "contact": false,
+      "source_sha256": {
+        "raw": "fc6baebff7903e214019c6d2ef81a26dc7518b06662917f31a8444f3c6b7cb4c",
+        "obs": "2795f5c08742fa7ae146426162b9b9e94fb330f48454a6b9d5dfdaaca233c097",
+        "frames": "fa7f2d87bc133e690ac471e63a9166c451d389a44941c04e052a71cfe10b1beb",
+        "hdf5": "7c79d5cd2dfe41a6b5299d9ec8d2c2f2733f4992c134e0d2ba98cff1c553adee",
+        "online_actions": "f7947e562584594f252bffa403fbae0f6e4fd544bbfdbe3172652d3a63234ec6",
+        "pilot_result": "51a4e37206a1c4f7db98b3d8c3ee6e4d487b22a60de447941a6ac31bedc62790",
+        "completion": "d125cfa97d057f6b532cc8b831133d17ba79ee53cb7f225f89a9513d96c1d7e6",
+        "success_gate": "8bdc0424aa6f49b29a69dd844393095ff0c7e1021089b1b20dcf80d54e89beb5",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100062_online_h50_stride20_train_expert0",
+      "seed": 100062,
+      "fold": "train",
+      "frame_index": 17,
+      "contact": false,
+      "source_sha256": {
+        "raw": "fc6baebff7903e214019c6d2ef81a26dc7518b06662917f31a8444f3c6b7cb4c",
+        "obs": "2795f5c08742fa7ae146426162b9b9e94fb330f48454a6b9d5dfdaaca233c097",
+        "frames": "fa7f2d87bc133e690ac471e63a9166c451d389a44941c04e052a71cfe10b1beb",
+        "hdf5": "7c79d5cd2dfe41a6b5299d9ec8d2c2f2733f4992c134e0d2ba98cff1c553adee",
+        "online_actions": "f7947e562584594f252bffa403fbae0f6e4fd544bbfdbe3172652d3a63234ec6",
+        "pilot_result": "51a4e37206a1c4f7db98b3d8c3ee6e4d487b22a60de447941a6ac31bedc62790",
+        "completion": "d125cfa97d057f6b532cc8b831133d17ba79ee53cb7f225f89a9513d96c1d7e6",
+        "success_gate": "8bdc0424aa6f49b29a69dd844393095ff0c7e1021089b1b20dcf80d54e89beb5",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100062_online_h50_stride20_train_expert0",
+      "seed": 100062,
+      "fold": "train",
+      "frame_index": 29,
+      "contact": false,
+      "source_sha256": {
+        "raw": "fc6baebff7903e214019c6d2ef81a26dc7518b06662917f31a8444f3c6b7cb4c",
+        "obs": "2795f5c08742fa7ae146426162b9b9e94fb330f48454a6b9d5dfdaaca233c097",
+        "frames": "fa7f2d87bc133e690ac471e63a9166c451d389a44941c04e052a71cfe10b1beb",
+        "hdf5": "7c79d5cd2dfe41a6b5299d9ec8d2c2f2733f4992c134e0d2ba98cff1c553adee",
+        "online_actions": "f7947e562584594f252bffa403fbae0f6e4fd544bbfdbe3172652d3a63234ec6",
+        "pilot_result": "51a4e37206a1c4f7db98b3d8c3ee6e4d487b22a60de447941a6ac31bedc62790",
+        "completion": "d125cfa97d057f6b532cc8b831133d17ba79ee53cb7f225f89a9513d96c1d7e6",
+        "success_gate": "8bdc0424aa6f49b29a69dd844393095ff0c7e1021089b1b20dcf80d54e89beb5",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100062_online_h50_stride20_train_expert0",
+      "seed": 100062,
+      "fold": "train",
+      "frame_index": 42,
+      "contact": true,
+      "source_sha256": {
+        "raw": "fc6baebff7903e214019c6d2ef81a26dc7518b06662917f31a8444f3c6b7cb4c",
+        "obs": "2795f5c08742fa7ae146426162b9b9e94fb330f48454a6b9d5dfdaaca233c097",
+        "frames": "fa7f2d87bc133e690ac471e63a9166c451d389a44941c04e052a71cfe10b1beb",
+        "hdf5": "7c79d5cd2dfe41a6b5299d9ec8d2c2f2733f4992c134e0d2ba98cff1c553adee",
+        "online_actions": "f7947e562584594f252bffa403fbae0f6e4fd544bbfdbe3172652d3a63234ec6",
+        "pilot_result": "51a4e37206a1c4f7db98b3d8c3ee6e4d487b22a60de447941a6ac31bedc62790",
+        "completion": "d125cfa97d057f6b532cc8b831133d17ba79ee53cb7f225f89a9513d96c1d7e6",
+        "success_gate": "8bdc0424aa6f49b29a69dd844393095ff0c7e1021089b1b20dcf80d54e89beb5",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100062_online_h50_stride20_train_expert0",
+      "seed": 100062,
+      "fold": "train",
+      "frame_index": 55,
+      "contact": true,
+      "source_sha256": {
+        "raw": "fc6baebff7903e214019c6d2ef81a26dc7518b06662917f31a8444f3c6b7cb4c",
+        "obs": "2795f5c08742fa7ae146426162b9b9e94fb330f48454a6b9d5dfdaaca233c097",
+        "frames": "fa7f2d87bc133e690ac471e63a9166c451d389a44941c04e052a71cfe10b1beb",
+        "hdf5": "7c79d5cd2dfe41a6b5299d9ec8d2c2f2733f4992c134e0d2ba98cff1c553adee",
+        "online_actions": "f7947e562584594f252bffa403fbae0f6e4fd544bbfdbe3172652d3a63234ec6",
+        "pilot_result": "51a4e37206a1c4f7db98b3d8c3ee6e4d487b22a60de447941a6ac31bedc62790",
+        "completion": "d125cfa97d057f6b532cc8b831133d17ba79ee53cb7f225f89a9513d96c1d7e6",
+        "success_gate": "8bdc0424aa6f49b29a69dd844393095ff0c7e1021089b1b20dcf80d54e89beb5",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100064_online_h50_stride20_train_expert0",
+      "seed": 100064,
+      "fold": "train",
+      "frame_index": 12,
+      "contact": false,
+      "source_sha256": {
+        "raw": "354d2a594278d4fb526b336ca18dd4ccf6dcfaaa727e1af2bf21dbf2b4dba242",
+        "obs": "230d851460645a53cc94cc6a4b98ad489379b6e19eda7acd7aa2912fba5f97ad",
+        "frames": "4f245bddeb48dfcba86c57f5f23f29c540d37aaaa48e5f1d41bd9f216cb6ea9c",
+        "hdf5": "1eb4c05f38273dfc92c9b8a2f33fdd7d4ea0783026cccc1414a15f40b7fc6bc3",
+        "online_actions": "840ca4f1353404d1e6275896dbcaa533ff7dbf1cfc5d84416dcaa531cae38083",
+        "pilot_result": "9c03a8164a6044d1d331e99255a0c4b430734036fc8b5ddebeadc8fb53155513",
+        "completion": "8800b6388d44abe7d699976a3206bde451a12d177cb42c9c9a127163f0c97b57",
+        "success_gate": "b5f90ed6dc60de6ba4b2f4663365300bee74a6c05b4aed1eade5d294b9855c8b",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100064_online_h50_stride20_train_expert0",
+      "seed": 100064,
+      "fold": "train",
+      "frame_index": 25,
+      "contact": false,
+      "source_sha256": {
+        "raw": "354d2a594278d4fb526b336ca18dd4ccf6dcfaaa727e1af2bf21dbf2b4dba242",
+        "obs": "230d851460645a53cc94cc6a4b98ad489379b6e19eda7acd7aa2912fba5f97ad",
+        "frames": "4f245bddeb48dfcba86c57f5f23f29c540d37aaaa48e5f1d41bd9f216cb6ea9c",
+        "hdf5": "1eb4c05f38273dfc92c9b8a2f33fdd7d4ea0783026cccc1414a15f40b7fc6bc3",
+        "online_actions": "840ca4f1353404d1e6275896dbcaa533ff7dbf1cfc5d84416dcaa531cae38083",
+        "pilot_result": "9c03a8164a6044d1d331e99255a0c4b430734036fc8b5ddebeadc8fb53155513",
+        "completion": "8800b6388d44abe7d699976a3206bde451a12d177cb42c9c9a127163f0c97b57",
+        "success_gate": "b5f90ed6dc60de6ba4b2f4663365300bee74a6c05b4aed1eade5d294b9855c8b",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100064_online_h50_stride20_train_expert0",
+      "seed": 100064,
+      "fold": "train",
+      "frame_index": 38,
+      "contact": true,
+      "source_sha256": {
+        "raw": "354d2a594278d4fb526b336ca18dd4ccf6dcfaaa727e1af2bf21dbf2b4dba242",
+        "obs": "230d851460645a53cc94cc6a4b98ad489379b6e19eda7acd7aa2912fba5f97ad",
+        "frames": "4f245bddeb48dfcba86c57f5f23f29c540d37aaaa48e5f1d41bd9f216cb6ea9c",
+        "hdf5": "1eb4c05f38273dfc92c9b8a2f33fdd7d4ea0783026cccc1414a15f40b7fc6bc3",
+        "online_actions": "840ca4f1353404d1e6275896dbcaa533ff7dbf1cfc5d84416dcaa531cae38083",
+        "pilot_result": "9c03a8164a6044d1d331e99255a0c4b430734036fc8b5ddebeadc8fb53155513",
+        "completion": "8800b6388d44abe7d699976a3206bde451a12d177cb42c9c9a127163f0c97b57",
+        "success_gate": "b5f90ed6dc60de6ba4b2f4663365300bee74a6c05b4aed1eade5d294b9855c8b",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100064_online_h50_stride20_train_expert0",
+      "seed": 100064,
+      "fold": "train",
+      "frame_index": 51,
+      "contact": true,
+      "source_sha256": {
+        "raw": "354d2a594278d4fb526b336ca18dd4ccf6dcfaaa727e1af2bf21dbf2b4dba242",
+        "obs": "230d851460645a53cc94cc6a4b98ad489379b6e19eda7acd7aa2912fba5f97ad",
+        "frames": "4f245bddeb48dfcba86c57f5f23f29c540d37aaaa48e5f1d41bd9f216cb6ea9c",
+        "hdf5": "1eb4c05f38273dfc92c9b8a2f33fdd7d4ea0783026cccc1414a15f40b7fc6bc3",
+        "online_actions": "840ca4f1353404d1e6275896dbcaa533ff7dbf1cfc5d84416dcaa531cae38083",
+        "pilot_result": "9c03a8164a6044d1d331e99255a0c4b430734036fc8b5ddebeadc8fb53155513",
+        "completion": "8800b6388d44abe7d699976a3206bde451a12d177cb42c9c9a127163f0c97b57",
+        "success_gate": "b5f90ed6dc60de6ba4b2f4663365300bee74a6c05b4aed1eade5d294b9855c8b",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100065_online_h50_stride20_train_expert0",
+      "seed": 100065,
+      "fold": "train",
+      "frame_index": 10,
+      "contact": false,
+      "source_sha256": {
+        "raw": "479aa02b893d88332f8d9901b688e601e14d2323928a57247575e3c314c91f9b",
+        "obs": "126c25c94cc1c3f63fd0d0bda55bbbdd7fec4f6753f28618d5406b563f63687f",
+        "frames": "6b6005a27d3e53f0a9e55be09d58b6dde4a63a91b382813b1ebccbd5f8b576ba",
+        "hdf5": "c92453bb416995c4b2aa7e2c92ff9d6499aea27d103fde1171947b20facf0e3c",
+        "online_actions": "467f8c867ea3289de3fa9e978592ad19eadcebf077edc7c7646f0ac3843c33d3",
+        "pilot_result": "6c9f648d89f4d844a9cf714865e4397d4dee3964eafd80f204b0d82f19d7c358",
+        "completion": "1331911ee58d9f73e30aa53d839005bcb0f8315a3caed045115c12706f49780c",
+        "success_gate": "565322d414fe62a1404abeb02433182fdf5aa22afe74cfc155e60bca85ea7fa1",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100065_online_h50_stride20_train_expert0",
+      "seed": 100065,
+      "fold": "train",
+      "frame_index": 23,
+      "contact": false,
+      "source_sha256": {
+        "raw": "479aa02b893d88332f8d9901b688e601e14d2323928a57247575e3c314c91f9b",
+        "obs": "126c25c94cc1c3f63fd0d0bda55bbbdd7fec4f6753f28618d5406b563f63687f",
+        "frames": "6b6005a27d3e53f0a9e55be09d58b6dde4a63a91b382813b1ebccbd5f8b576ba",
+        "hdf5": "c92453bb416995c4b2aa7e2c92ff9d6499aea27d103fde1171947b20facf0e3c",
+        "online_actions": "467f8c867ea3289de3fa9e978592ad19eadcebf077edc7c7646f0ac3843c33d3",
+        "pilot_result": "6c9f648d89f4d844a9cf714865e4397d4dee3964eafd80f204b0d82f19d7c358",
+        "completion": "1331911ee58d9f73e30aa53d839005bcb0f8315a3caed045115c12706f49780c",
+        "success_gate": "565322d414fe62a1404abeb02433182fdf5aa22afe74cfc155e60bca85ea7fa1",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100065_online_h50_stride20_train_expert0",
+      "seed": 100065,
+      "fold": "train",
+      "frame_index": 36,
+      "contact": false,
+      "source_sha256": {
+        "raw": "479aa02b893d88332f8d9901b688e601e14d2323928a57247575e3c314c91f9b",
+        "obs": "126c25c94cc1c3f63fd0d0bda55bbbdd7fec4f6753f28618d5406b563f63687f",
+        "frames": "6b6005a27d3e53f0a9e55be09d58b6dde4a63a91b382813b1ebccbd5f8b576ba",
+        "hdf5": "c92453bb416995c4b2aa7e2c92ff9d6499aea27d103fde1171947b20facf0e3c",
+        "online_actions": "467f8c867ea3289de3fa9e978592ad19eadcebf077edc7c7646f0ac3843c33d3",
+        "pilot_result": "6c9f648d89f4d844a9cf714865e4397d4dee3964eafd80f204b0d82f19d7c358",
+        "completion": "1331911ee58d9f73e30aa53d839005bcb0f8315a3caed045115c12706f49780c",
+        "success_gate": "565322d414fe62a1404abeb02433182fdf5aa22afe74cfc155e60bca85ea7fa1",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100065_online_h50_stride20_train_expert0",
+      "seed": 100065,
+      "fold": "train",
+      "frame_index": 49,
+      "contact": true,
+      "source_sha256": {
+        "raw": "479aa02b893d88332f8d9901b688e601e14d2323928a57247575e3c314c91f9b",
+        "obs": "126c25c94cc1c3f63fd0d0bda55bbbdd7fec4f6753f28618d5406b563f63687f",
+        "frames": "6b6005a27d3e53f0a9e55be09d58b6dde4a63a91b382813b1ebccbd5f8b576ba",
+        "hdf5": "c92453bb416995c4b2aa7e2c92ff9d6499aea27d103fde1171947b20facf0e3c",
+        "online_actions": "467f8c867ea3289de3fa9e978592ad19eadcebf077edc7c7646f0ac3843c33d3",
+        "pilot_result": "6c9f648d89f4d844a9cf714865e4397d4dee3964eafd80f204b0d82f19d7c358",
+        "completion": "1331911ee58d9f73e30aa53d839005bcb0f8315a3caed045115c12706f49780c",
+        "success_gate": "565322d414fe62a1404abeb02433182fdf5aa22afe74cfc155e60bca85ea7fa1",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100066_online_h50_stride20_train_expert0",
+      "seed": 100066,
+      "fold": "train",
+      "frame_index": 5,
+      "contact": false,
+      "source_sha256": {
+        "raw": "c511359ee3a92fd6738e77036342e8276235541371b5ff19c5f8534219450b3b",
+        "obs": "3075129a4ba97ed8c114a5428a91bdbd1519380273c1b9afa62688bc43602ce4",
+        "frames": "1cd4553ba5d0c8bd343abc526e45294f8e231c3c5a4b0ebe9c2b334d73f6159e",
+        "hdf5": "5c55a1a9f1789abb48bcf253bb60f823fc4ac185d4f8d6a63ea43435ff8afa73",
+        "online_actions": "708fb012b7aa0f70d9cb313900e5f7dd84a2d3f2e7f056d0b471047d55ee3049",
+        "pilot_result": "764d5a187d975a9381c101ac8b065f0b5e72c5baa099b8130427246323945067",
+        "completion": "dd839b4e6ac173445434b458a224c1a393b7c678b0709120c5f2a31d9b17fcf6",
+        "success_gate": "be7121fa276c048c2865af393290297b30fb8e77729ae93f0d1a73061d1f2055",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100066_online_h50_stride20_train_expert0",
+      "seed": 100066,
+      "fold": "train",
+      "frame_index": 18,
+      "contact": false,
+      "source_sha256": {
+        "raw": "c511359ee3a92fd6738e77036342e8276235541371b5ff19c5f8534219450b3b",
+        "obs": "3075129a4ba97ed8c114a5428a91bdbd1519380273c1b9afa62688bc43602ce4",
+        "frames": "1cd4553ba5d0c8bd343abc526e45294f8e231c3c5a4b0ebe9c2b334d73f6159e",
+        "hdf5": "5c55a1a9f1789abb48bcf253bb60f823fc4ac185d4f8d6a63ea43435ff8afa73",
+        "online_actions": "708fb012b7aa0f70d9cb313900e5f7dd84a2d3f2e7f056d0b471047d55ee3049",
+        "pilot_result": "764d5a187d975a9381c101ac8b065f0b5e72c5baa099b8130427246323945067",
+        "completion": "dd839b4e6ac173445434b458a224c1a393b7c678b0709120c5f2a31d9b17fcf6",
+        "success_gate": "be7121fa276c048c2865af393290297b30fb8e77729ae93f0d1a73061d1f2055",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100066_online_h50_stride20_train_expert0",
+      "seed": 100066,
+      "fold": "train",
+      "frame_index": 31,
+      "contact": false,
+      "source_sha256": {
+        "raw": "c511359ee3a92fd6738e77036342e8276235541371b5ff19c5f8534219450b3b",
+        "obs": "3075129a4ba97ed8c114a5428a91bdbd1519380273c1b9afa62688bc43602ce4",
+        "frames": "1cd4553ba5d0c8bd343abc526e45294f8e231c3c5a4b0ebe9c2b334d73f6159e",
+        "hdf5": "5c55a1a9f1789abb48bcf253bb60f823fc4ac185d4f8d6a63ea43435ff8afa73",
+        "online_actions": "708fb012b7aa0f70d9cb313900e5f7dd84a2d3f2e7f056d0b471047d55ee3049",
+        "pilot_result": "764d5a187d975a9381c101ac8b065f0b5e72c5baa099b8130427246323945067",
+        "completion": "dd839b4e6ac173445434b458a224c1a393b7c678b0709120c5f2a31d9b17fcf6",
+        "success_gate": "be7121fa276c048c2865af393290297b30fb8e77729ae93f0d1a73061d1f2055",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100066_online_h50_stride20_train_expert0",
+      "seed": 100066,
+      "fold": "train",
+      "frame_index": 44,
+      "contact": true,
+      "source_sha256": {
+        "raw": "c511359ee3a92fd6738e77036342e8276235541371b5ff19c5f8534219450b3b",
+        "obs": "3075129a4ba97ed8c114a5428a91bdbd1519380273c1b9afa62688bc43602ce4",
+        "frames": "1cd4553ba5d0c8bd343abc526e45294f8e231c3c5a4b0ebe9c2b334d73f6159e",
+        "hdf5": "5c55a1a9f1789abb48bcf253bb60f823fc4ac185d4f8d6a63ea43435ff8afa73",
+        "online_actions": "708fb012b7aa0f70d9cb313900e5f7dd84a2d3f2e7f056d0b471047d55ee3049",
+        "pilot_result": "764d5a187d975a9381c101ac8b065f0b5e72c5baa099b8130427246323945067",
+        "completion": "dd839b4e6ac173445434b458a224c1a393b7c678b0709120c5f2a31d9b17fcf6",
+        "success_gate": "be7121fa276c048c2865af393290297b30fb8e77729ae93f0d1a73061d1f2055",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    },
+    {
+      "trial_id": "relay_pickcwmjm6_s100066_online_h50_stride20_train_expert0",
+      "seed": 100066,
+      "fold": "train",
+      "frame_index": 57,
+      "contact": true,
+      "source_sha256": {
+        "raw": "c511359ee3a92fd6738e77036342e8276235541371b5ff19c5f8534219450b3b",
+        "obs": "3075129a4ba97ed8c114a5428a91bdbd1519380273c1b9afa62688bc43602ce4",
+        "frames": "1cd4553ba5d0c8bd343abc526e45294f8e231c3c5a4b0ebe9c2b334d73f6159e",
+        "hdf5": "5c55a1a9f1789abb48bcf253bb60f823fc4ac185d4f8d6a63ea43435ff8afa73",
+        "online_actions": "708fb012b7aa0f70d9cb313900e5f7dd84a2d3f2e7f056d0b471047d55ee3049",
+        "pilot_result": "764d5a187d975a9381c101ac8b065f0b5e72c5baa099b8130427246323945067",
+        "completion": "dd839b4e6ac173445434b458a224c1a393b7c678b0709120c5f2a31d9b17fcf6",
+        "success_gate": "be7121fa276c048c2865af393290297b30fb8e77729ae93f0d1a73061d1f2055",
+        "scenario": "0ed8f02a487625fb6fa47f056f314cc08b60a3c544686d65ad49e2f9d9eb6346"
+      }
+    }
+  ],
+  "microbatch": [
+    1,
+    2,
+    4
+  ],
+  "global_batch": 4,
+  "gradient_accumulation": [
+    4,
+    2,
+    1
+  ],
+  "real_model_forward_verified": false
+}

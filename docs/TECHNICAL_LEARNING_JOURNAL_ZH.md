@@ -114,3 +114,15 @@ v2 固定批次已结束：100123 和 100126 的对照、恢复均官方成功�
 - [自动化启动源码归档](../scripts/automation/README.md)
 
 本机证据：`data/reports/cwmj_m7_confirmation/report.md`、用户成果目录中的 `cwmj-m6-confirmation/report.md`，以及 `data/reports/cwmj_m8_training_r0_{zero,true,mismatch}/step_2880/result.json`。这些私有实验产物不随源码提交；精确复现还需要原数据、checkpoint、资产、依赖和冻结清单，GitHub 源码本身不包含这些条件。
+
+## 2026-11-08：受控反馈试运行与batch基准准备
+
+受控反馈技术试运行已在后台执行，固定两开发seed、四条件和两种反馈频率，共16场；尚未完成全批技术审计，不能宣称高频触觉有效。正式确认候选方案独立使用新seed、三个既有训练重复和固定2880步权重，将频率与触觉条件交互作为预定对比，不根据试运行成功率挑选配置。候选seed的6228份本机JSON元数据审计未见冲突；该范围不包括未登记试验，仍非执行许可。
+
+显存没用满不意味着直接把batch改大即可。实际模型动作loss按有效joint_mask总数归一化，而MoE序列平衡和router-z辅助项按序列/token平均。尾部有效长度不同，统一除以累积次数会改变动作目标权重；按动作数缩放整个total_loss又会错误缩放辅助项。新的独立基准分别按有效坐标数和样本数加权，拒绝不支持的辅助归约配置。
+
+全CPU重建442个样本（训练402），与历史数据指纹一致。固定32个训练窗口后，micro1/2/4均通过真实输入打包。六项CPU测试涵盖尾部mask、不同有效长度的loss/梯度、相机与触觉样本顺序、数值比较失败路径。GPU基准runner、有限队列和中文图文报告器已实现，并固定BF16工程容差及起始参数/teacher/noise哈希核验。三个配置global-batch统一4，各计时8次更新；它测吞吐，不是新一轮触觉效果训练。GPU实测尚未启动，必须等反馈队列全部终态且GPU空闲；不覆盖checkpoint，不自动操作Strata。
+
+学习要点：数据打包正确、归约正确、模型数值近似一致、性能提高和任务收益是五个不同层次的证据。不能用其中一个替代另一个。完整图文报告需由实际执行结果生成，准备阶段不填写虚构吞吐、显存峰值或成功率。
+
+资料：[micro-batch基准](MICROBATCH_THROUGHPUT_BENCHMARK_ZH.md)、[正式反馈确认候选](CONTROLLED_FEEDBACK_CONFIRMATION_CANDIDATE_ZH.md)。源码归档不包含本地原始数据、权重、审计大清单或运行日志。

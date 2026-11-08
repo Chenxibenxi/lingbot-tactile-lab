@@ -1,0 +1,15 @@
+{
+  "schema": "microbatch_numeric_screen_v1",
+  "status": "preregistered_before_gpu_benchmark",
+  "purpose": "BF16 engineering equivalence screen; not statistical evidence of tactile benefit",
+  "limits": {
+    "global_relative_l2": 0.01,
+    "per_parameter_relative_l2": 0.05,
+    "minimum_cosine": 0.999,
+    "absolute_l2": 1e-06,
+    "norm_floor": 1e-12,
+    "loss_relative": 0.005,
+    "loss_absolute": 1e-06
+  },
+  "rule": "All limits must pass. Failure prevents throughput recommendation; inspect, do not relax after results."
+}
