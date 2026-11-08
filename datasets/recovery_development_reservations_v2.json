@@ -1,0 +1,51 @@
+{
+  "schema": "recovery_development_reservations_v2",
+  "protocol_sha256": "55b55d19a9b5b19d0c3bdea58cd563daa0c077c2e29b88a56a87e786a2836b86",
+  "gpu_execution_ready": false,
+  "seeds": [
+    {
+      "seed": 100123,
+      "status": "reserved_development",
+      "attempts": [
+        "prefix_generation",
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    },
+    {
+      "seed": 100124,
+      "status": "reserved_development",
+      "attempts": [
+        "prefix_generation",
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    },
+    {
+      "seed": 100125,
+      "status": "reserved_development",
+      "attempts": [
+        "prefix_generation",
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    },
+    {
+      "seed": 100126,
+      "status": "reserved_development",
+      "attempts": [
+        "prefix_generation",
+        "expert_control",
+        "left_open_once_recovery"
+      ],
+      "training_supervision_allowed": false,
+      "future_confirmation_allowed": false
+    }
+  ]
+}
