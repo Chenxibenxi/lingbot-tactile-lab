@@ -1,0 +1,236 @@
+{
+  "seed_denominator": 3,
+  "planned_max_runs": 15,
+  "records": [
+    {
+      "seed": 100124,
+      "condition": "reference",
+      "status": "expert_planning_failure",
+      "failure": {
+        "type": "OnlineExpertPlanError",
+        "error": "right current-state path planning failed",
+        "training_approval": false
+      }
+    },
+    {
+      "seed": 100124,
+      "status": "branches_skipped_missing_reference"
+    },
+    {
+      "seed": 100125,
+      "condition": "reference",
+      "status": "completed"
+    },
+    {
+      "seed": 100125,
+      "condition": "mu0_continue",
+      "status": "completed"
+    },
+    {
+      "seed": 100125,
+      "condition": "mu0_regrasp",
+      "status": "completed"
+    },
+    {
+      "seed": 100125,
+      "condition": "mu1_continue",
+      "status": "completed"
+    },
+    {
+      "seed": 100125,
+      "condition": "mu1_regrasp",
+      "status": "completed"
+    },
+    {
+      "seed": 100126,
+      "condition": "reference",
+      "status": "completed"
+    },
+    {
+      "seed": 100126,
+      "condition": "mu0_continue",
+      "status": "completed"
+    },
+    {
+      "seed": 100126,
+      "condition": "mu0_regrasp",
+      "status": "completed"
+    },
+    {
+      "seed": 100126,
+      "condition": "mu1_continue",
+      "status": "completed"
+    },
+    {
+      "seed": 100126,
+      "condition": "mu1_regrasp",
+      "status": "completed"
+    }
+  ],
+  "training_approval": false,
+  "pairs": {
+    "100125/mu0": {
+      "comparable": true,
+      "decision_steps": [
+        6841,
+        6841
+      ],
+      "scope": "recorded geometry/contact exact equality; no hidden-state equivalence claim"
+    },
+    "100125/mu1": {
+      "comparable": true,
+      "decision_steps": [
+        6841,
+        6841
+      ],
+      "scope": "recorded geometry/contact exact equality; no hidden-state equivalence claim"
+    },
+    "100126/mu0": {
+      "comparable": true,
+      "decision_steps": [
+        5467,
+        5467
+      ],
+      "scope": "recorded geometry/contact exact equality; no hidden-state equivalence claim"
+    },
+    "100126/mu1": {
+      "comparable": true,
+      "decision_steps": [
+        5467,
+        5467
+      ],
+      "scope": "recorded geometry/contact exact equality; no hidden-state equivalence claim"
+    }
+  },
+  "conditions": {
+    "100124/mu0_continue": {
+      "status": "not_executed_reference_failed"
+    },
+    "100124/mu0_regrasp": {
+      "status": "not_executed_reference_failed"
+    },
+    "100124/mu1_continue": {
+      "status": "not_executed_reference_failed"
+    },
+    "100124/mu1_regrasp": {
+      "status": "not_executed_reference_failed"
+    },
+    "100125/mu0_continue": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 499,
+        "entity_contact_steps": {
+          "fr_link8": 500,
+          "fr_link7": 500,
+          "fr_link6": 499
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "f9f56d7e5c4f79e6a199fdcec0e11ff83c0a664189dbb1493552318c58a553ce"
+    },
+    "100125/mu0_regrasp": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 500,
+        "entity_contact_steps": {
+          "fr_link7": 500,
+          "fr_link8": 500,
+          "fr_link6": 500
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "59a56b0ca244d66384c68d85932461b678a48f1a1290cb0c472e8fbd4aadcce4"
+    },
+    "100125/mu1_continue": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 0,
+        "entity_contact_steps": {
+          "fr_link8": 500,
+          "fr_link7": 500
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "9bbf922cb364969b4428d2504f9eaa321624ae173d62060f4be114826b0836e7"
+    },
+    "100125/mu1_regrasp": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 0,
+        "entity_contact_steps": {
+          "fr_link7": 500,
+          "fr_link8": 500
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "7eb7ceebfd9fc72908a51c399bef8315c303d2ca493a46cc61aecba5a0bc6a3b"
+    },
+    "100126/mu0_continue": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 500,
+        "entity_contact_steps": {
+          "fr_link8": 500,
+          "fr_link7": 500,
+          "fr_link6": 500
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "155e50a1744b77136199a62a97049079b9c89b0807c01e4329e6c6daa289f5b9"
+    },
+    "100126/mu0_regrasp": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 500,
+        "entity_contact_steps": {
+          "fr_link6": 500,
+          "fr_link7": 500,
+          "fr_link8": 500
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "4af37a5af3cebb28c95ad78a89464bb66b048a87e067813e06be6115934eeb5b"
+    },
+    "100126/mu1_continue": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 0,
+        "entity_contact_steps": {
+          "fr_link7": 500,
+          "fr_link8": 500
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "96e094d80867f60464932d4046c7e7de26715606d1419e44e6bb5b6f6f45866f"
+    },
+    "100126/mu1_regrasp": {
+      "status": "completed",
+      "hold": {
+        "geometric_pass_steps": 500,
+        "nonfinger_contact_steps": 0,
+        "entity_contact_steps": {
+          "fr_link8": 500,
+          "fr_link7": 500
+        },
+        "steps": 500
+      },
+      "fixed_probe_commands_match": true,
+      "source_summary_sha256": "dc3e238094800803b8402e4ed0942b91078382647b5c781b1ebe5b45b3fbe2c3"
+    }
+  },
+  "scope": "three previously used development seeds; not formal generalization test"
+}

@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "sample_id": "right_correction_hold_v1_mu1_regrasp:37",
+  "actual_pretrained_vla": true,
+  "optimizer_steps": 0,
+  "checkpoint_written": false,
+  "results": [
+    {
+      "mode": "action_only",
+      "loss": 0.552146315574646,
+      "gradients": {
+        "time_embedding": 0.048187367618083954,
+        "history_embedding": 0.015361633151769638,
+        "tactile.0.weight": 0.0688021257519722,
+        "tactile.0.bias": 0.031484223902225494,
+        "tactile.2.weight": 0.4839475154876709,
+        "tactile.2.bias": 0.0990990474820137,
+        "proprio.weight": 0.28090381622314453,
+        "proprio.bias": 0.06711966544389725,
+        "history.weight": 0.12730982899665833,
+        "history.bias": 0.029541678726673126,
+        "contact_head.weight": null,
+        "contact_head.bias": null
+      },
+      "seconds": 1.031922891997965
+    },
+    {
+      "mode": "action_plus_aux",
+      "loss": 0.7186185121536255,
+      "gradients": {
+        "time_embedding": 0.04927022010087967,
+        "history_embedding": 0.018168892711400986,
+        "tactile.0.weight": 0.07205294817686081,
+        "tactile.0.bias": 0.032988615334033966,
+        "tactile.2.weight": 0.49609610438346863,
+        "tactile.2.bias": 0.10172651708126068,
+        "proprio.weight": 0.2813601493835449,
+        "proprio.bias": 0.06722870469093323,
+        "history.weight": 0.15228985249996185,
+        "history.bias": 0.03534439951181412,
+        "contact_head.weight": 0.6341908574104309,
+        "contact_head.bias": 0.08232186734676361
+      },
+      "seconds": 0.24603245299658738
+    },
+    {
+      "mode": "invalid_touch",
+      "loss": 0.48765799403190613,
+      "gradients": {
+        "time_embedding": 0.0,
+        "history_embedding": 0.02671702392399311,
+        "tactile.0.weight": 0.0,
+        "tactile.0.bias": 0.0,
+        "tactile.2.weight": 0.0,
+        "tactile.2.bias": 0.0,
+        "proprio.weight": 0.474930077791214,
+        "proprio.bias": 0.11348066478967667,
+        "history.weight": 0.2218218743801117,
+        "history.bias": 0.05147894471883774,
+        "contact_head.weight": null,
+        "contact_head.bias": null
+      },
+      "seconds": 0.2417925909976475
+    }
+  ],
+  "peak_allocated_bytes": 14789232640,
+  "adapter_parameters": 652037,
+  "training_approval": false,
+  "limitations": [
+    "single development seed",
+    "rule expert candidate actions, not approved labels",
+    "legacy command-state normalization retained for compatibility; separate actual proprio token",
+    "diagnostic instruction specified in script",
+    "cached inference parity not tested",
+    "no task-performance conclusion"
+  ]
+}

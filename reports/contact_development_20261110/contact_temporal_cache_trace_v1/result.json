@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "sample_id": "right_correction_hold_v1_mu1_regrasp:37",
+  "results": [
+    {
+      "same_first_step_input_trace": {
+        "embedding": true,
+        "action_attention": true,
+        "suffix_positions": true
+      },
+      "mode": "absent",
+      "finite": true,
+      "max_abs_action_difference": 0.029296875,
+      "mean_abs_action_difference": 0.002827337011694908,
+      "relative_l2": 0.0049872929230332375,
+      "allclose_atol_0p01_rtol_0p01": false,
+      "cached_repeat_bitwise_equal": true,
+      "velocity_step_max_abs": [
+        0.03515625,
+        0.05859375
+      ]
+    },
+    {
+      "same_first_step_input_trace": {
+        "embedding": true,
+        "action_attention": true,
+        "suffix_positions": true
+      },
+      "mode": "valid_touch",
+      "finite": true,
+      "max_abs_action_difference": 0.09375,
+      "mean_abs_action_difference": 0.0036021671257913113,
+      "relative_l2": 0.0070668370462954044,
+      "allclose_atol_0p01_rtol_0p01": false,
+      "cached_repeat_bitwise_equal": true,
+      "velocity_step_max_abs": [
+        0.0859375,
+        0.1787109375
+      ]
+    },
+    {
+      "same_first_step_input_trace": {
+        "embedding": true,
+        "action_attention": true,
+        "suffix_positions": true
+      },
+      "mode": "invalid_touch",
+      "finite": true,
+      "max_abs_action_difference": 0.037109375,
+      "mean_abs_action_difference": 0.0031608440913259983,
+      "relative_l2": 0.0057719857431948185,
+      "allclose_atol_0p01_rtol_0p01": false,
+      "cached_repeat_bitwise_equal": true,
+      "velocity_step_max_abs": [
+        0.09375,
+        0.056640625
+      ]
+    }
+  ],
+  "peak_allocated_bytes": 12708935680,
+  "training_approval": false,
+  "optimizer_steps": 0,
+  "tolerance_preregistered": {
+    "atol": 0.01,
+    "rtol": 0.01
+  },
+  "limitations": [
+    "single development sample",
+    "bf16 execution",
+    "two denoising steps only",
+    "full forward reconstructs noise to match each step; bf16 roundoff included",
+    "not closed-loop evaluation"
+  ]
+}
