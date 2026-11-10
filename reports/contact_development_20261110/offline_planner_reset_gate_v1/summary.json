@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "condition": "after_warmup",
+      "wrapper_status": "Success",
+      "path_sha256": "52a888744cbaa196c7af952518978a0dd16846a2a107f025912b98f5f5a7d6dc",
+      "path_length": 177,
+      "solver": [
+        {
+          "status": "None",
+          "valid_query": true,
+          "success": [
+            true
+          ],
+          "position_error": 7.867546628403943e-06,
+          "rotation_error": 4.001812612841604e-06,
+          "solve_time": 0.6169633865356445,
+          "ik_time": 0.04836273193359375,
+          "graph_time": 0.42972540855407715,
+          "trajopt_time": 0.10782814025878906,
+          "attempts": 8
+        }
+      ],
+      "physics_step_source": 8552
+    },
+    {
+      "condition": "reset_once",
+      "wrapper_status": "Fail",
+      "path_sha256": null,
+      "path_length": null,
+      "solver": [
+        {
+          "status": "MotionGenStatus.FINETUNE_TRAJOPT_FAIL",
+          "valid_query": true,
+          "success": [
+            false
+          ],
+          "position_error": [
+            2.1108378405187977e-06
+          ],
+          "rotation_error": [
+            1.7637006521908916e-06
+          ],
+          "solve_time": 0.5447630882263184,
+          "ik_time": 0.06020331382751465,
+          "graph_time": 0.3878328800201416,
+          "trajopt_time": 0.09672689437866211,
+          "attempts": 10
+        }
+      ],
+      "physics_step_source": 8552
+    },
+    {
+      "condition": "reset_repeat",
+      "wrapper_status": "Fail",
+      "path_sha256": null,
+      "path_length": null,
+      "solver": [
+        {
+          "status": "MotionGenStatus.FINETUNE_TRAJOPT_FAIL",
+          "valid_query": true,
+          "success": [
+            false
+          ],
+          "position_error": [
+            2.1108378405187977e-06
+          ],
+          "rotation_error": [
+            1.7637006521908916e-06
+          ],
+          "solve_time": 0.525836706161499,
+          "ik_time": 0.05956292152404785,
+          "graph_time": 0.36792778968811035,
+          "trajopt_time": 0.09834599494934082,
+          "attempts": 10
+        }
+      ],
+      "physics_step_source": 8552
+    }
+  ],
+  "commands_executed": 0,
+  "simulation_created": false,
+  "training_approval": false,
+  "limitation": "Cold planner reconstruction matches stored configuration, world and observable qpos but not prior solver caches/RNG history."
+}

@@ -1,0 +1,248 @@
+{
+  "captured_world_query_gate_passed": true,
+  "records": [
+    {
+      "arm": "left",
+      "world": "original",
+      "probe": "inside_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": true,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": false
+    },
+    {
+      "arm": "left",
+      "world": "original",
+      "probe": "above_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "left",
+      "world": "original",
+      "probe": "below_table_center",
+      "world_point": [
+        0.0,
+        0.0,
+        0.64
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "left",
+      "world": "original",
+      "probe": "outside_table_x",
+      "world_point": [
+        0.8,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "left",
+      "world": "captured",
+      "probe": "inside_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": true,
+      "query_value": 0.03499996289610863,
+      "observed_collision": true,
+      "match": true
+    },
+    {
+      "arm": "left",
+      "world": "captured",
+      "probe": "above_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "left",
+      "world": "captured",
+      "probe": "below_table_center",
+      "world_point": [
+        0.0,
+        0.0,
+        0.64
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "left",
+      "world": "captured",
+      "probe": "outside_table_x",
+      "world_point": [
+        0.8,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "right",
+      "world": "original",
+      "probe": "inside_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": true,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": false
+    },
+    {
+      "arm": "right",
+      "world": "original",
+      "probe": "above_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "right",
+      "world": "original",
+      "probe": "below_table_center",
+      "world_point": [
+        0.0,
+        0.0,
+        0.64
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "right",
+      "world": "original",
+      "probe": "outside_table_x",
+      "world_point": [
+        0.8,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "right",
+      "world": "captured",
+      "probe": "inside_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": true,
+      "query_value": 0.034999966621398926,
+      "observed_collision": true,
+      "match": true
+    },
+    {
+      "arm": "right",
+      "world": "captured",
+      "probe": "above_table",
+      "world_point": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "right",
+      "world": "captured",
+      "probe": "below_table_center",
+      "world_point": [
+        0.0,
+        0.0,
+        0.64
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    },
+    {
+      "arm": "right",
+      "world": "captured",
+      "probe": "outside_table_x",
+      "world_point": [
+        0.8,
+        0.0,
+        0.715
+      ],
+      "radius_m": 0.01,
+      "expected_collision": false,
+      "query_value": 0.0,
+      "observed_collision": false,
+      "match": true
+    }
+  ],
+  "source_geometry_sha256": "b087e8eac442b74033d6ad88a7ee5cdbe7f0a2677a02fc8a868edf116c952a3a",
+  "scope": "sphere-vs-static-world query only; no robot motion or robot-sphere fidelity validation",
+  "training_approval": false
+}

@@ -1,0 +1,20 @@
+{
+  "pregrasp_start_step": 50,
+  "pregrasp_end_step": 8552,
+  "first_right_target_contact_step": 7900,
+  "object_translation_m": 0.05677071243749943,
+  "object_rotation_deg": 88.44071346683465,
+  "stale_to_same_object_relative_target_displacement_m": 0.12219753420879527,
+  "same_object_relative_target_world_pose": [
+    -0.03428213043632733,
+    -0.07221259569752098,
+    0.740550440927781,
+    0.4359660049489377,
+    -0.312828672134329,
+    -0.6522029135117844,
+    0.535446751812237
+  ],
+  "transformed_target_is_not_approved_action": true,
+  "source_sha256": "b747ad8b1e9807f16f407dd748e6235db0c61f383f8fba62934ba69f67e1d030",
+  "training_approval": false
+}

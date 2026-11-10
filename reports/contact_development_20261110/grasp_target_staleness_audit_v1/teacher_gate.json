@@ -1,0 +1,9 @@
+{
+  "fresh": false,
+  "translation_m": 0.05677071243749943,
+  "rotation_rad": 1.5435816428091533,
+  "position_tolerance_m": 0.005,
+  "rotation_tolerance_rad": 0.08726646259971647,
+  "role": "privileged_teacher_validity_only",
+  "training_approval": false
+}

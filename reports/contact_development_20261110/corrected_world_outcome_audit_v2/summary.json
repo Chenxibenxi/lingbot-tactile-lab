@@ -1,0 +1,38 @@
+{
+  "batch": {
+    "status": "completed",
+    "records": [
+      {
+        "seed": 100125,
+        "condition": "mu1_regrasp",
+        "status": "expert_planning_failure",
+        "failure": {
+          "type": "OnlineExpertPlanError",
+          "error": "all asset final grasp candidates failed feasibility",
+          "training_approval": false
+        }
+      }
+    ],
+    "time": 1794310178.7149062,
+    "training_approval": false
+  },
+  "pair_to_old_failed_teacher": {
+    "initial_state_equal": true,
+    "initial_rgb_equal": true,
+    "boundary_equal": true,
+    "probe_geometry_contacts_equal": true
+  },
+  "executed_candidate_phase_counts": {
+    "open_for_regrasp": 1
+  },
+  "last_1s_partner_steps": {
+    "table": 250
+  },
+  "last_physics_step": 6860,
+  "training_approval": false,
+  "failure": {
+    "type": "OnlineExpertPlanError",
+    "error": "all asset final grasp candidates failed feasibility",
+    "training_approval": false
+  }
+}

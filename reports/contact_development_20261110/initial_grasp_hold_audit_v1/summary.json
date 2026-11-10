@@ -1,0 +1,26 @@
+{
+  "batch": {
+    "status": "completed",
+    "records": [
+      {
+        "seed": 100125,
+        "condition": "mu1_regrasp",
+        "status": "expert_planning_failure",
+        "failure": {
+          "type": "OnlineExpertPlanError",
+          "error": "right current-state path planning failed",
+          "training_approval": false
+        }
+      }
+    ],
+    "time": 1794310386.6045015,
+    "training_approval": false
+  },
+  "training_approval": false,
+  "failure": {
+    "type": "OnlineExpertPlanError",
+    "error": "right current-state path planning failed",
+    "training_approval": false
+  },
+  "right_table_contact_steps": 0
+}

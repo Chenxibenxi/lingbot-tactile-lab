@@ -1,0 +1,72 @@
+{
+  "status": "completed",
+  "result": {
+    "feasible": true,
+    "action_types": [
+      "move",
+      "move",
+      "gripper"
+    ]
+  },
+  "events": [
+    {
+      "event": "candidate_prefilter",
+      "contact_point_id": 0,
+      "status": "no_pregrasp_pose",
+      "training_approval": false
+    },
+    {
+      "event": "candidate_prefilter",
+      "contact_point_id": 3,
+      "status": "no_pregrasp_pose",
+      "training_approval": false
+    },
+    {
+      "event": "candidate_prefilter",
+      "contact_point_id": 6,
+      "status": "no_pregrasp_pose",
+      "training_approval": false
+    },
+    {
+      "event": "candidate_prefilter",
+      "contact_point_id": 7,
+      "status": "no_pregrasp_pose",
+      "training_approval": false
+    },
+    {
+      "event": "candidate_feasibility",
+      "contact_point_id": 1,
+      "stage": "approach_from_predicted_pregrasp",
+      "status": "Success",
+      "training_approval": false
+    },
+    {
+      "event": "selected_grasp_candidate",
+      "contact_point_id": 1,
+      "pre_pose": [
+        0.019139595329761505,
+        -0.12138454616069794,
+        0.831631600856781,
+        0.7607273459434509,
+        0.000997776398435235,
+        -0.060227081179618835,
+        0.6462705135345459
+      ],
+      "grasp_pose": [
+        0.03173273272394383,
+        -0.04273245417694051,
+        0.8390653964653384,
+        0.7607273459434509,
+        0.000997776398435235,
+        -0.060227081179618835,
+        0.6462705135345459
+      ],
+      "observable_state_unchanged": true,
+      "training_approval": false
+    }
+  ],
+  "physics_step": 0,
+  "observable_state_unchanged": true,
+  "commands_executed": 0,
+  "training_approval": false
+}
