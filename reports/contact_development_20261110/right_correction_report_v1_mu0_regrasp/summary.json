@@ -1,0 +1,56 @@
+{
+  "condition": "mu0_regrasp",
+  "seed": 100123,
+  "decision_step": 5696,
+  "final_step": 9586,
+  "official_dual_task_success": false,
+  "training_approval": false,
+  "endpoint_only_not_sustained_success": true,
+  "objects": {
+    "bottle1": {
+      "decision_functional_point_m": [
+        -0.08773525693801748,
+        0.15014388329305497,
+        0.8520721964533929
+      ],
+      "final_functional_point_m": [
+        -0.09014144727872953,
+        0.14350935080539248,
+        0.8510366819704769
+      ],
+      "final_xy_abs_error_m": [
+        0.030141447278729527,
+        0.2485093508053925
+      ],
+      "final_geometric_predicate": false,
+      "predicate_steps_after_decision": 0
+    },
+    "bottle2": {
+      "decision_functional_point_m": [
+        0.13643291557539228,
+        0.03720495522003908,
+        0.8853043139202411
+      ],
+      "final_functional_point_m": [
+        0.06120742128114564,
+        -0.10544753846733376,
+        0.9984445501822427
+      ],
+      "final_xy_abs_error_m": [
+        0.0012074212811456417,
+        0.00044753846733376623
+      ],
+      "final_geometric_predicate": true,
+      "predicate_steps_after_decision": 909
+    }
+  },
+  "sha256": {
+    "<LAB_ROOT>/data/paired/right_correction_development_v1_mu0_regrasp/label_geometry.jsonl": "1e389c8d7297d5a63aea45c6534d02c25a75b5d91fa044287eca99a365cd6231",
+    "<LAB_ROOT>/data/paired/right_correction_development_v1_mu0_regrasp/correction_execution.json": "8aa35f4ab64bed888c03858e12d5c28eda53e6ea6a7e9a29c27f27aa977fe79a",
+    "<LAB_ROOT>/data/paired/right_correction_development_v1_mu0_regrasp/manifest.json": "c3310ef83c4ba621f36da91021d561c866564b6c7db02f0096de0bf563e56803",
+    "<LAB_ROOT>/work/cwmj_bottle_asset_v2/actor_metadata.json": "74c697aa038aad576d637439a71a043ea657eb03b1a6ee03f6e996b224810f7a",
+    "/mnt/relaydata/lingbot/RoboTwin/envs/utils/actor_utils.py": "252d43c526b23adcf4ba549fec64a49f037fc4a24e9edd1998e5f60d3e13d5d9",
+    "/mnt/relaydata/lingbot/RoboTwin/envs/pick_diverse_bottles.py": "95ebb80fa96eafd0b7ff5518251c2a7aa42f22ef9b7cfdda4e80eac511f06151",
+    "<LAB_ROOT>/work/right_correction_report_v1/run.py": "5ff7e8eb3d996a6c24b40fc2f07f1bb59c2b5ffe93a3d08b3320a2667ea63a52"
+  }
+}

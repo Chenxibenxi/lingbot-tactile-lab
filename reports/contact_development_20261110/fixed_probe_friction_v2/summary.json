@@ -1,0 +1,40 @@
+{
+  "conditions": {
+    "mu0": {
+      "steps": 5696,
+      "actions": 53,
+      "duration_s": 22.78400108218193,
+      "object_material": 0.0,
+      "initial_z": 0.7369327545166016,
+      "final_z": 0.7764855623245239,
+      "max_lift_m": 0.04066002368927002,
+      "held_candidate_steps": 380,
+      "clean_held_candidate_steps": 0,
+      "other_contact_steps": 1030,
+      "other_entities": [
+        "fr_link6",
+        "right_camera"
+      ],
+      "label_sha256": "5359a690dbe71f0aaf169f1c0ac7e81a8cb3dc1979a2ae24c781560dd16c7d68"
+    },
+    "mu1": {
+      "steps": 5696,
+      "actions": 53,
+      "duration_s": 22.78400108218193,
+      "object_material": 1.0,
+      "initial_z": 0.7369327545166016,
+      "final_z": 0.8322191834449768,
+      "max_lift_m": 0.09648019075393677,
+      "held_candidate_steps": 852,
+      "clean_held_candidate_steps": 677,
+      "other_contact_steps": 16,
+      "other_entities": [
+        "right_camera"
+      ],
+      "label_sha256": "da4f74431ce8f8ce081ef96921bcc2ff1e476381cc18c929341ce95faeff94d6"
+    }
+  },
+  "commands_exactly_equal": true,
+  "training_approval": false,
+  "threshold_scope": "post-hoc development thresholds reused from contact event audit; not confirmation"
+}

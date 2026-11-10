@@ -1,0 +1,162 @@
+{
+  "training_approval": false,
+  "conditions": {
+    "mu0_continue": {
+      "endpoint": {
+        "decision_functional_point_m": [
+          0.13643291557539228,
+          0.03720495522003908,
+          0.8853043139202411
+        ],
+        "final_functional_point_m": [
+          0.06259669659860027,
+          -0.10517586486959378,
+          0.9936925682310425
+        ],
+        "final_xy_abs_error_m": [
+          0.002596696598600276,
+          0.00017586486959378367
+        ],
+        "final_geometric_predicate": true,
+        "predicate_steps_after_decision": 877
+      },
+      "correction_actions": 14,
+      "correction_physics_steps": 1296,
+      "correction_sim_seconds": 5.184,
+      "final_50_steps": {
+        "finger_contact_steps": 50,
+        "table_contact_steps": 0,
+        "other_body_contact_steps": 50,
+        "max_relative_position_drift_m": 0.001711997653685182,
+        "window_seconds": 0.2,
+        "entity_contact_steps": {
+          "fr_link7": 50,
+          "fr_link8": 50,
+          "fr_link6": 50
+        }
+      },
+      "label_sha256": "4d6b5152d7ce9c8b4ac006c010c7bd5dcdf83fc50ee905484fa0ea7d32921baf"
+    },
+    "mu1_continue": {
+      "endpoint": {
+        "decision_functional_point_m": [
+          0.09662605669432107,
+          0.0696781507401005,
+          0.9442757297404771
+        ],
+        "final_functional_point_m": [
+          0.06048889541933223,
+          -0.1042844738962841,
+          0.9986787167371606
+        ],
+        "final_xy_abs_error_m": [
+          0.0004888954193322317,
+          0.0007155261037158911
+        ],
+        "final_geometric_predicate": true,
+        "predicate_steps_after_decision": 885
+      },
+      "correction_actions": 16,
+      "correction_physics_steps": 1570,
+      "correction_sim_seconds": 6.28,
+      "final_50_steps": {
+        "finger_contact_steps": 50,
+        "table_contact_steps": 0,
+        "other_body_contact_steps": 50,
+        "max_relative_position_drift_m": 2.551400084876598e-05,
+        "window_seconds": 0.2,
+        "entity_contact_steps": {
+          "right_camera": 50,
+          "fr_link7": 50,
+          "fr_link8": 50
+        }
+      },
+      "label_sha256": "426a22fbc669ca1f76ca3960aa3afcefcecd106f5fb63604e544493fbc5b3ed7"
+    },
+    "mu0_regrasp": {
+      "endpoint": {
+        "decision_functional_point_m": [
+          0.13643291557539228,
+          0.03720495522003908,
+          0.8853043139202411
+        ],
+        "final_functional_point_m": [
+          0.06120742128114564,
+          -0.10544753846733376,
+          0.9984445501822427
+        ],
+        "final_xy_abs_error_m": [
+          0.0012074212811456417,
+          0.00044753846733376623
+        ],
+        "final_geometric_predicate": true,
+        "predicate_steps_after_decision": 909
+      },
+      "correction_actions": 45,
+      "correction_physics_steps": 3890,
+      "correction_sim_seconds": 15.56,
+      "final_50_steps": {
+        "finger_contact_steps": 50,
+        "table_contact_steps": 0,
+        "other_body_contact_steps": 50,
+        "max_relative_position_drift_m": 1.6343822365776746e-05,
+        "window_seconds": 0.2,
+        "entity_contact_steps": {
+          "right_camera": 50,
+          "fr_link7": 50,
+          "fr_link8": 50
+        }
+      },
+      "label_sha256": "1e389c8d7297d5a63aea45c6534d02c25a75b5d91fa044287eca99a365cd6231"
+    },
+    "mu1_regrasp": {
+      "endpoint": {
+        "decision_functional_point_m": [
+          0.09662605669432107,
+          0.0696781507401005,
+          0.9442757297404771
+        ],
+        "final_functional_point_m": [
+          0.06013273674269595,
+          -0.1045598803452637,
+          0.9988330372669675
+        ],
+        "final_xy_abs_error_m": [
+          0.0001327367426959547,
+          0.00044011965473629566
+        ],
+        "final_geometric_predicate": true,
+        "predicate_steps_after_decision": 914
+      },
+      "correction_actions": 53,
+      "correction_physics_steps": 5028,
+      "correction_sim_seconds": 20.112000000000002,
+      "final_50_steps": {
+        "finger_contact_steps": 50,
+        "table_contact_steps": 0,
+        "other_body_contact_steps": 0,
+        "max_relative_position_drift_m": 2.4457897896956812e-05,
+        "window_seconds": 0.2,
+        "entity_contact_steps": {
+          "fr_link7": 50,
+          "fr_link8": 50
+        }
+      },
+      "label_sha256": "7f8f308970cff6665e5588fffe7dfdf8e767f5400671da85c03b234162b8058d"
+    }
+  },
+  "prefix_comparisons": {
+    "mu0": {
+      "through_step": 5696,
+      "canonical_label_mismatches": 0,
+      "first_mismatch": null,
+      "scope": "recorded geometry and object contacts only; not hidden simulator state"
+    },
+    "mu1": {
+      "through_step": 5696,
+      "canonical_label_mismatches": 0,
+      "first_mismatch": null,
+      "scope": "recorded geometry and object contacts only; not hidden simulator state"
+    }
+  }
+}
