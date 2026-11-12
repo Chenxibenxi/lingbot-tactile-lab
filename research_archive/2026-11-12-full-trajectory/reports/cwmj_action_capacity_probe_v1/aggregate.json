@@ -1,0 +1,47 @@
+{
+  "existing_rank8": {
+    "updates": 512,
+    "diagnostics": {
+      "0": {
+        "observations": 48,
+        "mean_mae": 0.11762114986777306,
+        "mean_first_mae": 0.06356017066476245
+      },
+      "512": {
+        "observations": 48,
+        "mean_mae": 0.08444993601491053,
+        "mean_first_mae": 0.04081719578243792
+      }
+    }
+  },
+  "rank8_plus_bias": {
+    "updates": 512,
+    "diagnostics": {
+      "0": {
+        "observations": 48,
+        "mean_mae": 0.11762114986777306,
+        "mean_first_mae": 0.06356017066476245
+      },
+      "512": {
+        "observations": 48,
+        "mean_mae": 0.08192818068588774,
+        "mean_first_mae": 0.03967780348223945
+      }
+    }
+  },
+  "rank8_plus_full_residual_and_bias": {
+    "updates": 512,
+    "diagnostics": {
+      "0": {
+        "observations": 48,
+        "mean_mae": 0.11762114986777306,
+        "mean_first_mae": 0.06356017066476245
+      },
+      "512": {
+        "observations": 48,
+        "mean_mae": 0.07841622084379196,
+        "mean_first_mae": 0.040298177006964885
+      }
+    }
+  }
+}

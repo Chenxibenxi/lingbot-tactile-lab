@@ -1,0 +1,187 @@
+[
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/prepare.py",
+    "bytes": 2289,
+    "sha256": "d798fdb5ee68db9a516e8234c7f34c33480778f778d05e31ebf59174cd6c39f2"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/preflight.py",
+    "bytes": 3187,
+    "sha256": "75cae22d83b3df1678c02de5e3486fe9cb9c1fd85392f649b305222c7147c11d"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/collect.py",
+    "bytes": 2671,
+    "sha256": "e9da6bc84168d9fb75abd7fb55bdff6d47970433fe70460cd9a778c3064e6d47"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/quality.py",
+    "bytes": 2794,
+    "sha256": "5b3ba73b922dc7c7c23cd1237be863e976ccb0404b15d3d21f09679232066a9d"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/report_capture.py",
+    "bytes": 1598,
+    "sha256": "d0bc85e365b17cf29acfa0137e65baf8e78c92475b5102d91148795c19aad175"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/summarize.py",
+    "bytes": 2923,
+    "sha256": "bfa780a164ca269b382647d0e424fc09a1874650614c8b93227246eb1779d88c"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/build_windows.py",
+    "bytes": 2796,
+    "sha256": "8bcb8ea5d882de8fad03bcda8c771759d5abca2fb2ee4b3cb15ee46f59baa0c9"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/check_loader.py",
+    "bytes": 668,
+    "sha256": "245bd200db3265225016ed03106d9cf3601d5132631b25d31e1f03b714320b99"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/roundtrip.py",
+    "bytes": 3010,
+    "sha256": "18ba213efb62de2523a4bcfb1dae812aface794b28fb580bdf82b12fa35e3723"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_scale_v1/batch_capture.sh",
+    "bytes": 1192,
+    "sha256": "d94035b3f01d52364c8e33c293de7cdf3211fb73201d96cb47c863236c8d9c8d"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_training_v1/run.py",
+    "bytes": 10591,
+    "sha256": "b63e716519a7012994ad131bddaf739c246c581a55a600ae1090e3145d4d1fcd"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_training_v1/run.sh",
+    "bytes": 709,
+    "sha256": "e3acd64dd83bf767223c33bc524d574b4ece044ee753e09da9a99c80a91c5712"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_training_v1/report.py",
+    "bytes": 2439,
+    "sha256": "57a5c853b24196159e196891afa57d6768c8fcc2bff3636973d8338fc2091762"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_training_v1/after_report.sh",
+    "bytes": 582,
+    "sha256": "b5a8d3526177466fa6ea3c56427349cc56fdc2db2fe63c0cfd6317a1630ca61c"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_extension_v1/run.py",
+    "bytes": 11075,
+    "sha256": "9c865c3eb42792220d72b3b8dc59ef95a5611b6a44db27245cc7c8cc7bfc974b"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/scripts/cwmj_full_trajectory_extension_v1/run.sh",
+    "bytes": 1312,
+    "sha256": "65c167eac21f716fb57a1a8c641502cc41a4acf3644b2a918a50a8fb884edfd2"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_full_trajectory_scale_summary_v1/report.md",
+    "bytes": 936,
+    "sha256": "6164db9dabdd6b7b0001d3e55975c1ec42a9d281b4d80c5680e6bfa2073127e1"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_full_trajectory_scale_summary_v1/manifest.json",
+    "bytes": 73575,
+    "sha256": "78831e4d2279ecd1eb371c6f18053815bac7021009cb417aee75ecc45fba824d"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_full_trajectory_scale_summary_v1/quality.png",
+    "bytes": 34559,
+    "sha256": "9c3b3dfc031943187be7093645cf4f0391e7b368a06f4f8194970f1b3ee91ce5"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_full_trajectory_scale_summary_v1/loader_check.json",
+    "bytes": 1399,
+    "sha256": "eae03f42cc97a4c6f1fe030d63b67f9fd825628537ad7f6b1118f1f38c634be3"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_full_trajectory_roundtrip_v1/report.md",
+    "bytes": 467,
+    "sha256": "7ab6c107036743b50b91c0fdae5ad2c63d479a9fe1a20279aea24d232f59dd30"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_full_trajectory_roundtrip_v1/result.json",
+    "bytes": 7353,
+    "sha256": "8cec1ba533958544e0f7cbe9155535be0f0bde717e24cdc70ed2c014d779f8ed"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_full_trajectory_roundtrip_v1/errors.png",
+    "bytes": 22300,
+    "sha256": "9230bf2d82877ff6a5de9b0b248adbcf619824e7ef03d0169ac404e120f0a22f"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_action_capacity_probe_v1/report.md",
+    "bytes": 2998,
+    "sha256": "658649a773ee369763f38bbed81eed14717ab45d5152bd8e41560b07119a7e7d"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_action_capacity_probe_v1/aggregate.json",
+    "bytes": 1070,
+    "sha256": "c6da040daf124a0d288ef9701f24ccae28b2a855d75442b623003e48308c5391"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_action_capacity_probe_v1/comparison.png",
+    "bytes": 182312,
+    "sha256": "b25d182f4b5e2f316a33659057cb5f883b14b07d5f3928203cd60eb864e18e55"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_action_capacity_probe_v1/checkpoint_audit.json",
+    "bytes": 4918,
+    "sha256": "8e5d190d716a867857b87ae635cfee652249efb9d30f002a78c165494c705b23"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_capacity_validation_v1/report.md",
+    "bytes": 2811,
+    "sha256": "9350e8462b84c32972b5f1fce66df41fa6c3f75a2e2502f9c350ad2b63eee319"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/reports/cwmj_capacity_validation_v1/comparison.png",
+    "bytes": 72270,
+    "sha256": "c41de7f4981349b8d9ac0eb6b9d43b3789dac6ce08d2ac9a6f0a3bdc86b0df59"
+  },
+  {
+    "path": "src/cwmj_full_trajectory_data.py",
+    "bytes": 3565,
+    "sha256": "41624ce82d3ffaaa7462d2f2ec368b1caa8e493e966ff1aba1f3b69838356329"
+  },
+  {
+    "path": "src/action_projection_capacity.py",
+    "bytes": 1279,
+    "sha256": "f711aea4e36d736b93a730fee127be63f0eaa1377d84b82a1c0ee817364e384f"
+  },
+  {
+    "path": "tests/test_action_projection_capacity.py",
+    "bytes": 1321,
+    "sha256": "26e7adafb92d7d9fb3ca3b2c72f2997e9ee4f98af53cc2e3e18aae78a650782e"
+  },
+  {
+    "path": "datasets/cwmj_full_trajectory_scale_v1.json",
+    "bytes": 80303,
+    "sha256": "1b711ae4a4a3f58c54f26c0c37d56493490c3fdf4ca09106c387ab1d6d4e47ee"
+  },
+  {
+    "path": "datasets/cwmj_full_trajectory_training_v1.json",
+    "bytes": 3012,
+    "sha256": "2050c243c796b6dece880921c136c8841e754b72a1cf2600f663b074f50e9974"
+  },
+  {
+    "path": "datasets/cwmj_full_trajectory_extension_v1.json",
+    "bytes": 2862,
+    "sha256": "8993639f59526605c2dde639381f73497a153eb882f223efd776b61c2eeddf81"
+  },
+  {
+    "path": "docs/TECHNICAL_LEARNING_JOURNAL_ZH.md",
+    "bytes": 183773,
+    "sha256": "f2adfff07fe71ce482996e8a1f466d77fc64c9396fba774eb384af8a9ec6b6f7"
+  },
+  {
+    "path": "research_archive/2026-11-12-full-trajectory/README.md",
+    "bytes": 802,
+    "sha256": "52d17d009eae3f84e6cce62f728affda22f7a8d320f100d2374f72ad68b1757a"
+  }
+]

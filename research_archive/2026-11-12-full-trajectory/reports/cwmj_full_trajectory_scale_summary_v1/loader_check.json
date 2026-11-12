@@ -1,0 +1,110 @@
+[
+  {
+    "index": 0,
+    "valid_steps": 50,
+    "mask_sum": 700,
+    "tactile_mask": [
+      [
+        false,
+        false,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 1,
+    "valid_steps": 50,
+    "mask_sum": 700,
+    "tactile_mask": [
+      [
+        false,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 2,
+    "valid_steps": 50,
+    "mask_sum": 700,
+    "tactile_mask": [
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 93,
+    "valid_steps": 50,
+    "mask_sum": 700,
+    "tactile_mask": [
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 94,
+    "valid_steps": 49,
+    "mask_sum": 686,
+    "tactile_mask": [
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 141,
+    "valid_steps": 2,
+    "mask_sum": 28,
+    "tactile_mask": [
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 142,
+    "valid_steps": 1,
+    "mask_sum": 14,
+    "tactile_mask": [
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 143,
+    "valid_steps": 50,
+    "mask_sum": 700,
+    "tactile_mask": [
+      [
+        false,
+        false,
+        true
+      ]
+    ]
+  },
+  {
+    "index": 18303,
+    "valid_steps": 1,
+    "mask_sum": 14,
+    "tactile_mask": [
+      [
+        true,
+        true,
+        true
+      ]
+    ]
+  }
+]

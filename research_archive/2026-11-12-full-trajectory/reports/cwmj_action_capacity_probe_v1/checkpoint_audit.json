@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "source_sha256": "011b75f5d7eb13959fc5c8a63d8bf6c16148bde6aa790ceeae71f40474383896",
+  "source_parameters_exactly_preserved_at_start": true,
+  "arms": {
+    "existing_rank8": {
+      "step": 512,
+      "changed_parameter_tensors": 33,
+      "capacity_max_abs_delta": {
+        "model.action_out_proj.capacity_bias": 0.0,
+        "model.action_out_proj.capacity_weight": 0.0
+      },
+      "policy_sha256": "161ed5103964acd609632ea1e3603bed7c7b33390a07cbe85b11eeea465b1e35",
+      "initial_samples_bitwise_equal": 48,
+      "policy_keys": [
+        "model.action_film.context_norm.bias",
+        "model.action_film.context_norm.weight",
+        "model.action_film.modulation.0.bias",
+        "model.action_film.modulation.0.weight",
+        "model.action_film.modulation.2.bias",
+        "model.action_film.modulation.2.weight",
+        "model.action_film.score.bias",
+        "model.action_film.score.weight",
+        "model.action_out_proj.capacity_bias",
+        "model.action_out_proj.capacity_weight",
+        "model.action_out_proj.lora.lora_A",
+        "model.action_out_proj.lora.lora_B",
+        "model.action_step_conditioner.proj.weight",
+        "model.tactile_adapter.history.bias",
+        "model.tactile_adapter.history.weight",
+        "model.tactile_adapter.history_embedding",
+        "model.tactile_adapter.proprio.bias",
+        "model.tactile_adapter.proprio.weight",
+        "model.tactile_adapter.tactile.0.bias",
+        "model.tactile_adapter.tactile.0.weight",
+        "model.tactile_adapter.tactile.2.bias",
+        "model.tactile_adapter.tactile.2.weight",
+        "model.tactile_adapter.time_embedding"
+      ]
+    },
+    "rank8_plus_bias": {
+      "step": 512,
+      "changed_parameter_tensors": 34,
+      "capacity_max_abs_delta": {
+        "model.action_out_proj.capacity_bias": 0.0002516389940865338,
+        "model.action_out_proj.capacity_weight": 0.0
+      },
+      "policy_sha256": "62cc879787a71c4da18919e4a037d8c6625c5d005c039735003d046fee19a09f",
+      "initial_samples_bitwise_equal": 48,
+      "policy_keys": [
+        "model.action_film.context_norm.bias",
+        "model.action_film.context_norm.weight",
+        "model.action_film.modulation.0.bias",
+        "model.action_film.modulation.0.weight",
+        "model.action_film.modulation.2.bias",
+        "model.action_film.modulation.2.weight",
+        "model.action_film.score.bias",
+        "model.action_film.score.weight",
+        "model.action_out_proj.capacity_bias",
+        "model.action_out_proj.capacity_weight",
+        "model.action_out_proj.lora.lora_A",
+        "model.action_out_proj.lora.lora_B",
+        "model.action_step_conditioner.proj.weight",
+        "model.tactile_adapter.history.bias",
+        "model.tactile_adapter.history.weight",
+        "model.tactile_adapter.history_embedding",
+        "model.tactile_adapter.proprio.bias",
+        "model.tactile_adapter.proprio.weight",
+        "model.tactile_adapter.tactile.0.bias",
+        "model.tactile_adapter.tactile.0.weight",
+        "model.tactile_adapter.tactile.2.bias",
+        "model.tactile_adapter.tactile.2.weight",
+        "model.tactile_adapter.time_embedding"
+      ]
+    },
+    "rank8_plus_full_residual_and_bias": {
+      "step": 512,
+      "changed_parameter_tensors": 35,
+      "capacity_max_abs_delta": {
+        "model.action_out_proj.capacity_bias": 0.00021570865646936,
+        "model.action_out_proj.capacity_weight": 0.025068454444408417
+      },
+      "policy_sha256": "2ad33611b01fd21265f8fc00e3aad550d810e786977f61493fb7db7537f54435",
+      "initial_samples_bitwise_equal": 48,
+      "policy_keys": [
+        "model.action_film.context_norm.bias",
+        "model.action_film.context_norm.weight",
+        "model.action_film.modulation.0.bias",
+        "model.action_film.modulation.0.weight",
+        "model.action_film.modulation.2.bias",
+        "model.action_film.modulation.2.weight",
+        "model.action_film.score.bias",
+        "model.action_film.score.weight",
+        "model.action_out_proj.capacity_bias",
+        "model.action_out_proj.capacity_weight",
+        "model.action_out_proj.lora.lora_A",
+        "model.action_out_proj.lora.lora_B",
+        "model.action_step_conditioner.proj.weight",
+        "model.tactile_adapter.history.bias",
+        "model.tactile_adapter.history.weight",
+        "model.tactile_adapter.history_embedding",
+        "model.tactile_adapter.proprio.bias",
+        "model.tactile_adapter.proprio.weight",
+        "model.tactile_adapter.tactile.0.bias",
+        "model.tactile_adapter.tactile.0.weight",
+        "model.tactile_adapter.tactile.2.bias",
+        "model.tactile_adapter.tactile.2.weight",
+        "model.tactile_adapter.time_embedding"
+      ]
+    }
+  },
+  "limitation": "Frozen backbone not serialized in these checkpoints; freeze is supported by runner requires_grad allowlist, not before/after full-backbone hashes. No closed-loop claim."
+}

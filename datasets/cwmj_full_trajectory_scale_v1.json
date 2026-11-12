@@ -1,0 +1,2758 @@
+{
+  "schema": "cwmj_full_trajectory_scale_v1",
+  "status": "reserved_not_collected",
+  "cases": [
+    {
+      "split": "train",
+      "scenario_id": "a69af91cd0395e238c2827a71716f40afd3540af37b2b4c60ddefaa10971e931",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48000,
+        "xy_offset_m": [
+          0.0017572992412675558,
+          0.0010073327737117879
+        ],
+        "yaw_offset_rad": -0.03388201101179402
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "e5b7e0d05e60cac5ee5a78d1c9d9599f1e73cfcfdccec7668bf9f7d6d7133350",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48001,
+        "xy_offset_m": [
+          0.0028595236713217457,
+          0.0014301375926627
+        ],
+        "yaw_offset_rad": -0.00797440585246826
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "7a131d38bc9eecaa8949dec29dc1d14c6c4c581230a02e6dcf62de37999a8629",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48002,
+        "xy_offset_m": [
+          -0.00036147779004202596,
+          0.002757723646314253
+        ],
+        "yaw_offset_rad": 0.007991915914838957
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "bbce23f5711ee929931606a867cba9e9142eeb954b5c42df70a0a3e3f1a97ce9",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48003,
+        "xy_offset_m": [
+          0.002529365102683854,
+          -0.0027099867533677303
+        ],
+        "yaw_offset_rad": -0.028866094184452854
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "0f1b576308d162225276e0c36ac939e750ea86b46fc2030073df73112a8a3f50",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48004,
+        "xy_offset_m": [
+          0.0029137119870002058,
+          -0.002107143846466223
+        ],
+        "yaw_offset_rad": -0.04370200961363867
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "438e9649d555c0d69ff683af4fc337e590c402d0dfb2b6235cba0804c71f4f8e",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48005,
+        "xy_offset_m": [
+          -0.0016191617513345248,
+          0.00046154887141879345
+        ],
+        "yaw_offset_rad": 0.05923225088507858
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "1bead34bf845bfc9c47aa38906f80b719340e7ac9f64b37ea579b478c0593dcf",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48006,
+        "xy_offset_m": [
+          -0.002807592404255767,
+          0.002857984333292117
+        ],
+        "yaw_offset_rad": -0.0263238949366836
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "d1b851b39dd1838768889f087f9632a3951ec5d12897e361abc704942a547da0",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48007,
+        "xy_offset_m": [
+          -0.0006582461568764449,
+          -0.0006540872377304749
+        ],
+        "yaw_offset_rad": -0.040089627114352364
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "7aea076abb8525add0446230c3ee7df7ad4b06451f5580faaaa56ba1b2a45303",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48008,
+        "xy_offset_m": [
+          0.0022459736747646817,
+          -0.00211941508598375
+        ],
+        "yaw_offset_rad": -0.02462208235740654
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "69e0360993dfae09d34e40c21c30a56f252204a16ac14cb77c33d17b413b0fd6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48009,
+        "xy_offset_m": [
+          0.0008950484696807212,
+          1.8804822057197357e-05
+        ],
+        "yaw_offset_rad": -0.0041096400338174605
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "ff382e5f7b17ff3d4e14ceae16cb978f94cbd0e53ac6fd52205bec2b954efa6f",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48010,
+        "xy_offset_m": [
+          0.0021780281356904383,
+          0.0013895295842909598
+        ],
+        "yaw_offset_rad": -0.02599998766531822
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "82d425ee3c2878fcafdc21cb1edd3d996343a9984b289b5637fbde13a99eb426",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48011,
+        "xy_offset_m": [
+          -0.001021817103998832,
+          -0.0015856367326940865
+        ],
+        "yaw_offset_rad": -0.019798825924319995
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "8013fcc4c7d884d6a7e7d2c18492c5576f399515be720f78488a82fad1710a6d",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48012,
+        "xy_offset_m": [
+          0.0015455978465522087,
+          -0.0021406136216523667
+        ],
+        "yaw_offset_rad": 0.012870150484295073
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "7dc94008fcff727d1b4f15a58eab02f1a8a6cb23f38e76d0ee98dfbde4a74485",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48013,
+        "xy_offset_m": [
+          -0.001011650057931096,
+          -0.00027931765620730926
+        ],
+        "yaw_offset_rad": 0.05380274325777443
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "482cf1b2d566326e94294bb39e6b34f47375ea0e82a35485a57ea060bd8d7c14",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48014,
+        "xy_offset_m": [
+          0.0024406049529530852,
+          -0.0012112046788339194
+        ],
+        "yaw_offset_rad": -0.058458484489910305
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "fe28d2d37ebf249c54a053adae8e191d374ff84011ba5b407c513ba06ac10f97",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48015,
+        "xy_offset_m": [
+          -0.0006190815069945033,
+          0.0008488784964666438
+        ],
+        "yaw_offset_rad": -0.05854840161730364
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "7cc867493751c5f1084c1835c22573d12e328ce55cd87b0df1fe08779a258754",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48016,
+        "xy_offset_m": [
+          -0.0015366681965246513,
+          0.0004037464404653009
+        ],
+        "yaw_offset_rad": 0.0472072215153275
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "0e5dc9b1e29b4936dea4811fc4a6c5b3424c8ad7c385ff625d9a4c0d3edc27f6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48017,
+        "xy_offset_m": [
+          0.0007165271306024757,
+          -0.00036117819589250727
+        ],
+        "yaw_offset_rad": -0.043947241437407455
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "c867a5ddbdbeba4b31b43210076a91ddcb427c7f81a6cbab636b6ad2025ced91",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48018,
+        "xy_offset_m": [
+          -0.002499253018945966,
+          -0.0029782315716724976
+        ],
+        "yaw_offset_rad": 0.0450284089625935
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "60fce8575563fb762d64d80929dfa87f42f8d3589e76a03d709ffdacfbf5fc7c",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48019,
+        "xy_offset_m": [
+          -0.00038787608166307745,
+          0.0008732377224308966
+        ],
+        "yaw_offset_rad": 0.02869860416462519
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "c1ef5a52c5ebadca271dece9fd763967c76d50f3e3c830ed769fa9ea6aaa5d76",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48020,
+        "xy_offset_m": [
+          0.0003678953508102884,
+          -0.0017576765350778983
+        ],
+        "yaw_offset_rad": -0.048391555816237095
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "a41bb1f76196d38f23a730c11b261cf608e0adedc8f155ba3c8d6768211d3518",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48021,
+        "xy_offset_m": [
+          -0.002561989090489681,
+          0.0006038571439616106
+        ],
+        "yaw_offset_rad": 0.034722770576034914
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "ecd5f515b250ab75da6abe1789b5ee6435d21b49b04c4efbf8448521daa4beea",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48022,
+        "xy_offset_m": [
+          -0.0023157868638448904,
+          0.0014026403576288364
+        ],
+        "yaw_offset_rad": -0.04661504457011677
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "07a2f786ad8ed01cb75c870039afeb45e69111761a7dfd6cea33cc428153e987",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48023,
+        "xy_offset_m": [
+          0.0011358046154984697,
+          0.0013566039181162034
+        ],
+        "yaw_offset_rad": -0.0573714241826055
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "4c795f69382c3695ababe23f56c01dccf095f32fe414f37745f4644f23738924",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48024,
+        "xy_offset_m": [
+          0.001406438767022341,
+          -0.0008537825637249755
+        ],
+        "yaw_offset_rad": -0.056889364441015486
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "81dd8a7f6b34f25e8193e14b5f32e2ec8d89168519da4435f9dce4e3b406a513",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48025,
+        "xy_offset_m": [
+          -0.0010884135873234883,
+          0.0021040486464518025
+        ],
+        "yaw_offset_rad": -0.01328271489527559
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "577df9002b433d26d89b46dc802fe37ae1e331f2d18ba66e39843e09dc5350f6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48026,
+        "xy_offset_m": [
+          -0.0016614091388042862,
+          -0.0012588895942304678
+        ],
+        "yaw_offset_rad": 0.009010602585406868
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "e1995c021463621c75540c7000ff08e57001cd7ba59471c28ed22885ce04ddd0",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48027,
+        "xy_offset_m": [
+          -0.0010751802138370427,
+          -0.0027661644396639326
+        ],
+        "yaw_offset_rad": 0.0570612169804464
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "1e073dbec9d889d6d5f2622a3338403169bb3f5e41f5d1be2d5bb20420a4924a",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48028,
+        "xy_offset_m": [
+          0.0007494575887839424,
+          -0.00018388441216554653
+        ],
+        "yaw_offset_rad": 0.01871008324062609
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "7d55db81793ed1e14a209c0083284e6a40f052d9f962b5a1957b8916e3dc2f50",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48029,
+        "xy_offset_m": [
+          -0.0019439090528525181,
+          -0.0010712731522658561
+        ],
+        "yaw_offset_rad": 0.0250659114741974
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "732e3f410a273f8ef6679b85739aecea6054b35059a0782792ca75e9b66fb2cf",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48030,
+        "xy_offset_m": [
+          0.0028096704417492476,
+          -0.0015968484924850136
+        ],
+        "yaw_offset_rad": 0.054076235819715504
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "2a398edb64ffb7f5d7344d373142019d49b7f00d045265c62876c697bd46332b",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48031,
+        "xy_offset_m": [
+          0.002738528641809807,
+          -0.0011869539644703995
+        ],
+        "yaw_offset_rad": -0.04014954602143562
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "1cd7833cbb09ce612177f1edbadc6317fa93ab86d4cec6ba0e0d359ae5e4f305",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48032,
+        "xy_offset_m": [
+          0.0027358437108152755,
+          0.0011699557907552064
+        ],
+        "yaw_offset_rad": 0.03330918583362466
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "664b7fdf3c31124a8e150b421620a491752540d3356e040a19bc1dd017d6b7d6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48033,
+        "xy_offset_m": [
+          -0.00033358696098664733,
+          -0.0016313524028907242
+        ],
+        "yaw_offset_rad": -0.013264247069136925
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "f1ec70a5ae4bafa2d571eddbff2bb042c41552597f465bab02c03a5f6af31842",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48034,
+        "xy_offset_m": [
+          0.002822879695099932,
+          -0.0016964544159302041
+        ],
+        "yaw_offset_rad": -0.036844832497701735
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "ac1f68e4ca4ea4c6be3b98b79114aab9000ad12c6d2deaaa6d37ca043f8191bd",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48035,
+        "xy_offset_m": [
+          -0.0014055970246148774,
+          7.273679846572052e-05
+        ],
+        "yaw_offset_rad": -0.044979628911571895
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "10f7d7bacf1dbf0996d6e3004e432cd0724bdaae1731d871d17e1703273e9641",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48036,
+        "xy_offset_m": [
+          0.0017528991746040053,
+          -0.0014707046103068515
+        ],
+        "yaw_offset_rad": -0.008858558322036136
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "a818c52599978c3ba2d3710293fff78eecd55c08b66d0ac11ed1b889a5fa3eea",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48037,
+        "xy_offset_m": [
+          -0.0002818693049614013,
+          0.0017038617865327071
+        ],
+        "yaw_offset_rad": -0.04951149387378351
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "98f2c8be09451feac2f579daae926b4ad7c8b30d859eda4c3260ccc54e42220a",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48038,
+        "xy_offset_m": [
+          -0.002968467438767151,
+          -0.0015698338523916682
+        ],
+        "yaw_offset_rad": 0.015755928769131913
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "210caffd18c0847cf3fb012147d0f368930217255f148c4ce2ca540cb14d785c",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48039,
+        "xy_offset_m": [
+          -0.0022101750071577813,
+          0.00017267868036741638
+        ],
+        "yaw_offset_rad": 0.03086309009112688
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "34e6c950fa5e7e755056bba47b5ee3f1ea59c0116f3748eda4305736bc479f33",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48040,
+        "xy_offset_m": [
+          -0.0021395412525136706,
+          0.001800587849103379
+        ],
+        "yaw_offset_rad": -0.033385478783551
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "daa1198e5696eb0d2112907f607fef7e78c8f03bd5dc8653c841c2f70a6c20c8",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48041,
+        "xy_offset_m": [
+          0.0019286518406773454,
+          0.00045872194583645824
+        ],
+        "yaw_offset_rad": -0.037113753730990656
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "68d52262c20dc04703150d21691abf9c3efb9c2df9af47c15d31f0c0870f4756",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48042,
+        "xy_offset_m": [
+          -0.001906293795448997,
+          -0.00264687394492941
+        ],
+        "yaw_offset_rad": -0.031885916702392714
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "588470deed73d42bf60c18e7f856c44f116e349d204d54e30acc98235fd2bdf2",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48043,
+        "xy_offset_m": [
+          0.002806832843289574,
+          0.001525874372786373
+        ],
+        "yaw_offset_rad": 0.01663090074694254
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "d994084d367ec0697e7d513b12b93314cc5a8819e11649be843b1c7e3b7f98a6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48044,
+        "xy_offset_m": [
+          0.0023647359734105715,
+          -0.0027548439842689913
+        ],
+        "yaw_offset_rad": -0.03877720144614516
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "8bc8950cf9d31fd73598247b9dc09e9d9623c257a5b8f237f0f5c8cf11a62672",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48045,
+        "xy_offset_m": [
+          0.001384561468693168,
+          0.0025863388444599626
+        ],
+        "yaw_offset_rad": 0.014485537215283714
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "fab5672cb0b969cb2b936161d270dd9d107f94e3debe08f996d7dfa16e7dc4f0",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48046,
+        "xy_offset_m": [
+          0.002849058094040049,
+          -0.0015622069425416654
+        ],
+        "yaw_offset_rad": 0.05582681059260419
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "97826ce2931748d4e312ac6fa9802781948f7991b7aa434874ee894e884a4d47",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48047,
+        "xy_offset_m": [
+          -2.0021279059484996e-06,
+          0.00020117123980212042
+        ],
+        "yaw_offset_rad": -0.0199519517530748
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "3633088304c99d75a97d51d444b893ee0f0fc11e307470d60f641598621a8895",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48048,
+        "xy_offset_m": [
+          -0.0008420386265896845,
+          -0.0026597589494752752
+        ],
+        "yaw_offset_rad": -0.04833345601714832
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "e6e391db9abaf756c8d592c80d0848fc06b67aed0b31dfaebe470ee3faaef809",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48049,
+        "xy_offset_m": [
+          0.001032184972641922,
+          -7.771742642630284e-05
+        ],
+        "yaw_offset_rad": -0.05549563252578411
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "7d0ff0b75cb9473f4432bd524f3059352657e6cbea3917fbb376e421570ca1d3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48050,
+        "xy_offset_m": [
+          0.0015633484312909717,
+          -0.00042581427674340385
+        ],
+        "yaw_offset_rad": -0.003958233345749497
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "042fa35c8dcffc4f008f36b77fc1f8a7bb8e868b92d74d651df1b78fabfa7dad",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48051,
+        "xy_offset_m": [
+          -0.0023858560665156133,
+          0.0003745432950614932
+        ],
+        "yaw_offset_rad": 0.031259506586669455
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "73fd493d331a37ae8124a521cf9a2112b177e1eec49988ef5eae8cbab4e606aa",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48052,
+        "xy_offset_m": [
+          -0.0023324351034431107,
+          -0.0019572476469760488
+        ],
+        "yaw_offset_rad": -0.018657444417512617
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "aedc13d6e10af886faff996a3859ec750bef0b83cfc23d224b9770143d33596d",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48053,
+        "xy_offset_m": [
+          -0.0009957875974866272,
+          -0.001267070490137951
+        ],
+        "yaw_offset_rad": 0.04753845620683447
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "5c0c3fcebd10551cc992a484b5fd63ec47059a373fb73c59b3e55bfe6a6cafe1",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48054,
+        "xy_offset_m": [
+          0.0006980191050048779,
+          0.0026999149359543378
+        ],
+        "yaw_offset_rad": -0.046087451983687855
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "fd034dbe2e0adfc1ecc123d804eb0de50d0577ede6e21190fa10b3ed4ebeb329",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48055,
+        "xy_offset_m": [
+          -0.0010971926950658535,
+          0.0012221585312215373
+        ],
+        "yaw_offset_rad": 0.03104675297625195
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "7d999dd7c9d12a0084be9104ed5598264f59aeeb11e6227394da3192fb50d7c3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48056,
+        "xy_offset_m": [
+          -0.0028207211512930913,
+          -0.0014246725087226897
+        ],
+        "yaw_offset_rad": 0.059707676570344495
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "399806d497987e60e78374343532349129b144b6b2a731805681a9618aaa2b1b",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48057,
+        "xy_offset_m": [
+          0.0023995547993720936,
+          0.0011672191145728978
+        ],
+        "yaw_offset_rad": 0.04496120034100884
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "0980b87dec0c07acca05e7c14406b3b1cb1ee327600e0ebd0071e52c5dd005f4",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48058,
+        "xy_offset_m": [
+          0.0023217570191296907,
+          0.0005862522252181902
+        ],
+        "yaw_offset_rad": 0.03320022666692429
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "1bfa2fd7b64030a0f281c6ce5301e0992a205739dee6cb19e855c5159f30d1d6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48059,
+        "xy_offset_m": [
+          0.0021428836821567416,
+          0.0011407379616248893
+        ],
+        "yaw_offset_rad": 0.04532767157412103
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "5089a0df85f688d7ca8df914aa1078b74a65b7c9c28c96a554262e34b8a58d41",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48060,
+        "xy_offset_m": [
+          -0.0011164073926114766,
+          -0.0028240354996877477
+        ],
+        "yaw_offset_rad": -0.0007314956295155564
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "2e3b39ab79a9b1365e571f51a877441cd38af33de6361106b43cacd2cc35a87a",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48061,
+        "xy_offset_m": [
+          -0.002670701364005857,
+          -0.0008976345893566013
+        ],
+        "yaw_offset_rad": 0.002696162124989243
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "4295518628d8d4e0af59bc726160e30899a0d4c02c7191901da37dd15a547aca",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48062,
+        "xy_offset_m": [
+          0.0014319873423898856,
+          0.00023166511579397146
+        ],
+        "yaw_offset_rad": 0.039456250633485956
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "8a8b549077a727dfd11045e3a4f6b9b2f104ec9290a8c5c3ccc4369fb1b2a6de",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48063,
+        "xy_offset_m": [
+          -0.0004648658240121199,
+          -0.0020020115887786055
+        ],
+        "yaw_offset_rad": -0.022733849492067033
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "109a6ae7367fed47ccf1078881631b3b742ea95da54991b794988a9355783497",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48064,
+        "xy_offset_m": [
+          -0.00027652862025964123,
+          0.0008097509623870118
+        ],
+        "yaw_offset_rad": 0.04841495752285635
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "539b609eaef1e7d2b0203c4d2209cd8ed7ebd7af702d0a314c00c9592acc7aec",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48065,
+        "xy_offset_m": [
+          0.0029966314995809457,
+          -0.0010566901528964077
+        ],
+        "yaw_offset_rad": 0.05831725262219824
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "d91e5ee7afc5b97272ffe9b377f3d6f45a747b4a8cc39c874369ab7aff43c002",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48066,
+        "xy_offset_m": [
+          -0.0011827973854046827,
+          0.0006529386565974652
+        ],
+        "yaw_offset_rad": 0.05706629380107699
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "4c8df071793b144716d008bf2828b5629047e7403d77abe53034b094af9b3fa7",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48067,
+        "xy_offset_m": [
+          -0.0013515591293698822,
+          -0.0014977218958039315
+        ],
+        "yaw_offset_rad": 0.049636555408703376
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "53cc8c0017139a239cbdf055505e86416458d10247b84ae0cae16536af4055f4",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48068,
+        "xy_offset_m": [
+          0.002650120482939863,
+          0.002478807574957745
+        ],
+        "yaw_offset_rad": 0.03458525956666475
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "b8893d1f23492706c37c97e09ce95341e3669d65ac0dd61bd01b4b92f28e607c",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48069,
+        "xy_offset_m": [
+          -0.0020341797658695233,
+          -2.8445884435392317e-06
+        ],
+        "yaw_offset_rad": 0.003376792816791027
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "a88ffcbd6e1fe99ce790058ee7ef59a7481aba996f956b48bad2af38f672c02a",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48070,
+        "xy_offset_m": [
+          0.0019454294370252617,
+          0.0011871130027475496
+        ],
+        "yaw_offset_rad": -0.0071529789967029675
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "71545555a05db3c10b65a5e86ebc4b7095a380c9893e4e8f6e2ac142e9c8ee6e",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48071,
+        "xy_offset_m": [
+          -0.0006772366850298452,
+          -0.0012791300210607563
+        ],
+        "yaw_offset_rad": 0.04408415202390034
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "a995de9e85fb8136d571abaddc945d3104eaae8b0aab0270538b85a809ba8890",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48072,
+        "xy_offset_m": [
+          0.0004059840489570275,
+          -0.0005508360452369434
+        ],
+        "yaw_offset_rad": 0.04725065869520008
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "2d95f74a7975dd388e567adba0edab061befbceac74fd15e84a470009d0341e6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48073,
+        "xy_offset_m": [
+          -0.002970626781558225,
+          0.0007991164079668689
+        ],
+        "yaw_offset_rad": -0.05934626438313103
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "4890b96c4a364e3def40364a580b8fb08a27ecabca38a116cd8c0f45e9b4c133",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48074,
+        "xy_offset_m": [
+          0.0004396992145844921,
+          -6.206785055749148e-05
+        ],
+        "yaw_offset_rad": 0.03081966527551315
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "080aef56f8d9b9c1ae525c7b703ae9a95b5adeca1d53504ceef0603e8ef3d077",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48075,
+        "xy_offset_m": [
+          0.000862631009469479,
+          -0.0025719759415713866
+        ],
+        "yaw_offset_rad": 0.007478025228930041
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "46f058c57c042cf831c3bc4ab6813286d59d342e3870d6c5ab5150da1454b1e3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48076,
+        "xy_offset_m": [
+          -0.00017505406736233447,
+          0.002578711469881442
+        ],
+        "yaw_offset_rad": -0.02955142119846392
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "58f25b22b924960a51d0f9cdb456863421d0a4e7be66fa9eeb9de2cbaffa0fc9",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48077,
+        "xy_offset_m": [
+          -0.002077105255796929,
+          0.0015321207838758719
+        ],
+        "yaw_offset_rad": 0.010987514340538643
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "45c42e8799d0fc106c22f443dcf15e4d1e3581eaa5bc84bbba2b8e099167ab03",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48078,
+        "xy_offset_m": [
+          0.0017109308865216853,
+          0.0012820519585466355
+        ],
+        "yaw_offset_rad": -0.03319538283916285
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "97c49da17bbaca2f4370f52811124e0709102c1a1d1db167b984363add14b2a8",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48079,
+        "xy_offset_m": [
+          -0.001124121890746882,
+          0.002261120628946076
+        ],
+        "yaw_offset_rad": 0.0030626927400562304
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "804248262202fc9cc2fc3e85049a79f9be1ebbed626369675c13818c3ba553f9",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48080,
+        "xy_offset_m": [
+          -0.0008002390311834329,
+          -0.0010169601001387583
+        ],
+        "yaw_offset_rad": -0.02779737997727135
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "0df67d90dcde869e53f98a785bd3717df4502446d1f518a9a51abb8f33b7d8bc",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48081,
+        "xy_offset_m": [
+          0.0014269057865464833,
+          0.0017918824151286336
+        ],
+        "yaw_offset_rad": -0.016667315096687833
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "9c2fb9909d92f1123d835872f06da8d1a6759e43029821efe5be30f6d791ed86",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48082,
+        "xy_offset_m": [
+          0.0029848279310111508,
+          0.0013594481154268053
+        ],
+        "yaw_offset_rad": -0.03427201653338688
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "87507124e78029ba09f5e8544799e6c392f5c598bd4ccc4bab83ad2e07bb7aea",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48083,
+        "xy_offset_m": [
+          -0.00035323526922526917,
+          -0.0015228083153702326
+        ],
+        "yaw_offset_rad": 0.006300700433873041
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "cef4dd0df12324aaf9ec1a80ee70562a50de935982db836377a22850eed01947",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48084,
+        "xy_offset_m": [
+          -0.0011489266827585535,
+          0.0023212558604715824
+        ],
+        "yaw_offset_rad": 0.03930289878337968
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "5e8da6e02ae7f21263841bb9609a21b8088cf19f94e5f235dbfca8311eadafc4",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48085,
+        "xy_offset_m": [
+          -0.0026193007320183294,
+          0.002054041751300247
+        ],
+        "yaw_offset_rad": 0.023082298973048546
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "c4842ba8a18df15840c86d546d484fde47827285d002b0dae149270d7fcf0241",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48086,
+        "xy_offset_m": [
+          -0.0009816428886733146,
+          0.0019352191947625205
+        ],
+        "yaw_offset_rad": -0.030355074141558008
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "a173c1c6de5f09d77b4cd464d3f2c0d29ceeadf3ac09c7acc0dc882c9b1cabd1",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48087,
+        "xy_offset_m": [
+          0.0022595291382701364,
+          -0.0006700817772445191
+        ],
+        "yaw_offset_rad": 0.0011286298986291424
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "0ab76aa01c64884ca88f127debd60acab214fcc136130ab193f7b63888d7c6f3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48088,
+        "xy_offset_m": [
+          -0.00030776612808181003,
+          -0.0011397161464762778
+        ],
+        "yaw_offset_rad": 0.04993993204765948
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "9ea763a489376ffd9ab6897f2a577225e61931eba170fcaa5997e8f1c1a44ba4",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48089,
+        "xy_offset_m": [
+          -0.0023385331855665056,
+          -0.0010608142488080798
+        ],
+        "yaw_offset_rad": 0.048368221579968465
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "baaae3cc4528892346256c401c6f520b2013f5fc5fe899dd2b86b75dbe48c321",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48090,
+        "xy_offset_m": [
+          -0.0017905400271667497,
+          -0.0011419186574376909
+        ],
+        "yaw_offset_rad": 0.045940943841596804
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "c39530e5da62bedf07359d027202edb0a869715e9efeff5cb193214abaa936cf",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48091,
+        "xy_offset_m": [
+          -0.0001339921958552195,
+          0.0005577084950451031
+        ],
+        "yaw_offset_rad": 0.0031424824673222523
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "be675bacbb4facd41720b81a92832a89ea4ded8fe76c840f0793acad5636e728",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48092,
+        "xy_offset_m": [
+          -0.0016961973631866854,
+          0.0010812762700492442
+        ],
+        "yaw_offset_rad": -0.003119981384572007
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "f19c2b0b91d22383e033bce7c011d454b1b92bb5d5b162aa4426cd8ec97594e1",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48093,
+        "xy_offset_m": [
+          0.0001296123118507391,
+          -0.002489502887907563
+        ],
+        "yaw_offset_rad": 0.05303721600983714
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "eaa8b0467c1f151adc298a9d22fa18ca2b847f3d4e3dea3387aee6e92b09914e",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48094,
+        "xy_offset_m": [
+          -0.0012638223217102142,
+          -0.0021430893292855363
+        ],
+        "yaw_offset_rad": 0.02704427749756845
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "c19ff7289f859d5ffbd2eeb82f0cc4f27cb1d4385c9bd430cf46d188ee543210",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48095,
+        "xy_offset_m": [
+          0.0026529946667695186,
+          0.0013485580194301794
+        ],
+        "yaw_offset_rad": 0.05349287741680123
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "2133cb9112d3c24ed0841b2cd8ba1014440b51bca8dabc52060c4ee8eab25db6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48096,
+        "xy_offset_m": [
+          0.0011501656031179842,
+          -0.0014406260079895359
+        ],
+        "yaw_offset_rad": 0.029679334341622482
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "309c225018b3b8ce3eead2842c4e52a986387b7554ccbfebd553d1aa93c0dc58",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48097,
+        "xy_offset_m": [
+          0.0010202155202264666,
+          0.0005393590026654725
+        ],
+        "yaw_offset_rad": 0.03883699570706445
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "3ec882ca7577ee47da186065b04b96e72e280f5cac71c59a7111e76a1ae1ed7e",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48098,
+        "xy_offset_m": [
+          0.0021876126134773768,
+          -0.0012103648092675159
+        ],
+        "yaw_offset_rad": 0.024139688647147148
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "6572176158c3d25c06138a672678654574254084d8ec9206770b7f72c4b66e59",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48099,
+        "xy_offset_m": [
+          0.002318818642984646,
+          0.00014461917650025313
+        ],
+        "yaw_offset_rad": 0.04379245536512827
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "509c0fe8885294cc17d4cfe0e97e92b2506678bd237fb1f1577264df0f24a34b",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48100,
+        "xy_offset_m": [
+          0.0002802014659391847,
+          -0.0025087543531384735
+        ],
+        "yaw_offset_rad": 0.05037181979385631
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "38f8ec5a3b7c70456324e29544725e6c29e8c677070847b6cc9e00eea388e9f3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48101,
+        "xy_offset_m": [
+          0.0023580109955474585,
+          -0.0017476573990970609
+        ],
+        "yaw_offset_rad": 0.04815644446840556
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "d6c08cf5d4dde0e20d0fad5d26e397bd08390e7b010a5f894e57c3cb1b401022",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48102,
+        "xy_offset_m": [
+          0.0016894099456018895,
+          -1.4982082276715145e-05
+        ],
+        "yaw_offset_rad": -0.05669313920997887
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "d6817f57b022634c524b5669e01f9bbd7950305121e3ec3c92de7f25ebe09cf2",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48103,
+        "xy_offset_m": [
+          -0.0012151298102377145,
+          0.001777068811343755
+        ],
+        "yaw_offset_rad": -0.022106840858584748
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "8020bdba8c9f6f86fc4db9906c578e70d9beaf37a509539c02d1eb5d58f7a8f7",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48104,
+        "xy_offset_m": [
+          -0.0010763811267479116,
+          0.0002098360473245667
+        ],
+        "yaw_offset_rad": -0.015763752520925337
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "4bf39185e1cd8ac8e898fbb1773026d4a922f7d85e43ecb1cab42a357e462e1e",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48105,
+        "xy_offset_m": [
+          0.0017895194649784887,
+          -0.0020175464925193433
+        ],
+        "yaw_offset_rad": 0.002123634650764955
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "f493290faafcea97b1ec1b540196441de576b6e9206f7bee8867b62e46ac20e0",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48106,
+        "xy_offset_m": [
+          0.0019047242162710757,
+          -0.0010147679517817964
+        ],
+        "yaw_offset_rad": 0.017822432270823182
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "252939e4d3e5f57158c1d9ebe3a4bc94c2bcf4224ab3fa166bbc6df043aa9603",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48107,
+        "xy_offset_m": [
+          -0.0012875215962678574,
+          0.0013675983918807711
+        ],
+        "yaw_offset_rad": 0.014596401820214822
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "c085ec017f18cf2babe9980b2bf12c7323f596ec0fcfc0bb09cfe61de37ca354",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48108,
+        "xy_offset_m": [
+          -0.0025428514682917878,
+          -0.001964428588790361
+        ],
+        "yaw_offset_rad": -0.02421600659848918
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "9719e24bd885d15118ee5c6923e6106316511f8801fa7788fb1fbab6ab2f7df3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48109,
+        "xy_offset_m": [
+          -0.00037858620135152723,
+          0.002949570325151492
+        ],
+        "yaw_offset_rad": -0.02880644841525952
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "874f963686e0f3cb98edab79a811b75ba4ed622d8100b4e7ba4330d3da7a2e34",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48110,
+        "xy_offset_m": [
+          0.0019836998268922138,
+          -0.0010316811756079904
+        ],
+        "yaw_offset_rad": 0.014450357753283918
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "957df90f6a826415ef8a49b8225cf24f08c76a98328a668e51f825d094128e2c",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48111,
+        "xy_offset_m": [
+          -0.000497080801135078,
+          0.0008482542686352301
+        ],
+        "yaw_offset_rad": -0.013340574354351951
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "b4a7a290263d8c32df49f1d9685c93808ba6453ea201505d69f8fbcc1a631951",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48112,
+        "xy_offset_m": [
+          -0.0012223510292656483,
+          0.0015336709401536208
+        ],
+        "yaw_offset_rad": 0.022507860541880448
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "25568965604fdfe8cc8f83f9cc5c7d5fe03bf9ea414d40a86b3ceade8ce6e137",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48113,
+        "xy_offset_m": [
+          0.0021347108077476385,
+          -0.0005193120075244547
+        ],
+        "yaw_offset_rad": 0.03379867748287778
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "28891c0f90b16c2b038e62749eba087a181f6dbd2f69dd3a7f88271281d87b33",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48114,
+        "xy_offset_m": [
+          0.002675697413909898,
+          0.0023760182471395767
+        ],
+        "yaw_offset_rad": -0.019251986971845707
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "f8fad12acd9d3bd9abe33ed8f4aaa66542034b60db77f0b947fef5c7de2d6c4d",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48115,
+        "xy_offset_m": [
+          0.002238491083790823,
+          -0.001924072802799473
+        ],
+        "yaw_offset_rad": -0.052295118280113344
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "974b47cc45fdf40fffdf1650262878f030f4960e858ee822b43b5ee0a5c189c8",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48116,
+        "xy_offset_m": [
+          0.0012794060722945326,
+          0.0012742601629094638
+        ],
+        "yaw_offset_rad": 0.05658289835456182
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "be8494c8a33540c1638e43a82c7b977a998fee002d9d63f181651769477019e1",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48117,
+        "xy_offset_m": [
+          0.0011346562978614104,
+          0.002761793086200611
+        ],
+        "yaw_offset_rad": -3.8462843236303224e-05
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "958138369f6b059225b54784027a6a3c48d5d99b8f6559ade3ed9d57d377feb6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48118,
+        "xy_offset_m": [
+          0.0020981237603841744,
+          -0.0005627772295902994
+        ],
+        "yaw_offset_rad": -0.014687038315658658
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "458b1b0a2fe666f61785b111afe354d07f64d92b17b3d8541cfeb792772eb5c3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48119,
+        "xy_offset_m": [
+          0.002640942191845309,
+          0.0010212686970068295
+        ],
+        "yaw_offset_rad": 0.059090551380282214
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "dc517bccc84b979a1e9b8519a3c47465a1756c6a5675441a53c1cd1f9c73107f",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48120,
+        "xy_offset_m": [
+          -0.0018728484787706474,
+          0.0025479816677352945
+        ],
+        "yaw_offset_rad": 0.0247723544537225
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "66e446017d8ac1dc745ce66d8e0c189c779b3b24d4898c54633c08456e5efa0b",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48121,
+        "xy_offset_m": [
+          -0.0020431114578407144,
+          -0.0008727573140476889
+        ],
+        "yaw_offset_rad": 0.023617406954842934
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "f3b0be0ad8abc382f529145cdeec2f146cd2f2efc8eed4f393c2c9af7658d36c",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48122,
+        "xy_offset_m": [
+          0.0013396046823384942,
+          0.0002330808956928208
+        ],
+        "yaw_offset_rad": 0.028130638998093066
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "2fe008776e3bc403f9b958ac77a66cba99e57c7fde70e7c3927607775233b373",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48123,
+        "xy_offset_m": [
+          2.242413972684907e-05,
+          -0.001336168160025651
+        ],
+        "yaw_offset_rad": -0.053183620279817226
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "eebba084022e76979e5a5c58a110f502045e1a250bed3e304610491d7c103f4f",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48124,
+        "xy_offset_m": [
+          -0.002591532148772794,
+          0.0010610515183392686
+        ],
+        "yaw_offset_rad": -0.05762486297121432
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "a688e4ac530e199ac41ccbb8726c0ebed1758c3125632c575a94d42b163a30a3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48125,
+        "xy_offset_m": [
+          0.0015932960802607895,
+          0.0016324369618315338
+        ],
+        "yaw_offset_rad": -0.03859540125045076
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "13e007e324c9279a6af6baef00f8fa443dacd37f32b0450669ba048991f559e8",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48126,
+        "xy_offset_m": [
+          -0.002258637406903842,
+          -0.002966775655869554
+        ],
+        "yaw_offset_rad": 0.03589276665374784
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "train",
+      "scenario_id": "def871da5d0f37e148544b616dab5d2d1985ea159d0f47829a999def4b86b527",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48127,
+        "xy_offset_m": [
+          -0.002509652197823523,
+          -0.002216449083767856
+        ],
+        "yaw_offset_rad": 0.0522381663659119
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "56920169859124141e4fce218a87d1ae06ab1fe772bf7f56a2f2c0773527286c",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48128,
+        "xy_offset_m": [
+          -0.0005846773612396099,
+          -0.001667358809061788
+        ],
+        "yaw_offset_rad": 0.01575375528771321
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "1cbece56bb618a889e53152a94be7cd6d726daec5d335b42adca562b289ff9bf",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48129,
+        "xy_offset_m": [
+          0.0014808617799959723,
+          -0.0018889269214492019
+        ],
+        "yaw_offset_rad": 0.05410568492473049
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "dcfa306b8a49f94d5dc982f08c730cca47ab4c774d6332e56695914f1f38add6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48130,
+        "xy_offset_m": [
+          0.0011695932663000888,
+          -0.0017149266746840633
+        ],
+        "yaw_offset_rad": -0.0052644143079763756
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "38a121a15bb33563aeabc52a20f0fe50307a43db07292c02eb76759bc1fcdd3c",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48131,
+        "xy_offset_m": [
+          -0.0012056647900935613,
+          0.002752887005908298
+        ],
+        "yaw_offset_rad": -0.035608325402670046
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "67961dd3c039d1ebbbd60c46d377fe7139cc562600196cb2970a9b0d03472913",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48132,
+        "xy_offset_m": [
+          -0.0023357189996245343,
+          -0.0018205177027760498
+        ],
+        "yaw_offset_rad": -0.0016549351950351926
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "722ab8bbd73e85db3a21b1b862b473613cfd5a937214eb34fbc94ad11e7a8897",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48133,
+        "xy_offset_m": [
+          0.0003787409200343671,
+          0.002418445980071935
+        ],
+        "yaw_offset_rad": -0.014181534072953916
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "dec662d68e2b8ed367610cdc8231870f563148ddae0a8cea80d505e653465900",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48134,
+        "xy_offset_m": [
+          0.001162674671595463,
+          0.002132226160382565
+        ],
+        "yaw_offset_rad": -0.024403986666886618
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "a71ad98dbbd1429f98923eb465d5475465f42de48f551e04102d9af2fd653822",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48135,
+        "xy_offset_m": [
+          0.0025463718043255206,
+          -0.002650834616521807
+        ],
+        "yaw_offset_rad": 0.015663986996655416
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "655fa44eba671a3fbfaf514a68a6b6b68e62ae2b76ebe292cc13b0983fbf79b2",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48136,
+        "xy_offset_m": [
+          -0.0023813114608573277,
+          -0.0016584951311867174
+        ],
+        "yaw_offset_rad": -0.0036391989062612914
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "cf5a7a93033085989b3d465618a04f0b0858007e35144300c0232f716ce3fdd3",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48137,
+        "xy_offset_m": [
+          0.002864741972504912,
+          0.0018469297346355405
+        ],
+        "yaw_offset_rad": -0.04765570705140532
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "2f7f7613e676eba631bbd7fe9252f12513895f41ab9f1ccd9038d02780c6e483",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48138,
+        "xy_offset_m": [
+          0.0014793189662250933,
+          -0.0008770219343873318
+        ],
+        "yaw_offset_rad": -0.030597565774485108
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "9e9f06f37b8dd535f61b9334204ddb90d415f6e7f16e95d138d6b2919f57c091",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48139,
+        "xy_offset_m": [
+          0.0018734414100567117,
+          0.002932305911609194
+        ],
+        "yaw_offset_rad": -0.04602958492229431
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "73bddea0e768dbe2634aa92f40eb50b4fe11abcf0674bb0f5198f9945c2c3b35",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48140,
+        "xy_offset_m": [
+          0.0022307506888983985,
+          0.0017428518369263825
+        ],
+        "yaw_offset_rad": 0.049752662098734066
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "a752ae24cff4d5548269a6814944340df523d2a51021c38783ab3d29ef6f668e",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48141,
+        "xy_offset_m": [
+          -0.001667974585731717,
+          0.0005674391685284836
+        ],
+        "yaw_offset_rad": -0.04027050060970117
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "f91488a08a966c45d867a4ccbb290d8bd4c8b2847c3dd4402a786ac14520c877",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48142,
+        "xy_offset_m": [
+          0.0003452102892286457,
+          -0.0005905710638381815
+        ],
+        "yaw_offset_rad": -0.014714956925285072
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "e84aad2c851992612f604958c2502be425bba7522ccbcb5fd1427c12e4a11d07",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48143,
+        "xy_offset_m": [
+          -0.0009082819521951,
+          0.0011230647902577837
+        ],
+        "yaw_offset_rad": 0.05109859568043412
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "3ec45e432a4887787a7bfe9d2fd1265506bbe94af3ee0e19cf1421eefa590f19",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48144,
+        "xy_offset_m": [
+          -0.0007219967243869332,
+          -0.0023874965564362714
+        ],
+        "yaw_offset_rad": -0.0550214738824545
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "787a2ff77d96c63d4eddf3c0404d5a6bbe94d29e7bd6b3b064e6eb8410e51012",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48145,
+        "xy_offset_m": [
+          0.00048485798289007445,
+          -0.001962682867631636
+        ],
+        "yaw_offset_rad": -0.05617400280974297
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "3c133fd442de1ec00f417cc22505001c33b43f9bedfe584669b64985730c41c2",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48146,
+        "xy_offset_m": [
+          0.0009774919561992331,
+          0.00031485494201372206
+        ],
+        "yaw_offset_rad": -0.03464120120676542
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "03e742e0edc33524695abd0edcabc06d5b000e6cab48a52d532cfd13cda2f764",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48147,
+        "xy_offset_m": [
+          0.0009135247800202443,
+          0.0014106844520343333
+        ],
+        "yaw_offset_rad": 0.035239942787109096
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "ee6fafc08487c52735186b12b3f4959c2de0fd2b015f926ff5f2e69defcc5ee4",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48148,
+        "xy_offset_m": [
+          -5.293558253197973e-05,
+          -0.00017372623657028931
+        ],
+        "yaw_offset_rad": -0.04961007541432362
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "6ac811407e84d78c7229fe3c9976ea87d2b15d1e5ea7eee9cc79b70af87a5415",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48149,
+        "xy_offset_m": [
+          0.0013725958799208288,
+          -0.0009067745084635017
+        ],
+        "yaw_offset_rad": -0.037649293382064214
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "10f6965f7372bd5ef3bf735b14cdf42cffa2b6c868699c21c481956715519f37",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48150,
+        "xy_offset_m": [
+          0.0001782889306318888,
+          0.0017220274051588155
+        ],
+        "yaw_offset_rad": -0.010293992970014605
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "2e1f85eb29b3b68e80826c8d358b58d2c9117f394a85417505964fba783ce39d",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48151,
+        "xy_offset_m": [
+          0.001837675327904336,
+          -0.0027696732753145674
+        ],
+        "yaw_offset_rad": 0.049995234161595736
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "b87177bf3442af9067d36b8a3f21632cfd3ed86543bd154daf537357fb96dc1a",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48152,
+        "xy_offset_m": [
+          -0.0014393251315399272,
+          -0.0014352618440641157
+        ],
+        "yaw_offset_rad": 0.003257110633988383
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "c755e0fee972273475b678ef3297a4c563f03d01bb6247f67cb3b148a5dbb6ed",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48153,
+        "xy_offset_m": [
+          0.001225304856578604,
+          0.0008539729305821367
+        ],
+        "yaw_offset_rad": -0.0032176028941690304
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "c45e18a0f7945aa7fa8321cbd77c8d7898d6dfe2502ed6d3f86b8dfa8c86560a",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48154,
+        "xy_offset_m": [
+          0.002564943797708423,
+          -0.0026438196530569865
+        ],
+        "yaw_offset_rad": -0.010021311047800137
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "29c58ab4e68367c39f260590059cdaa3e7e28c608a0c83b19ed273094d0e7662",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48155,
+        "xy_offset_m": [
+          0.0001920966444815676,
+          -0.00045730296007103453
+        ],
+        "yaw_offset_rad": 0.002524468707677807
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "7b67f6e2908926c7916ae311e755c836c6450f17311976a65fc4717507a90315",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48156,
+        "xy_offset_m": [
+          -0.0024806047892648227,
+          0.0019288609482502883
+        ],
+        "yaw_offset_rad": 0.043998148742128276
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "372bbc3ac1e9829bbf6b4e2f77d194a968ad1393c50cd8fdee6392a4ffcf5dba",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48157,
+        "xy_offset_m": [
+          0.0028185711899666238,
+          -0.0008033337938853817
+        ],
+        "yaw_offset_rad": -0.05821537405324938
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "4d6748e5be8e5e01a58e5513cce5948ccd031920a5bcfb6413309801695f0a97",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48158,
+        "xy_offset_m": [
+          -0.002841413071546212,
+          -0.002297657147221528
+        ],
+        "yaw_offset_rad": -0.05992393745168942
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "validation",
+      "scenario_id": "f3d2028956ac75e613a2d75adb70bacfcbcb97dd03f8a48a689efc549150b6e9",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48159,
+        "xy_offset_m": [
+          -0.0016120050392531972,
+          -0.002295088073528612
+        ],
+        "yaw_offset_rad": 0.05232636795261637
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "ca4440959deaaf64526baf4ebd1aa5cfa22ede3e039c26e77f630a6f9bc47651",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48160,
+        "xy_offset_m": [
+          -0.00033500415051225963,
+          2.2426367514500473e-05
+        ],
+        "yaw_offset_rad": 0.016908282558245155
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "9bce607ad264f92393a649f6461a53b8779706b3f0945b39dd26dfecd984ee9d",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48161,
+        "xy_offset_m": [
+          -0.0010552270928742824,
+          0.0017294201027497624
+        ],
+        "yaw_offset_rad": -0.05061142362010489
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "d3cc2ef2dcb17db63ea0c8b9503a400f231d56fc26a0c6abb4693ca16462752f",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48162,
+        "xy_offset_m": [
+          0.0026392692899624643,
+          -0.0023823272396541945
+        ],
+        "yaw_offset_rad": 0.055654689051728226
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "46865613678f48f02282abff5bb6e67d9034563d8e17e182759f49d81bca3b25",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48163,
+        "xy_offset_m": [
+          -0.00039653979727147454,
+          -0.002648489901071296
+        ],
+        "yaw_offset_rad": -0.021820516276001546
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "3a1761cf1ebd2050cb3ccae2c2a868691c85f1cdbafb3a663656d0b8ec74cd0f",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48164,
+        "xy_offset_m": [
+          -0.0022073200145119793,
+          -0.000968165699287221
+        ],
+        "yaw_offset_rad": 0.004975758233903324
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "97a086c379404da6ecfc92ba828009f2eb8043761385a0d4a4c2e2c53b9b24e2",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48165,
+        "xy_offset_m": [
+          0.0016244729872240344,
+          -0.0012838228482211496
+        ],
+        "yaw_offset_rad": -0.04127408635385113
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "b6bc3d616a1335ecb92f40c0b44fe7c8503347370db00dbfdf46d9b6068e51f6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48166,
+        "xy_offset_m": [
+          0.0025676016572045513,
+          0.00143453359897163
+        ],
+        "yaw_offset_rad": -0.032980769733933636
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "bc66de9541a9f89434f64c40f6b1ff8782f4624d6f4f212746e995de0458209f",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48167,
+        "xy_offset_m": [
+          -0.002286677056215907,
+          -0.0009369436762545836
+        ],
+        "yaw_offset_rad": 0.0547582409869717
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "947a2c84bfd7d205e82bf40d9d67a38c809a754076389cc77bcf03fcb27acb30",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48168,
+        "xy_offset_m": [
+          -0.0026914059697298125,
+          -0.001993439323730404
+        ],
+        "yaw_offset_rad": 0.004073859343530911
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "7b2ce61e6cc3622d616d258d7aa52ff1ab658e80a25fb56635303b528b77c688",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48169,
+        "xy_offset_m": [
+          0.0013146097560785067,
+          -0.0020471163506134097
+        ],
+        "yaw_offset_rad": -0.04944586773435844
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "6e5629d444ca4a9751f28a67159843c25791abcde4a67349522f2404331e0052",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48170,
+        "xy_offset_m": [
+          0.00020178292470748307,
+          0.0020772563458074335
+        ],
+        "yaw_offset_rad": 0.0056705078014231275
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "8ebeddb7800bf6f76a56f3e1d4809f58686c96b6fd0735e993f05c8eca1e54b8",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48171,
+        "xy_offset_m": [
+          0.0019032890629923386,
+          0.0009039142885354577
+        ],
+        "yaw_offset_rad": 0.053289597442560205
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "80f34094e69bcb11fdd0a786f41467e40fb9105f55c513e727c598e663884ac9",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48172,
+        "xy_offset_m": [
+          4.559440735304662e-05,
+          -0.0011488723306657136
+        ],
+        "yaw_offset_rad": 0.019127831310820714
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "61aee18dc40bff63ea9413f755501e7522180864c35faff96b6ee49bc1d6bd1f",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48173,
+        "xy_offset_m": [
+          -0.002110167174613292,
+          0.0015619956133440206
+        ],
+        "yaw_offset_rad": 0.05821682244016957
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "c131ea1d2e02c4ba0540ece78a6e5b92e3f32ed25c2fe162fd939086b09bc3ca",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48174,
+        "xy_offset_m": [
+          -0.0028715984405374333,
+          -0.002936764851906711
+        ],
+        "yaw_offset_rad": 0.05301191597021693
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "8f3af7dee0f5757edd1193efe02b8e1995ab23a71785fd9503cefbea30c7c070",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48175,
+        "xy_offset_m": [
+          -0.0023727833979661768,
+          0.001115758313461752
+        ],
+        "yaw_offset_rad": 0.045214770440929336
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "fba9e01f7233db0e68e0e00080535bce5422c86992c0db78c7da54df8a12e22e",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48176,
+        "xy_offset_m": [
+          -0.00273167496876432,
+          0.0009564118896223999
+        ],
+        "yaw_offset_rad": -0.023876183981319958
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "d57779200291ad3dd01564315bde69f98812ebc22a7b12a7eec3e2d892096d23",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48177,
+        "xy_offset_m": [
+          -0.002386363931751045,
+          -0.0011971866878306933
+        ],
+        "yaw_offset_rad": -0.034716894726554405
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "2d3685e8aff17c99b8601f1d9f2d9f575ea634aedf263b3313e7b7fedd3363f7",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48178,
+        "xy_offset_m": [
+          0.0022849844038844566,
+          0.0002443113036421276
+        ],
+        "yaw_offset_rad": 0.007242702736623863
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "22042964cef98460c1782190a450cba2dffcdfba1d4a2fe2b0a68cabc4663822",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48179,
+        "xy_offset_m": [
+          -0.00028662642058209075,
+          0.0014037434668063087
+        ],
+        "yaw_offset_rad": 0.028511213854655368
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "41f88cf7e02b9cf48aa761645e1225d114d298500a8ea6699520e0e50c31b872",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48180,
+        "xy_offset_m": [
+          -0.0006138218533171288,
+          0.0008845247345009685
+        ],
+        "yaw_offset_rad": -0.03168066126397756
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "b7643405a1745df6738a00c5656b0caba29d405185cf7e0a730dd91356dfd1b1",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48181,
+        "xy_offset_m": [
+          -0.002125941293522511,
+          -0.0002520629415021284
+        ],
+        "yaw_offset_rad": 0.004473321043662423
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "235e248b71c3b8de56b5e23c4ebcc1724e4fa28f07304716c403e13ee0887bbd",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48182,
+        "xy_offset_m": [
+          0.0012550152591226564,
+          0.0020739960366441546
+        ],
+        "yaw_offset_rad": 0.053403792693407545
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "8dd42858edad5959e5529a919670ad0182c46005c26ed11c977744f626546796",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48183,
+        "xy_offset_m": [
+          -0.0009543241365071319,
+          -0.0005136425629456479
+        ],
+        "yaw_offset_rad": -0.03732174478388077
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "cfc27f0b30f236df7c720fb99f3544f0d03c43e8ebe6240dcf45c3aeeec155b6",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48184,
+        "xy_offset_m": [
+          0.002262563707742753,
+          -5.598613898622753e-05
+        ],
+        "yaw_offset_rad": -0.005790879497949486
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "536827a4a89119655950a02276a6fe808e50285c569f18ce5f0936c9ac51b628",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48185,
+        "xy_offset_m": [
+          0.0021605233604105037,
+          0.0010139662251550151
+        ],
+        "yaw_offset_rad": 0.04559167562004961
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "64465a95b4719cb52178e51163cbfa732bafdebd2b23480a6b953b8525327dde",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48186,
+        "xy_offset_m": [
+          -0.002202381473630827,
+          4.744527106389021e-06
+        ],
+        "yaw_offset_rad": -0.024144992844881738
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "a05d55513be199d3ddd0d22cdab57c519a0157c232ea11c8449b36337ce0ceb4",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48187,
+        "xy_offset_m": [
+          0.0006274454340274562,
+          0.001615011203591303
+        ],
+        "yaw_offset_rad": 0.017648819626083598
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "14d23561c572701c172c3491bf39d16b38bb927d5d67682d67bfafe328e6ded2",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48188,
+        "xy_offset_m": [
+          0.0016491960374737371,
+          -0.002485535503299725
+        ],
+        "yaw_offset_rad": -0.032193654065577434
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "49ec34bb629e9388a11361bfaa32378ce961395fde0339e86e2629d4110cf194",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48189,
+        "xy_offset_m": [
+          -0.0011023472318792023,
+          0.0003216702791050928
+        ],
+        "yaw_offset_rad": 0.044666567795462075
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "8e227db68b5bbdc7902f134bbebd30e1a902d400459e596cd8dc3b9481cb68ed",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48190,
+        "xy_offset_m": [
+          0.002315238988056572,
+          -0.0009600860432202535
+        ],
+        "yaw_offset_rad": -0.012467881842382338
+      },
+      "status": "reserved"
+    },
+    {
+      "split": "test",
+      "scenario_id": "f208f52d066c1693815b25b3ecb751ea33bae5d60c9bd98a2e81859d64743b81",
+      "scenario": {
+        "namespace": "cwmj_full_trajectory_scale_v1",
+        "seed": 48191,
+        "xy_offset_m": [
+          -0.0017361939199667606,
+          -0.00213008939681914
+        ],
+        "yaw_offset_rad": -0.020748207920649436
+      },
+      "status": "reserved"
+    }
+  ],
+  "initial_cpu_preflight_seeds": [
+    48000,
+    48001,
+    48002,
+    48003,
+    48004,
+    48005,
+    48006,
+    48007
+  ],
+  "target_train_accepted_trajectories": 128,
+  "failure_policy": "retain failures; never relabel failed trajectory as expert or silently replace a reserved seed",
+  "full_trajectory_ticks": 144,
+  "stage_counts": {
+    "settle_pre_grasp": 4,
+    "descend_to_grasp": 20,
+    "close_fingers": 10,
+    "lift_start_offset": 6,
+    "lift": 20,
+    "hold_lift": 24,
+    "place_down": 30,
+    "release": 10,
+    "retract": 20
+  },
+  "arm_target_ranges_rad": [
+    0.0055280003444949655,
+    0.15638839552967787,
+    0.3086487233067017,
+    0.4650542992999842,
+    0.0005772952243421095,
+    0.00794898969008484,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "collection_contract": {
+    "period_s": 0.05,
+    "same_run_images_and_tactile": true,
+    "future_action_masks_required": true,
+    "store_each_image_once": true,
+    "minimum_free_disk_GiB": 4,
+    "training_approval_requires": [
+      "complete capture SHA/timing validation",
+      "stage-specific physical outcome checks",
+      "actual arm-motion coverage",
+      "no forbidden contact"
+    ],
+    "recovery_label_requires": "post-failure intervention better than matched no-correction branch; no automatic recovery labels"
+  },
+  "evaluation_policy": {
+    "stop_small_capacity_sweeps": true,
+    "test_never_used_for_selection": true,
+    "training_checkpoints_fraction": [
+      0,
+      0.25,
+      0.5,
+      1
+    ],
+    "full_eval_only_at_final_or_nonfinite_failure": true
+  },
+  "note": "128 is an initial engineering collection target, not evidence of sufficient scale. Full expert command path supplies moving-arm coverage; recovery branches still need separate verified experts."
+}

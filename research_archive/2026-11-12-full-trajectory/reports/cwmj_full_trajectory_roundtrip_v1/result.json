@@ -1,0 +1,328 @@
+{
+  "passed": true,
+  "windows_checked": 45,
+  "seeds": [
+    48000,
+    48063,
+    48127
+  ],
+  "max_abs_error": 1.1920928955078125e-07,
+  "scope": "Stage starts and history/tail boundaries in three training trajectories; not all18304windows. Valid actions only; no learned model evaluation. Original robotwin norm provenance unresolved.",
+  "entries": [
+    {
+      "index": 0,
+      "seed": 48000,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 1,
+      "seed": 48000,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 2,
+      "seed": 48000,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 3,
+      "seed": 48000,
+      "stage": "descend_to_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 23,
+      "seed": 48000,
+      "stage": "close_fingers",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 33,
+      "seed": 48000,
+      "stage": "lift_start_offset",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 39,
+      "seed": 48000,
+      "stage": "lift",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 59,
+      "seed": 48000,
+      "stage": "hold_lift",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 83,
+      "seed": 48000,
+      "stage": "place_down",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 93,
+      "seed": 48000,
+      "stage": "place_down",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 94,
+      "seed": 48000,
+      "stage": "place_down",
+      "valid_steps": 49,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 113,
+      "seed": 48000,
+      "stage": "release",
+      "valid_steps": 30,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 123,
+      "seed": 48000,
+      "stage": "retract",
+      "valid_steps": 20,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 141,
+      "seed": 48000,
+      "stage": "retract",
+      "valid_steps": 2,
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "index": 142,
+      "seed": 48000,
+      "stage": "retract",
+      "valid_steps": 1,
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "index": 9009,
+      "seed": 48063,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9010,
+      "seed": 48063,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9011,
+      "seed": 48063,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9012,
+      "seed": 48063,
+      "stage": "descend_to_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9032,
+      "seed": 48063,
+      "stage": "close_fingers",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9042,
+      "seed": 48063,
+      "stage": "lift_start_offset",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9048,
+      "seed": 48063,
+      "stage": "lift",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9068,
+      "seed": 48063,
+      "stage": "hold_lift",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9092,
+      "seed": 48063,
+      "stage": "place_down",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9102,
+      "seed": 48063,
+      "stage": "place_down",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9103,
+      "seed": 48063,
+      "stage": "place_down",
+      "valid_steps": 49,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9122,
+      "seed": 48063,
+      "stage": "release",
+      "valid_steps": 30,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9132,
+      "seed": 48063,
+      "stage": "retract",
+      "valid_steps": 20,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 9150,
+      "seed": 48063,
+      "stage": "retract",
+      "valid_steps": 2,
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "index": 9151,
+      "seed": 48063,
+      "stage": "retract",
+      "valid_steps": 1,
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "index": 18161,
+      "seed": 48127,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18162,
+      "seed": 48127,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18163,
+      "seed": 48127,
+      "stage": "settle_pre_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18164,
+      "seed": 48127,
+      "stage": "descend_to_grasp",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18184,
+      "seed": 48127,
+      "stage": "close_fingers",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18194,
+      "seed": 48127,
+      "stage": "lift_start_offset",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18200,
+      "seed": 48127,
+      "stage": "lift",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18220,
+      "seed": 48127,
+      "stage": "hold_lift",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18244,
+      "seed": 48127,
+      "stage": "place_down",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18254,
+      "seed": 48127,
+      "stage": "place_down",
+      "valid_steps": 50,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18255,
+      "seed": 48127,
+      "stage": "place_down",
+      "valid_steps": 49,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18274,
+      "seed": 48127,
+      "stage": "release",
+      "valid_steps": 30,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18284,
+      "seed": 48127,
+      "stage": "retract",
+      "valid_steps": 20,
+      "max_abs_error": 1.1920928955078125e-07
+    },
+    {
+      "index": 18302,
+      "seed": 48127,
+      "stage": "retract",
+      "valid_steps": 2,
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "index": 18303,
+      "seed": 48127,
+      "stage": "retract",
+      "valid_steps": 1,
+      "max_abs_error": 5.960464477539063e-08
+    }
+  ]
+}
