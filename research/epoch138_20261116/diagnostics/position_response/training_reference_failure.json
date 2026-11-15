@@ -1,0 +1,5 @@
+{
+  "error": "KeyError68000",
+  "cause": "original planning catalog omits supplemental training cases; no training or data changed",
+  "fix": "read actual per-trajectory result.position_case"
+}

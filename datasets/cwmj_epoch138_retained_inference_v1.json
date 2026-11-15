@@ -1,0 +1,30 @@
+{
+  "schema": "cwmj_retained_inference_baseline_v1",
+  "decision_date": "2026-11-16",
+  "status": "frozen_development_baseline_not_optimality_claim",
+  "checkpoint_sha256": "f253e20d1e15b0f15cf2b804e22e12dce80500afcc853f288e35f0d9a589fbff",
+  "epoch": 138,
+  "step": 281244,
+  "reference_experiment": "cwmj_epoch138_gripensemble_v1",
+  "reference_configuration": "w3_d85",
+  "prediction_horizon": 50,
+  "replan_interval_s": 0.05,
+  "execute_steps_per_prediction": 1,
+  "ensemble": {
+    "window": 3,
+    "decay": 0.85,
+    "dimensions": "all14_arm_and_gripper",
+    "source_row": "target_tick - source_tick",
+    "weight": "decay ** source_age_ticks; normalize over available causal history",
+    "gripper_projection": "each selected source gripper normalized to [0,1] before averaging; preserve raw and delta",
+    "arm_clipping": false
+  },
+  "existing_arm_role": "explicit language-selected active side; inactive arm ready-command hold, not learned autonomous selection",
+  "alignment_guard": {"enabled": false, "v1": "archived_not_adopted", "v2": "archived_not_adopted"},
+  "new_control_patches": "prohibited_by_latest_user_instruction",
+  "physics_preflight": "unchanged; every50ms,25x2ms substeps",
+  "platform": "datasets/cwmj_fixed_dual_arm_platform_v2.json",
+  "current_authorization": {"new_training": false, "dataset_collection": false, "kimi": false, "deepseek": false},
+  "effect": "documents next-run baseline; no process hot-patched or launched",
+  "limits": "old development cases, not independent test performance; smoothing does not establish grasp or tactile causal benefit"
+}

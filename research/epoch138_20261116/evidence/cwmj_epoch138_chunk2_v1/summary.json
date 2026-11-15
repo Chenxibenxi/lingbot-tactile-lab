@@ -1,0 +1,100 @@
+{
+  "status": "completed",
+  "planned": 4,
+  "episodes": [
+    {
+      "case": "right_67030_r1",
+      "side": "right",
+      "termination": "physics_preflight_rejected",
+      "metrics": {
+        "complete": false,
+        "executed_model_ticks": 158,
+        "executed_sim_duration_s": 7.9,
+        "sensors_valid": true,
+        "lift_30mm": false,
+        "longest_unsupported_finger_contact_span_s": 0.004,
+        "stable_hold_1s": false,
+        "released_place": true,
+        "peak_normal_N": 110.68630265989825,
+        "force_bound_pass": false,
+        "qualified_task_success": false,
+        "inference_mean_s": 0.6364530568404007,
+        "inference_p95_s": 0.6745801220065913,
+        "active_side": "right",
+        "contact_requirement": "any active-hand finger contact; original rule retained",
+        "scope": "Position-development v1 with20 approach ticks; unchanged task thresholds; active-hand audit, active-hand relative pose. Executed states only. Partial episodes never task success. Physics paused during inference; not realtime latency."
+      }
+    },
+    {
+      "case": "left_67009_r1",
+      "side": "left",
+      "termination": "physics_preflight_rejected",
+      "metrics": {
+        "complete": false,
+        "executed_model_ticks": 16,
+        "executed_sim_duration_s": 0.8,
+        "sensors_valid": true,
+        "lift_30mm": false,
+        "longest_unsupported_finger_contact_span_s": 0.0,
+        "stable_hold_1s": false,
+        "released_place": false,
+        "peak_normal_N": 153.44120344102635,
+        "force_bound_pass": false,
+        "qualified_task_success": false,
+        "inference_mean_s": 0.624073348991159,
+        "inference_p95_s": 0.6506744561949744,
+        "active_side": "left",
+        "contact_requirement": "any active-hand finger contact; original rule retained",
+        "scope": "Position-development v1 with20 approach ticks; unchanged task thresholds; active-hand audit, active-hand relative pose. Executed states only. Partial episodes never task success. Physics paused during inference; not realtime latency."
+      }
+    },
+    {
+      "case": "left_67000_r0",
+      "side": "left",
+      "termination": "physics_preflight_rejected",
+      "metrics": {
+        "complete": false,
+        "executed_model_ticks": 16,
+        "executed_sim_duration_s": 0.8,
+        "sensors_valid": true,
+        "lift_30mm": false,
+        "longest_unsupported_finger_contact_span_s": 0.0,
+        "stable_hold_1s": false,
+        "released_place": false,
+        "peak_normal_N": 171.79099972702676,
+        "force_bound_pass": false,
+        "qualified_task_success": false,
+        "inference_mean_s": 0.6143258971149206,
+        "inference_p95_s": 0.6474432457936927,
+        "active_side": "left",
+        "contact_requirement": "any active-hand finger contact; original rule retained",
+        "scope": "Position-development v1 with20 approach ticks; unchanged task thresholds; active-hand audit, active-hand relative pose. Executed states only. Partial episodes never task success. Physics paused during inference; not realtime latency."
+      }
+    },
+    {
+      "case": "right_67031_r1",
+      "side": "right",
+      "termination": "horizon_complete",
+      "metrics": {
+        "complete": true,
+        "executed_model_ticks": 163,
+        "executed_sim_duration_s": 8.15,
+        "sensors_valid": true,
+        "lift_30mm": false,
+        "longest_unsupported_finger_contact_span_s": 0.002,
+        "stable_hold_1s": false,
+        "released_place": true,
+        "peak_normal_N": 153.63143160407117,
+        "force_bound_pass": false,
+        "qualified_task_success": false,
+        "inference_mean_s": 0.6001749119711415,
+        "inference_p95_s": 0.6423705743683967,
+        "active_side": "right",
+        "contact_requirement": "any active-hand finger contact; original rule retained",
+        "scope": "Position-development v1 with20 approach ticks; unchanged task thresholds; active-hand audit, active-hand relative pose. Executed states only. Partial episodes never task success. Physics paused during inference; not realtime latency."
+      }
+    }
+  ],
+  "training_steps": 0,
+  "successes": 0
+}

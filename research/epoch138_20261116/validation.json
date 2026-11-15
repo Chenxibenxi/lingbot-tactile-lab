@@ -1,0 +1,14 @@
+{
+  "python_ast_files": 69,
+  "all_parse": true,
+  "ensemble_checks": {
+    "gripper": "18 aligned/projection combinations, source immutability and nonfinite rejection passed",
+    "arms": "72 aligned weighted combinations, history/gripper/source checks passed"
+  },
+  "credential_pattern_scan": "passed selected files",
+  "largest_file": "313907 bytes embodiment contract: geometry/actuator audit text, reviewed no weights or credentials",
+  "new_gpu_jobs": 0,
+  "new_training_steps": 0,
+  "new_rollouts": 0,
+  "scope": "source/archive and existing CPU contract checks; not physical or learned-task validation"
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "current new dataset preparation including push v13 and subsequent candidates in this batch",
+  "admission_requires": "explicit user approval for exact reviewed version and video hashes",
+  "default_status": "pending_human_review",
+  "review_entry": [
+    "full same-run video",
+    "synchronized four-finger force-input table",
+    "task/side/case identifier",
+    "termination and abnormality records",
+    "video SHA256 and version"
+  ],
+  "automated_or_model_review_is_approval": false,
+  "failed_videos": "retain and expose, exclude from success quota",
+  "existing_approved_grasp50": "unchanged"
+}

@@ -1,0 +1,397 @@
+{
+  "split_source": "/mnt/relaydata/lingbot-tactile-lab/datasets/cwmj_fixed_dual_position_generalization_v1.json",
+  "split_sha256": "6c6c5f35ac1d9b80e317b17f000ca22f9bab567478fc566b5f1124951378f009",
+  "cases": [
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        -0.03
+      ],
+      "seed": 67000,
+      "case_id": "left_67000"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        -0.01
+      ],
+      "seed": 67001,
+      "case_id": "left_67001"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        0.01
+      ],
+      "seed": 67002,
+      "case_id": "left_67002"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        0.03
+      ],
+      "seed": 67003,
+      "case_id": "left_67003"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        -0.03
+      ],
+      "seed": 67004,
+      "case_id": "left_67004"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        -0.01
+      ],
+      "seed": 67005,
+      "case_id": "left_67005"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        0.01
+      ],
+      "seed": 67006,
+      "case_id": "left_67006"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        0.03
+      ],
+      "seed": 67007,
+      "case_id": "left_67007"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        -0.03
+      ],
+      "seed": 67008,
+      "case_id": "left_67008"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        -0.01
+      ],
+      "seed": 67009,
+      "case_id": "left_67009"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        0.01
+      ],
+      "seed": 67010,
+      "case_id": "left_67010"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        0.03
+      ],
+      "seed": 67011,
+      "case_id": "left_67011"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        -0.03
+      ],
+      "seed": 67012,
+      "case_id": "left_67012"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        -0.01
+      ],
+      "seed": 67013,
+      "case_id": "left_67013"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        0.01
+      ],
+      "seed": 67014,
+      "case_id": "left_67014"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        0.03
+      ],
+      "seed": 67015,
+      "case_id": "left_67015"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        -0.03
+      ],
+      "seed": 67016,
+      "case_id": "right_67016"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        -0.01
+      ],
+      "seed": 67017,
+      "case_id": "right_67017"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        0.01
+      ],
+      "seed": 67018,
+      "case_id": "right_67018"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        0.03
+      ],
+      "seed": 67019,
+      "case_id": "right_67019"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        -0.03
+      ],
+      "seed": 67020,
+      "case_id": "right_67020"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        -0.01
+      ],
+      "seed": 67021,
+      "case_id": "right_67021"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        0.01
+      ],
+      "seed": 67022,
+      "case_id": "right_67022"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        0.03
+      ],
+      "seed": 67023,
+      "case_id": "right_67023"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        -0.03
+      ],
+      "seed": 67024,
+      "case_id": "right_67024"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        -0.01
+      ],
+      "seed": 67025,
+      "case_id": "right_67025"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        0.01
+      ],
+      "seed": 67026,
+      "case_id": "right_67026"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        0.03
+      ],
+      "seed": 67027,
+      "case_id": "right_67027"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        -0.03
+      ],
+      "seed": 67028,
+      "case_id": "right_67028"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        -0.01
+      ],
+      "seed": 67029,
+      "case_id": "right_67029"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        0.01
+      ],
+      "seed": 67030,
+      "case_id": "right_67030"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        0.03
+      ],
+      "seed": 67031,
+      "case_id": "right_67031"
+    }
+  ],
+  "repeats": 2,
+  "episodes": 4,
+  "platform": "datasets/cwmj_fixed_dual_arm_platform_v2.json",
+  "checkpoint_source": "evaluation_ready.json, verify SHA and complete epoch",
+  "mode": "actual model closed-loop lift hold place-back, tactile enabled",
+  "constraints": [
+    "no teacher demonstration substitution",
+    "fixed dual embodiment/cameras/ready posture",
+    "original action projection and physics preflight",
+    "full same-run video and synchronized four-finger force table including failures",
+    "dataset collection and Kimi remain paused",
+    "no Strata startup or external GPU eviction"
+  ],
+  "gate": {
+    "seed_macro_success": 0.7,
+    "episodes": 64
+  },
+  "task_thresholds": {
+    "lift_m": 0.03,
+    "hold_s": 1.0,
+    "hold_translation_m": 0.005,
+    "hold_rotation_rad": 0.08726646259971647,
+    "place_height_tolerance_m": 0.01,
+    "peak_normal_limit_N": 5.0,
+    "hold_normal_limit_N": 2.5
+  },
+  "horizon_model_ticks": 163,
+  "warmup_ticks": 1,
+  "episodes_order": [
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        0.01
+      ],
+      "seed": 67030,
+      "case_id": "right_67030",
+      "repeat": 1,
+      "ensemble": {
+        "name": "w3_d85",
+        "window": 3,
+        "decay": 0.85
+      }
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        -0.01
+      ],
+      "seed": 67009,
+      "case_id": "left_67009",
+      "repeat": 1,
+      "ensemble": {
+        "name": "w3_d85",
+        "window": 3,
+        "decay": 0.85
+      }
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        -0.03
+      ],
+      "seed": 67000,
+      "case_id": "left_67000",
+      "repeat": 0,
+      "ensemble": {
+        "name": "w3_d85",
+        "window": 3,
+        "decay": 0.85
+      }
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        0.03
+      ],
+      "seed": 67031,
+      "case_id": "right_67031",
+      "repeat": 1,
+      "ensemble": {
+        "name": "w3_d85",
+        "window": 3,
+        "decay": 0.85
+      }
+    }
+  ],
+  "execution_horizon": 2,
+  "split": "development_reused_test_cases",
+  "scope": "Four reused development cases; causal robot-only lateral-before-descent guard vs gripensemble w3_d85",
+  "baseline": "cwmj_epoch138_chunk2_v1",
+  "language_counterfactual": "same reset observation/noise; swapped left/right instruction; prediction-only",
+  "ensemble_grid": [
+    {
+      "name": "w3_d85",
+      "window": 3,
+      "decay": 0.85
+    }
+  ],
+  "selection_rule": "Report all configs; prioritize complete task and stable hold, then lift and contact/slip diagnostics; no smoothness-only winner. No threshold tuning."
+}

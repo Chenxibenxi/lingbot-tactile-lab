@@ -1,0 +1,893 @@
+{
+  "schema": "cwmj_fixed_dual_position_generalization_v1",
+  "status": "reserved_before_collection",
+  "task": "grasp_place",
+  "scope": "position generalization within a single fixed object task; not full generalization claim",
+  "workspace_center_m": {
+    "left": [
+      0.6,
+      0.1
+    ],
+    "right": [
+      0.6,
+      -0.1
+    ]
+  },
+  "fixed_across_cases": [
+    "dual_arm_geometry",
+    "all_camera_intrinsics_and_mounts",
+    "robot_ready_pose",
+    "object_identity",
+    "object_orientation",
+    "physics_parameters"
+  ],
+  "vary": "object tabletop x/y; active arm approaches from same fixed ready pose",
+  "training": [
+    {
+      "side": "left",
+      "offset_m": [
+        -0.04,
+        -0.04
+      ],
+      "seed": 65000,
+      "case_id": "left_65000"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.04,
+        -0.02
+      ],
+      "seed": 65001,
+      "case_id": "left_65001"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.04,
+        0
+      ],
+      "seed": 65002,
+      "case_id": "left_65002"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.04,
+        0.02
+      ],
+      "seed": 65003,
+      "case_id": "left_65003"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.04,
+        0.04
+      ],
+      "seed": 65004,
+      "case_id": "left_65004"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.02,
+        -0.04
+      ],
+      "seed": 65005,
+      "case_id": "left_65005"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.02,
+        -0.02
+      ],
+      "seed": 65006,
+      "case_id": "left_65006"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.02,
+        0
+      ],
+      "seed": 65007,
+      "case_id": "left_65007"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.02,
+        0.02
+      ],
+      "seed": 65008,
+      "case_id": "left_65008"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.02,
+        0.04
+      ],
+      "seed": 65009,
+      "case_id": "left_65009"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0,
+        -0.04
+      ],
+      "seed": 65010,
+      "case_id": "left_65010"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0,
+        -0.02
+      ],
+      "seed": 65011,
+      "case_id": "left_65011"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0,
+        0
+      ],
+      "seed": 65012,
+      "case_id": "left_65012"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0,
+        0.02
+      ],
+      "seed": 65013,
+      "case_id": "left_65013"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0,
+        0.04
+      ],
+      "seed": 65014,
+      "case_id": "left_65014"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.02,
+        -0.04
+      ],
+      "seed": 65015,
+      "case_id": "left_65015"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.02,
+        -0.02
+      ],
+      "seed": 65016,
+      "case_id": "left_65016"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.02,
+        0
+      ],
+      "seed": 65017,
+      "case_id": "left_65017"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.02,
+        0.02
+      ],
+      "seed": 65018,
+      "case_id": "left_65018"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.02,
+        0.04
+      ],
+      "seed": 65019,
+      "case_id": "left_65019"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.04,
+        -0.04
+      ],
+      "seed": 65020,
+      "case_id": "left_65020"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.04,
+        -0.02
+      ],
+      "seed": 65021,
+      "case_id": "left_65021"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.04,
+        0
+      ],
+      "seed": 65022,
+      "case_id": "left_65022"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.04,
+        0.02
+      ],
+      "seed": 65023,
+      "case_id": "left_65023"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.04,
+        0.04
+      ],
+      "seed": 65024,
+      "case_id": "left_65024"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.04,
+        -0.04
+      ],
+      "seed": 65025,
+      "case_id": "right_65025"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.04,
+        -0.02
+      ],
+      "seed": 65026,
+      "case_id": "right_65026"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.04,
+        0
+      ],
+      "seed": 65027,
+      "case_id": "right_65027"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.04,
+        0.02
+      ],
+      "seed": 65028,
+      "case_id": "right_65028"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.04,
+        0.04
+      ],
+      "seed": 65029,
+      "case_id": "right_65029"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.02,
+        -0.04
+      ],
+      "seed": 65030,
+      "case_id": "right_65030"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.02,
+        -0.02
+      ],
+      "seed": 65031,
+      "case_id": "right_65031"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.02,
+        0
+      ],
+      "seed": 65032,
+      "case_id": "right_65032"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.02,
+        0.02
+      ],
+      "seed": 65033,
+      "case_id": "right_65033"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.02,
+        0.04
+      ],
+      "seed": 65034,
+      "case_id": "right_65034"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0,
+        -0.04
+      ],
+      "seed": 65035,
+      "case_id": "right_65035"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0,
+        -0.02
+      ],
+      "seed": 65036,
+      "case_id": "right_65036"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0,
+        0
+      ],
+      "seed": 65037,
+      "case_id": "right_65037"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0,
+        0.02
+      ],
+      "seed": 65038,
+      "case_id": "right_65038"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0,
+        0.04
+      ],
+      "seed": 65039,
+      "case_id": "right_65039"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.02,
+        -0.04
+      ],
+      "seed": 65040,
+      "case_id": "right_65040"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.02,
+        -0.02
+      ],
+      "seed": 65041,
+      "case_id": "right_65041"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.02,
+        0
+      ],
+      "seed": 65042,
+      "case_id": "right_65042"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.02,
+        0.02
+      ],
+      "seed": 65043,
+      "case_id": "right_65043"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.02,
+        0.04
+      ],
+      "seed": 65044,
+      "case_id": "right_65044"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.04,
+        -0.04
+      ],
+      "seed": 65045,
+      "case_id": "right_65045"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.04,
+        -0.02
+      ],
+      "seed": 65046,
+      "case_id": "right_65046"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.04,
+        0
+      ],
+      "seed": 65047,
+      "case_id": "right_65047"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.04,
+        0.02
+      ],
+      "seed": 65048,
+      "case_id": "right_65048"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.04,
+        0.04
+      ],
+      "seed": 65049,
+      "case_id": "right_65049"
+    }
+  ],
+  "validation": [
+    {
+      "side": "left",
+      "offset_m": [
+        -0.025,
+        -0.005
+      ],
+      "seed": 66000,
+      "case_id": "left_66000"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.025,
+        0.025
+      ],
+      "seed": 66001,
+      "case_id": "left_66001"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.025,
+        -0.025
+      ],
+      "seed": 66002,
+      "case_id": "left_66002"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.025,
+        0.005
+      ],
+      "seed": 66003,
+      "case_id": "left_66003"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.025,
+        -0.005
+      ],
+      "seed": 66004,
+      "case_id": "right_66004"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.025,
+        0.025
+      ],
+      "seed": 66005,
+      "case_id": "right_66005"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.025,
+        -0.025
+      ],
+      "seed": 66006,
+      "case_id": "right_66006"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.025,
+        0.005
+      ],
+      "seed": 66007,
+      "case_id": "right_66007"
+    }
+  ],
+  "test": [
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        -0.03
+      ],
+      "seed": 67000,
+      "case_id": "left_67000"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        -0.01
+      ],
+      "seed": 67001,
+      "case_id": "left_67001"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        0.01
+      ],
+      "seed": 67002,
+      "case_id": "left_67002"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        0.03
+      ],
+      "seed": 67003,
+      "case_id": "left_67003"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        -0.03
+      ],
+      "seed": 67004,
+      "case_id": "left_67004"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        -0.01
+      ],
+      "seed": 67005,
+      "case_id": "left_67005"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        0.01
+      ],
+      "seed": 67006,
+      "case_id": "left_67006"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        0.03
+      ],
+      "seed": 67007,
+      "case_id": "left_67007"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        -0.03
+      ],
+      "seed": 67008,
+      "case_id": "left_67008"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        -0.01
+      ],
+      "seed": 67009,
+      "case_id": "left_67009"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        0.01
+      ],
+      "seed": 67010,
+      "case_id": "left_67010"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        0.03
+      ],
+      "seed": 67011,
+      "case_id": "left_67011"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        -0.03
+      ],
+      "seed": 67012,
+      "case_id": "left_67012"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        -0.01
+      ],
+      "seed": 67013,
+      "case_id": "left_67013"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        0.01
+      ],
+      "seed": 67014,
+      "case_id": "left_67014"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        0.03
+      ],
+      "seed": 67015,
+      "case_id": "left_67015"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        -0.03
+      ],
+      "seed": 67016,
+      "case_id": "right_67016"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        -0.01
+      ],
+      "seed": 67017,
+      "case_id": "right_67017"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        0.01
+      ],
+      "seed": 67018,
+      "case_id": "right_67018"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        0.03
+      ],
+      "seed": 67019,
+      "case_id": "right_67019"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        -0.03
+      ],
+      "seed": 67020,
+      "case_id": "right_67020"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        -0.01
+      ],
+      "seed": 67021,
+      "case_id": "right_67021"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        0.01
+      ],
+      "seed": 67022,
+      "case_id": "right_67022"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        0.03
+      ],
+      "seed": 67023,
+      "case_id": "right_67023"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        -0.03
+      ],
+      "seed": 67024,
+      "case_id": "right_67024"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        -0.01
+      ],
+      "seed": 67025,
+      "case_id": "right_67025"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        0.01
+      ],
+      "seed": 67026,
+      "case_id": "right_67026"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        0.03
+      ],
+      "seed": 67027,
+      "case_id": "right_67027"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        -0.03
+      ],
+      "seed": 67028,
+      "case_id": "right_67028"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        -0.01
+      ],
+      "seed": 67029,
+      "case_id": "right_67029"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        0.01
+      ],
+      "seed": 67030,
+      "case_id": "right_67030"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        0.03
+      ],
+      "seed": 67031,
+      "case_id": "right_67031"
+    }
+  ],
+  "development": [
+    {
+      "side": "left",
+      "offset_m": [
+        -0.035,
+        0.005
+      ],
+      "seed": 64000,
+      "case_id": "left_64000"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.035,
+        -0.005
+      ],
+      "seed": 64001,
+      "case_id": "left_64001"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.035,
+        0.005
+      ],
+      "seed": 64002,
+      "case_id": "right_64002"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.035,
+        -0.005
+      ],
+      "seed": 64003,
+      "case_id": "right_64003"
+    }
+  ],
+  "test_repeats": 2,
+  "test_gate": {
+    "seed_macro_success": 0.7,
+    "episodes": 64
+  },
+  "student_input_excludes": [
+    "scenario_seed",
+    "object_truth_pose",
+    "split",
+    "offline_planner_waypoints"
+  ],
+  "initial_feasibility_planner": "offline known placement target for IK; not visual localization or evidence of autonomous teacher perception",
+  "training_launch_allowed": false,
+  "human_review": "original three videos approved; new positional rollout videos retain separate provenance and review status"
+}

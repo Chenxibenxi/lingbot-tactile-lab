@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "supersedes": "cwmj_tactile_occluded_push_direction_v1.json",
+  "source": "latest user clarification: vision and touch operate in parallel; no absolute hierarchy",
+  "objective": "parallel visual-tactile-proprioceptive action decisions",
+  "modality_order": "none fixed",
+  "camera_and_embodiment_changes": false,
+  "online_evidence": [
+    "causal synchronized RGB and visual history",
+    "per-finger normal-force history with validity/timestamps",
+    "measured joint and gripper states",
+    "effective command history"
+  ],
+  "teacher_requirements": [
+    "Use available evidence from both modalities throughout the action; no mandatory vision-first then touch sequence.",
+    "Lost red pixels alone must not mandate lifting/re-observation.",
+    "Neither visual uncertainty nor balanced fingertip force alone determines every action; evaluate combined evidence and uncertainty.",
+    "Tactile-supported correction need not universally await a verified visual tracker; object-motion estimates still require validation.",
+    "Preserve meaningful observe/hold/stop alternatives when evidence warrants them.",
+    "Current push policy must not retreat/lift/re-observe/return for perception; fixed-camera RGB continues. Evidence-insufficient stop is valid. Final withdrawal is not a re-observation action."
+  ],
+  "coverage": [
+    "both modalities informative",
+    "vision occluded or ambiguous with informative tactile evidence",
+    "tactile ambiguous with informative visual evidence",
+    "conflicting visual/tactile evidence",
+    "both insufficient: probe/hold/reobserve/stop as supported"
+  ],
+  "evaluation": [
+    "matched-state/history/budget action alternatives",
+    "full RGB+proprioception+command baseline",
+    "paired tactile and shuffled/missing-tactile comparisons",
+    "nominal no-correction and failure/rejection cases"
+  ],
+  "truth_usage": "offline evaluation/labels only, never online teacher input",
+  "repair_scope": {
+    "push_v5_to_v9": "legacy engineering comparison; not repaired by relabeling",
+    "v10_infrastructure": "retain snapshots; replace unconditional recovery prohibition when implementing actual fused policy",
+    "other_task_candidates": "review for fixed modality hierarchy before rollout/admission",
+    "existing_grasp50": "no automatic invalidation or training interruption; audit separately, no assertion of tactile causal benefit"
+  },
+  "training_admitted": false,
+  "push_reobservation_maneuver_allowed": false,
+  "continuous_fixed_camera_rgb": true,
+  "contact_phase_requirements": {
+    "initial_touch": "single-finger contact may be a normal transient; not an automatic failure",
+    "contact_establishment": "bounded evidence-supported alignment with force/collision limits; timeout and unknown retained",
+    "sustained_pushing": "verify simultaneous two-finger contact before continuous advance; monitor loss/imbalance",
+    "diagnosis_priority": "initial contact position/orientation prediction versus measured approach; root cause not yet proven",
+    "not_authorized": "blind directional correction, unlimited one-finger push, relaxed safety limits"
+  }
+}

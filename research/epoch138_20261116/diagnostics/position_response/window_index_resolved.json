@@ -1,0 +1,7 @@
+{
+  "scope": "All50 trajectories; raw labels vs same source record, previous policy state vs previous effective actuator command; timing and hash for all8150",
+  "errors": [],
+  "checked": 8150,
+  "max_label_error": 1.1920510623042446e-07,
+  "max_state_error": 0.0
+}

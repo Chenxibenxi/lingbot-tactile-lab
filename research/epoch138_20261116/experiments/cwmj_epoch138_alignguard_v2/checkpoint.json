@@ -1,0 +1,9 @@
+{
+  "checkpoint": "/mnt/relaydata/lingbot-tactile-lab/data/cwmj_epoch_boundary_finish_v2/epoch_final.pt",
+  "sha256": "f253e20d1e15b0f15cf2b804e22e12dce80500afcc853f288e35f0d9a589fbff",
+  "step": 281244,
+  "completed_epochs": 138,
+  "evaluation_plan": "/mnt/relaydata/lingbot-tactile-lab/work/cwmj_epoch_boundary_finish_v2/evaluation_plan.json",
+  "training_finished": true,
+  "evaluation_started": false
+}

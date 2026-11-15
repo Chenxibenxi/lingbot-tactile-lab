@@ -1,0 +1,265 @@
+{
+  "rows": [
+    {
+      "side": "left",
+      "row": 0,
+      "model": {
+        "mean_z_mm": 900.7742260957788,
+        "std_z_mm": 5.049194869346719,
+        "xy_response_diagonal": [
+          0.10423954028111299,
+          0.36099930279483505
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 915.4854624028519,
+        "std_z_mm": 0.028571338700327912,
+        "xy_response_diagonal": [
+          0.007930947860274219,
+          0.007094660955671611
+        ],
+        "phases": [
+          "approach_from_fixed_ready"
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "row": 9,
+      "model": {
+        "mean_z_mm": 892.8116126438192,
+        "std_z_mm": 5.659620522550849,
+        "xy_response_diagonal": [
+          0.27856326444166574,
+          0.7029112972733527
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 918.4883075661644,
+        "std_z_mm": 0.9740385588185606,
+        "xy_response_diagonal": [
+          0.5249581849963122,
+          0.49759444814689174
+        ],
+        "phases": [
+          "approach_from_fixed_ready"
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "row": 19,
+      "model": {
+        "mean_z_mm": 887.2852961028473,
+        "std_z_mm": 8.674680112488701,
+        "xy_response_diagonal": [
+          0.33416444791353617,
+          0.7357627910367106
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 920.0285571036301,
+        "std_z_mm": 2.9570780124949493e-05,
+        "xy_response_diagonal": [
+          1.000000045148006,
+          1.0000000389905859
+        ],
+        "phases": [
+          "approach_from_fixed_ready"
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "row": 29,
+      "model": {
+        "mean_z_mm": 862.5443989819408,
+        "std_z_mm": 15.408744057252434,
+        "xy_response_diagonal": [
+          0.24894776935326224,
+          0.76474846622669
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 890.768143746833,
+        "std_z_mm": 2.7714176260534152e-05,
+        "xy_response_diagonal": [
+          0.9999999875324553,
+          1.0000001000124958
+        ],
+        "phases": [
+          "descend_to_grasp"
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "row": 49,
+      "model": {
+        "mean_z_mm": 859.732868260252,
+        "std_z_mm": 16.9833271937493,
+        "xy_response_diagonal": [
+          0.32562640547401495,
+          0.7628440859281327
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 820.0297613793945,
+        "std_z_mm": 2.0945824164839473e-05,
+        "xy_response_diagonal": [
+          1.0000000300780532,
+          0.9999999574804225
+        ],
+        "phases": [
+          "close_fingers"
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "row": 0,
+      "model": {
+        "mean_z_mm": 906.1512029207166,
+        "std_z_mm": 6.972830074499228,
+        "xy_response_diagonal": [
+          0.2220891353857156,
+          0.1896142200599356
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 915.4872764655659,
+        "std_z_mm": 0.03140964064235041,
+        "xy_response_diagonal": [
+          0.007999700343406016,
+          0.007146042061122707
+        ],
+        "phases": [
+          "approach_from_fixed_ready"
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "row": 9,
+      "model": {
+        "mean_z_mm": 892.3875752352523,
+        "std_z_mm": 7.6588217316320275,
+        "xy_response_diagonal": [
+          0.4000053433434229,
+          0.5389057327003164
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 918.5497637977791,
+        "std_z_mm": 1.070191511169376,
+        "xy_response_diagonal": [
+          0.5272336290766096,
+          0.49969049893772033
+        ],
+        "phases": [
+          "approach_from_fixed_ready"
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "row": 19,
+      "model": {
+        "mean_z_mm": 877.3458986337085,
+        "std_z_mm": 12.654725004019621,
+        "xy_response_diagonal": [
+          0.403410871694206,
+          0.5917072138509283
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 920.0285482370745,
+        "std_z_mm": 2.714495809820751e-05,
+        "xy_response_diagonal": [
+          1.0000001226571469,
+          0.9999999441082447
+        ],
+        "phases": [
+          "approach_from_fixed_ready"
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "row": 29,
+      "model": {
+        "mean_z_mm": 847.1861279970688,
+        "std_z_mm": 14.699320039079064,
+        "xy_response_diagonal": [
+          0.3660811999154919,
+          0.6093238604667711
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 890.7681509030343,
+        "std_z_mm": 2.3927648985450114e-05,
+        "xy_response_diagonal": [
+          0.9999999711549284,
+          1.000000044591957
+        ],
+        "phases": [
+          "descend_to_grasp"
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "row": 49,
+      "model": {
+        "mean_z_mm": 836.8108102116603,
+        "std_z_mm": 9.245995506173287,
+        "xy_response_diagonal": [
+          0.4071293549594961,
+          0.6645346361226985
+        ],
+        "phases": [
+          "model future"
+        ]
+      },
+      "teacher": {
+        "mean_z_mm": 820.0297622787228,
+        "std_z_mm": 3.103581296901253e-05,
+        "xy_response_diagonal": [
+          0.9999999720007676,
+          1.0000000211240712
+        ],
+        "phases": [
+          "close_fingers"
+        ]
+      }
+    }
+  ],
+  "scope": "Different train/test layouts; compare phase and sensitivity, not paired accuracy. Body midpoint proxy common across both, not true grasp center."
+}

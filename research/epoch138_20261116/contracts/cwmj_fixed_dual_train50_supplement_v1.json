@@ -1,0 +1,152 @@
+{
+  "schema": "cwmj_fixed_dual_train50_supplement_v1",
+  "purpose": "additional independent train positions to reach25 successful videos per side; original failures remain recorded, never evaluation replacement",
+  "selection": "retain all original successes; if a side has fewer than25, add supplementary successful cases in preregistered order, until25",
+  "training": [
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        -0.02
+      ],
+      "seed": 68000,
+      "case_id": "left_68000"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.03,
+        0.02
+      ],
+      "seed": 68001,
+      "case_id": "left_68001"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        -0.02
+      ],
+      "seed": 68002,
+      "case_id": "left_68002"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        -0.01,
+        0.02
+      ],
+      "seed": 68003,
+      "case_id": "left_68003"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        -0.02
+      ],
+      "seed": 68004,
+      "case_id": "left_68004"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.01,
+        0.02
+      ],
+      "seed": 68005,
+      "case_id": "left_68005"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        -0.02
+      ],
+      "seed": 68006,
+      "case_id": "left_68006"
+    },
+    {
+      "side": "left",
+      "offset_m": [
+        0.03,
+        0.02
+      ],
+      "seed": 68007,
+      "case_id": "left_68007"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        -0.02
+      ],
+      "seed": 68008,
+      "case_id": "right_68008"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.03,
+        0.02
+      ],
+      "seed": 68009,
+      "case_id": "right_68009"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        -0.02
+      ],
+      "seed": 68010,
+      "case_id": "right_68010"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        -0.01,
+        0.02
+      ],
+      "seed": 68011,
+      "case_id": "right_68011"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        -0.02
+      ],
+      "seed": 68012,
+      "case_id": "right_68012"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.01,
+        0.02
+      ],
+      "seed": 68013,
+      "case_id": "right_68013"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        -0.02
+      ],
+      "seed": 68014,
+      "case_id": "right_68014"
+    },
+    {
+      "side": "right",
+      "offset_m": [
+        0.03,
+        0.02
+      ],
+      "seed": 68015,
+      "case_id": "right_68015"
+    }
+  ],
+  "validation_test_untouched": true
+}

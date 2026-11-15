@@ -1,0 +1,158 @@
+{
+  "schema": "fixed_dual_arm_platform_v2",
+  "status": "separated_ready_candidate",
+  "camera_reference_sha256": "e6d8005f99c8d029d24ed7169b2acbad9781cea3ec7e15adfe0a14bd52230083",
+  "cameras": [
+    {
+      "policy_key": "cam_high",
+      "parent_body": "world",
+      "mjcf_pos": [
+        0.2,
+        0.032,
+        1.35
+      ],
+      "mjcf_quat_wxyz": [
+        0.670820393,
+        0.223606798,
+        -0.223606798,
+        -0.670820393
+      ],
+      "fovy_deg": 37.0,
+      "resolution": [
+        320,
+        240
+      ]
+    },
+    {
+      "policy_key": "cam_left_wrist",
+      "parent_body": "fl_link6",
+      "mjcf_pos": [
+        0.07,
+        0.032,
+        0.065
+      ],
+      "mjcf_quat_wxyz": [
+        0.589367954,
+        0.390698624,
+        -0.390698624,
+        -0.589367954
+      ],
+      "fovy_deg": 37.0,
+      "resolution": [
+        320,
+        240
+      ]
+    },
+    {
+      "policy_key": "cam_right_wrist",
+      "parent_body": "fr_link6",
+      "mjcf_pos": [
+        0.07,
+        0.032,
+        0.065
+      ],
+      "mjcf_quat_wxyz": [
+        0.589367954,
+        0.390698624,
+        -0.390698624,
+        -0.589367954
+      ],
+      "fovy_deg": 37.0,
+      "resolution": [
+        320,
+        240
+      ]
+    }
+  ],
+  "ready_arm_joints": {
+    "fl_joint1": -0.4097452515042096,
+    "fl_joint2": 2.043058778132171,
+    "fl_joint3": 1.731172988813005,
+    "fl_joint4": -1.2588587045770612,
+    "fl_joint5": 0.0017477023120519518,
+    "fl_joint6": -0.38248530246905,
+    "fr_joint1": 0.37992503092069035,
+    "fr_joint2": 2.0535287343995328,
+    "fr_joint3": 1.7506313271154748,
+    "fr_joint4": -1.2678469687254899,
+    "fr_joint5": 0.0018244324571805358,
+    "fr_joint6": 0.39733305171108907
+  },
+  "gripper_ready_physical_m": 0.045,
+  "task_workspace": {
+    "nominal_x": 0.6,
+    "left_y": 0.1,
+    "right_y": -0.1
+  },
+  "invariant": "robot geometry, arm mounts, camera mounts/intrinsics and14D semantics shared by all tasks; task may vary object and actions",
+  "training_admitted": false,
+  "revision_reason": "user requested separated initial arms; wrists y +/-0.15m instead of +/-0.10m; preserve camera frame margin; cameras and robot geometry unchanged",
+  "static_ik_evidence": [
+    {
+      "side": "fl",
+      "target": [
+        0.6,
+        0.15,
+        1.0
+      ],
+      "ik": {
+        "joint_names": [
+          "fl_joint1",
+          "fl_joint2",
+          "fl_joint3",
+          "fl_joint4",
+          "fl_joint5",
+          "fl_joint6"
+        ],
+        "q": [
+          -0.4097452515042096,
+          2.043058778132171,
+          1.731172988813005,
+          -1.2588587045770612,
+          0.0017477023120519518,
+          -0.38248530246905
+        ],
+        "position_error_m": 2.5438405243138006e-16,
+        "rotation_error_rad": 1.378868140901773e-15,
+        "pose_reached": true,
+        "solver_success": true,
+        "evaluations": 5,
+        "collision_checked": false,
+        "path_validated": false
+      }
+    },
+    {
+      "side": "fr",
+      "target": [
+        0.6,
+        -0.15,
+        1.0
+      ],
+      "ik": {
+        "joint_names": [
+          "fr_joint1",
+          "fr_joint2",
+          "fr_joint3",
+          "fr_joint4",
+          "fr_joint5",
+          "fr_joint6"
+        ],
+        "q": [
+          0.37992503092069035,
+          2.0535287343995328,
+          1.7506313271154748,
+          -1.2678469687254899,
+          0.0018244324571805358,
+          0.39733305171108907
+        ],
+        "position_error_m": 2.7194799110210365e-16,
+        "rotation_error_rad": 4.4008125853622624e-15,
+        "pose_reached": true,
+        "solver_success": true,
+        "evaluations": 5,
+        "collision_checked": false,
+        "path_validated": false
+      }
+    }
+  ]
+}

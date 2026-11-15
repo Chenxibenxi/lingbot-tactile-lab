@@ -1,0 +1,36 @@
+{
+  "schema": "cwmj_task_dataset_minimum_v1",
+  "authority": "user_20261114",
+  "all_tasks_minimum_successful_complete_training_videos": 50,
+  "single_active_arm": {
+    "left_arm": 25,
+    "right_arm": 25,
+    "placement_rule": "left workspace uses left arm; right workspace uses right arm",
+    "distinct_initial_positions_per_side": 25
+  },
+  "dual_arm": {
+    "complete_cooperative_trajectories": 50,
+    "cannot_substitute_two_single_arm_pools": true,
+    "vary": [
+      "object_initial_positions",
+      "task_relevant_relative_layout",
+      "cooperative_role_configuration"
+    ]
+  },
+  "common": [
+    "fixed dual-arm embodiment and camera mounting/intrinsics",
+    "same-run RGB/touch/actions/timestamps",
+    "complete reset-to-termination videos",
+    "independent train/validation/test scene splits",
+    "retain failures but do not count them toward50 successful training demonstrations",
+    "no repeated playback, mirrored frames, or duplicate video counts"
+  ],
+  "object_diversity": {
+    "authorized": true,
+    "handoff_reference": "docs/HANDOFF_ACTION_BOUNDARY_20261113_ZH.md sections6,8",
+    "admission": "verify geometry, named reset, stability, reachability, dynamic grasp, sensor/visual teacher compatibility before mixing a replacement object",
+    "mug_current_status": "historical static scene/IK candidate only, not dynamically admitted"
+  },
+  "minimum_not_sufficiency_claim": true,
+  "shared_platform": "datasets/cwmj_fixed_dual_arm_platform_v2.json"
+}

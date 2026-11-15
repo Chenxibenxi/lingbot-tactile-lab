@@ -1,0 +1,150 @@
+{
+  "scope": "Direct local Python imports only; dynamic work paths, base model package/assets/runtime still required; not standalone reproducibility certification",
+  "modules": {
+    "src/cwmj49_arm_trajectory.py": {
+      "bytes": 61701,
+      "sha256": "48df2fc2a3c75b217e3f166ffca07039a1e69ff207d44c075a74062f785bdfa2",
+      "included_support_copy": false
+    },
+    "src/cwmj46_closure_control.py": {
+      "bytes": 54762,
+      "sha256": "85c37b5d79767b16b08211c9a1ae40d4bb93816b45cd686ac810a6f06c9e42d0",
+      "included_support_copy": false
+    },
+    "src/cwmj_fixed_dual_arm_platform.py": {
+      "bytes": 2536,
+      "sha256": "3ac60dfe6bd8191d791e4ad14272db1e12e17bae6ab61db7cb6c2107c36422b6",
+      "included_support_copy": true
+    },
+    "src/mainline_first_target_contract.py": {
+      "bytes": 1572,
+      "sha256": "4fd88658f42027323e5fba6b911a756efa1c7ff60dad5d1a977935533b3f5bf1",
+      "included_support_copy": true
+    },
+    "src/cwmj_preference_training_data.py": {
+      "bytes": 5046,
+      "sha256": "c79cf23836f10a2fa16309aba21bb594a050b29f73660448158549c0e50009f7",
+      "included_support_copy": false
+    },
+    "src/run_cwmj46_model_loop.py": {
+      "bytes": 103194,
+      "sha256": "3e767ae4e683b4bb5a776d03964f0b0f70148a576db86c79faf7f675b0b34b20",
+      "included_support_copy": false
+    },
+    "src/prepare_real_vla_visual_smoke.py": {
+      "bytes": 4659,
+      "sha256": "150f5c9318082ada40b187088e44dc5a20d15ad14eb1f755b566ba4f9b64aa3d",
+      "included_support_copy": false
+    },
+    "src/contact_modality_controls.py": {
+      "bytes": 1830,
+      "sha256": "9c26b13a520b4c2faa8900c5c8022dd7cd2e151a4b5740971de7763624c40b3c",
+      "included_support_copy": false
+    },
+    "src/contact_policy_action_decode.py": {
+      "bytes": 1422,
+      "sha256": "9dfaf503dd7b3bd28fbad458cd67969a2f8ddf12e1582a20e0ba1bed1272cf67",
+      "included_support_copy": false
+    },
+    "src/tactile_contact_persistence.py": {
+      "bytes": 1977,
+      "sha256": "1d64529ba9cec3bdf3d55dfbda9a831cb2d1a59da65f163c5c408154f5f34067",
+      "included_support_copy": false
+    },
+    "src/contact_trainable_parameters.py": {
+      "bytes": 1820,
+      "sha256": "44d2de34080f7f79ad7e33879b19f2b6e22077a9ea0471a99c24133415a1a859",
+      "included_support_copy": false
+    },
+    "src/cwmj_mainline_scenario.py": {
+      "bytes": 1504,
+      "sha256": "3968ca329c165e7d347b9f6b2c6e47af596d088ddfd9c16a6f87639b4d492957",
+      "included_support_copy": false
+    },
+    "src/cwmj_mainline_execution.py": {
+      "bytes": 6612,
+      "sha256": "1678b84e059c0c4553ad5dd8336eac0c5eef4145690a02ee595dda707bebac65",
+      "included_support_copy": true
+    },
+    "src/cwmj_m2_observation_env.py": {
+      "bytes": 66295,
+      "sha256": "ec2811964d943daca54b2d21661b2257f2c0e26b996886fddc1e7a328ffcdd47",
+      "included_support_copy": false
+    },
+    "src/contact_policy_inference.py": {
+      "bytes": 3532,
+      "sha256": "36f0d2cea56d18ed88b3350d9b7900f0d7227746f518f123b76d26c296587ee8",
+      "included_support_copy": true
+    },
+    "src/run_cwmj_m7_training.py": {
+      "bytes": 16014,
+      "sha256": "cc947bca29b076cef990ba92c43b6ebb528dcee50a64a62a885a188881921214",
+      "included_support_copy": false
+    },
+    "src/cwmj_full_trajectory_data.py": {
+      "bytes": 3565,
+      "sha256": "41624ce82d3ffaaa7462d2f2ec368b1caa8e493e966ff1aba1f3b69838356329",
+      "included_support_copy": true
+    },
+    "src/cwmj_model_bridge_v1.py": {
+      "bytes": 105813,
+      "sha256": "ddecb75087139c8fda1d5527860fc6f55adfdb26472ed266ad0d702d8414a28f",
+      "included_support_copy": true
+    },
+    "src/cwmj_temporal_conditioner.py": {
+      "bytes": 1905,
+      "sha256": "8ca3dd930bff939e60fe085d844af1cda484cbd1b768f1beb739bb4d09a3bce1",
+      "included_support_copy": true
+    },
+    "src/action_step_conditioner.py": {
+      "bytes": 796,
+      "sha256": "318042ee8a542e69a9deebafcc245273997731239d55ec5a1c824c7b3def9388",
+      "included_support_copy": true
+    },
+    "src/contact_action_projection_lora.py": {
+      "bytes": 2337,
+      "sha256": "f28eada46ba586a91732fddd1c0d1471de106ef49d0ae0ef702c6e78a2384dfe",
+      "included_support_copy": true
+    },
+    "src/contact_action_film.py": {
+      "bytes": 1717,
+      "sha256": "767f462fc94fa4198773b00917044982a6b489631db89bc10746cd05f6161778",
+      "included_support_copy": true
+    },
+    "src/cwmj_action_preference_loss.py": {
+      "bytes": 2190,
+      "sha256": "565b2b918f6c01b0a3690c27dcbd5fb65fd58c8b4511fa4867a65939a3509b92",
+      "included_support_copy": false
+    },
+    "src/cwmj_native_policy_inference.py": {
+      "bytes": 1657,
+      "sha256": "a4bdee647f13b63132ad48377f14335967737fec2ae185913e1b32eca0c66050",
+      "included_support_copy": true
+    },
+    "src/cwmj_slip_outcomes.py": {
+      "bytes": 3492,
+      "sha256": "deaba472029cab28b160ec84d904014ae362105efd195612be60e60ecb482276",
+      "included_support_copy": false
+    },
+    "src/cwmj_mainline_env.py": {
+      "bytes": 5064,
+      "sha256": "c52fd02dca8d2ca39b7d44ab0825fd099870b535fc78adc7c77e2fb037aca3c1",
+      "included_support_copy": true
+    },
+    "src/cwmj_monitored_execution.py": {
+      "bytes": 1760,
+      "sha256": "203bed6a7148773aade5f598dfbf167aadf8afbd247e38967767a895f3216bdb",
+      "included_support_copy": true
+    },
+    "src/cwmj_multimodal_capture.py": {
+      "bytes": 2245,
+      "sha256": "1604c1e5ac6d63559847d3c36552140710427a2abdfe2cadc225ca93a9b1efec",
+      "included_support_copy": true
+    },
+    "src/mainline_gripper_projection.py": {
+      "bytes": 1280,
+      "sha256": "01d6d2c3803a95c18277799b7bab98c2d86be7ae3cd880ba2dcef4f891ca7b05",
+      "included_support_copy": true
+    }
+  }
+}
